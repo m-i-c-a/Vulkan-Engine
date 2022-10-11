@@ -1,8 +1,13 @@
 [
 {
   "directory": "/home/mica/Desktop/Engine/build",
-  "command": "/usr/bin/g++   -I/home/mica/Desktop/Engine/glfw_INCLUDE_DIRS -I/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include -I/home/mica/Desktop/Engine/third-party/glfw/include  -g   -std=gnu++17 -o CMakeFiles/engine.dir/test.cpp.o -c /home/mica/Desktop/Engine/test.cpp",
-  "file": "/home/mica/Desktop/Engine/test.cpp"
+  "command": "/usr/bin/g++   -I/home/mica/Desktop/Engine/glfw_INCLUDE_DIRS -I/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include -I/home/mica/Desktop/Engine/third-party/glfw/include  -g   -std=gnu++17 -o CMakeFiles/engine.dir/main.cpp.o -c /home/mica/Desktop/Engine/main.cpp",
+  "file": "/home/mica/Desktop/Engine/main.cpp"
+},
+{
+  "directory": "/home/mica/Desktop/Engine/build",
+  "command": "/usr/bin/g++   -I/home/mica/Desktop/Engine/glfw_INCLUDE_DIRS -I/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include -I/home/mica/Desktop/Engine/third-party/glfw/include  -g   -std=gnu++17 -o CMakeFiles/engine.dir/VulkanCore.cpp.o -c /home/mica/Desktop/Engine/VulkanCore.cpp",
+  "file": "/home/mica/Desktop/Engine/VulkanCore.cpp"
 },
 {
   "directory": "/home/mica/Desktop/Engine/build/third-party/glfw/src",

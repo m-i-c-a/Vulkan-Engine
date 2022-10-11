@@ -1,74 +1,8 @@
-#include <vector>
-
-#include <vulkan/vulkan.h>
+#include "VulkanCore.hpp"
+#include "Defines.hpp"
 #include <GLFW/glfw3.h>
 
-#include "Defines.hpp"
-
-
-/*
-Programmable Vertex Pulling (PVP) on Triangle
-PVP on obj file mesh
-Phong Shading
-Bindless PerDrawData (push constants (PC))
-PVP on multple obj file meshes
-Textures in samplers
-Sparse Textures
-Bindless PerMaterialData (PC)
-DrawIndirect
-DrawIndirect + instancing
-Auto gen shader structs (offline/pre-step)
-PBR materials
-
-Research
---------
-PVP vs Traditional
-
-Projects
-----------------
-Neural Net Trees
-Clouds
-Scene Graph Exploration
-Culling
-*/
-
-
-struct VulkanInitInfo
-{
-    GLFWwindow* window = nullptr;
-    std::vector<const char*> requestedInstanceLayerNames {};
-    std::vector<const char*> requestedInstanceExtensionNames {};
-    std::vector<const char*> requestedDeviceExtensionNames {};
-    uint32_t requestedSwapchainImageCount;
-    VkFormat requestedSwapchainImageFormat;
-    VkExtent2D requestedSwapchainImageExtent;
-    VkPresentModeKHR requestedSwapchainImagePresentMode;
-};
-
-struct VulkanCore
-{
-    VkInstance vk_instance = VK_NULL_HANDLE;
-    VkSurfaceKHR vk_surface = VK_NULL_HANDLE;
-    VkPhysicalDevice vk_physicalDevice = VK_NULL_HANDLE;
-    uint32_t graphicsQFamIdx = UINT32_MAX;
-    VkDevice vk_device = VK_NULL_HANDLE;
-    VkQueue vk_graphicsQ = VK_NULL_HANDLE;
-    VkSwapchainKHR vk_swapchain = VK_NULL_HANDLE;
-    std::vector<VkImage> vk_swapchainImages {};
-    std::vector<VkImageView> vk_swapchainImageViews {};
-    VkFormat vk_swapchainImageFormat = VK_FORMAT_MAX_ENUM;
-    VkExtent2D vk_swapchainExtent = { 0, 0 };
-};
-
-struct QFamIndices
-{
-    uint32_t graphics = UINT32_MAX;
-    uint32_t transfer = UINT32_MAX;
-    uint32_t compute = UINT32_MAX;
-    uint32_t sparse = UINT32_MAX;
-};
-
-VkInstance createInstance(const uint32_t enabledLayerCount, const char* const* ppEnabledLayerNames, const uint32_t enabledExtensionCount, const char* const* ppEnabledExtensionNames)
+static VkInstance createInstance(const uint32_t enabledLayerCount, const char* const* ppEnabledLayerNames, const uint32_t enabledExtensionCount, const char* const* ppEnabledExtensionNames)
 {
     VkInstance vk_instance = VK_NULL_HANDLE;
 
@@ -90,14 +24,14 @@ VkInstance createInstance(const uint32_t enabledLayerCount, const char* const* p
     return vk_instance;
 }
 
-VkSurfaceKHR createSurface(const VkInstance vk_instance, GLFWwindow *window)
+static VkSurfaceKHR createSurface(const VkInstance vk_instance, GLFWwindow *window)
 {
     VkSurfaceKHR vk_surface = VK_NULL_HANDLE;
     VK_CHECK(glfwCreateWindowSurface(vk_instance, window, nullptr, &vk_surface));
     return vk_surface;
 }
 
-VkPhysicalDevice selectPhysicalDevice(const VkInstance vk_instance)
+static VkPhysicalDevice selectPhysicalDevice(const VkInstance vk_instance)
 {
     uint32_t numPhysicalDevices = 0u;
     VkPhysicalDevice* vk_physicalDevices = nullptr;
@@ -121,7 +55,7 @@ VkPhysicalDevice selectPhysicalDevice(const VkInstance vk_instance)
     return vk_physicalDevices[selectedPhysicalDeviceIndex];
 }
 
-uint32_t selectGraphicsQFamIdx(const VkPhysicalDevice vk_physicalDevice, const VkSurfaceKHR vk_surface)
+static uint32_t selectGraphicsQFamIdx(const VkPhysicalDevice vk_physicalDevice, const VkSurfaceKHR vk_surface)
 {
     uint32_t numQFamProps= 0;
     VkQueueFamilyProperties* vk_qFamProps = nullptr;
@@ -149,7 +83,7 @@ uint32_t selectGraphicsQFamIdx(const VkPhysicalDevice vk_physicalDevice, const V
     return UINT32_MAX;
 }
 
-VkDevice createDevice(const VkPhysicalDevice vk_physicalDevice, const uint32_t graphicsQFamIdx, std::vector<const char*> deviceExtensionNames) 
+static VkDevice createDevice(const VkPhysicalDevice vk_physicalDevice, const uint32_t graphicsQFamIdx, std::vector<const char*> deviceExtensionNames) 
 {
     constexpr float q_priority = 1.0f;
 
@@ -177,14 +111,14 @@ VkDevice createDevice(const VkPhysicalDevice vk_physicalDevice, const uint32_t g
     return vk_device;
 }
 
-VkQueue getGraphicsQ(VkDevice vk_device, uint32_t graphicsQFamIdx)
+static VkQueue getGraphicsQ(VkDevice vk_device, uint32_t graphicsQFamIdx)
 {
    VkQueue vk_graphicsQ;
    vkGetDeviceQueue(vk_device, graphicsQFamIdx, 0, &vk_graphicsQ);
    return vk_graphicsQ;
 }
 
-uint32_t getSwapchainMinImageCount(const VkSurfaceCapabilitiesKHR& vk_surfaceCapabilities, const uint32_t requestedImageCount)
+static uint32_t getSwapchainMinImageCount(const VkSurfaceCapabilitiesKHR& vk_surfaceCapabilities, const uint32_t requestedImageCount)
 {
     assert(requestedImageCount > 0 && "Invalid requested image count for swapchain!");
 
@@ -216,7 +150,7 @@ uint32_t getSwapchainMinImageCount(const VkSurfaceCapabilitiesKHR& vk_surfaceCap
     return minImageCount;
 }
 
-void getSwapchainImageFormatAndColorSpace(const VkPhysicalDevice vk_physicalDevice, const VkSurfaceKHR vk_surface, const VkFormat requestedFormat, VkFormat& chosenFormat, VkColorSpaceKHR& chosenColorSpace)
+static void getSwapchainImageFormatAndColorSpace(const VkPhysicalDevice vk_physicalDevice, const VkSurfaceKHR vk_surface, const VkFormat requestedFormat, VkFormat& chosenFormat, VkColorSpaceKHR& chosenColorSpace)
 {
     uint32_t numSupportedSurfaceFormats = 0;
     VK_CHECK(vkGetPhysicalDeviceSurfaceFormatsKHR(vk_physicalDevice, vk_surface, &numSupportedSurfaceFormats, nullptr));
@@ -244,7 +178,7 @@ void getSwapchainImageFormatAndColorSpace(const VkPhysicalDevice vk_physicalDevi
     delete [] supportedSurfaceFormats;
 }
 
-VkExtent2D getSwapchainExtent(const VkSurfaceCapabilitiesKHR& vk_surfaceCapabilities, const VkExtent2D vk_requestedImageExtent)
+static VkExtent2D getSwapchainExtent(const VkSurfaceCapabilitiesKHR& vk_surfaceCapabilities, const VkExtent2D vk_requestedImageExtent)
 {
     VkExtent2D vk_extent;
     
@@ -263,7 +197,7 @@ VkExtent2D getSwapchainExtent(const VkSurfaceCapabilitiesKHR& vk_surfaceCapabili
     return vk_extent;
 }
 
-VkSurfaceTransformFlagBitsKHR getSwapchainPreTransform(const VkSurfaceCapabilitiesKHR& vk_surfaceCapabilities)
+static VkSurfaceTransformFlagBitsKHR getSwapchainPreTransform(const VkSurfaceCapabilitiesKHR& vk_surfaceCapabilities)
 {
     VkSurfaceTransformFlagBitsKHR vk_preTransform = VK_SURFACE_TRANSFORM_FLAG_BITS_MAX_ENUM_KHR;
 
@@ -280,7 +214,7 @@ VkSurfaceTransformFlagBitsKHR getSwapchainPreTransform(const VkSurfaceCapabiliti
     return vk_preTransform;
 }
 
-VkCompositeAlphaFlagBitsKHR getSwapchainCompositeAlpha(const VkSurfaceCapabilitiesKHR& vk_surfaceCapabilities)
+static VkCompositeAlphaFlagBitsKHR getSwapchainCompositeAlpha(const VkSurfaceCapabilitiesKHR& vk_surfaceCapabilities)
 {
     VkCompositeAlphaFlagBitsKHR vk_compositeAlpha = VK_COMPOSITE_ALPHA_FLAG_BITS_MAX_ENUM_KHR;
 
@@ -309,7 +243,7 @@ VkCompositeAlphaFlagBitsKHR getSwapchainCompositeAlpha(const VkSurfaceCapabiliti
     return vk_compositeAlpha;
 }
 
-VkPresentModeKHR getSwapchainPresentMode(const VkPhysicalDevice vk_physicalDevice, const VkSurfaceKHR vk_surface, const VkPresentModeKHR vk_requestedPresentMode)
+static VkPresentModeKHR getSwapchainPresentMode(const VkPhysicalDevice vk_physicalDevice, const VkSurfaceKHR vk_surface, const VkPresentModeKHR vk_requestedPresentMode)
 {
     VkPresentModeKHR vk_presentMode = VK_PRESENT_MODE_MAX_ENUM_KHR;
     uint32_t numSupportedPresentModes = 0;
@@ -338,7 +272,7 @@ VkPresentModeKHR getSwapchainPresentMode(const VkPhysicalDevice vk_physicalDevic
     return vk_presentMode;
 }
 
-VkSwapchainCreateInfoKHR populateSwapchainCreateInfo(VkPhysicalDevice vk_physicalDevice, VkSurfaceKHR vk_surface, VkDevice vk_device, const uint32_t requestedImageCount, const VkFormat vk_requestedFormat, const VkExtent2D vk_requestedExtent, const VkPresentModeKHR vk_requestedPresentMode)
+static VkSwapchainCreateInfoKHR populateSwapchainCreateInfo(VkPhysicalDevice vk_physicalDevice, VkSurfaceKHR vk_surface, VkDevice vk_device, const uint32_t requestedImageCount, const VkFormat vk_requestedFormat, const VkExtent2D vk_requestedExtent, const VkPresentModeKHR vk_requestedPresentMode)
 {
     VkSurfaceCapabilitiesKHR vk_surfaceCapabilities;
     VK_CHECK(vkGetPhysicalDeviceSurfaceCapabilitiesKHR(vk_physicalDevice, vk_surface, &vk_surfaceCapabilities));
@@ -369,14 +303,14 @@ VkSwapchainCreateInfoKHR populateSwapchainCreateInfo(VkPhysicalDevice vk_physica
     return vk_swapchainCreateInfo;
 }
 
-VkSwapchainKHR createSwapchain(const VkDevice vk_device, const VkSwapchainCreateInfoKHR& vk_swapchainCreateInfo)
+static VkSwapchainKHR createSwapchain(const VkDevice vk_device, const VkSwapchainCreateInfoKHR& vk_swapchainCreateInfo)
 {
     VkSwapchainKHR vk_swapchain;
     VK_CHECK(vkCreateSwapchainKHR(vk_device, &vk_swapchainCreateInfo, nullptr, &vk_swapchain));
     return vk_swapchain;
 }
 
-std::vector<VkImage> getSwapchainImages(const VkDevice vk_device, const VkSwapchainKHR vk_swapchain)
+static std::vector<VkImage> getSwapchainImages(const VkDevice vk_device, const VkSwapchainKHR vk_swapchain)
 {
     uint32_t numSwapchainImages = 0;
     std::vector<VkImage> vk_swapchainImages;
@@ -388,7 +322,7 @@ std::vector<VkImage> getSwapchainImages(const VkDevice vk_device, const VkSwapch
     return vk_swapchainImages;
 }
 
-std::vector<VkImageView> createSwapchainImageViews(const VkDevice vk_device, const std::vector<VkImage>& vk_swapchainImages, const VkFormat vk_swapchainImageFormat)
+static std::vector<VkImageView> createSwapchainImageViews(const VkDevice vk_device, const std::vector<VkImage>& vk_swapchainImages, const VkFormat vk_swapchainImageFormat)
 {
     std::vector<VkImageView> vk_swapchainImageViews(vk_swapchainImages.size());
 
@@ -418,7 +352,6 @@ std::vector<VkImageView> createSwapchainImageViews(const VkDevice vk_device, con
     LOG("Swapchain Image Count: %lu\n", vk_swapchainImages.size());
     return vk_swapchainImageViews;
 }
-
 
 VulkanCore initVulkan(const VulkanInitInfo& vulkanInitInfo)
 {
@@ -470,43 +403,4 @@ void cleanupVulkan(const VulkanCore& vulkanCore)
     vkDestroyDevice(vulkanCore.vk_device, nullptr);
     vkDestroySurfaceKHR(vulkanCore.vk_instance, vulkanCore.vk_surface, nullptr);
     vkDestroyInstance(vulkanCore.vk_instance, nullptr);
-}
-
-int main()
-{
-    const int windowWidth = 500;
-    const int windowHeight = 500;
-    const char* windowName = "Engine";
-    bool continueExecuting = true;
-
-    glfwInit();
-    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-    glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-    GLFWwindow* glfw_window = glfwCreateWindow(windowWidth, windowHeight, windowName, nullptr, nullptr);
-    assert(glfw_window && "Failed to create window");
-
-    const VulkanInitInfo vulkanInitInfo {
-        .window = glfw_window,
-        .requestedInstanceLayerNames = { "VK_LAYER_KHRONOS_validation" },
-        .requestedInstanceExtensionNames = { "VK_KHR_surface", "VK_KHR_xcb_surface" },
-        .requestedDeviceExtensionNames = { VK_KHR_SWAPCHAIN_EXTENSION_NAME },
-        .requestedSwapchainImageCount = 3,
-        .requestedSwapchainImageFormat = VK_FORMAT_R8G8B8_SRGB,
-        .requestedSwapchainImageExtent = { windowWidth, windowHeight },
-        .requestedSwapchainImagePresentMode = VK_PRESENT_MODE_FIFO_KHR
-    };
-
-    VulkanCore vulkanCore = initVulkan(vulkanInitInfo);
-
-    while (!glfwWindowShouldClose(glfw_window))
-    {
-        glfwPollEvents();
-
-        glfwSwapBuffers(glfw_window);
-    }
-
-    cleanupVulkan(vulkanCore);
-
-    glfwDestroyWindow(glfw_window);
-    glfwTerminate();
 }

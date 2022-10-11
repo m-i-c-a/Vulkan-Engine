@@ -351,32 +351,59 @@ windows/fast:
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/windows.dir/build.make third-party/glfw/examples/CMakeFiles/windows.dir/build
 .PHONY : windows/fast
 
-test.o: test.cpp.o
+VulkanCore.o: VulkanCore.cpp.o
 
-.PHONY : test.o
+.PHONY : VulkanCore.o
 
 # target to build an object file
-test.cpp.o:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/test.cpp.o
-.PHONY : test.cpp.o
+VulkanCore.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/VulkanCore.cpp.o
+.PHONY : VulkanCore.cpp.o
 
-test.i: test.cpp.i
+VulkanCore.i: VulkanCore.cpp.i
 
-.PHONY : test.i
+.PHONY : VulkanCore.i
 
 # target to preprocess a source file
-test.cpp.i:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/test.cpp.i
-.PHONY : test.cpp.i
+VulkanCore.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/VulkanCore.cpp.i
+.PHONY : VulkanCore.cpp.i
 
-test.s: test.cpp.s
+VulkanCore.s: VulkanCore.cpp.s
 
-.PHONY : test.s
+.PHONY : VulkanCore.s
 
 # target to generate assembly for a file
-test.cpp.s:
-	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/test.cpp.s
-.PHONY : test.cpp.s
+VulkanCore.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/VulkanCore.cpp.s
+.PHONY : VulkanCore.cpp.s
+
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -405,9 +432,12 @@ help:
 	@echo "... offscreen"
 	@echo "... wave"
 	@echo "... windows"
-	@echo "... test.o"
-	@echo "... test.i"
-	@echo "... test.s"
+	@echo "... VulkanCore.o"
+	@echo "... VulkanCore.i"
+	@echo "... VulkanCore.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

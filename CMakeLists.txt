@@ -5,6 +5,8 @@ project(engine)
 
 add_subdirectory(third-party)
 
-add_executable(${PROJECT_NAME} test.cpp)
+add_executable(${PROJECT_NAME} main.cpp
+    VulkanCore.cpp VulkanCore.hpp)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE glfw $ENV{VULKAN_SDK}/lib/libvulkan.so)
 target_include_directories(${PROJECT_NAME} PRIVATE glfw_INCLUDE_DIRS $ENV{VULKAN_SDK}/include)
