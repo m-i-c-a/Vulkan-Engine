@@ -1,0 +1,269 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "third-party",
+					"childIndexes" : 
+					[
+						2
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "third-party"
+				},
+				{
+					"build" : "third-party/glfw",
+					"childIndexes" : 
+					[
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third-party/glfw",
+					"targetIndexes" : 
+					[
+						11
+					]
+				},
+				{
+					"build" : "third-party/glfw/src",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "third-party/glfw/src",
+					"targetIndexes" : 
+					[
+						3,
+						12
+					]
+				},
+				{
+					"build" : "third-party/glfw/examples",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "third-party/glfw/examples",
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						13,
+						14
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "engine",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 4,
+					"id" : "boing::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-boing-Debug-3e506e05d5dd60f58656.json",
+					"name" : "boing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "engine::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-engine-Debug-bb1c38fd62b415c0f6c3.json",
+					"name" : "engine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gears::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-gears-Debug-1f30e5423eb57f6cff95.json",
+					"name" : "gears",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "glfw::@281570e8f3ee925e5575",
+					"jsonFile" : "target-glfw-Debug-ff83f0d68bbad1868340.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "heightmap::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-heightmap-Debug-3b8d12e4523fc902b8db.json",
+					"name" : "heightmap",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "offscreen::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-offscreen-Debug-88550ecced1f069135f0.json",
+					"name" : "offscreen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "particles::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-particles-Debug-329b1c00f6ada17eb934.json",
+					"name" : "particles",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "sharing::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-sharing-Debug-42b131c4a98e985bf22b.json",
+					"name" : "sharing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "splitview::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-splitview-Debug-790522ec917b232e5b42.json",
+					"name" : "splitview",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "triangle-opengl::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-triangle-opengl-Debug-b366acda9aa68bd38c98.json",
+					"name" : "triangle-opengl",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "triangle-opengles::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-triangle-opengles-Debug-fc61b013d81c63543992.json",
+					"name" : "triangle-opengles",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "uninstall::@556c92c420f14367ed0b",
+					"jsonFile" : "target-uninstall-Debug-69bba0648a8f65d0230b.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "update_mappings::@281570e8f3ee925e5575",
+					"jsonFile" : "target-update_mappings-Debug-0e220fe820b5e956d580.json",
+					"name" : "update_mappings",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "wave::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-wave-Debug-a491ecb06d75994e0d6f.json",
+					"name" : "wave",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "windows::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-windows-Debug-b7c39fb4a5b8eb5260aa.json",
+					"name" : "windows",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/mica/Desktop/Engine/build",
+		"source" : "/home/mica/Desktop/Engine"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}
