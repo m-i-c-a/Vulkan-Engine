@@ -43,7 +43,21 @@ struct VulkanInitInfo
     VkFormat requestedSwapchainImageFormat;
     VkExtent2D requestedSwapchainImageExtent;
     VkPresentModeKHR requestedSwapchainImagePresentMode;
-    // std::vector<VkQueueFlagBits> requestedQs {}; // for now we default to a single graphics queue
+};
+
+struct VulkanCore
+{
+    VkInstance vk_instance = VK_NULL_HANDLE;
+    VkSurfaceKHR vk_surface = VK_NULL_HANDLE;
+    VkPhysicalDevice vk_physicalDevice = VK_NULL_HANDLE;
+    uint32_t graphicsQFamIdx = UINT32_MAX;
+    VkDevice vk_device = VK_NULL_HANDLE;
+    VkQueue vk_graphicsQ = VK_NULL_HANDLE;
+    VkSwapchainKHR vk_swapchain = VK_NULL_HANDLE;
+    std::vector<VkImage> vk_swapchainImages {};
+    std::vector<VkImageView> vk_swapchainImageViews {};
+    VkFormat vk_swapchainImageFormat = VK_FORMAT_MAX_ENUM;
+    VkExtent2D vk_swapchainExtent = { 0, 0 };
 };
 
 struct QFamIndices
@@ -362,19 +376,26 @@ VkSwapchainKHR createSwapchain(const VkDevice vk_device, const VkSwapchainCreate
     return vk_swapchain;
 }
 
-#if 0
-uint32_t createSwapchainImages(VkDevice vk_device, VkSwapchainKHR vk_swapchain, std::vector<VkImage>& images, std::vector<VkImageView>& imageViews, VkFormat format)
+std::vector<VkImage> getSwapchainImages(const VkDevice vk_device, const VkSwapchainKHR vk_swapchain)
 {
     uint32_t numSwapchainImages = 0;
-    VK_CHECK(vkGetSwapchainImagesKHR(device, swapchain, &numSwapchainImages, nullptr));
-    images.resize(numSwapchainImages);
-    imageViews.resize(numSwapchainImages);
-    VK_CHECK(vkGetSwapchainImagesKHR(device, swapchain, &numSwapchainImages, images.data()));
+    std::vector<VkImage> vk_swapchainImages;
 
-    VkImageViewCreateInfo imageViewCreateInfo {
+    VK_CHECK(vkGetSwapchainImagesKHR(vk_device, vk_swapchain, &numSwapchainImages, nullptr));
+    vk_swapchainImages.resize(numSwapchainImages);
+    VK_CHECK(vkGetSwapchainImagesKHR(vk_device, vk_swapchain, &numSwapchainImages, vk_swapchainImages.data()));
+
+    return vk_swapchainImages;
+}
+
+std::vector<VkImageView> createSwapchainImageViews(const VkDevice vk_device, const std::vector<VkImage>& vk_swapchainImages, const VkFormat vk_swapchainImageFormat)
+{
+    std::vector<VkImageView> vk_swapchainImageViews(vk_swapchainImages.size());
+
+    VkImageViewCreateInfo vk_imageViewCreateInfo {
         .sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO,
         .viewType = VK_IMAGE_VIEW_TYPE_2D,
-        .format = format,
+        .format = vk_swapchainImageFormat,
         .components = {
             .r = VK_COMPONENT_SWIZZLE_IDENTITY,
             .g = VK_COMPONENT_SWIZZLE_IDENTITY,
@@ -388,19 +409,18 @@ uint32_t createSwapchainImages(VkDevice vk_device, VkSwapchainKHR vk_swapchain, 
             .layerCount = 1 },
     };
 
-    for (size_t i = 0; i < numSwapchainImages; ++i)
+    for (size_t i = 0; i < vk_swapchainImages.size(); ++i)
     {
-        imageViewCreateInfo.image = images[i];
-        VK_CHECK(vkCreateImageView(device, &imageViewCreateInfo, nullptr, &imageViews[i]));
+        vk_imageViewCreateInfo.image = vk_swapchainImages[i];
+        VK_CHECK(vkCreateImageView(vk_device, &vk_imageViewCreateInfo, nullptr, &vk_swapchainImageViews[i]));
     }
 
-    std::cout << "Swapchain Image Count: " << numSwapchainImages << '\n';
-    return numSwapchainImages;
+    LOG("Swapchain Image Count: %lu\n", vk_swapchainImages.size());
+    return vk_swapchainImageViews;
 }
-#endif
 
 
-void initVulkan(const VulkanInitInfo& vulkanInitInfo)
+VulkanCore initVulkan(const VulkanInitInfo& vulkanInitInfo)
 {
     VkInstance vk_instance = VK_NULL_HANDLE;
     VkSurfaceKHR vk_surface = VK_NULL_HANDLE;
@@ -410,6 +430,8 @@ void initVulkan(const VulkanInitInfo& vulkanInitInfo)
     VkQueue vk_graphicsQ = VK_NULL_HANDLE;
     VkSwapchainCreateInfoKHR vk_swapchainCreateInfo;
     VkSwapchainKHR vk_swapchain = VK_NULL_HANDLE;
+    std::vector<VkImage> vk_swapchainImages {};
+    std::vector<VkImageView> vk_swapchainImageViews {};
 
     vk_instance = createInstance(vulkanInitInfo.requestedInstanceLayerNames.size(), vulkanInitInfo.requestedInstanceLayerNames.data(), vulkanInitInfo.requestedInstanceExtensionNames.size(), vulkanInitInfo.requestedInstanceExtensionNames.data());
     vk_surface = createSurface(vk_instance, vulkanInitInfo.window);
@@ -419,7 +441,35 @@ void initVulkan(const VulkanInitInfo& vulkanInitInfo)
     vk_graphicsQ = getGraphicsQ(vk_device, graphicsQFamIdx);
     vk_swapchainCreateInfo = populateSwapchainCreateInfo(vk_physicalDevice, vk_surface, vk_device, vulkanInitInfo.requestedSwapchainImageCount, vulkanInitInfo.requestedSwapchainImageFormat, vulkanInitInfo.requestedSwapchainImageExtent, vulkanInitInfo.requestedSwapchainImagePresentMode);
     vk_swapchain = createSwapchain(vk_device, vk_swapchainCreateInfo);
-    // swapchain images
+    vk_swapchainImages = getSwapchainImages(vk_device, vk_swapchain);
+    vk_swapchainImageViews = createSwapchainImageViews(vk_device, vk_swapchainImages, vk_swapchainCreateInfo.imageFormat);
+
+    const VulkanCore vulkanCore {
+        .vk_instance = vk_instance,
+        .vk_surface = vk_surface,
+        .vk_physicalDevice = vk_physicalDevice,
+        .graphicsQFamIdx = graphicsQFamIdx,
+        .vk_device = vk_device,
+        .vk_graphicsQ = vk_graphicsQ,
+        .vk_swapchain = vk_swapchain,
+        .vk_swapchainImages = vk_swapchainImages,
+        .vk_swapchainImageViews = vk_swapchainImageViews,
+        .vk_swapchainImageFormat = vk_swapchainCreateInfo.imageFormat,
+        .vk_swapchainExtent = vk_swapchainCreateInfo.imageExtent,
+    };
+
+    return vulkanCore;
+}
+
+void cleanupVulkan(const VulkanCore& vulkanCore)
+{
+    for (uint32_t i = 0; i < vulkanCore.vk_swapchainImageViews.size(); ++i)
+        vkDestroyImageView(vulkanCore.vk_device, vulkanCore.vk_swapchainImageViews[i], nullptr);
+
+    vkDestroySwapchainKHR(vulkanCore.vk_device, vulkanCore.vk_swapchain, nullptr);
+    vkDestroyDevice(vulkanCore.vk_device, nullptr);
+    vkDestroySurfaceKHR(vulkanCore.vk_instance, vulkanCore.vk_surface, nullptr);
+    vkDestroyInstance(vulkanCore.vk_instance, nullptr);
 }
 
 int main()
@@ -446,7 +496,7 @@ int main()
         .requestedSwapchainImagePresentMode = VK_PRESENT_MODE_FIFO_KHR
     };
 
-    initVulkan(vulkanInitInfo);
+    VulkanCore vulkanCore = initVulkan(vulkanInitInfo);
 
     while (!glfwWindowShouldClose(glfw_window))
     {
@@ -454,6 +504,8 @@ int main()
 
         glfwSwapBuffers(glfw_window);
     }
+
+    cleanupVulkan(vulkanCore);
 
     glfwDestroyWindow(glfw_window);
     glfwTerminate();

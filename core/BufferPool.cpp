@@ -36,7 +36,13 @@ uint16_t BufferPool<T>::acquireBlock()
 }
 
 template<class T>
-T& BufferPool<T>::getBlock(const uint16_t id)
+const T& BufferPool<T>::getReadableBlock(const uint16_t id) const
+{
+    return m_cpuBlocks[id];
+}
+
+template<class T>
+T& BufferPool<T>::getWritableBlock(const uint16_t id)
 {
     m_activeDirtyBlockCount[m_activeDirtyBlockCount++] = id;
     return m_cpuBlocks[id];
@@ -46,7 +52,6 @@ template<class T>
 void BufferPool<T>::flushDirtyBlocks()
 {
     // need to flush mapped memory here
-
 
     for (uint16_t i = 0; i < m_activeDirtyBlockCount; ++i)
     {

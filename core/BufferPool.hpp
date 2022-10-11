@@ -25,7 +25,8 @@ public:
     ~BufferPool();
 
     uint16_t acquireBlock();
-    T& getBlock(const uint16_t id);
+    const T& getReadableBlock(const uint16_t id) const;
+    T& getWritableBlock(const uint16_t id);
     void flushDirtyBlocks();
 };
 
