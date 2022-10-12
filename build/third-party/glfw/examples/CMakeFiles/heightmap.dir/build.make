@@ -60,15 +60,15 @@ include third-party/glfw/examples/CMakeFiles/heightmap.dir/flags.make
 third-party/glfw/examples/CMakeFiles/heightmap.dir/heightmap.c.o: third-party/glfw/examples/CMakeFiles/heightmap.dir/flags.make
 third-party/glfw/examples/CMakeFiles/heightmap.dir/heightmap.c.o: ../third-party/glfw/examples/heightmap.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third-party/glfw/examples/CMakeFiles/heightmap.dir/heightmap.c.o"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/heightmap.dir/heightmap.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/examples/heightmap.c
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/heightmap.dir/heightmap.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/examples/heightmap.c
 
 third-party/glfw/examples/CMakeFiles/heightmap.dir/heightmap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/heightmap.dir/heightmap.c.i"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/examples/heightmap.c > CMakeFiles/heightmap.dir/heightmap.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/examples/heightmap.c > CMakeFiles/heightmap.dir/heightmap.c.i
 
 third-party/glfw/examples/CMakeFiles/heightmap.dir/heightmap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/heightmap.dir/heightmap.c.s"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/examples/heightmap.c -o CMakeFiles/heightmap.dir/heightmap.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/examples/heightmap.c -o CMakeFiles/heightmap.dir/heightmap.c.s
 
 # Object files for target heightmap
 heightmap_OBJECTS = \

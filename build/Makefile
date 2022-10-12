@@ -378,6 +378,195 @@ VulkanCore.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/VulkanCore.cpp.s
 .PHONY : VulkanCore.cpp.s
 
+core/Buffer.o: core/Buffer.cpp.o
+
+.PHONY : core/Buffer.o
+
+# target to build an object file
+core/Buffer.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Buffer.cpp.o
+.PHONY : core/Buffer.cpp.o
+
+core/Buffer.i: core/Buffer.cpp.i
+
+.PHONY : core/Buffer.i
+
+# target to preprocess a source file
+core/Buffer.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Buffer.cpp.i
+.PHONY : core/Buffer.cpp.i
+
+core/Buffer.s: core/Buffer.cpp.s
+
+.PHONY : core/Buffer.s
+
+# target to generate assembly for a file
+core/Buffer.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Buffer.cpp.s
+.PHONY : core/Buffer.cpp.s
+
+core/CommandBuffer.o: core/CommandBuffer.cpp.o
+
+.PHONY : core/CommandBuffer.o
+
+# target to build an object file
+core/CommandBuffer.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/CommandBuffer.cpp.o
+.PHONY : core/CommandBuffer.cpp.o
+
+core/CommandBuffer.i: core/CommandBuffer.cpp.i
+
+.PHONY : core/CommandBuffer.i
+
+# target to preprocess a source file
+core/CommandBuffer.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/CommandBuffer.cpp.i
+.PHONY : core/CommandBuffer.cpp.i
+
+core/CommandBuffer.s: core/CommandBuffer.cpp.s
+
+.PHONY : core/CommandBuffer.s
+
+# target to generate assembly for a file
+core/CommandBuffer.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/CommandBuffer.cpp.s
+.PHONY : core/CommandBuffer.cpp.s
+
+core/CommandPool.o: core/CommandPool.cpp.o
+
+.PHONY : core/CommandPool.o
+
+# target to build an object file
+core/CommandPool.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/CommandPool.cpp.o
+.PHONY : core/CommandPool.cpp.o
+
+core/CommandPool.i: core/CommandPool.cpp.i
+
+.PHONY : core/CommandPool.i
+
+# target to preprocess a source file
+core/CommandPool.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/CommandPool.cpp.i
+.PHONY : core/CommandPool.cpp.i
+
+core/CommandPool.s: core/CommandPool.cpp.s
+
+.PHONY : core/CommandPool.s
+
+# target to generate assembly for a file
+core/CommandPool.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/CommandPool.cpp.s
+.PHONY : core/CommandPool.cpp.s
+
+core/Fence.o: core/Fence.cpp.o
+
+.PHONY : core/Fence.o
+
+# target to build an object file
+core/Fence.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Fence.cpp.o
+.PHONY : core/Fence.cpp.o
+
+core/Fence.i: core/Fence.cpp.i
+
+.PHONY : core/Fence.i
+
+# target to preprocess a source file
+core/Fence.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Fence.cpp.i
+.PHONY : core/Fence.cpp.i
+
+core/Fence.s: core/Fence.cpp.s
+
+.PHONY : core/Fence.s
+
+# target to generate assembly for a file
+core/Fence.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Fence.cpp.s
+.PHONY : core/Fence.cpp.s
+
+core/Image.o: core/Image.cpp.o
+
+.PHONY : core/Image.o
+
+# target to build an object file
+core/Image.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Image.cpp.o
+.PHONY : core/Image.cpp.o
+
+core/Image.i: core/Image.cpp.i
+
+.PHONY : core/Image.i
+
+# target to preprocess a source file
+core/Image.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Image.cpp.i
+.PHONY : core/Image.cpp.i
+
+core/Image.s: core/Image.cpp.s
+
+.PHONY : core/Image.s
+
+# target to generate assembly for a file
+core/Image.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Image.cpp.s
+.PHONY : core/Image.cpp.s
+
+core/ImageView.o: core/ImageView.cpp.o
+
+.PHONY : core/ImageView.o
+
+# target to build an object file
+core/ImageView.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/ImageView.cpp.o
+.PHONY : core/ImageView.cpp.o
+
+core/ImageView.i: core/ImageView.cpp.i
+
+.PHONY : core/ImageView.i
+
+# target to preprocess a source file
+core/ImageView.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/ImageView.cpp.i
+.PHONY : core/ImageView.cpp.i
+
+core/ImageView.s: core/ImageView.cpp.s
+
+.PHONY : core/ImageView.s
+
+# target to generate assembly for a file
+core/ImageView.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/ImageView.cpp.s
+.PHONY : core/ImageView.cpp.s
+
+core/Resource.o: core/Resource.cpp.o
+
+.PHONY : core/Resource.o
+
+# target to build an object file
+core/Resource.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Resource.cpp.o
+.PHONY : core/Resource.cpp.o
+
+core/Resource.i: core/Resource.cpp.i
+
+.PHONY : core/Resource.i
+
+# target to preprocess a source file
+core/Resource.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Resource.cpp.i
+.PHONY : core/Resource.cpp.i
+
+core/Resource.s: core/Resource.cpp.s
+
+.PHONY : core/Resource.s
+
+# target to generate assembly for a file
+core/Resource.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Resource.cpp.s
+.PHONY : core/Resource.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -435,6 +624,27 @@ help:
 	@echo "... VulkanCore.o"
 	@echo "... VulkanCore.i"
 	@echo "... VulkanCore.s"
+	@echo "... core/Buffer.o"
+	@echo "... core/Buffer.i"
+	@echo "... core/Buffer.s"
+	@echo "... core/CommandBuffer.o"
+	@echo "... core/CommandBuffer.i"
+	@echo "... core/CommandBuffer.s"
+	@echo "... core/CommandPool.o"
+	@echo "... core/CommandPool.i"
+	@echo "... core/CommandPool.s"
+	@echo "... core/Fence.o"
+	@echo "... core/Fence.i"
+	@echo "... core/Fence.s"
+	@echo "... core/Image.o"
+	@echo "... core/Image.i"
+	@echo "... core/Image.s"
+	@echo "... core/ImageView.o"
+	@echo "... core/ImageView.i"
+	@echo "... core/ImageView.s"
+	@echo "... core/Resource.o"
+	@echo "... core/Resource.i"
+	@echo "... core/Resource.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "third-party/glfw/examples/gears"
+			"path" : "third-party/glfw/examples/boing"
 		}
 	],
 	"backtrace" : 1,
@@ -15,7 +15,8 @@
 		],
 		"files" : 
 		[
-			"third-party/glfw/examples/CMakeLists.txt"
+			"third-party/glfw/examples/CMakeLists.txt",
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -25,8 +26,17 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 29,
+				"line" : 28,
 				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 6,
+				"parent" : 2
 			},
 			{
 				"command" : 1,
@@ -51,7 +61,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
+					"path" : "/home/mica/Desktop/Engine/common"
+				},
+				{
+					"backtrace" : 4,
 					"path" : "/home/mica/Desktop/Engine/third-party/glfw/deps"
 				},
 				{
@@ -77,7 +91,7 @@
 	{
 		"name" : "GLFW3/Examples"
 	},
-	"id" : "gears::@95b4158757d24bba1cf5",
+	"id" : "boing::@95b4158757d24bba1cf5",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -118,8 +132,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "gears",
-	"nameOnDisk" : "gears",
+	"name" : "boing",
+	"nameOnDisk" : "boing",
 	"paths" : 
 	{
 		"build" : "third-party/glfw/examples",
@@ -147,7 +161,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "third-party/glfw/examples/gears.c",
+			"path" : "third-party/glfw/examples/boing.c",
 			"sourceGroupIndex" : 0
 		},
 		{

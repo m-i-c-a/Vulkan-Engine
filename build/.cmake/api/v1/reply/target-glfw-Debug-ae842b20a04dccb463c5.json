@@ -15,12 +15,14 @@
 			"install",
 			"target_compile_options",
 			"target_compile_definitions",
+			"include_directories",
 			"target_include_directories",
 			"target_sources"
 		],
 		"files" : 
 		[
-			"third-party/glfw/src/CMakeLists.txt"
+			"third-party/glfw/src/CMakeLists.txt",
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -58,37 +60,46 @@
 				"parent" : 0
 			},
 			{
+				"file" : 1
+			},
+			{
 				"command" : 4,
+				"file" : 1,
+				"line" : 6,
+				"parent" : 6
+			},
+			{
+				"command" : 5,
 				"file" : 0,
 				"line" : 140,
 				"parent" : 0
 			},
 			{
-				"command" : 4,
+				"command" : 5,
 				"file" : 0,
 				"line" : 143,
 				"parent" : 0
 			},
 			{
-				"command" : 5,
+				"command" : 6,
 				"file" : 0,
 				"line" : 19,
 				"parent" : 0
 			},
 			{
-				"command" : 5,
+				"command" : 6,
 				"file" : 0,
 				"line" : 48,
 				"parent" : 0
 			},
 			{
-				"command" : 5,
+				"command" : 6,
 				"file" : 0,
 				"line" : 61,
 				"parent" : 0
 			},
 			{
-				"command" : 5,
+				"command" : 6,
 				"file" : 0,
 				"line" : 63,
 				"parent" : 0
@@ -128,15 +139,19 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 6,
+					"backtrace" : 7,
+					"path" : "/home/mica/Desktop/Engine/common"
+				},
+				{
+					"backtrace" : 8,
 					"path" : "/home/mica/Desktop/Engine/third-party/glfw/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 9,
 					"path" : "/home/mica/Desktop/Engine/third-party/glfw/src"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 9,
 					"path" : "/home/mica/Desktop/Engine/build/third-party/glfw/src"
 				}
 			],
@@ -186,15 +201,19 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 6,
+					"backtrace" : 7,
+					"path" : "/home/mica/Desktop/Engine/common"
+				},
+				{
+					"backtrace" : 8,
 					"path" : "/home/mica/Desktop/Engine/third-party/glfw/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 9,
 					"path" : "/home/mica/Desktop/Engine/third-party/glfw/src"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 9,
 					"path" : "/home/mica/Desktop/Engine/build/third-party/glfw/src"
 				}
 			],
@@ -407,91 +426,91 @@
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 8,
+			"backtrace" : 10,
 			"path" : "third-party/glfw/src/posix_time.h",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 8,
+			"backtrace" : 10,
 			"path" : "third-party/glfw/src/posix_thread.h",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 8,
+			"backtrace" : 10,
 			"compileGroupIndex" : 1,
 			"path" : "third-party/glfw/src/posix_module.c",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 8,
+			"backtrace" : 10,
 			"compileGroupIndex" : 1,
 			"path" : "third-party/glfw/src/posix_time.c",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 8,
+			"backtrace" : 10,
 			"compileGroupIndex" : 1,
 			"path" : "third-party/glfw/src/posix_thread.c",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 9,
+			"backtrace" : 11,
 			"path" : "third-party/glfw/src/x11_platform.h",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 9,
+			"backtrace" : 11,
 			"path" : "third-party/glfw/src/xkb_unicode.h",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 9,
+			"backtrace" : 11,
 			"compileGroupIndex" : 1,
 			"path" : "third-party/glfw/src/x11_init.c",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 9,
+			"backtrace" : 11,
 			"compileGroupIndex" : 1,
 			"path" : "third-party/glfw/src/x11_monitor.c",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 9,
+			"backtrace" : 11,
 			"compileGroupIndex" : 1,
 			"path" : "third-party/glfw/src/x11_window.c",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 9,
+			"backtrace" : 11,
 			"compileGroupIndex" : 1,
 			"path" : "third-party/glfw/src/xkb_unicode.c",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 9,
+			"backtrace" : 11,
 			"compileGroupIndex" : 1,
 			"path" : "third-party/glfw/src/glx_context.c",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 10,
+			"backtrace" : 12,
 			"path" : "third-party/glfw/src/linux_joystick.h",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 10,
+			"backtrace" : 12,
 			"compileGroupIndex" : 1,
 			"path" : "third-party/glfw/src/linux_joystick.c",
 			"sourceGroupIndex" : 1
 		},
 		{
-			"backtrace" : 11,
+			"backtrace" : 13,
 			"path" : "third-party/glfw/src/posix_poll.h",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 11,
+			"backtrace" : 13,
 			"compileGroupIndex" : 1,
 			"path" : "third-party/glfw/src/posix_poll.c",
 			"sourceGroupIndex" : 1

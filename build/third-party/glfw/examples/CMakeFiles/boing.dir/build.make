@@ -60,15 +60,15 @@ include third-party/glfw/examples/CMakeFiles/boing.dir/flags.make
 third-party/glfw/examples/CMakeFiles/boing.dir/boing.c.o: third-party/glfw/examples/CMakeFiles/boing.dir/flags.make
 third-party/glfw/examples/CMakeFiles/boing.dir/boing.c.o: ../third-party/glfw/examples/boing.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third-party/glfw/examples/CMakeFiles/boing.dir/boing.c.o"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/boing.dir/boing.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/examples/boing.c
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/boing.dir/boing.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/examples/boing.c
 
 third-party/glfw/examples/CMakeFiles/boing.dir/boing.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/boing.dir/boing.c.i"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/examples/boing.c > CMakeFiles/boing.dir/boing.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/examples/boing.c > CMakeFiles/boing.dir/boing.c.i
 
 third-party/glfw/examples/CMakeFiles/boing.dir/boing.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/boing.dir/boing.c.s"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/examples/boing.c -o CMakeFiles/boing.dir/boing.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/examples/boing.c -o CMakeFiles/boing.dir/boing.c.s
 
 # Object files for target boing
 boing_OBJECTS = \

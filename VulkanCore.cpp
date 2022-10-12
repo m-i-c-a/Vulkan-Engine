@@ -83,7 +83,7 @@ static uint32_t selectGraphicsQFamIdx(const VkPhysicalDevice vk_physicalDevice, 
     return UINT32_MAX;
 }
 
-static VkDevice createDevice(const VkPhysicalDevice vk_physicalDevice, const uint32_t graphicsQFamIdx, std::vector<const char*> deviceExtensionNames) 
+static VkDevice createDevice(const VkPhysicalDevice vk_physicalDevice, const uint32_t graphicsQFamIdx, std::vector<const char*> deviceExtensionNames, void* pDeviceFeatures) 
 {
     constexpr float q_priority = 1.0f;
 
@@ -94,9 +94,14 @@ static VkDevice createDevice(const VkPhysicalDevice vk_physicalDevice, const uin
         .pQueuePriorities = &q_priority
     };
 
+    const VkPhysicalDeviceVulkan13Features vk_physicalDeviceFeatures13 {
+        .sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_3_FEATURES,
+        .dynamicRendering = VK_TRUE
+    };
+
     const VkDeviceCreateInfo vk_deviceCreateInfo {
         .sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO,
-        .pNext = nullptr,
+        .pNext = &vk_physicalDeviceFeatures13,
         .queueCreateInfoCount = 1u,
         .pQueueCreateInfos = &vk_deviceQCreateInfo,
         .enabledLayerCount = 0u,
@@ -370,7 +375,7 @@ VulkanCore initVulkan(const VulkanInitInfo& vulkanInitInfo)
     vk_surface = createSurface(vk_instance, vulkanInitInfo.window);
     vk_physicalDevice = selectPhysicalDevice(vk_instance);
     graphicsQFamIdx = selectGraphicsQFamIdx(vk_physicalDevice, vk_surface);
-    vk_device = createDevice(vk_physicalDevice, graphicsQFamIdx, vulkanInitInfo.requestedDeviceExtensionNames);
+    vk_device = createDevice(vk_physicalDevice, graphicsQFamIdx, vulkanInitInfo.requestedDeviceExtensionNames, vulkanInitInfo.pDeviceFeatures);
     vk_graphicsQ = getGraphicsQ(vk_device, graphicsQFamIdx);
     vk_swapchainCreateInfo = populateSwapchainCreateInfo(vk_physicalDevice, vk_surface, vk_device, vulkanInitInfo.requestedSwapchainImageCount, vulkanInitInfo.requestedSwapchainImageFormat, vulkanInitInfo.requestedSwapchainImageExtent, vulkanInitInfo.requestedSwapchainImagePresentMode);
     vk_swapchain = createSwapchain(vk_device, vk_swapchainCreateInfo);

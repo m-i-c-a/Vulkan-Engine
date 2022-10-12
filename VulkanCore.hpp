@@ -17,6 +17,7 @@ struct VulkanInitInfo
     VkFormat requestedSwapchainImageFormat;
     VkExtent2D requestedSwapchainImageExtent;
     VkPresentModeKHR requestedSwapchainImagePresentMode;
+    void* pDeviceFeatures = nullptr;
 };
 
 struct VulkanCore

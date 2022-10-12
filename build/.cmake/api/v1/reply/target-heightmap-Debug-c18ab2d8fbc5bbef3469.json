@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "third-party/glfw/examples/triangle-opengles"
+			"path" : "third-party/glfw/examples/heightmap"
 		}
 	],
 	"backtrace" : 1,
@@ -15,7 +15,8 @@
 		],
 		"files" : 
 		[
-			"third-party/glfw/examples/CMakeLists.txt"
+			"third-party/glfw/examples/CMakeLists.txt",
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -25,8 +26,17 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 36,
+				"line" : 30,
 				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 6,
+				"parent" : 2
 			},
 			{
 				"command" : 1,
@@ -51,7 +61,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
+					"path" : "/home/mica/Desktop/Engine/common"
+				},
+				{
+					"backtrace" : 4,
 					"path" : "/home/mica/Desktop/Engine/third-party/glfw/deps"
 				},
 				{
@@ -77,7 +91,7 @@
 	{
 		"name" : "GLFW3/Examples"
 	},
-	"id" : "triangle-opengles::@95b4158757d24bba1cf5",
+	"id" : "heightmap::@95b4158757d24bba1cf5",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -118,8 +132,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "triangle-opengles",
-	"nameOnDisk" : "triangle-opengles",
+	"name" : "heightmap",
+	"nameOnDisk" : "heightmap",
 	"paths" : 
 	{
 		"build" : "third-party/glfw/examples",
@@ -147,12 +161,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "third-party/glfw/examples/triangle-opengles.c",
+			"path" : "third-party/glfw/examples/heightmap.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "third-party/glfw/deps/glad/gles2.h",
+			"path" : "third-party/glfw/deps/glad/gl.h",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${env:VULKAN_SDK}/include"
+                "${env:VULKAN_SDK}/include",
+                "${workspaceFolder}/common"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

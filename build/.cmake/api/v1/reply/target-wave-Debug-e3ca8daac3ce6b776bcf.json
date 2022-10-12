@@ -15,7 +15,8 @@
 		],
 		"files" : 
 		[
-			"third-party/glfw/examples/CMakeLists.txt"
+			"third-party/glfw/examples/CMakeLists.txt",
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -27,6 +28,15 @@
 				"file" : 0,
 				"line" : 37,
 				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 6,
+				"parent" : 2
 			},
 			{
 				"command" : 1,
@@ -51,7 +61,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
+					"path" : "/home/mica/Desktop/Engine/common"
+				},
+				{
+					"backtrace" : 4,
 					"path" : "/home/mica/Desktop/Engine/third-party/glfw/deps"
 				},
 				{

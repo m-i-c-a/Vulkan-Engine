@@ -10,7 +10,7 @@ private:
 protected:
     static VkDevice s_vkDevice;
 
-    uint32_t getHeapIndex(const uint32_t memoryTypeIndices, const VkMemoryPropertyFlags memoryPropertyFlags);
+    static uint32_t getHeapIndex(const uint32_t memoryTypeIndices, const VkMemoryPropertyFlags memoryPropertyFlags);
 public:
     static void initResources(VkPhysicalDevice vk_physicalDevice, VkDevice vk_device);
 };

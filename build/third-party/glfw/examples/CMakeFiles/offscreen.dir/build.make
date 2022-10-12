@@ -60,15 +60,15 @@ include third-party/glfw/examples/CMakeFiles/offscreen.dir/flags.make
 third-party/glfw/examples/CMakeFiles/offscreen.dir/offscreen.c.o: third-party/glfw/examples/CMakeFiles/offscreen.dir/flags.make
 third-party/glfw/examples/CMakeFiles/offscreen.dir/offscreen.c.o: ../third-party/glfw/examples/offscreen.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third-party/glfw/examples/CMakeFiles/offscreen.dir/offscreen.c.o"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/offscreen.dir/offscreen.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/examples/offscreen.c
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/offscreen.dir/offscreen.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/examples/offscreen.c
 
 third-party/glfw/examples/CMakeFiles/offscreen.dir/offscreen.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/offscreen.dir/offscreen.c.i"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/examples/offscreen.c > CMakeFiles/offscreen.dir/offscreen.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/examples/offscreen.c > CMakeFiles/offscreen.dir/offscreen.c.i
 
 third-party/glfw/examples/CMakeFiles/offscreen.dir/offscreen.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/offscreen.dir/offscreen.c.s"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/examples/offscreen.c -o CMakeFiles/offscreen.dir/offscreen.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/examples/offscreen.c -o CMakeFiles/offscreen.dir/offscreen.c.s
 
 # Object files for target offscreen
 offscreen_OBJECTS = \

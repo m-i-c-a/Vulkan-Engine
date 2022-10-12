@@ -60,15 +60,15 @@ include third-party/glfw/examples/CMakeFiles/splitview.dir/flags.make
 third-party/glfw/examples/CMakeFiles/splitview.dir/splitview.c.o: third-party/glfw/examples/CMakeFiles/splitview.dir/flags.make
 third-party/glfw/examples/CMakeFiles/splitview.dir/splitview.c.o: ../third-party/glfw/examples/splitview.c
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third-party/glfw/examples/CMakeFiles/splitview.dir/splitview.c.o"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/splitview.dir/splitview.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/examples/splitview.c
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/splitview.dir/splitview.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/examples/splitview.c
 
 third-party/glfw/examples/CMakeFiles/splitview.dir/splitview.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/splitview.dir/splitview.c.i"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/examples/splitview.c > CMakeFiles/splitview.dir/splitview.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/examples/splitview.c > CMakeFiles/splitview.dir/splitview.c.i
 
 third-party/glfw/examples/CMakeFiles/splitview.dir/splitview.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/splitview.dir/splitview.c.s"
-	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/examples/splitview.c -o CMakeFiles/splitview.dir/splitview.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/examples && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/examples/splitview.c -o CMakeFiles/splitview.dir/splitview.c.s
 
 # Object files for target splitview
 splitview_OBJECTS = \

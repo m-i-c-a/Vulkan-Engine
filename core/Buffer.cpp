@@ -1,7 +1,14 @@
 #include "Buffer.hpp"
-#include "../Defines.hpp"
+#include "Defines.hpp"
 
-Buffer::Buffer(const VkDeviceSize vk_size, const VkBufferUsageFlags vk_usage, const VkMemoryPropertyFlags vk_memProps)
+
+Buffer::~Buffer()
+{
+    vkDestroyBuffer(s_vkDevice, m_vkBuffer, nullptr);
+    vkFreeMemory(s_vkDevice, m_vkDeviceMemory, nullptr);
+}
+
+void Buffer::create(const VkDeviceSize vk_size, const VkBufferUsageFlags vk_usage)
 {
     const VkBufferCreateInfo vk_bufferCreateInfo {
         .sType = VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO,
@@ -11,7 +18,10 @@ Buffer::Buffer(const VkDeviceSize vk_size, const VkBufferUsageFlags vk_usage, co
     };
 
     VK_CHECK(vkCreateBuffer(s_vkDevice, &vk_bufferCreateInfo, nullptr, &m_vkBuffer));
+}
 
+void Buffer::allocate(const VkMemoryPropertyFlags vk_memProps)
+{
     VkMemoryRequirements vk_memReqs;
     vkGetBufferMemoryRequirements(s_vkDevice, m_vkBuffer, &vk_memReqs);
 
@@ -22,13 +32,11 @@ Buffer::Buffer(const VkDeviceSize vk_size, const VkBufferUsageFlags vk_usage, co
     };
 
     VK_CHECK(vkAllocateMemory(s_vkDevice, &vk_allocInfo, nullptr, &m_vkDeviceMemory));
-    VK_CHECK(vkBindBufferMemory(s_vkDevice, m_vkBuffer, m_vkDeviceMemory, 0));
 }
 
-Buffer::~Buffer()
+void Buffer::bind()
 {
-    vkDestroyBuffer(s_vkDevice, m_vkBuffer, nullptr);
-    vkFreeMemory(s_vkDevice, m_vkDeviceMemory, nullptr);
+    VK_CHECK(vkBindBufferMemory(s_vkDevice, m_vkBuffer, m_vkDeviceMemory, 0));
 }
 
 void* Buffer::map()

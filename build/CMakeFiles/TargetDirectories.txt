@@ -43,3 +43,9 @@
 /home/mica/Desktop/Engine/build/third-party/glfw/examples/CMakeFiles/windows.dir
 /home/mica/Desktop/Engine/build/third-party/glfw/examples/CMakeFiles/rebuild_cache.dir
 /home/mica/Desktop/Engine/build/third-party/glfw/examples/CMakeFiles/edit_cache.dir
+/home/mica/Desktop/Engine/build/core/CMakeFiles/install/strip.dir
+/home/mica/Desktop/Engine/build/core/CMakeFiles/install/local.dir
+/home/mica/Desktop/Engine/build/core/CMakeFiles/install.dir
+/home/mica/Desktop/Engine/build/core/CMakeFiles/list_install_components.dir
+/home/mica/Desktop/Engine/build/core/CMakeFiles/rebuild_cache.dir
+/home/mica/Desktop/Engine/build/core/CMakeFiles/edit_cache.dir

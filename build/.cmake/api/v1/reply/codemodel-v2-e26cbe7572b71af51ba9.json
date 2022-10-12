@@ -8,12 +8,13 @@
 					"build" : ".",
 					"childIndexes" : 
 					[
-						1
+						1,
+						5
 					],
 					"hasInstallRule" : true,
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.0"
+						"string" : "3.13"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -31,7 +32,7 @@
 					"hasInstallRule" : true,
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.0"
+						"string" : "3.13"
 					},
 					"parentIndex" : 0,
 					"projectIndex" : 0,
@@ -96,6 +97,16 @@
 						13,
 						14
 					]
+				},
+				{
+					"build" : "core",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "core"
 				}
 			],
 			"name" : "Debug",
@@ -109,7 +120,8 @@
 					"directoryIndexes" : 
 					[
 						0,
-						1
+						1,
+						5
 					],
 					"name" : "engine",
 					"targetIndexes" : 
@@ -150,77 +162,77 @@
 				{
 					"directoryIndex" : 4,
 					"id" : "boing::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-boing-Debug-3e506e05d5dd60f58656.json",
+					"jsonFile" : "target-boing-Debug-2d77d9361338c8022cf8.json",
 					"name" : "boing",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "engine::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-engine-Debug-20016ea9bc7c93ee7f17.json",
+					"jsonFile" : "target-engine-Debug-5d52ae9397a8c988a185.json",
 					"name" : "engine",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "gears::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-gears-Debug-1f30e5423eb57f6cff95.json",
+					"jsonFile" : "target-gears-Debug-3455783a58c781aa627e.json",
 					"name" : "gears",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "glfw::@281570e8f3ee925e5575",
-					"jsonFile" : "target-glfw-Debug-ff83f0d68bbad1868340.json",
+					"jsonFile" : "target-glfw-Debug-ae842b20a04dccb463c5.json",
 					"name" : "glfw",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "heightmap::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-heightmap-Debug-3b8d12e4523fc902b8db.json",
+					"jsonFile" : "target-heightmap-Debug-c18ab2d8fbc5bbef3469.json",
 					"name" : "heightmap",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "offscreen::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-offscreen-Debug-88550ecced1f069135f0.json",
+					"jsonFile" : "target-offscreen-Debug-8c27aba21b498be2c85b.json",
 					"name" : "offscreen",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "particles::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-particles-Debug-329b1c00f6ada17eb934.json",
+					"jsonFile" : "target-particles-Debug-7c63ad79b463aba3d07e.json",
 					"name" : "particles",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "sharing::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-sharing-Debug-42b131c4a98e985bf22b.json",
+					"jsonFile" : "target-sharing-Debug-a5844aad7767b5ddd34e.json",
 					"name" : "sharing",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "splitview::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-splitview-Debug-790522ec917b232e5b42.json",
+					"jsonFile" : "target-splitview-Debug-72870d3eb470a19c909c.json",
 					"name" : "splitview",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "triangle-opengl::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-triangle-opengl-Debug-b366acda9aa68bd38c98.json",
+					"jsonFile" : "target-triangle-opengl-Debug-1ed48f84595a2ba24ac4.json",
 					"name" : "triangle-opengl",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "triangle-opengles::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-triangle-opengles-Debug-fc61b013d81c63543992.json",
+					"jsonFile" : "target-triangle-opengles-Debug-8211bdb54592cd9b6209.json",
 					"name" : "triangle-opengles",
 					"projectIndex" : 1
 				},
@@ -241,14 +253,14 @@
 				{
 					"directoryIndex" : 4,
 					"id" : "wave::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-wave-Debug-a491ecb06d75994e0d6f.json",
+					"jsonFile" : "target-wave-Debug-e3ca8daac3ce6b776bcf.json",
 					"name" : "wave",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "windows::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-windows-Debug-b7c39fb4a5b8eb5260aa.json",
+					"jsonFile" : "target-windows-Debug-5ac264b5d04e961cc7d9.json",
 					"name" : "windows",
 					"projectIndex" : 1
 				}
