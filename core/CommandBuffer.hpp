@@ -10,7 +10,6 @@ struct CommandBuffer : public Resource
     VkCommandBuffer m_vkCmdBuff = VK_NULL_HANDLE;
 
     CommandBuffer() = default;
-    ~CommandBuffer();
 
     void create(const VkCommandPool vk_cmdPool);
 };

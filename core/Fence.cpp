@@ -10,3 +10,8 @@ void Fence::create(const VkFenceCreateFlags vk_fenceFlags)
 
     VK_CHECK(vkCreateFence(s_vkDevice, &vk_fenceCreateInfo, nullptr, &m_vkFence));
 }
+
+Fence::~Fence()
+{
+    vkDestroyFence(s_vkDevice, m_vkFence, nullptr);
+}

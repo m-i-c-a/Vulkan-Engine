@@ -12,3 +12,8 @@ void CommandPool::create(const VkCommandPoolCreateFlags vk_cmdPoolFlags, const u
 
     VK_CHECK(vkCreateCommandPool(s_vkDevice, &vk_cmdPoolCreateInfo, nullptr, &m_vkCmdPool));
 }
+
+CommandPool::~CommandPool()
+{
+    vkDestroyCommandPool(s_vkDevice, m_vkCmdPool, nullptr);
+}

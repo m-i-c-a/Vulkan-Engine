@@ -35,11 +35,12 @@ static VkPhysicalDevice selectPhysicalDevice(const VkInstance vk_instance)
 {
     uint32_t numPhysicalDevices = 0u;
     VkPhysicalDevice* vk_physicalDevices = nullptr;
-    const uint32_t selectedPhysicalDeviceIndex = 2u;
+    const uint32_t selectedPhysicalDeviceIndex = 0u;
+    VkPhysicalDevice vk_selectedPhysicalDevice = VK_NULL_HANDLE;
 
     VK_CHECK(vkEnumeratePhysicalDevices(vk_instance, &numPhysicalDevices, nullptr));
     vk_physicalDevices = new VkPhysicalDevice[numPhysicalDevices];
-    vkEnumeratePhysicalDevices(vk_instance, &numPhysicalDevices, vk_physicalDevices);
+    VK_CHECK(vkEnumeratePhysicalDevices(vk_instance, &numPhysicalDevices, vk_physicalDevices));
 
     LOG("# Physical Devices: %u\n", numPhysicalDevices);
     for (uint32_t i = 0; i < numPhysicalDevices; ++i)
@@ -50,9 +51,11 @@ static VkPhysicalDevice selectPhysicalDevice(const VkInstance vk_instance)
     }
     LOG("Using Physical Device %u\n\n", selectedPhysicalDeviceIndex);
 
+    vk_selectedPhysicalDevice = vk_physicalDevices[selectedPhysicalDeviceIndex];
+
     delete [] vk_physicalDevices;
 
-    return vk_physicalDevices[selectedPhysicalDeviceIndex];
+    return vk_selectedPhysicalDevice;
 }
 
 static uint32_t selectGraphicsQFamIdx(const VkPhysicalDevice vk_physicalDevice, const VkSurfaceKHR vk_surface)

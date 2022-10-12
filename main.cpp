@@ -79,6 +79,14 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_swapchainImageAcquireFence = fence;
 }
 
+void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    delete appCore.m_cmdBuff;
+    delete appCore.m_cmdPool;
+    delete appCore.m_swapchainImageAcquireFence;
+}
+
+
 void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 {
     VK_CHECK(vkAcquireNextImageKHR(vulkanCore.vk_device, vulkanCore.vk_swapchain, UINT64_MAX, VK_NULL_HANDLE, appCore.m_swapchainImageAcquireFence->m_vkFence, &appCore.m_uActiveSwapchainImageIdx));
@@ -249,6 +257,8 @@ int main()
 
         appSubmit(vulkanCore, appCore);
     }
+
+    appCleanup(vulkanCore, appCore);
 
     cleanupVulkan(vulkanCore);
 
