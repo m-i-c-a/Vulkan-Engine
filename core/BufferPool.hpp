@@ -15,7 +15,7 @@ private:
     T* m_cpuBlocks;
     std::vector<uint16_t> m_dirtyBlocks;
     std::stack<uint16_t> m_freeBlocks;
-    uint43_t m_activeBlockCount = 0;
+    uint32_t m_activeBlockCount = 0;
     uint32_t m_activeDirtyBlockCount = 0;
 
     Buffer* m_stagingBuffer;

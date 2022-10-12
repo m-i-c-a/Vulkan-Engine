@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mica/Desktop/Engine/VulkanCore.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/VulkanCore.cpp.o"
   "/home/mica/Desktop/Engine/core/Buffer.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/core/Buffer.cpp.o"
+  "/home/mica/Desktop/Engine/core/BufferPool.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/core/BufferPool.cpp.o"
   "/home/mica/Desktop/Engine/core/CommandBuffer.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/core/CommandBuffer.cpp.o"
   "/home/mica/Desktop/Engine/core/CommandPool.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/core/CommandPool.cpp.o"
   "/home/mica/Desktop/Engine/core/Fence.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/core/Fence.cpp.o"

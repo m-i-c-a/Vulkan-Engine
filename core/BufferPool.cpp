@@ -9,9 +9,17 @@ BufferPool<T>::BufferPool(const uint16_t blockCount, const uint16_t dirtyCount)
 
     const VkDeviceSize size = blockCount * sizeof(T);
 
-    m_stagingBuffer = new Buffer(size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
-    m_ssboBuffer = new Buffer(size, VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    m_stagingBuffer = new Buffer();
+    m_stagingBuffer->create(size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT);
+    m_stagingBuffer->allocate(VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
+    m_stagingBuffer->bind();
+
     m_cpuBlocks = (T*)(m_stagingBuffer->map());
+
+    m_ssboBuffer = new Buffer();
+    m_ssboBuffer->create(size, VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    m_ssboBuffer->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    m_ssboBuffer->bind();
 
     for (uint16_t i = blockCount - 1; i >= 0; i--)
     {
@@ -44,7 +52,7 @@ const T& BufferPool<T>::getReadableBlock(const uint16_t id) const
 template<class T>
 T& BufferPool<T>::getWritableBlock(const uint16_t id)
 {
-    m_activeDirtyBlockCount[m_activeDirtyBlockCount++] = id;
+    m_dirtyBlocks[m_activeDirtyBlockCount++] = id;
     return m_cpuBlocks[id];
 }
 

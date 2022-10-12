@@ -94,14 +94,9 @@ static VkDevice createDevice(const VkPhysicalDevice vk_physicalDevice, const uin
         .pQueuePriorities = &q_priority
     };
 
-    const VkPhysicalDeviceVulkan13Features vk_physicalDeviceFeatures13 {
-        .sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_3_FEATURES,
-        .dynamicRendering = VK_TRUE
-    };
-
     const VkDeviceCreateInfo vk_deviceCreateInfo {
         .sType = VK_STRUCTURE_TYPE_DEVICE_CREATE_INFO,
-        .pNext = &vk_physicalDeviceFeatures13,
+        .pNext = pDeviceFeatures,
         .queueCreateInfoCount = 1u,
         .pQueueCreateInfos = &vk_deviceQCreateInfo,
         .enabledLayerCount = 0u,

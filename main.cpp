@@ -37,6 +37,21 @@ Scene Graph Exploration
 Culling
 */
 
+/*
+shader can have its reflection info
+
+vert = processShader() // get reflection info
+frag = processShader() // get reflection info
+
+// a program is a valid collection of shaders
+// pipeline layout is formed by the union of the two shaders
+program = createProgram(vert, frag)
+
+// a pipeline is a program + some additional state
+
+program is the pipeline layout formed by the union of all the reflection info
+*/
+
 struct AppCore
 {
     CommandPool* m_cmdPool = nullptr;
@@ -48,35 +63,8 @@ struct AppCore
     ImageView* m_baseColorAttachmentImageView = nullptr;
 };
 
-void createRenderAttachments(const VulkanCore& vulkanCore, AppCore& appCore)
-{
-    const VkFormat vk_colorAttachmentFormat = vulkanCore.vk_swapchainImageFormat;
-
-    // Image* baseColorAttachmentImage = new Image();
-    // baseColorAttachmentImage->create(VK_IMAGE_TYPE_2D, vk_colorAttachmentFormat, { vulkanCore.vk_swapchainExtent.width, vulkanCore.vk_swapchainExtent.height, 1 }, 1, VK_SAMPLE_COUNT_1_BIT, VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT, 1);
-    // baseColorAttachmentImage->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    // baseColorAttachmentImage->bind();
-
-    // const VkImageSubresourceRange vk_baseColorAttachmentImageViewRange {
-    //     .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
-    //     .baseMipLevel = 0,
-    //     .levelCount = 1,
-    //     .baseArrayLayer = 0,
-    //     .layerCount = 1,
-    // };
-
-    // ImageView* baseColorAttachmentImageView = new ImageView();
-    // baseColorAttachmentImageView->create(vulkanCore.->m_vkImage, VK_IMAGE_VIEW_TYPE_2D, vk_colorAttachmentFormat, vk_baseColorAttachmentImageViewRange);
-
-    // appCore.m_baseColorAttachmentImage = baseColorAttachmentImage;
-    // appCore.m_baseColorAttachmentImageView = baseColorAttachmentImageView;
-}
-
-
 void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
 {
-    // createRenderAttachments(vulkanCore, appCore);
-
     CommandPool* cmdPool = new CommandPool();
     cmdPool->create(0x0, vulkanCore.graphicsQFamIdx);
 
@@ -101,7 +89,6 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
         .sType = VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO,
         .imageView = vulkanCore.vk_swapchainImageViews[appCore.m_uActiveSwapchainImageIdx],
         .imageLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-        // .resolveMode = VK_RESOLVE_MODE_NONE,
         .loadOp = VK_ATTACHMENT_LOAD_OP_CLEAR,
         .storeOp = VK_ATTACHMENT_STORE_OP_STORE,
         .clearValue = { .color = { 0.2f, 0.2f, 0.2f, 1.0f } }
@@ -111,7 +98,6 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
         .sType = VK_STRUCTURE_TYPE_RENDERING_INFO,
         .renderArea = { .offset = { 0, 0 }, .extent = { vulkanCore.vk_swapchainExtent.width, vulkanCore.vk_swapchainExtent.height } },
         .layerCount = 1,
-        // .viewMask = 0,
         .colorAttachmentCount = 1,
         .pColorAttachments = &vk_baseColorAttachmentInfo,
         .pDepthAttachment = nullptr,

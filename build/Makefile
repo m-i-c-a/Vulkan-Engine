@@ -405,6 +405,33 @@ core/Buffer.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Buffer.cpp.s
 .PHONY : core/Buffer.cpp.s
 
+core/BufferPool.o: core/BufferPool.cpp.o
+
+.PHONY : core/BufferPool.o
+
+# target to build an object file
+core/BufferPool.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/BufferPool.cpp.o
+.PHONY : core/BufferPool.cpp.o
+
+core/BufferPool.i: core/BufferPool.cpp.i
+
+.PHONY : core/BufferPool.i
+
+# target to preprocess a source file
+core/BufferPool.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/BufferPool.cpp.i
+.PHONY : core/BufferPool.cpp.i
+
+core/BufferPool.s: core/BufferPool.cpp.s
+
+.PHONY : core/BufferPool.s
+
+# target to generate assembly for a file
+core/BufferPool.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/BufferPool.cpp.s
+.PHONY : core/BufferPool.cpp.s
+
 core/CommandBuffer.o: core/CommandBuffer.cpp.o
 
 .PHONY : core/CommandBuffer.o
@@ -627,6 +654,9 @@ help:
 	@echo "... core/Buffer.o"
 	@echo "... core/Buffer.i"
 	@echo "... core/Buffer.s"
+	@echo "... core/BufferPool.o"
+	@echo "... core/BufferPool.i"
+	@echo "... core/BufferPool.s"
 	@echo "... core/CommandBuffer.o"
 	@echo "... core/CommandBuffer.i"
 	@echo "... core/CommandBuffer.s"

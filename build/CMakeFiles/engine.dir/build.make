@@ -96,9 +96,22 @@ CMakeFiles/engine.dir/core/Buffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/Buffer.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/core/Buffer.cpp -o CMakeFiles/engine.dir/core/Buffer.cpp.s
 
+CMakeFiles/engine.dir/core/BufferPool.cpp.o: CMakeFiles/engine.dir/flags.make
+CMakeFiles/engine.dir/core/BufferPool.cpp.o: ../core/BufferPool.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/core/BufferPool.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/BufferPool.cpp.o -c /home/mica/Desktop/Engine/core/BufferPool.cpp
+
+CMakeFiles/engine.dir/core/BufferPool.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/core/BufferPool.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/core/BufferPool.cpp > CMakeFiles/engine.dir/core/BufferPool.cpp.i
+
+CMakeFiles/engine.dir/core/BufferPool.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/core/BufferPool.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/core/BufferPool.cpp -o CMakeFiles/engine.dir/core/BufferPool.cpp.s
+
 CMakeFiles/engine.dir/core/CommandBuffer.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/core/CommandBuffer.cpp.o: ../core/CommandBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/engine.dir/core/CommandBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/core/CommandBuffer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/CommandBuffer.cpp.o -c /home/mica/Desktop/Engine/core/CommandBuffer.cpp
 
 CMakeFiles/engine.dir/core/CommandBuffer.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/engine.dir/core/CommandBuffer.cpp.s: cmake_force
 
 CMakeFiles/engine.dir/core/CommandPool.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/core/CommandPool.cpp.o: ../core/CommandPool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/engine.dir/core/CommandPool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/core/CommandPool.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/CommandPool.cpp.o -c /home/mica/Desktop/Engine/core/CommandPool.cpp
 
 CMakeFiles/engine.dir/core/CommandPool.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/engine.dir/core/CommandPool.cpp.s: cmake_force
 
 CMakeFiles/engine.dir/core/Fence.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/core/Fence.cpp.o: ../core/Fence.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/engine.dir/core/Fence.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/core/Fence.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/Fence.cpp.o -c /home/mica/Desktop/Engine/core/Fence.cpp
 
 CMakeFiles/engine.dir/core/Fence.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/engine.dir/core/Fence.cpp.s: cmake_force
 
 CMakeFiles/engine.dir/core/Image.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/core/Image.cpp.o: ../core/Image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/engine.dir/core/Image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/core/Image.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/Image.cpp.o -c /home/mica/Desktop/Engine/core/Image.cpp
 
 CMakeFiles/engine.dir/core/Image.cpp.i: cmake_force
@@ -150,7 +163,7 @@ CMakeFiles/engine.dir/core/Image.cpp.s: cmake_force
 
 CMakeFiles/engine.dir/core/ImageView.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/core/ImageView.cpp.o: ../core/ImageView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/engine.dir/core/ImageView.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/engine.dir/core/ImageView.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/ImageView.cpp.o -c /home/mica/Desktop/Engine/core/ImageView.cpp
 
 CMakeFiles/engine.dir/core/ImageView.cpp.i: cmake_force
@@ -163,7 +176,7 @@ CMakeFiles/engine.dir/core/ImageView.cpp.s: cmake_force
 
 CMakeFiles/engine.dir/core/Resource.cpp.o: CMakeFiles/engine.dir/flags.make
 CMakeFiles/engine.dir/core/Resource.cpp.o: ../core/Resource.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/engine.dir/core/Resource.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/engine.dir/core/Resource.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/core/Resource.cpp.o -c /home/mica/Desktop/Engine/core/Resource.cpp
 
 CMakeFiles/engine.dir/core/Resource.cpp.i: cmake_force
@@ -179,6 +192,7 @@ engine_OBJECTS = \
 "CMakeFiles/engine.dir/main.cpp.o" \
 "CMakeFiles/engine.dir/VulkanCore.cpp.o" \
 "CMakeFiles/engine.dir/core/Buffer.cpp.o" \
+"CMakeFiles/engine.dir/core/BufferPool.cpp.o" \
 "CMakeFiles/engine.dir/core/CommandBuffer.cpp.o" \
 "CMakeFiles/engine.dir/core/CommandPool.cpp.o" \
 "CMakeFiles/engine.dir/core/Fence.cpp.o" \
@@ -192,6 +206,7 @@ engine_EXTERNAL_OBJECTS =
 engine: CMakeFiles/engine.dir/main.cpp.o
 engine: CMakeFiles/engine.dir/VulkanCore.cpp.o
 engine: CMakeFiles/engine.dir/core/Buffer.cpp.o
+engine: CMakeFiles/engine.dir/core/BufferPool.cpp.o
 engine: CMakeFiles/engine.dir/core/CommandBuffer.cpp.o
 engine: CMakeFiles/engine.dir/core/CommandPool.cpp.o
 engine: CMakeFiles/engine.dir/core/Fence.cpp.o
@@ -204,7 +219,7 @@ engine: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/lib/libvulkan.so
 engine: /usr/lib/x86_64-linux-gnu/librt.so
 engine: /usr/lib/x86_64-linux-gnu/libm.so
 engine: CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable engine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
