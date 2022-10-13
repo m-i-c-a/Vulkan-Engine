@@ -10,6 +10,7 @@
 #include "core/Fence.hpp"
 #include "core/Image.hpp"
 #include "core/ImageView.hpp"
+#include "core/ShaderModule.hpp"
 
 /*
 Programmable Vertex Pulling (PVP) on Triangle
@@ -61,6 +62,9 @@ struct AppCore
 
     Image* m_baseColorAttachmentImage = nullptr;
     ImageView* m_baseColorAttachmentImageView = nullptr;
+
+    VkPipelineLayout m_vkPipelineLayout = VK_NULL_HANDLE;
+    VkPipeline m_vkPipeline = VK_NULL_HANDLE;
 };
 
 void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -74,9 +78,163 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     Fence* fence = new Fence();
     fence->create(0x0);
 
+    const VkPipelineLayoutCreateInfo vk_pipelineLayoutCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
+        .setLayoutCount = 0,
+        .pSetLayouts = nullptr,
+        .pushConstantRangeCount = 0,
+        .pPushConstantRanges = nullptr,
+    };
+
+    VkPipelineLayout vk_pipelineLayout = VK_NULL_HANDLE;
+    VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &vk_pipelineLayout));
+
+    ShaderModule* vertexShaderModule = new ShaderModule();
+    vertexShaderModule->create("../shaders/spirv/shader-vert.spv");
+
+    ShaderModule* fragmentShaderModule = new ShaderModule();
+    fragmentShaderModule->create("../shaders/spirv/shader-frag.spv");
+
+    const VkPipelineShaderStageCreateInfo vk_shaderStageCreateInfos[] = {
+        {
+            .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
+            .stage = VK_SHADER_STAGE_VERTEX_BIT,
+            .module = vertexShaderModule->m_vkShaderModule,
+            .pName = "main",
+            .pSpecializationInfo = nullptr
+        },
+        {
+            .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
+            .stage = VK_SHADER_STAGE_FRAGMENT_BIT,
+            .module = fragmentShaderModule->m_vkShaderModule,
+            .pName = "main",
+            .pSpecializationInfo = nullptr
+        }
+    };
+
+    const VkPipelineVertexInputStateCreateInfo vk_vertexInputStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO,
+        .vertexBindingDescriptionCount = 0,
+        .pVertexBindingDescriptions = 0,
+        .vertexAttributeDescriptionCount = 0,
+        .pVertexAttributeDescriptions = 0,
+    };
+
+    const VkPipelineInputAssemblyStateCreateInfo vk_inputAssemblyStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO,
+        .topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST,
+        .primitiveRestartEnable = VK_FALSE,
+    };
+
+    const VkPipelineTessellationStateCreateInfo vk_tessellationStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_TESSELLATION_STATE_CREATE_INFO,
+        .patchControlPoints = 0,
+    };
+
+    const VkViewport vk_viewport {
+        .x = 0,
+        .y = 0,
+        .width = static_cast<float>(vulkanCore.vk_swapchainExtent.width),
+        .height = static_cast<float>(vulkanCore.vk_swapchainExtent.height),
+        .minDepth = 0,
+        .maxDepth = 1,
+    };
+
+    const VkRect2D vk_scissor {
+        .offset = {.x = 0, .y = 0},
+        .extent = vulkanCore.vk_swapchainExtent
+    };
+
+    const VkPipelineViewportStateCreateInfo vk_viewportStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO,
+        .viewportCount = 1,
+        .pViewports = &vk_viewport,
+        .scissorCount = 1,
+        .pScissors = &vk_scissor,
+    };
+
+    const VkPipelineRasterizationStateCreateInfo vk_rasterizationStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO,
+        .depthClampEnable = VK_FALSE,
+        .rasterizerDiscardEnable = VK_FALSE,
+        .polygonMode = VK_POLYGON_MODE_FILL,
+        .cullMode = VK_CULL_MODE_NONE,
+        .frontFace = VK_FRONT_FACE_CLOCKWISE,
+        .depthBiasEnable = VK_FALSE,
+        .depthBiasConstantFactor = 0.f,
+        .depthBiasClamp = 0.f,
+        .depthBiasSlopeFactor = 0.f,
+        .lineWidth = 1.f,
+    };
+
+    const VkPipelineMultisampleStateCreateInfo vk_multisampleStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO,
+        .rasterizationSamples = VK_SAMPLE_COUNT_1_BIT,
+        .sampleShadingEnable = VK_FALSE,
+        .minSampleShading = 0,
+        .pSampleMask = nullptr,
+        .alphaToCoverageEnable = VK_FALSE,
+        .alphaToOneEnable = VK_FALSE,
+    };
+
+    const VkPipelineColorBlendAttachmentState vk_colorBlendAttachmentState {
+        .blendEnable = VK_FALSE,
+        .srcColorBlendFactor = VK_BLEND_FACTOR_ZERO,
+        .dstColorBlendFactor = VK_BLEND_FACTOR_ZERO,
+        .colorBlendOp = VK_BLEND_OP_ADD,
+        .srcAlphaBlendFactor = VK_BLEND_FACTOR_ZERO,
+        .dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO,
+        .alphaBlendOp = VK_BLEND_OP_ADD,
+        .colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT,
+    };
+    
+    const VkPipelineColorBlendStateCreateInfo vk_colorBlendStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO,
+        .logicOpEnable = VK_FALSE,
+        .logicOp = VK_LOGIC_OP_COPY,
+        .attachmentCount = 1,
+        .pAttachments = &vk_colorBlendAttachmentState,
+        .blendConstants = { 0, 0, 0, 0 }
+    };
+
+    const VkPipelineRenderingCreateInfoKHR vk_renderingCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_RENDERING_CREATE_INFO,
+        .colorAttachmentCount = 1,
+        .pColorAttachmentFormats = &vulkanCore.vk_swapchainImageFormat
+    };
+
+    VkGraphicsPipelineCreateInfo vk_graphicsPipelineCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO,
+        .pNext = &vk_renderingCreateInfo,
+        .stageCount = ARRAYSIZE(vk_shaderStageCreateInfos),
+        .pStages = vk_shaderStageCreateInfos,
+        .pVertexInputState = &vk_vertexInputStateCreateInfo,
+        .pInputAssemblyState = &vk_inputAssemblyStateCreateInfo,
+        .pTessellationState = &vk_tessellationStateCreateInfo,
+        .pViewportState = &vk_viewportStateCreateInfo,
+        .pRasterizationState = &vk_rasterizationStateCreateInfo,
+        .pMultisampleState = &vk_multisampleStateCreateInfo,
+        .pDepthStencilState = nullptr,
+        .pColorBlendState = &vk_colorBlendStateCreateInfo,
+        .pDynamicState = nullptr,
+        .layout = vk_pipelineLayout,
+        .renderPass = nullptr,
+        .subpass = 0,
+        .basePipelineHandle = VK_NULL_HANDLE,
+        .basePipelineIndex = 0,
+    };
+
+    VkPipeline vk_pipeline = VK_NULL_HANDLE;
+    VK_CHECK(vkCreateGraphicsPipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_graphicsPipelineCreateInfo, nullptr, &vk_pipeline));
+
     appCore.m_cmdPool = cmdPool;
     appCore.m_cmdBuff = cmdBuff;
     appCore.m_swapchainImageAcquireFence = fence;
+    appCore.m_vkPipelineLayout = vk_pipelineLayout;
+    appCore.m_vkPipeline = vk_pipeline;
+
+    delete fragmentShaderModule;
+    delete vertexShaderModule;
 }
 
 void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -84,8 +242,10 @@ void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
     delete appCore.m_cmdBuff;
     delete appCore.m_cmdPool;
     delete appCore.m_swapchainImageAcquireFence;
-}
 
+    vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkPipelineLayout, nullptr);
+    vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkPipeline, nullptr);
+}
 
 void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 {

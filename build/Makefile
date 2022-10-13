@@ -594,6 +594,33 @@ core/Resource.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Resource.cpp.s
 .PHONY : core/Resource.cpp.s
 
+core/ShaderModule.o: core/ShaderModule.cpp.o
+
+.PHONY : core/ShaderModule.o
+
+# target to build an object file
+core/ShaderModule.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/ShaderModule.cpp.o
+.PHONY : core/ShaderModule.cpp.o
+
+core/ShaderModule.i: core/ShaderModule.cpp.i
+
+.PHONY : core/ShaderModule.i
+
+# target to preprocess a source file
+core/ShaderModule.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/ShaderModule.cpp.i
+.PHONY : core/ShaderModule.cpp.i
+
+core/ShaderModule.s: core/ShaderModule.cpp.s
+
+.PHONY : core/ShaderModule.s
+
+# target to generate assembly for a file
+core/ShaderModule.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/ShaderModule.cpp.s
+.PHONY : core/ShaderModule.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -675,6 +702,9 @@ help:
 	@echo "... core/Resource.o"
 	@echo "... core/Resource.i"
 	@echo "... core/Resource.s"
+	@echo "... core/ShaderModule.o"
+	@echo "... core/ShaderModule.i"
+	@echo "... core/ShaderModule.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -261,6 +261,35 @@ CMakeFiles/engine.dir/core/Resource.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x
 CMakeFiles/engine.dir/core/Resource.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib.h
 CMakeFiles/engine.dir/core/Resource.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib_xrandr.h
 
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: ../common/Defines.hpp
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: ../core/Resource.hpp
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: ../core/ShaderModule.cpp
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: ../core/ShaderModule.hpp
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std_encode.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std_decode.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std_encode.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_platform.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_android.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_beta.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_core.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_directfb.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_fuchsia.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_ggp.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_ios.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_macos.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_metal.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_screen.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_vi.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_wayland.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_win32.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xcb.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib.h
+CMakeFiles/engine.dir/core/ShaderModule.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib_xrandr.h
+
 CMakeFiles/engine.dir/main.cpp.o: ../common/Defines.hpp
 CMakeFiles/engine.dir/main.cpp.o: ../third-party/glfw/include/GLFW/glfw3.h
 CMakeFiles/engine.dir/main.cpp.o: ../VulkanCore.hpp
@@ -270,6 +299,7 @@ CMakeFiles/engine.dir/main.cpp.o: ../core/Fence.hpp
 CMakeFiles/engine.dir/main.cpp.o: ../core/Image.hpp
 CMakeFiles/engine.dir/main.cpp.o: ../core/ImageView.hpp
 CMakeFiles/engine.dir/main.cpp.o: ../core/Resource.hpp
+CMakeFiles/engine.dir/main.cpp.o: ../core/ShaderModule.hpp
 CMakeFiles/engine.dir/main.cpp.o: ../main.cpp
 CMakeFiles/engine.dir/main.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std.h
 CMakeFiles/engine.dir/main.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h

@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mica/Desktop/Engine/core/Image.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/core/Image.cpp.o"
   "/home/mica/Desktop/Engine/core/ImageView.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/core/ImageView.cpp.o"
   "/home/mica/Desktop/Engine/core/Resource.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/core/Resource.cpp.o"
+  "/home/mica/Desktop/Engine/core/ShaderModule.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/core/ShaderModule.cpp.o"
   "/home/mica/Desktop/Engine/main.cpp" "/home/mica/Desktop/Engine/build/CMakeFiles/engine.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

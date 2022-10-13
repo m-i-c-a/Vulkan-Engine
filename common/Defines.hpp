@@ -22,3 +22,5 @@
             assert(val == VK_SUCCESS); \
         }                              \
     } while (false)
+
+#define ARRAYSIZE(x) (sizeof(x) / sizeof(x[0]))

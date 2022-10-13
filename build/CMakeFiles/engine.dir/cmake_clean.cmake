@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/core/Image.cpp.o"
   "CMakeFiles/engine.dir/core/ImageView.cpp.o"
   "CMakeFiles/engine.dir/core/Resource.cpp.o"
+  "CMakeFiles/engine.dir/core/ShaderModule.cpp.o"
   "CMakeFiles/engine.dir/main.cpp.o"
   "engine"
   "engine.pdb"
