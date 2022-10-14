@@ -301,7 +301,6 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     VkPipeline vk_pipeline = VK_NULL_HANDLE;
     VK_CHECK(vkCreateGraphicsPipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_graphicsPipelineCreateInfo, nullptr, &vk_pipeline));
 
-
     // initial uploads
     Renderable planeRenderable {
         .m_uIndexCount = ARRAYSIZE(planeIndexData),
