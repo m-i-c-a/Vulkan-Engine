@@ -69,7 +69,7 @@ int32_t SceneBuffer::queueVertexUpload(const VkDeviceSize vk_size, void* pData)
     return vertexOffset;
 }
 
-uint32_t SceneBuffer::queueIndexUpload(const VkDeviceSize vk_size, uint32_t* pData)
+uint32_t SceneBuffer::queueIndexUpload(const VkDeviceSize vk_size, const uint32_t* pData)
 {
 #ifdef DEBUG
     if (m_vkStagingBufferOffset + vk_size > m_vkStagingBufferSize)
@@ -120,3 +120,7 @@ void SceneBuffer::flushQueuedUploads(const VkCommandBuffer vk_cmdBuff)
     vkCmdCopyBuffer(vk_cmdBuff, m_stagingBuffer->m_vkBuffer, m_indexBuffer->m_vkBuffer, static_cast<uint32_t>(m_vkIndexBufferCopies.size()), m_vkIndexBufferCopies.data());
     m_vkIndexBufferCopies.clear();
 }
+
+
+const VkBuffer SceneBuffer::getVertexBuffer() const { return m_vertexBuffer->m_vkBuffer; }
+const VkBuffer SceneBuffer::getIndexBuffer() const { return m_indexBuffer->m_vkBuffer; }

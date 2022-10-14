@@ -54,16 +54,34 @@ program = createProgram(vert, frag)
 program is the pipeline layout formed by the union of all the reflection info
 */
 
-#define BINDLESS_VERTEX_BUFFER
+// #define BINDLESS_VERTEX_BUFFER
+
+struct Renderable
+{
+    uint32_t m_uIndexCount = 0;
+    uint32_t m_uInstanceCount = 0;
+    uint32_t m_uFirstIndex = 0;
+    int32_t  m_iVertexOffset = 0;
+};
+
 
 struct Vertex
 {
+    float pos[3];
+    float normal[3];
+    float uv[2];
 };
 
-struct Model
-{
+constexpr Vertex planeVertexData[] {
+     { { -0.5f, -0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 0.0f, 1.0f } }, // top left
+     { { -0.5f,  0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 0.0f, 0.0f } }, // bot left
+     { {  0.5f,  0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 1.0f, 0.0f } }, // bot right
+     { {  0.5f, -0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 1.0f, 1.0f } }  // top right
+};
 
-    uint32_t indexCount;
+constexpr uint32_t planeIndexData[] {
+    0, 1, 2,
+    0, 2, 3
 };
 
 struct AppCore
@@ -80,6 +98,8 @@ struct AppCore
 
     VkPipelineLayout m_vkPipelineLayout = VK_NULL_HANDLE;
     VkPipeline m_vkPipeline = VK_NULL_HANDLE;
+
+    Renderable renderable {};
 };
 
 void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -158,9 +178,9 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
             .offset = sizeof(float) * 3,
         },
         {
-            .location = 0,
+            .location = 2,
             .binding = 0,
-            .format = VK_FORMAT_R32G32B32_SFLOAT,
+            .format = VK_FORMAT_R32G32_SFLOAT,
             .offset = sizeof(float) * 6,
         },
     };
@@ -281,12 +301,49 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     VkPipeline vk_pipeline = VK_NULL_HANDLE;
     VK_CHECK(vkCreateGraphicsPipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_graphicsPipelineCreateInfo, nullptr, &vk_pipeline));
 
+
+    // initial uploads
+    Renderable planeRenderable {
+        .m_uIndexCount = ARRAYSIZE(planeIndexData),
+        .m_uInstanceCount = 1,
+        .m_uFirstIndex = sceneBuffer->queueIndexUpload(sizeof(planeIndexData), planeIndexData),
+        .m_iVertexOffset = sceneBuffer->queueVertexUpload(sizeof(planeVertexData), (void*)planeVertexData),
+    };
+
+    constexpr VkCommandBufferBeginInfo vk_cmdBeginInfo {
+        .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
+        .flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT,
+    };
+
+    VK_CHECK(vkBeginCommandBuffer(cmdBuff->m_vkCmdBuff, &vk_cmdBeginInfo));
+
+    sceneBuffer->flushQueuedUploads(cmdBuff->m_vkCmdBuff);
+
+    VK_CHECK(vkEndCommandBuffer(cmdBuff->m_vkCmdBuff));
+
+    const VkSubmitInfo vk_submitInfo {
+        .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
+        .waitSemaphoreCount = 0,
+        .pWaitSemaphores = nullptr,
+        .pWaitDstStageMask = nullptr,
+        .commandBufferCount = 1,
+        .pCommandBuffers = &cmdBuff->m_vkCmdBuff,
+        .signalSemaphoreCount = 0,
+        .pSignalSemaphores = 0,
+    };
+
+    VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
+    VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
+
+
+    // set
     appCore.m_cmdPool = cmdPool;
     appCore.m_cmdBuff = cmdBuff;
     appCore.m_swapchainImageAcquireFence = fence;
     appCore.m_vkPipelineLayout = vk_pipelineLayout;
     appCore.m_vkPipeline = vk_pipeline;
     appCore.m_sceneBuffer = sceneBuffer;
+    appCore.renderable = std::move(planeRenderable);
 
     delete fragmentShaderModule;
     delete vertexShaderModule;
@@ -366,7 +423,16 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 
     vkCmdBeginRendering(vk_cmdBuff, &vk_renderingInfo);
 
-    // vkCmdDrawIndexed(vk_cmdBuff,  )
+    VkDeviceSize pOffsets[] = { 0 }; 
+    const VkBuffer vertexBuffer = appCore.m_sceneBuffer->getVertexBuffer();
+    const VkBuffer indexBuffer = appCore.m_sceneBuffer->getIndexBuffer();
+
+    vkCmdBindVertexBuffers(vk_cmdBuff, 0, 1, &vertexBuffer, pOffsets);
+    vkCmdBindIndexBuffer(vk_cmdBuff, indexBuffer, 0, VK_INDEX_TYPE_UINT32);
+
+    vkCmdBindPipeline(vk_cmdBuff, VK_PIPELINE_BIND_POINT_GRAPHICS, appCore.m_vkPipeline);
+
+    vkCmdDrawIndexed(vk_cmdBuff, appCore.renderable.m_uIndexCount, appCore.renderable.m_uInstanceCount, appCore.renderable.m_uFirstIndex, appCore.renderable.m_iVertexOffset, 0);
 
     vkCmdEndRendering(vk_cmdBuff);
 

@@ -37,9 +37,12 @@ public:
     ~SceneBuffer();
 
     int32_t queueVertexUpload(const VkDeviceSize vk_size, void* pData); 
-    uint32_t queueIndexUpload(const VkDeviceSize vk_size, uint32_t* pData);
+    uint32_t queueIndexUpload(const VkDeviceSize vk_size, const uint32_t* pData);
 
     void flushQueuedUploads(const VkCommandBuffer vk_cmdBuff);
+
+    const VkBuffer getVertexBuffer() const;
+    const VkBuffer getIndexBuffer() const;
 };
 
 #endif // MICA_SCENE_BUFFER_HPP
