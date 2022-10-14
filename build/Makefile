@@ -594,6 +594,33 @@ core/Resource.cpp.s:
 	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/Resource.cpp.s
 .PHONY : core/Resource.cpp.s
 
+core/SceneBuffer.o: core/SceneBuffer.cpp.o
+
+.PHONY : core/SceneBuffer.o
+
+# target to build an object file
+core/SceneBuffer.cpp.o:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/SceneBuffer.cpp.o
+.PHONY : core/SceneBuffer.cpp.o
+
+core/SceneBuffer.i: core/SceneBuffer.cpp.i
+
+.PHONY : core/SceneBuffer.i
+
+# target to preprocess a source file
+core/SceneBuffer.cpp.i:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/SceneBuffer.cpp.i
+.PHONY : core/SceneBuffer.cpp.i
+
+core/SceneBuffer.s: core/SceneBuffer.cpp.s
+
+.PHONY : core/SceneBuffer.s
+
+# target to generate assembly for a file
+core/SceneBuffer.cpp.s:
+	$(MAKE) -f CMakeFiles/engine.dir/build.make CMakeFiles/engine.dir/core/SceneBuffer.cpp.s
+.PHONY : core/SceneBuffer.cpp.s
+
 core/ShaderModule.o: core/ShaderModule.cpp.o
 
 .PHONY : core/ShaderModule.o
@@ -702,6 +729,9 @@ help:
 	@echo "... core/Resource.o"
 	@echo "... core/Resource.i"
 	@echo "... core/Resource.s"
+	@echo "... core/SceneBuffer.o"
+	@echo "... core/SceneBuffer.i"
+	@echo "... core/SceneBuffer.s"
 	@echo "... core/ShaderModule.o"
 	@echo "... core/ShaderModule.i"
 	@echo "... core/ShaderModule.s"

@@ -10,6 +10,7 @@
 #include "core/Fence.hpp"
 #include "core/Image.hpp"
 #include "core/ImageView.hpp"
+#include "core/SceneBuffer.hpp"
 #include "core/ShaderModule.hpp"
 
 /*
@@ -53,6 +54,18 @@ program = createProgram(vert, frag)
 program is the pipeline layout formed by the union of all the reflection info
 */
 
+#define BINDLESS_VERTEX_BUFFER
+
+struct Vertex
+{
+};
+
+struct Model
+{
+
+    uint32_t indexCount;
+};
+
 struct AppCore
 {
     CommandPool* m_cmdPool = nullptr;
@@ -62,6 +75,8 @@ struct AppCore
 
     Image* m_baseColorAttachmentImage = nullptr;
     ImageView* m_baseColorAttachmentImageView = nullptr;
+
+    SceneBuffer* m_sceneBuffer = nullptr;
 
     VkPipelineLayout m_vkPipelineLayout = VK_NULL_HANDLE;
     VkPipeline m_vkPipeline = VK_NULL_HANDLE;
@@ -77,6 +92,8 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
 
     Fence* fence = new Fence();
     fence->create(0x0);
+
+    SceneBuffer* sceneBuffer = new SceneBuffer(sizeof(Vertex), 5000000, 2000000, 5000000);
 
     const VkPipelineLayoutCreateInfo vk_pipelineLayoutCreateInfo {
         .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
@@ -112,6 +129,7 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
         }
     };
 
+#ifdef BINDLESS_VERTEX_BUFFER
     const VkPipelineVertexInputStateCreateInfo vk_vertexInputStateCreateInfo {
         .sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO,
         .vertexBindingDescriptionCount = 0,
@@ -119,6 +137,42 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
         .vertexAttributeDescriptionCount = 0,
         .pVertexAttributeDescriptions = 0,
     };
+#else
+    const VkVertexInputBindingDescription vk_vertexInputBindingDesc {
+        .binding = 0,
+        .stride = sizeof(Vertex),
+        .inputRate = VK_VERTEX_INPUT_RATE_VERTEX,
+    };
+
+    const VkVertexInputAttributeDescription vk_vertexInputAttribDescs[] {
+        {
+            .location = 0,
+            .binding = 0,
+            .format = VK_FORMAT_R32G32B32_SFLOAT,
+            .offset = 0,
+        },
+        {
+            .location = 1,
+            .binding = 0,
+            .format = VK_FORMAT_R32G32B32_SFLOAT,
+            .offset = sizeof(float) * 3,
+        },
+        {
+            .location = 0,
+            .binding = 0,
+            .format = VK_FORMAT_R32G32B32_SFLOAT,
+            .offset = sizeof(float) * 6,
+        },
+    };
+
+    const VkPipelineVertexInputStateCreateInfo vk_vertexInputStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO,
+        .vertexBindingDescriptionCount = 1,
+        .pVertexBindingDescriptions = &vk_vertexInputBindingDesc,
+        .vertexAttributeDescriptionCount = ARRAYSIZE(vk_vertexInputAttribDescs),
+        .pVertexAttributeDescriptions = vk_vertexInputAttribDescs,
+    };
+#endif
 
     const VkPipelineInputAssemblyStateCreateInfo vk_inputAssemblyStateCreateInfo {
         .sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO,
@@ -218,7 +272,7 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
         .pColorBlendState = &vk_colorBlendStateCreateInfo,
         .pDynamicState = nullptr,
         .layout = vk_pipelineLayout,
-        .renderPass = nullptr,
+        .renderPass = VK_NULL_HANDLE,
         .subpass = 0,
         .basePipelineHandle = VK_NULL_HANDLE,
         .basePipelineIndex = 0,
@@ -232,6 +286,7 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_swapchainImageAcquireFence = fence;
     appCore.m_vkPipelineLayout = vk_pipelineLayout;
     appCore.m_vkPipeline = vk_pipeline;
+    appCore.m_sceneBuffer = sceneBuffer;
 
     delete fragmentShaderModule;
     delete vertexShaderModule;
@@ -242,6 +297,7 @@ void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
     delete appCore.m_cmdBuff;
     delete appCore.m_cmdPool;
     delete appCore.m_swapchainImageAcquireFence;
+    delete appCore.m_sceneBuffer;
 
     vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkPipelineLayout, nullptr);
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkPipeline, nullptr);
@@ -309,6 +365,8 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
     );
 
     vkCmdBeginRendering(vk_cmdBuff, &vk_renderingInfo);
+
+    // vkCmdDrawIndexed(vk_cmdBuff,  )
 
     vkCmdEndRendering(vk_cmdBuff);
 

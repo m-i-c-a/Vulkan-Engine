@@ -7,5 +7,6 @@ target_sources(${PROJECT_NAME} PRIVATE
     Image.cpp         Image.hpp
     ImageView.cpp     ImageView.hpp
     Resource.cpp      Resource.hpp
+    SceneBuffer.cpp   SceneBuffer.hpp
     ShaderModule.cpp  ShaderModule.hpp
 )
