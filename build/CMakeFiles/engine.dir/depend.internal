@@ -504,12 +504,20 @@ CMakeFiles/engine.dir/main.cpp.o
  ../third-party/glm/glm/detail/func_exponential_simd.inl
  ../third-party/glm/glm/detail/func_geometric.inl
  ../third-party/glm/glm/detail/func_geometric_simd.inl
+ ../third-party/glm/glm/detail/func_integer.inl
+ ../third-party/glm/glm/detail/func_integer_simd.inl
  ../third-party/glm/glm/detail/func_matrix.inl
  ../third-party/glm/glm/detail/func_matrix_simd.inl
+ ../third-party/glm/glm/detail/func_packing.inl
+ ../third-party/glm/glm/detail/func_packing_simd.inl
+ ../third-party/glm/glm/detail/func_trigonometric.inl
+ ../third-party/glm/glm/detail/func_trigonometric_simd.inl
  ../third-party/glm/glm/detail/func_vector_relational.inl
  ../third-party/glm/glm/detail/func_vector_relational_simd.inl
  ../third-party/glm/glm/detail/qualifier.hpp
  ../third-party/glm/glm/detail/setup.hpp
+ ../third-party/glm/glm/detail/type_half.hpp
+ ../third-party/glm/glm/detail/type_half.inl
  ../third-party/glm/glm/detail/type_mat2x2.hpp
  ../third-party/glm/glm/detail/type_mat2x2.inl
  ../third-party/glm/glm/detail/type_mat2x3.hpp
@@ -539,6 +547,8 @@ CMakeFiles/engine.dir/main.cpp.o
  ../third-party/glm/glm/detail/type_vec4.inl
  ../third-party/glm/glm/detail/type_vec4_simd.inl
  ../third-party/glm/glm/exponential.hpp
+ ../third-party/glm/glm/ext/matrix_clip_space.hpp
+ ../third-party/glm/glm/ext/matrix_clip_space.inl
  ../third-party/glm/glm/ext/matrix_double2x2.hpp
  ../third-party/glm/glm/ext/matrix_double2x2_precision.hpp
  ../third-party/glm/glm/ext/matrix_double2x3.hpp
@@ -575,6 +585,11 @@ CMakeFiles/engine.dir/main.cpp.o
  ../third-party/glm/glm/ext/matrix_float4x3_precision.hpp
  ../third-party/glm/glm/ext/matrix_float4x4.hpp
  ../third-party/glm/glm/ext/matrix_float4x4_precision.hpp
+ ../third-party/glm/glm/ext/matrix_projection.hpp
+ ../third-party/glm/glm/ext/matrix_projection.inl
+ ../third-party/glm/glm/ext/matrix_transform.hpp
+ ../third-party/glm/glm/ext/scalar_constants.hpp
+ ../third-party/glm/glm/ext/scalar_constants.inl
  ../third-party/glm/glm/ext/scalar_int_sized.hpp
  ../third-party/glm/glm/ext/scalar_uint_sized.hpp
  ../third-party/glm/glm/ext/vector_bool2.hpp
@@ -607,7 +622,16 @@ CMakeFiles/engine.dir/main.cpp.o
  ../third-party/glm/glm/ext/vector_uint3_sized.hpp
  ../third-party/glm/glm/ext/vector_uint4.hpp
  ../third-party/glm/glm/ext/vector_uint4_sized.hpp
+ ../third-party/glm/glm/fwd.hpp
  ../third-party/glm/glm/geometric.hpp
+ ../third-party/glm/glm/glm.hpp
+ ../third-party/glm/glm/gtc/constants.hpp
+ ../third-party/glm/glm/gtc/constants.inl
+ ../third-party/glm/glm/gtc/matrix_transform.hpp
+ ../third-party/glm/glm/gtc/matrix_transform.inl
+ ../third-party/glm/glm/gtx/transform.hpp
+ ../third-party/glm/glm/gtx/transform.inl
+ ../third-party/glm/glm/integer.hpp
  ../third-party/glm/glm/mat2x2.hpp
  ../third-party/glm/glm/mat2x3.hpp
  ../third-party/glm/glm/mat2x4.hpp
@@ -618,12 +642,15 @@ CMakeFiles/engine.dir/main.cpp.o
  ../third-party/glm/glm/mat4x3.hpp
  ../third-party/glm/glm/mat4x4.hpp
  ../third-party/glm/glm/matrix.hpp
+ ../third-party/glm/glm/packing.hpp
  ../third-party/glm/glm/simd/common.h
  ../third-party/glm/glm/simd/exponential.h
  ../third-party/glm/glm/simd/geometric.h
+ ../third-party/glm/glm/simd/integer.h
  ../third-party/glm/glm/simd/matrix.h
  ../third-party/glm/glm/simd/neon.h
  ../third-party/glm/glm/simd/platform.h
+ ../third-party/glm/glm/trigonometric.hpp
  ../third-party/glm/glm/vec2.hpp
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp

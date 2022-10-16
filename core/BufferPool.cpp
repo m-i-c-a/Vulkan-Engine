@@ -11,7 +11,7 @@ BufferPool<T>::BufferPool(const uint16_t blockCount, const uint16_t dirtyCount)
 
     m_stagingBuffer = new Buffer();
     m_stagingBuffer->create(size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT);
-    m_stagingBuffer->allocate(VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
+    m_stagingBuffer->allocate(VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT); // TODO - flush instead
     m_stagingBuffer->bind();
 
     m_cpuBlocks = (T*)(m_stagingBuffer->map());
@@ -21,7 +21,7 @@ BufferPool<T>::BufferPool(const uint16_t blockCount, const uint16_t dirtyCount)
     m_ssboBuffer->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     m_ssboBuffer->bind();
 
-    for (uint16_t i = blockCount - 1; i > 0; i--)
+    for (int i = blockCount - 1; i >= 0; i--)
     {
         m_freeBlocks.push(i);
     }
@@ -57,18 +57,29 @@ T& BufferPool<T>::getWritableBlock(const uint16_t id)
 }
 
 template<class T>
-void BufferPool<T>::flushDirtyBlocks()
+void BufferPool<T>::flushDirtyBlocks(const VkCommandBuffer vk_cmdBuff)
 {
-    // need to flush mapped memory here
+    std::vector<VkBufferCopy> vk_bufferCopies(m_activeDirtyBlockCount);
 
     for (uint16_t i = 0; i < m_activeDirtyBlockCount; ++i)
     {
-        // create copy command and send off to staging buffer
+        const uint16_t ssboIdx = m_dirtyBlocks[i];
+
+        VkBufferCopy vk_bufferCopy {
+            .srcOffset = i * sizeof(T),
+            .dstOffset = ssboIdx * sizeof(T),
+            .size = sizeof(T),
+        };
+
+        vk_bufferCopies[i] = vk_bufferCopy;
     }
+
+    // might need pipeline barrier here...
+
+    vkCmdCopyBuffer(vk_cmdBuff, m_stagingBuffer->m_vkBuffer, m_ssboBuffer->m_vkBuffer, vk_bufferCopies.size(), vk_bufferCopies.data()); 
 
     m_activeDirtyBlockCount = 0;
 }
-
 
 template<class T>
 VkDescriptorBufferInfo BufferPool<T>::getDescBufferInfo() const

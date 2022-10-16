@@ -1,7 +1,11 @@
 #include <vector>
+#include <string.h>
 
 #include <vulkan/vulkan.h>
 #include <GLFW/glfw3.h>
+
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/transform.hpp>
 
 #include "Defines.hpp"
 #include "ShaderStructs.hpp"
@@ -109,7 +113,7 @@ struct AppCore
     VkDescriptorSetLayout m_vkDescSet0Layout = VK_NULL_HANDLE;
     VkDescriptorSet m_vkDescSet0 = VK_NULL_HANDLE;
 
-    Renderable renderable {};
+    std::vector<Renderable> m_renderables {};
 };
 
 void updateBufferDescriptorSet(const VkDevice vk_device, const VkDescriptorSet vk_descSet, const uint32_t descBinding, const VkDescriptorType vk_descType, VkDescriptorBufferInfo&& vk_descBufferInfo)
@@ -372,6 +376,11 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     globalUBO->create(sizeof(GlobalUBO), VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT);
     globalUBO->allocate(VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
     globalUBO->bind();
+    void* pGlobalUBO = globalUBO->map();
+    glm::mat4 identMat { 1.0f };
+    memcpy((char*)pGlobalUBO + offsetof(GlobalUBO, projMatrix), &(identMat[0][0]), sizeof(glm::mat4));
+    memcpy((char*)pGlobalUBO + offsetof(GlobalUBO, viewMatrix), &(identMat[0][0]), sizeof(glm::mat4));
+    globalUBO->unmap();
 
     DescriptorPool* descPool = new DescriptorPool();
     descPool->create(1, {{
@@ -402,15 +411,27 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
 
     updateBufferDescriptorSet(vulkanCore.vk_device, vk_descSet0, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, objectBufferPool->getDescBufferInfo());
 
+    std::vector<Renderable> renderables {};
 
-    // initial uploads
     Renderable planeRenderable {
         .m_uIndexCount = ARRAYSIZE(planeIndexData),
         .m_uInstanceCount = 1,
         .m_uFirstIndex = sceneBuffer->queueIndexUpload(sizeof(planeIndexData), planeIndexData),
         .m_iVertexOffset = sceneBuffer->queueVertexUpload(sizeof(planeVertexData), (void*)planeVertexData),
-        .m_uObjectIdx = objectBufferPool->acquireBlock()
     };
+
+    for (uint32_t i = 0; i < 10; ++i)
+    {
+       Renderable renderable = planeRenderable; 
+       renderable.m_uObjectIdx = objectBufferPool->acquireBlock();
+
+       ObjectData& objData = objectBufferPool->getWritableBlock(renderable.m_uObjectIdx);
+       objData.modelMatrix = glm::mat4(1.0f);
+       objData.modelMatrix = glm::translate(objData.modelMatrix, glm::vec3(-1.0f + 2.0f * ((float)i / 10.0f), 0.0f, 0.0f));
+       objData.modelMatrix = glm::scale(objData.modelMatrix, glm::vec3(0.1f, 0.1f, 0.1f));
+
+        renderables.push_back(std::move(renderable));
+    }
 
     constexpr VkCommandBufferBeginInfo vk_cmdBeginInfo {
         .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
@@ -420,6 +441,7 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     VK_CHECK(vkBeginCommandBuffer(cmdBuff->m_vkCmdBuff, &vk_cmdBeginInfo));
 
     sceneBuffer->flushQueuedUploads(cmdBuff->m_vkCmdBuff);
+    objectBufferPool->flushDirtyBlocks(cmdBuff->m_vkCmdBuff);
 
     VK_CHECK(vkEndCommandBuffer(cmdBuff->m_vkCmdBuff));
 
@@ -445,7 +467,7 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_sceneBuffer = sceneBuffer;
     appCore.m_objectBufferPool = objectBufferPool;
     appCore.m_globalUBO = globalUBO;
-    appCore.renderable = std::move(planeRenderable);
+    appCore.m_renderables = std::move(renderables);
     appCore.m_descPool = descPool;
     appCore.m_vkDescSet0 = vk_descSet0;
 }
@@ -540,8 +562,11 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 
     vkCmdBindPipeline(vk_cmdBuff, VK_PIPELINE_BIND_POINT_GRAPHICS, appCore.m_vkPipeline);
 
-    vkCmdPushConstants(vk_cmdBuff, appCore.m_vkPipelineLayout, VK_SHADER_STAGE_VERTEX_BIT, 0, sizeof(PushConstants), &appCore.renderable.m_uObjectIdx);
-    vkCmdDrawIndexed(vk_cmdBuff, appCore.renderable.m_uIndexCount, appCore.renderable.m_uInstanceCount, appCore.renderable.m_uFirstIndex, appCore.renderable.m_iVertexOffset, 0);
+    for (const Renderable& renderable : appCore.m_renderables)
+    {
+        vkCmdPushConstants(vk_cmdBuff, appCore.m_vkPipelineLayout, VK_SHADER_STAGE_VERTEX_BIT, 0, sizeof(PushConstants), &renderable.m_uObjectIdx);
+        vkCmdDrawIndexed(vk_cmdBuff, renderable.m_uIndexCount, renderable.m_uInstanceCount, renderable.m_uFirstIndex, renderable.m_iVertexOffset, 0);
+    }
 
     vkCmdEndRendering(vk_cmdBuff);
 

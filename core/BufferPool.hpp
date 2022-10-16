@@ -27,7 +27,7 @@ public:
     uint16_t acquireBlock();
     const T& getReadableBlock(const uint16_t id) const;
     T& getWritableBlock(const uint16_t id);
-    void flushDirtyBlocks();
+    void flushDirtyBlocks(const VkCommandBuffer vk_cmdBuff);
 
     VkDescriptorBufferInfo getDescBufferInfo() const;
 };
