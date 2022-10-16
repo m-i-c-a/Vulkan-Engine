@@ -28,6 +28,8 @@ public:
     const T& getReadableBlock(const uint16_t id) const;
     T& getWritableBlock(const uint16_t id);
     void flushDirtyBlocks();
+
+    VkDescriptorBufferInfo getDescBufferInfo() const;
 };
 
 #endif // MICA_BUFFER_POOL_HPP

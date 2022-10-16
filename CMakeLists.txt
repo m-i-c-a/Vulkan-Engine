@@ -10,6 +10,6 @@ add_subdirectory(third-party)
 add_executable(${PROJECT_NAME} main.cpp VulkanCore.cpp VulkanCore.hpp)
 add_subdirectory(core)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE glfw $ENV{VULKAN_SDK}/lib/libvulkan.so)
-target_include_directories(${PROJECT_NAME} PRIVATE glfw_INCLUDE_DIRS $ENV{VULKAN_SDK}/include)
+target_link_libraries(${PROJECT_NAME} PRIVATE glfw glm $ENV{VULKAN_SDK}/lib/libvulkan.so)
+target_include_directories(${PROJECT_NAME} PRIVATE glfw_INCLUDE_DIRS glm_INCLUDE_DIRS $ENV{VULKAN_SDK}/include)
 target_compile_options(${PROJECT_NAME} PRIVATE -g)

@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Engine/third-party/glfw/examples
+# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

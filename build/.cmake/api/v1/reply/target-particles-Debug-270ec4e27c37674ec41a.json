@@ -62,15 +62,15 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/mica/Desktop/Engine/common"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/common"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "/home/mica/Desktop/Engine/third-party/glfw/deps"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/deps"
 				},
 				{
 					"backtrace" : 1,
-					"path" : "/home/mica/Desktop/Engine/third-party/glfw/include"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include"
 				}
 			],
 			"language" : "C",

@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/core/BufferPool.cpp.o"
   "CMakeFiles/engine.dir/core/CommandBuffer.cpp.o"
   "CMakeFiles/engine.dir/core/CommandPool.cpp.o"
+  "CMakeFiles/engine.dir/core/DescriptorPool.cpp.o"
   "CMakeFiles/engine.dir/core/Fence.cpp.o"
   "CMakeFiles/engine.dir/core/Image.cpp.o"
   "CMakeFiles/engine.dir/core/ImageView.cpp.o"

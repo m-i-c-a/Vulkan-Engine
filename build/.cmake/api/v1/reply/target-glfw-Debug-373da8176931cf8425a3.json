@@ -140,19 +140,19 @@
 			[
 				{
 					"backtrace" : 7,
-					"path" : "/home/mica/Desktop/Engine/common"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/common"
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/home/mica/Desktop/Engine/third-party/glfw/include"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/home/mica/Desktop/Engine/third-party/glfw/src"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/home/mica/Desktop/Engine/build/third-party/glfw/src"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src"
 				}
 			],
 			"language" : "C",
@@ -202,19 +202,19 @@
 			[
 				{
 					"backtrace" : 7,
-					"path" : "/home/mica/Desktop/Engine/common"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/common"
 				},
 				{
 					"backtrace" : 8,
-					"path" : "/home/mica/Desktop/Engine/third-party/glfw/include"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/home/mica/Desktop/Engine/third-party/glfw/src"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src"
 				},
 				{
 					"backtrace" : 9,
-					"path" : "/home/mica/Desktop/Engine/build/third-party/glfw/src"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src"
 				}
 			],
 			"language" : "C",

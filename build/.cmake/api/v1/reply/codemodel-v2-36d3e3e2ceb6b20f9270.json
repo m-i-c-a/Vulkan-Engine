@@ -9,7 +9,7 @@
 					"childIndexes" : 
 					[
 						1,
-						5
+						7
 					],
 					"hasInstallRule" : true,
 					"minimumCMakeVersion" : 
@@ -27,7 +27,8 @@
 					"build" : "third-party",
 					"childIndexes" : 
 					[
-						2
+						2,
+						5
 					],
 					"hasInstallRule" : true,
 					"minimumCMakeVersion" : 
@@ -99,6 +100,30 @@
 					]
 				},
 				{
+					"build" : "third-party/glm",
+					"childIndexes" : 
+					[
+						6
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "third-party/glm"
+				},
+				{
+					"build" : "third-party/glm/glm",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 2,
+					"source" : "third-party/glm/glm"
+				},
+				{
 					"build" : "core",
 					"minimumCMakeVersion" : 
 					{
@@ -115,13 +140,14 @@
 				{
 					"childIndexes" : 
 					[
-						1
+						1,
+						2
 					],
 					"directoryIndexes" : 
 					[
 						0,
 						1,
-						5
+						7
 					],
 					"name" : "engine",
 					"targetIndexes" : 
@@ -155,6 +181,15 @@
 						13,
 						14
 					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5,
+						6
+					],
+					"name" : "glm",
+					"parentIndex" : 0
 				}
 			],
 			"targets" : 
@@ -162,77 +197,77 @@
 				{
 					"directoryIndex" : 4,
 					"id" : "boing::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-boing-Debug-2d77d9361338c8022cf8.json",
+					"jsonFile" : "target-boing-Debug-3a141e83e967a5d1990a.json",
 					"name" : "boing",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "engine::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-engine-Debug-3021bcc382c9cd10bd42.json",
+					"jsonFile" : "target-engine-Debug-edbf128ebbbeb045ca13.json",
 					"name" : "engine",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "gears::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-gears-Debug-3455783a58c781aa627e.json",
+					"jsonFile" : "target-gears-Debug-fa949bb3ef66f5d71c62.json",
 					"name" : "gears",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "glfw::@281570e8f3ee925e5575",
-					"jsonFile" : "target-glfw-Debug-ae842b20a04dccb463c5.json",
+					"jsonFile" : "target-glfw-Debug-373da8176931cf8425a3.json",
 					"name" : "glfw",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "heightmap::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-heightmap-Debug-c18ab2d8fbc5bbef3469.json",
+					"jsonFile" : "target-heightmap-Debug-7fdc0a06d3596648a941.json",
 					"name" : "heightmap",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "offscreen::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-offscreen-Debug-8c27aba21b498be2c85b.json",
+					"jsonFile" : "target-offscreen-Debug-e895c9ef2bf9b60c121e.json",
 					"name" : "offscreen",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "particles::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-particles-Debug-7c63ad79b463aba3d07e.json",
+					"jsonFile" : "target-particles-Debug-270ec4e27c37674ec41a.json",
 					"name" : "particles",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "sharing::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-sharing-Debug-a5844aad7767b5ddd34e.json",
+					"jsonFile" : "target-sharing-Debug-c9330a3ff46d0730617a.json",
 					"name" : "sharing",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "splitview::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-splitview-Debug-72870d3eb470a19c909c.json",
+					"jsonFile" : "target-splitview-Debug-988f1d45a22387485bc0.json",
 					"name" : "splitview",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "triangle-opengl::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-triangle-opengl-Debug-1ed48f84595a2ba24ac4.json",
+					"jsonFile" : "target-triangle-opengl-Debug-a096fb497f9dcc8fd5ae.json",
 					"name" : "triangle-opengl",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "triangle-opengles::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-triangle-opengles-Debug-8211bdb54592cd9b6209.json",
+					"jsonFile" : "target-triangle-opengles-Debug-05f160939a17cff843eb.json",
 					"name" : "triangle-opengles",
 					"projectIndex" : 1
 				},
@@ -253,14 +288,14 @@
 				{
 					"directoryIndex" : 4,
 					"id" : "wave::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-wave-Debug-e3ca8daac3ce6b776bcf.json",
+					"jsonFile" : "target-wave-Debug-c6c0cc5ebe97797306f6.json",
 					"name" : "wave",
 					"projectIndex" : 1
 				},
 				{
 					"directoryIndex" : 4,
 					"id" : "windows::@95b4158757d24bba1cf5",
-					"jsonFile" : "target-windows-Debug-5ac264b5d04e961cc7d9.json",
+					"jsonFile" : "target-windows-Debug-de22aa84ac2a8ab9925b.json",
 					"name" : "windows",
 					"projectIndex" : 1
 				}
@@ -270,8 +305,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/mica/Desktop/Engine/build",
-		"source" : "/home/mica/Desktop/Engine"
+		"build" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/build",
+		"source" : "/home/mica/Desktop/Vulkan/Vulkan-Engine"
 	},
 	"version" : 
 	{

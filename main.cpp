@@ -4,8 +4,10 @@
 #include <GLFW/glfw3.h>
 
 #include "Defines.hpp"
+#include "ShaderStructs.hpp"
 #include "VulkanCore.hpp"
 #include "core/Buffer.hpp"
+#include "core/BufferPool.hpp"
 #include "core/CommandBuffer.hpp"
 #include "core/CommandPool.hpp"
 #include "core/DescriptorPool.hpp"
@@ -45,18 +47,17 @@ Culling
 shader can have its reflection info
 
 vert = processShader() // get reflection info
-frag = processShader() // get reflection info
+frag = processShader(
+struct GlobalUBO
+{
 
-// a program is a valid collection of shaders
-// pipeline layout is formed by the union of the two shaders
-program = createProgram(vert, frag)
+};
 
-// a pipeline is a program + some additional state
-
-program is the pipeline layout formed by the union of all the reflection info
+struct ObjectData 
+{
+    glm::mat4 modelMatrix { 1.0f };
+};ne layout formed by the union of all the reflection info
 */
-
-// #define BINDLESS_VERTEX_BUFFER
 
 struct Renderable
 {
@@ -64,6 +65,8 @@ struct Renderable
     uint32_t m_uInstanceCount = 0;
     uint32_t m_uFirstIndex = 0;
     int32_t  m_iVertexOffset = 0;
+
+    uint32_t m_uObjectIdx = 0;
 };
 
 struct Vertex
@@ -71,16 +74,6 @@ struct Vertex
     float pos[3];
     float normal[3];
     float uv[2];
-};
-
-struct GlobalUBO
-{
-
-};
-
-struct DrawData
-{
-
 };
 
 constexpr Vertex planeVertexData[] {
@@ -106,8 +99,8 @@ struct AppCore
     ImageView* m_baseColorAttachmentImageView = nullptr;
 
     SceneBuffer* m_sceneBuffer = nullptr;
+    BufferPool<ObjectData>* m_objectBufferPool = nullptr;
     Buffer* m_globalUBO = nullptr;
-    Buffer* m_globalDrawSSBO = nullptr;
 
     DescriptorPool* m_descPool = nullptr;
 
@@ -119,25 +112,40 @@ struct AppCore
     Renderable renderable {};
 };
 
-void createPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
+void updateBufferDescriptorSet(const VkDevice vk_device, const VkDescriptorSet vk_descSet, const uint32_t descBinding, const VkDescriptorType vk_descType, VkDescriptorBufferInfo&& vk_descBufferInfo)
 {
-    // Layout
+    const VkWriteDescriptorSet vk_writeDescriptorSet {
+        .sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET,
+        .dstSet = vk_descSet,
+        .dstBinding = descBinding,
+        .dstArrayElement = 0,
+        .descriptorCount = 1,
+        .descriptorType = vk_descType,
+        .pImageInfo = nullptr,
+        .pBufferInfo = &vk_descBufferInfo,
+        .pTexelBufferView = nullptr,
+    };
 
+    vkUpdateDescriptorSets(vk_device, 1, &vk_writeDescriptorSet, 0, nullptr);
+}
+
+void createPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
+{
     const VkDescriptorSetLayoutBinding vk_descSetLayoutBindings[] {
-        {   // Global Draw SSBO
+        {   // Global UBO
             .binding = 0,
+            .descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_VERTEX_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {   // Global Draw SSBO
+            .binding = 1,
             .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
             .descriptorCount = 1,
             .stageFlags = VK_SHADER_STAGE_VERTEX_BIT,
             .pImmutableSamplers = nullptr,
         },
-        {   // Global UBO
-            .binding = 1,
-            .descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_VERTEX_BIT,
-            .pImmutableSamplers = nullptr,
-        }
     };
 
     const VkDescriptorSetLayoutCreateInfo vk_descSetLayoutCreateInfo {
@@ -150,7 +158,7 @@ void createPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
     VK_CHECK(vkCreateDescriptorSetLayout(vulkanCore.vk_device, &vk_descSetLayoutCreateInfo, nullptr, &vk_descSet0Layout));
 
     const VkPushConstantRange vk_pushConstantRange {
-        .stageFlags = VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT,
+        .stageFlags = VK_SHADER_STAGE_VERTEX_BIT,
         .offset = 0,
         .size = sizeof(uint32_t),
     };
@@ -166,9 +174,12 @@ void createPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
     VkPipelineLayout vk_pipelineLayout = VK_NULL_HANDLE;
     VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &vk_pipelineLayout));
 
+    appCore.m_vkDescSet0Layout = vk_descSet0Layout;
+    appCore.m_vkPipelineLayout = vk_pipelineLayout;
+}
 
-    // Pipeline
-
+void createPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
+{
     ShaderModule* vertexShaderModule = new ShaderModule();
     vertexShaderModule->create("../shaders/spirv/shader-vert.spv");
 
@@ -192,15 +203,6 @@ void createPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
         }
     };
 
-#ifdef BINDLESS_VERTEX_BUFFER
-    const VkPipelineVertexInputStateCreateInfo vk_vertexInputStateCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO,
-        .vertexBindingDescriptionCount = 0,
-        .pVertexBindingDescriptions = 0,
-        .vertexAttributeDescriptionCount = 0,
-        .pVertexAttributeDescriptions = 0,
-    };
-#else
     const VkVertexInputBindingDescription vk_vertexInputBindingDesc {
         .binding = 0,
         .stride = sizeof(Vertex),
@@ -235,7 +237,6 @@ void createPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
         .vertexAttributeDescriptionCount = ARRAYSIZE(vk_vertexInputAttribDescs),
         .pVertexAttributeDescriptions = vk_vertexInputAttribDescs,
     };
-#endif
 
     const VkPipelineInputAssemblyStateCreateInfo vk_inputAssemblyStateCreateInfo {
         .sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO,
@@ -334,7 +335,7 @@ void createPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
         .pDepthStencilState = nullptr,
         .pColorBlendState = &vk_colorBlendStateCreateInfo,
         .pDynamicState = nullptr,
-        .layout = vk_pipelineLayout,
+        .layout = appCore.m_vkPipelineLayout,
         .renderPass = VK_NULL_HANDLE,
         .subpass = 0,
         .basePipelineHandle = VK_NULL_HANDLE,
@@ -344,9 +345,7 @@ void createPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
     VkPipeline vk_pipeline = VK_NULL_HANDLE;
     VK_CHECK(vkCreateGraphicsPipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_graphicsPipelineCreateInfo, nullptr, &vk_pipeline));
 
-    appCore.m_vkPipelineLayout = vk_pipelineLayout;
     appCore.m_vkPipeline = vk_pipeline;
-    appCore.m_vkDescSet0Layout = vk_descSet0Layout;
 
     delete fragmentShaderModule;
     delete vertexShaderModule;
@@ -354,6 +353,7 @@ void createPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
 
 void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
 {
+    createPipelineLayout(vulkanCore, appCore);
     createPipeline(vulkanCore, appCore);
 
     CommandPool* cmdPool = new CommandPool();
@@ -366,14 +366,10 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     fence->create(0x0);
 
     SceneBuffer* sceneBuffer = new SceneBuffer(sizeof(Vertex), 5000000, 2000000, 5000000);
+    BufferPool<ObjectData>* objectBufferPool = new BufferPool<ObjectData>(500, 500);
 
     Buffer* globalUBO = new Buffer();
     globalUBO->create(sizeof(GlobalUBO), VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT);
-    globalUBO->allocate(VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
-    globalUBO->bind();
-
-    Buffer* globalDrawSSBO = new Buffer();
-    globalUBO->create(sizeof(DrawData) * 1, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT);
     globalUBO->allocate(VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
     globalUBO->bind();
 
@@ -387,7 +383,6 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
                             .descriptorCount = 1
                         }});
 
-
     const VkDescriptorSetAllocateInfo vk_descSetAllocInfo {
         .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO,
         .descriptorPool = descPool->m_vkDescPool,
@@ -398,12 +393,23 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     VkDescriptorSet vk_descSet0 = VK_NULL_HANDLE;
     VK_CHECK(vkAllocateDescriptorSets(vulkanCore.vk_device, &vk_descSetAllocInfo, &vk_descSet0));
 
+    updateBufferDescriptorSet(vulkanCore.vk_device, vk_descSet0, 0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 
+        {
+            .buffer = globalUBO->m_vkBuffer,
+            .offset = 0,
+            .range = VK_WHOLE_SIZE,
+        });
+
+    updateBufferDescriptorSet(vulkanCore.vk_device, vk_descSet0, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, objectBufferPool->getDescBufferInfo());
+
+
     // initial uploads
     Renderable planeRenderable {
         .m_uIndexCount = ARRAYSIZE(planeIndexData),
         .m_uInstanceCount = 1,
         .m_uFirstIndex = sceneBuffer->queueIndexUpload(sizeof(planeIndexData), planeIndexData),
         .m_iVertexOffset = sceneBuffer->queueVertexUpload(sizeof(planeVertexData), (void*)planeVertexData),
+        .m_uObjectIdx = objectBufferPool->acquireBlock()
     };
 
     constexpr VkCommandBufferBeginInfo vk_cmdBeginInfo {
@@ -437,6 +443,8 @@ void appInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_cmdBuff = cmdBuff;
     appCore.m_swapchainImageAcquireFence = fence;
     appCore.m_sceneBuffer = sceneBuffer;
+    appCore.m_objectBufferPool = objectBufferPool;
+    appCore.m_globalUBO = globalUBO;
     appCore.renderable = std::move(planeRenderable);
     appCore.m_descPool = descPool;
     appCore.m_vkDescSet0 = vk_descSet0;
@@ -447,10 +455,15 @@ void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
     delete appCore.m_cmdBuff;
     delete appCore.m_cmdPool;
     delete appCore.m_swapchainImageAcquireFence;
+    delete appCore.m_descPool;
     delete appCore.m_sceneBuffer;
+    delete appCore.m_objectBufferPool;
+    delete appCore.m_globalUBO;
 
     vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkPipelineLayout, nullptr);
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkPipeline, nullptr);
+
+    vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkDescSet0Layout, nullptr);
 }
 
 void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -527,6 +540,7 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 
     vkCmdBindPipeline(vk_cmdBuff, VK_PIPELINE_BIND_POINT_GRAPHICS, appCore.m_vkPipeline);
 
+    vkCmdPushConstants(vk_cmdBuff, appCore.m_vkPipelineLayout, VK_SHADER_STAGE_VERTEX_BIT, 0, sizeof(PushConstants), &appCore.renderable.m_uObjectIdx);
     vkCmdDrawIndexed(vk_cmdBuff, appCore.renderable.m_uIndexCount, appCore.renderable.m_uInstanceCount, appCore.renderable.m_uFirstIndex, appCore.renderable.m_iVertexOffset, 0);
 
     vkCmdEndRendering(vk_cmdBuff);
@@ -612,7 +626,7 @@ int main()
         .window = glfw_window,
         .requestedInstanceLayerNames = { "VK_LAYER_KHRONOS_validation" },
         .requestedInstanceExtensionNames = { "VK_KHR_surface", "VK_KHR_xcb_surface" },
-        .requestedDeviceExtensionNames = { VK_KHR_SWAPCHAIN_EXTENSION_NAME }, //, "VK_KHR_dynamic_rendering" },
+        .requestedDeviceExtensionNames = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, "VK_KHR_dynamic_rendering" }, 
         .requestedSwapchainImageCount = 3,
         .requestedSwapchainImageFormat = VK_FORMAT_R8G8B8_SRGB,
         .requestedSwapchainImageExtent = { windowWidth, windowHeight },

@@ -1,10 +1,10 @@
 #include "BufferPool.hpp"
 #include "Buffer.hpp"
+#include "ShaderStructs.hpp"
 
 template<class T>
 BufferPool<T>::BufferPool(const uint16_t blockCount, const uint16_t dirtyCount)
 {
-    m_cpuBlocks.resize(blockCount);
     m_dirtyBlocks.resize(dirtyCount);
 
     const VkDeviceSize size = blockCount * sizeof(T);
@@ -21,7 +21,7 @@ BufferPool<T>::BufferPool(const uint16_t blockCount, const uint16_t dirtyCount)
     m_ssboBuffer->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     m_ssboBuffer->bind();
 
-    for (uint16_t i = blockCount - 1; i >= 0; i--)
+    for (uint16_t i = blockCount - 1; i > 0; i--)
     {
         m_freeBlocks.push(i);
     }
@@ -68,3 +68,18 @@ void BufferPool<T>::flushDirtyBlocks()
 
     m_activeDirtyBlockCount = 0;
 }
+
+
+template<class T>
+VkDescriptorBufferInfo BufferPool<T>::getDescBufferInfo() const
+{
+    const VkDescriptorBufferInfo vk_descBufferInfo {
+        .buffer = m_ssboBuffer->m_vkBuffer,
+        .offset = 0,
+        .range = VK_WHOLE_SIZE,
+    };
+
+    return vk_descBufferInfo;
+}
+
+template class BufferPool<ObjectData>;

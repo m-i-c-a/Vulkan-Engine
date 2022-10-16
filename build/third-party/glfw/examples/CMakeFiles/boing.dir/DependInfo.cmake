@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/mica/Desktop/Engine/third-party/glfw/examples/boing.c" "/home/mica/Desktop/Engine/build/third-party/glfw/examples/CMakeFiles/boing.dir/boing.c.o"
+  "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/boing.c" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/examples/CMakeFiles/boing.dir/boing.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -17,7 +17,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/mica/Desktop/Engine/build/third-party/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
+  "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

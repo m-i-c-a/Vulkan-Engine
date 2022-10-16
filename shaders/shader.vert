@@ -27,6 +27,7 @@ layout(push_constant) uniform _push_constants
 
 void main()
 {
-    DrawData draw_data = global_draw_ssbo.draw_data[push_constants.draw_idx];
-    gl_Position = global_ubo.proj_matrix * global_ubo.view_matrix * draw_data.model_matrix * vec4(a_pos, 1.0f);
+    // DrawData draw_data = global_draw_ssbo.draw_data[push_constants.draw_idx];
+    // gl_Position = global_ubo.proj_matrix * global_ubo.view_matrix * draw_data.model_matrix * vec4(a_pos, 1.0f);
+    gl_Position = vec4(a_pos, 1.0f);
 }

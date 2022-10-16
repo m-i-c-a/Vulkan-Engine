@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -g -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mica/Desktop/Engine/common -I/home/mica/Desktop/Engine/glfw_INCLUDE_DIRS -I/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include -I/home/mica/Desktop/Engine/third-party/glfw/include 
+CXX_INCLUDES = -I/home/mica/Desktop/Vulkan/Vulkan-Engine/common -I/home/mica/Desktop/Vulkan/Vulkan-Engine/glfw_INCLUDE_DIRS -I/home/mica/Desktop/Vulkan/Vulkan-Engine/glm_INCLUDE_DIRS -I/home/mica/Downloads/1.3.204.1/x86_64/include -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glm 
 
