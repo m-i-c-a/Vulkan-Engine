@@ -3,7 +3,7 @@
 #include "ShaderStructs.hpp"
 
 template<class T>
-BufferPool<T>::BufferPool(const uint16_t blockCount, const uint16_t dirtyCount)
+BufferPool<T>::BufferPool(const uint16_t blockCount, const uint16_t dirtyCount, const VkBufferUsageFlags vk_bufferUsage)
 {
     m_dirtyBlocks.resize(dirtyCount);
 
@@ -17,7 +17,7 @@ BufferPool<T>::BufferPool(const uint16_t blockCount, const uint16_t dirtyCount)
     m_cpuBlocks = (T*)(m_stagingBuffer->map());
 
     m_ssboBuffer = new Buffer();
-    m_ssboBuffer->create(size, VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    m_ssboBuffer->create(size, VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | vk_bufferUsage);
     m_ssboBuffer->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     m_ssboBuffer->bind();
 
@@ -94,3 +94,4 @@ VkDescriptorBufferInfo BufferPool<T>::getDescBufferInfo() const
 }
 
 template class BufferPool<ObjectData>;
+template class BufferPool<GPUDrawCommand>;

@@ -35,7 +35,7 @@ SceneBuffer::~SceneBuffer()
     delete m_indexBuffer;
 }
 
-int32_t SceneBuffer::queueVertexUpload(const VkDeviceSize vk_size, void* pData)
+int32_t SceneBuffer::queueVertexUpload(const VkDeviceSize vk_size, const void* pData)
 {
 #ifdef DEBUG
     if (m_vkStagingBufferOffset + vk_size > m_vkStagingBufferSize)
@@ -119,6 +119,34 @@ void SceneBuffer::flushQueuedUploads(const VkCommandBuffer vk_cmdBuff)
 
     vkCmdCopyBuffer(vk_cmdBuff, m_stagingBuffer->m_vkBuffer, m_indexBuffer->m_vkBuffer, static_cast<uint32_t>(m_vkIndexBufferCopies.size()), m_vkIndexBufferCopies.data());
     m_vkIndexBufferCopies.clear();
+}
+
+
+MeshInfo SceneBuffer::queueUpload(const uint32_t id, const VkDeviceSize vk_vertexSize, const void* pVertexData, const VkDeviceSize vk_indexSize, const uint32_t* pIndexData)
+{
+    const auto iter = m_meshInfos.find(id);
+    if (iter == m_meshInfos.end())
+    {
+        const MeshInfo meshInfo {
+            .m_uIndexCount = vk_indexSize / sizeof(uint32_t),
+            .m_uFirstIndex = queueIndexUpload(vk_indexSize, pIndexData),
+            .m_iVertexOffset = queueVertexUpload(vk_vertexSize, pVertexData)
+        };
+
+        m_meshInfos.emplace(meshInfo, iter);
+
+        return std::move(meshInfo);
+    }
+
+    EXIT("Are you dumb? You are attempting to load the same mesh twice!\n");
+
+    return {};
+}
+
+
+const MeshInfo& SceneBuffer::getMeshInfo(const uint32_t id) const
+{
+
 }
 
 

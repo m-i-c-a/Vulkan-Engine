@@ -21,7 +21,7 @@ private:
     Buffer* m_stagingBuffer;
     Buffer* m_ssboBuffer;
 public:
-    BufferPool(const uint16_t blockCount, const uint16_t dirtyCount);
+    BufferPool(const uint16_t blockCount, const uint16_t dirtyCount, const VkBufferUsageFlags vk_bufferUsage = 0x0);
     ~BufferPool();
 
     uint16_t acquireBlock();

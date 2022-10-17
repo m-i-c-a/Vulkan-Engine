@@ -20,4 +20,15 @@ struct PushConstants
     uint32_t objectIdx = 0;
 };
 
+struct GPUDrawCommand
+{
+   VkDrawIndexedIndirectCommand vk_drawIndexedIndirectCommand; 
+};
+
+struct RenderableInfo
+{
+    uint32_t meshID;
+    uint32_t objectID;
+};
+
 #endif // MICA_SHADER_STRUCTS_HPP
