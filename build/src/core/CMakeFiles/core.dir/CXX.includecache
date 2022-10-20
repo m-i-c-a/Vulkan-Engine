@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/common/Defines.hpp
+assert.h
+-
+stdio.h
+-
+stdlib.h
+-
+
+../src/vulkanwrapper/Buffer.hpp
+vulkan/vulkan.h
+-
+Resource.hpp
+../src/vulkanwrapper/Resource.hpp
+
+../src/vulkanwrapper/Resource.hpp
+vulkan/vulkan.h
+-
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.cpp
+string.h
+-
+Defines.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/Defines.hpp
+SceneBuffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
+vulkanwrapper/Buffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/vulkanwrapper/Buffer.hpp
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
+vector
+-
+stack
+-
+unordered_map
+-
+vulkan/vulkan.h
+-
+

@@ -5,12 +5,14 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "${env:VULKAN_SDK}/include",
-                "${workspaceFolder}/common"
+                "${workspaceFolder}/common",
+                "${workspaceFolder}/core/Test",
+                "/usr/include/c++/10"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
             "cStandard": "gnu17",
-            "cppStandard": "gnu++17",
+            "cppStandard": "gnu++20",
             "intelliSenseMode": "linux-gcc-x64",
             "compileCommands": "${workspaceFolder}/build/compile_commands.json",
             "configurationProvider": "ms-vscode.cmake-tools"

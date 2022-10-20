@@ -40,7 +40,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/cmake_install.cmake")
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/core/cmake_install.cmake")
+  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/cmake_install.cmake")
 
 endif()
 

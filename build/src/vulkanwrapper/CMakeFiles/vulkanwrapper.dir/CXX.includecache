@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../src/common/Defines.hpp
+assert.h
+-
+stdio.h
+-
+stdlib.h
+-
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.cpp
+Defines.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Defines.hpp
+DescriptorPool.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.hpp
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.hpp
+vector
+-
+vulkan/vulkan.h
+-
+Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+vulkan/vulkan.h
+-
+

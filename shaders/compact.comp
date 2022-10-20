@@ -17,21 +17,25 @@ struct DrawCommand
     uint firstInstance;
 };
 
+// GPU only - B
 layout(set=0, binding=0) buffer readonly ssbo_0 
 {
     RenderableInfo data[];
 } visibleRenderables;
 
+// GPU only - E
 layout(set=0, binding=1) buffer ssbo_1
 {
     uint data;
 } instanceCount;
 
+// GPU only - F
 layout(set=0, binding=2) buffer ssbo_2
 {
     uint data[];
 } meshActive;
 
+// Buffer pool - D
 layout(set=0, binding=3) buffer ssbo_3
 {
     DrawCommand data[];

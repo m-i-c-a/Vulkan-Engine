@@ -6,7 +6,7 @@ C_FLAGS = -g -fPIC   -Wall -std=c99
 
 C_DEFINES = -D_DEFAULT_SOURCE -D_GLFW_X11
 
-C_INCLUDES = -I/home/mica/Desktop/Vulkan/Vulkan-Engine/common -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src -I/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src 
+C_INCLUDES = -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src -I/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src 
 
 # Custom flags: third-party/glfw/src/CMakeFiles/glfw.dir/context.c.o_FLAGS = -Wdeclaration-after-statement
 
