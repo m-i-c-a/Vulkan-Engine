@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Repos/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Repos/Vulkan-Engine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,9 +126,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -377,6 +377,19 @@ core/fast:
 	$(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/build
 .PHONY : core/fast
 
+#=============================================================================
+# Target rules for targets named debug-utils
+
+# Build rule for target.
+debug-utils: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 debug-utils
+.PHONY : debug-utils
+
+# fast build rule for target.
+debug-utils/fast:
+	$(MAKE) -f src/debug-utils/CMakeFiles/debug-utils.dir/build.make src/debug-utils/CMakeFiles/debug-utils.dir/build
+.PHONY : debug-utils/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -406,6 +419,7 @@ help:
 	@echo "... engine"
 	@echo "... vulkanwrapper"
 	@echo "... core"
+	@echo "... debug-utils"
 .PHONY : help
 
 

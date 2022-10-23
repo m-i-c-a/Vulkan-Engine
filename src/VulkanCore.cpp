@@ -35,7 +35,7 @@ static VkPhysicalDevice selectPhysicalDevice(const VkInstance vk_instance)
 {
     uint32_t numPhysicalDevices = 0u;
     VkPhysicalDevice* vk_physicalDevices = nullptr;
-    const uint32_t selectedPhysicalDeviceIndex = 1u;
+    const uint32_t selectedPhysicalDeviceIndex = 0u;
     VkPhysicalDevice vk_selectedPhysicalDevice = VK_NULL_HANDLE;
 
     VK_CHECK(vkEnumeratePhysicalDevices(vk_instance, &numPhysicalDevices, nullptr));

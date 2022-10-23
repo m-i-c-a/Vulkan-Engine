@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper
+# Install script for directory: /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

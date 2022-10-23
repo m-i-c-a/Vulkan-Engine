@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mica/Desktop/Repos/Vulkan-Engine/src/debug-utils/DebugUtilsEXT.cpp
+DebugUtilsEXT.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/debug-utils/DebugUtilsEXT.hpp
+
+/home/mica/Desktop/Repos/Vulkan-Engine/src/debug-utils/DebugUtilsEXT.hpp
+vulkan/vulkan.h
+-
+

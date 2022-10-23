@@ -13,6 +13,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.16.3/CMakeSystem.cmake"
   "../src/CMakeLists.txt"
   "../src/core/CMakeLists.txt"
+  "../src/debug-utils/CMakeLists.txt"
   "../src/vulkanwrapper/CMakeLists.txt"
   "../third-party/CMakeLists.txt"
   "../third-party/glfw/CMake/cmake_uninstall.cmake.in"
@@ -80,6 +81,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/vulkanwrapper/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/core/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/debug-utils/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -101,4 +103,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/engine.dir/DependInfo.cmake"
   "src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DependInfo.cmake"
   "src/core/CMakeFiles/core.dir/DependInfo.cmake"
+  "src/debug-utils/CMakeFiles/debug-utils.dir/DependInfo.cmake"
   )

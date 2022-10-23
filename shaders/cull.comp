@@ -53,6 +53,9 @@ bool isVisible()
 
 void main()
 {
+    if (gl_GlobalInvocationID.x >= pushConst.loadedRenderableCount)
+        return;
+
     uint loadedID = gl_GlobalInvocationID.x;
     RenderableInfo loadedRenderableInfo = loadedRenderables.data[loadedID];
 

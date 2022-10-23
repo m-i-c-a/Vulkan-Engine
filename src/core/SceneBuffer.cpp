@@ -48,8 +48,10 @@ int32_t SceneBuffer::queueVertexUpload(const VkDeviceSize vk_size, const void* p
         EXIT("ERROR - no space left in scene vertex buffer!\n");
     }
 
-    assert(m_vkStagingBufferOffset % m_vkVertexStride == 0);
-    assert(m_vkVertexBufferOffset % m_vkVertexStride == 0);
+    if (m_vkVertexBufferOffset != 0)
+    {
+        assert(m_vkVertexBufferOffset % m_vkVertexStride == 0);
+    }
 #endif
 
     VkBufferCopy vk_buffCopy {
@@ -82,7 +84,6 @@ uint32_t SceneBuffer::queueIndexUpload(const VkDeviceSize vk_size, const uint32_
         EXIT("ERROR - no space left in scene index buffer!\n");
     }
 
-    assert(m_vkStagingBufferOffset % m_vkVertexStride == 0);
     assert(m_vkIndexBufferOffset % sizeof(uint32_t) == 0);
 #endif
 

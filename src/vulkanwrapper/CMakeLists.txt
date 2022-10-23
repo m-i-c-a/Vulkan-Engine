@@ -8,4 +8,4 @@ add_library(vulkanwrapper STATIC
     ShaderModule.cpp   ShaderModule.hpp
 )
 
-target_compile_options(vulkanwrapper PRIVATE -g -std=c++2a)
+target_compile_options(vulkanwrapper PRIVATE -g -std=c++17)

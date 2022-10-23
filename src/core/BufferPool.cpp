@@ -93,6 +93,20 @@ VkDescriptorBufferInfo BufferPool<T>::getDescBufferInfo() const
     return vk_descBufferInfo;
 }
 
+#ifdef DEBUG
+template<class T>
+VkBuffer BufferPool<T>::getStagingBufferHandle() const
+{
+    return m_stagingBuffer->m_vkBuffer;
+}
+
+template<class T>
+VkBuffer BufferPool<T>::getStorageBufferHandle() const
+{
+    return m_ssboBuffer->m_vkBuffer;
+}
+#endif
+
 template class BufferPool<ObjectData>;
 template class BufferPool<GPUDrawCommand>;
 template class BufferPool<RenderableInfo>;

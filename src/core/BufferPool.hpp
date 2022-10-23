@@ -33,6 +33,11 @@ public:
     void flushDirtyBlocks(const VkCommandBuffer vk_cmdBuff);
 
     VkDescriptorBufferInfo getDescBufferInfo() const;
+
+#ifdef DEBUG
+    VkBuffer getStagingBufferHandle() const;
+    VkBuffer getStorageBufferHandle() const;
+#endif
 };
 
 #endif // MICA_BUFFER_POOL_HPP
