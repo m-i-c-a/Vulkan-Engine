@@ -76,13 +76,13 @@ GL/gl.h
 GL/glext.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/triangle-opengl.c
+/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/examples/triangle-opengl.c
 glad/gl.h
 -
 GLFW/glfw3.h
 -
 linmath.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/linmath.h
+/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/examples/linmath.h
 stdlib.h
 -
 stddef.h

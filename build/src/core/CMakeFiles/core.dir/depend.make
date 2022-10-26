@@ -33,6 +33,7 @@ src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o: ../src/core/Persiste
 src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o: ../src/core/PersistentStagingBuffer.hpp
 
 src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o: ../src/common/Defines.hpp
+src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o: ../src/common/ShaderStructs.hpp
 src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o: ../src/vulkanwrapper/Buffer.hpp
 src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o: ../src/vulkanwrapper/Resource.hpp
 src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o: ../src/core/SceneBuffer.cpp

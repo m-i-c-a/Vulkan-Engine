@@ -110,3 +110,4 @@ VkBuffer BufferPool<T>::getStorageBufferHandle() const
 template class BufferPool<ObjectData>;
 template class BufferPool<GPUDrawCommand>;
 template class BufferPool<RenderableInfo>;
+template class BufferPool<MeshInfo>;

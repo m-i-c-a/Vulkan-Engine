@@ -83,11 +83,11 @@
 			[
 				{
 					"backtrace" : 5,
-					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/common"
+					"path" : "/home/mica/Desktop/Repos/Vulkan-Engine/src/common"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/src"
+					"path" : "/home/mica/Desktop/Repos/Vulkan-Engine/src"
 				}
 			],
 			"language" : "CXX",

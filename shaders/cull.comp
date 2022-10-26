@@ -5,7 +5,14 @@ layout (local_size_x = 32) in;
 struct RenderableInfo
 {
     uint meshID;
-    uint objectID;
+    uint objID;
+};
+
+struct MeshInfo
+{
+    uint indexCount;
+    uint firstIndex;
+    int  vertexOffset;
 };
 
 struct DrawCommand
@@ -17,59 +24,139 @@ struct DrawCommand
     uint firstInstance;
 };
 
-// Buffer pool - A
+// IN / READONLY BUFFERS
+
 layout(set=0, binding=0) buffer readonly ssbo_0 
 {
+    // capacity = max # of renderables
+    // size     = # of loaded renderables
+    // init     = set by CPU
     RenderableInfo data[];
-} loadedRenderables;
+} ssbo_loadedRenderableInfos;
 
- // GPU only - B
-layout(set=0, binding=1) buffer ssbo_1 
+layout(set=0, binding=1) buffer readonly ssbo_1 
 {
-    RenderableInfo data[];
-} visibleRenderables;
-
-// GPU only - C
-layout(set=0, binding=2) buffer ssbo_2
-{
-    uint data;
-} visibleCount;
-
-// Buffer pool - D
-layout(set=0, binding=3) buffer ssbo_3
-{
-    DrawCommand data[];
-}  drawCommands; 
+    // capacity = max # of meshes 
+    // size     = # of loaded meshes
+    // init     = set by CPU
+    MeshInfo data[];
+} ssbo_loadedMeshInfos;
 
 layout(push_constant) uniform pc
 {
-    uint loadedRenderableCount;
-} pushConst;
+    // init     = set by CPU
+    uint data;
+} pc_loadedRenderableCount;
+
+// OUT / READ + WRITE BUFFERS
+
+layout(set=0, binding=2) buffer ssbo_2 
+{
+    // capacity = max # of renderables
+    // size     = # of visible renderables (by end of exec)
+    // init     = does not matter
+    RenderableInfo data[];
+} ssbo_visibleRenderableInfos;
+
+layout(set=0, binding=3) buffer ssbo_3
+{
+    // init     = 0 (set by CPU)
+    uint x;
+    uint y;
+    uint z;
+} ssbo_visibleRenderableCount;
+
+layout(set=0, binding=4) buffer ssbo_4
+{
+    // capacity = max # of meshes
+    // size     = # of loaded meshes
+    // init     = { -1, -1, -1, ... }
+    int data[];
+} ssbo_meshToCommandMapping;
+
+layout(set=0, binding=5) buffer ssbo_5
+{
+    // capacity = max # of meshes
+    // size     = # of loaded meshes
+    // init     = { 0, 0, 0, ... }
+    int data[];
+} ssbo_meshVisible; 
+
+layout(set=0, binding=6) buffer ssbo_6
+{
+    // capacity = max # of meshes
+    // size     = # of visible meshes
+    // init     = does not matter
+    DrawCommand data[];
+} ssbo_drawCommands;
+
+layout(set=0, binding=7) buffer ssbo_7
+{
+    // init     = 0 (CPU)
+    int data;
+} ssbo_drawCommandCount;
 
 bool isVisible()
 {
     return true;
 }
 
+void populateRenderableInfo(in uint innvocID, inout uint meshID, inout uint objID)
+{
+    RenderableInfo info = ssbo_loadedRenderableInfos.data[innvocID];
+    meshID = info.meshID;
+    objID  = info.objID;
+}
+
 void main()
 {
-    if (gl_GlobalInvocationID.x >= pushConst.loadedRenderableCount)
+    if (gl_GlobalInvocationID.x >= pc_loadedRenderableCount.data)
         return;
 
-    uint loadedID = gl_GlobalInvocationID.x;
-    RenderableInfo loadedRenderableInfo = loadedRenderables.data[loadedID];
+    uint meshID = 0;
+    uint objID  = 0;
+    populateRenderableInfo(gl_GlobalInvocationID.x, meshID, objID);
+
 
     if (isVisible())
     {
-        uint visibleID = atomicAdd(visibleCount.data, 1);
-        visibleRenderables.data[visibleID] = loadedRenderableInfo;
-        uint instance = atomicAdd(drawCommands.data[loadedRenderableInfo.meshID].instanceCount, 1);
-        if (instance == 0)
+        // is there a draw command associated with "meshID"
+
+        if (atomicCompSwap(ssbo_meshVisible.data[meshID], 0, 1) == 0)
         {
-            // renderableCount++
+            int commandID = atomicAdd(ssbo_drawCommandCount.data, 1);
+
+            // copy mesh data (indexCount, firstIndex, vertexOffset) into command
+
+            MeshInfo meshInfo = ssbo_loadedMeshInfos.data[meshID];
+
+            ssbo_drawCommands.data[commandID].indexCount   = meshInfo.indexCount;
+            ssbo_drawCommands.data[commandID].firstIndex   = meshInfo.firstIndex;
+            ssbo_drawCommands.data[commandID].vertexOffset = meshInfo.vertexOffset;
+            ssbo_drawCommands.data[commandID].firstInstance = 0;
+
+            // copy command id into mesh command mapping
+
+            ssbo_meshToCommandMapping.data[meshID] = commandID;
         }
+
+        // memory barrier - must wait for all threads within a warp to have a valid meshToCommandMapping
+        groupMemoryBarrier();
+
+        int commandID = ssbo_meshToCommandMapping.data[meshID];
+
+        // add instance to draw command
+
+        atomicAdd(ssbo_drawCommands.data[commandID].instanceCount, 1);
+
+        uint visibleID = atomicAdd(ssbo_visibleRenderableCount.x, 1);
+        ssbo_visibleRenderableInfos.data[visibleID].meshID   = meshID;
+        ssbo_visibleRenderableInfos.data[visibleID].objID = objID;
     }
 }
+
+
+
 
 // DISPATCH
 // # of loaded renderables
@@ -80,5 +167,5 @@ void main()
 // OUT
 // Buffer - # of visible meshes
 // Buffer - # of visible renderables
-// Buffer - IndirectDrawCommand per mesh, with visible instance count
+// Buffer - IndirectDrawCommand per visible mesh (only firstInstance not filled out)
 // Buffer - RenderableInfo per visible renderable

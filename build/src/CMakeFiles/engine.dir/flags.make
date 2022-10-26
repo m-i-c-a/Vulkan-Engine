@@ -6,5 +6,5 @@ CXX_FLAGS = -g -DDEBUG   -g -std=c++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mica/Desktop/Vulkan/Vulkan-Engine/src/common -I/home/mica/Desktop/Vulkan/Vulkan-Engine/src/glfw_INCLUDE_DIRS -I/home/mica/Desktop/Vulkan/Vulkan-Engine/src/glm_INCLUDE_DIRS -I/home/mica/Downloads/1.3.204.1/x86_64/include -I/home/mica/Desktop/Vulkan/Vulkan-Engine/src -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glm 
+CXX_INCLUDES = -I/home/mica/Desktop/Repos/Vulkan-Engine/src/common -I/home/mica/Desktop/Repos/Vulkan-Engine/src/glfw_INCLUDE_DIRS -I/home/mica/Desktop/Repos/Vulkan-Engine/src/glm_INCLUDE_DIRS -I/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include -I/home/mica/Desktop/Repos/Vulkan-Engine/src -I/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/include -I/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glm 
 

@@ -52,11 +52,11 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/deps"
+					"path" : "/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/deps"
 				},
 				{
 					"backtrace" : 1,
-					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include"
+					"path" : "/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/include"
 				}
 			],
 			"language" : "C",

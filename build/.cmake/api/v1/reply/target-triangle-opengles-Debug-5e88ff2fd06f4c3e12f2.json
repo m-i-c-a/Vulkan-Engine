@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "third-party/glfw/examples/offscreen"
+			"path" : "third-party/glfw/examples/triangle-opengles"
 		}
 	],
 	"backtrace" : 1,
@@ -25,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 31,
+				"line" : 36,
 				"parent" : 0
 			},
 			{
@@ -52,11 +52,11 @@
 			[
 				{
 					"backtrace" : 2,
-					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/deps"
+					"path" : "/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/deps"
 				},
 				{
 					"backtrace" : 1,
-					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include"
+					"path" : "/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/include"
 				}
 			],
 			"language" : "C",
@@ -77,7 +77,7 @@
 	{
 		"name" : "GLFW3/Examples"
 	},
-	"id" : "offscreen::@95b4158757d24bba1cf5",
+	"id" : "triangle-opengles::@95b4158757d24bba1cf5",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -118,8 +118,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "offscreen",
-	"nameOnDisk" : "offscreen",
+	"name" : "triangle-opengles",
+	"nameOnDisk" : "triangle-opengles",
 	"paths" : 
 	{
 		"build" : "third-party/glfw/examples",
@@ -147,12 +147,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "third-party/glfw/examples/offscreen.c",
+			"path" : "third-party/glfw/examples/triangle-opengles.c",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "third-party/glfw/deps/glad/gl.h",
+			"path" : "third-party/glfw/deps/glad/gles2.h",
 			"sourceGroupIndex" : 1
 		}
 	],

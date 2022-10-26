@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/sharing.c" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/examples/CMakeFiles/sharing.dir/sharing.c.o"
+  "/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/examples/sharing.c" "/home/mica/Desktop/Repos/Vulkan-Engine/build/third-party/glfw/examples/CMakeFiles/sharing.dir/sharing.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -16,7 +16,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
+  "/home/mica/Desktop/Repos/Vulkan-Engine/build/third-party/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

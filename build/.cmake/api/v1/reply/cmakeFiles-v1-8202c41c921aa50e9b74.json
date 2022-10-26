@@ -917,8 +917,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/build",
-		"source" : "/home/mica/Desktop/Vulkan/Vulkan-Engine"
+		"build" : "/home/mica/Desktop/Repos/Vulkan-Engine/build",
+		"source" : "/home/mica/Desktop/Repos/Vulkan-Engine"
 	},
 	"version" : 
 	{

@@ -7,17 +7,13 @@
 
 #include <vulkan/vulkan.h>
 
+#include "ShaderStructs.hpp"
+
 namespace VulkanWrapper
 {
     class Buffer;
 };
 
-struct MeshInfo
-{
-    uint32_t m_uIndexCount = 0;
-    uint32_t m_uFirstIndex = 0;
-    int32_t  m_iVertexOffset = 0;
-};
 
 class SceneBuffer
 {

@@ -6,5 +6,5 @@ CXX_FLAGS = -g -DDEBUG   -g -std=c++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mica/Desktop/Vulkan/Vulkan-Engine/src/common 
+CXX_INCLUDES = -I/home/mica/Desktop/Repos/Vulkan-Engine/src/common 
 

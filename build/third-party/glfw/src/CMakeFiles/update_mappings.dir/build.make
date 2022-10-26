@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Repos/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Repos/Vulkan-Engine/build
 
 # Utility rule file for update_mappings.
 
@@ -54,8 +54,8 @@ CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 include third-party/glfw/src/CMakeFiles/update_mappings.dir/progress.make
 
 third-party/glfw/src/CMakeFiles/update_mappings:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src && /usr/bin/cmake -P /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Updating gamepad mappings from upstream repository"
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/src && /usr/bin/cmake -P /home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/CMake/GenerateMappings.cmake mappings.h.in mappings.h
 
 update_mappings: third-party/glfw/src/CMakeFiles/update_mappings
 update_mappings: third-party/glfw/src/CMakeFiles/update_mappings.dir/build.make
@@ -68,10 +68,10 @@ third-party/glfw/src/CMakeFiles/update_mappings.dir/build: update_mappings
 .PHONY : third-party/glfw/src/CMakeFiles/update_mappings.dir/build
 
 third-party/glfw/src/CMakeFiles/update_mappings.dir/clean:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/third-party/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/update_mappings.dir/cmake_clean.cmake
 .PHONY : third-party/glfw/src/CMakeFiles/update_mappings.dir/clean
 
 third-party/glfw/src/CMakeFiles/update_mappings.dir/depend:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Repos/Vulkan-Engine /home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/src /home/mica/Desktop/Repos/Vulkan-Engine/build /home/mica/Desktop/Repos/Vulkan-Engine/build/third-party/glfw/src /home/mica/Desktop/Repos/Vulkan-Engine/build/third-party/glfw/src/CMakeFiles/update_mappings.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third-party/glfw/src/CMakeFiles/update_mappings.dir/depend
 
