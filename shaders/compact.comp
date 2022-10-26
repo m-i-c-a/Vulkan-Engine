@@ -58,3 +58,17 @@ void main()
         drawCommands.data[renderableInfo.meshID].firstInstance = firstInstance;
     }
 }
+
+// DISPATCH
+// # of visible renderables
+
+// IN
+// Buffer - uint32_t (init to 0) (used for counting # of instances processed)
+// Buffer - IndirectDrawCommand per mesh, with visible instanceCount
+// Buffer - RenderableInfo per visible renderable
+
+// OUT
+// Buffer - IndirectDrawCommand per mesh, with visible instanceCount + firstInstance
+// Buffer - # of visible meshes
+// Buffer - # of visible renderables
+// Buffer - RenderableInfo per visible renderable

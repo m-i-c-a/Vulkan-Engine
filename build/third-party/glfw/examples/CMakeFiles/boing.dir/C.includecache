@@ -76,7 +76,7 @@ GL/gl.h
 GL/glext.h
 -
 
-/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/examples/boing.c
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/boing.c
 stdio.h
 -
 stdlib.h

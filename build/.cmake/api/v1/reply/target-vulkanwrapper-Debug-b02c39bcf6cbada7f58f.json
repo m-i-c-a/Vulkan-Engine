@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "src/core/libcore.a"
+			"path" : "src/vulkanwrapper/libvulkanwrapper.a"
 		}
 	],
 	"backtrace" : 1,
@@ -12,14 +12,12 @@
 		"commands" : 
 		[
 			"add_library",
-			"target_link_libraries",
 			"target_compile_options",
-			"include_directories",
-			"target_include_directories"
+			"include_directories"
 		],
 		"files" : 
 		[
-			"src/core/CMakeLists.txt",
+			"src/vulkanwrapper/CMakeLists.txt",
 			"src/CMakeLists.txt"
 		],
 		"nodes" : 
@@ -36,29 +34,17 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 10,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 12,
+				"line" : 11,
 				"parent" : 0
 			},
 			{
 				"file" : 1
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 1,
 				"line" : 1,
-				"parent" : 4
-			},
-			{
-				"command" : 4,
-				"file" : 0,
-				"line" : 11,
-				"parent" : 0
+				"parent" : 3
 			}
 		]
 	},
@@ -68,26 +54,22 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -DDEBUG  "
+					"fragment" : "-g -DDEBUG  "
 				},
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"fragment" : "-g"
 				},
 				{
-					"backtrace" : 3,
-					"fragment" : "-std=c++2a"
+					"backtrace" : 2,
+					"fragment" : "-std=c++17"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
-					"path" : "/home/mica/Desktop/Repos/Vulkan-Engine/src/common"
-				},
-				{
-					"backtrace" : 6,
-					"path" : "/home/mica/Desktop/Repos/Vulkan-Engine/src"
+					"backtrace" : 4,
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/common"
 				}
 			],
 			"language" : "CXX",
@@ -98,24 +80,18 @@
 				4,
 				6,
 				8,
-				10
+				10,
+				12
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "vulkanwrapper::@5b0520fd85aed38ea988"
-		}
-	],
-	"id" : "core::@0618756b1ff51bca1a0e",
-	"name" : "core",
-	"nameOnDisk" : "libcore.a",
+	"id" : "vulkanwrapper::@5b0520fd85aed38ea988",
+	"name" : "vulkanwrapper",
+	"nameOnDisk" : "libvulkanwrapper.a",
 	"paths" : 
 	{
-		"build" : "src/core",
-		"source" : "src/core"
+		"build" : "src/vulkanwrapper",
+		"source" : "src/vulkanwrapper"
 	},
 	"sourceGroups" : 
 	[
@@ -128,7 +104,8 @@
 				4,
 				6,
 				8,
-				10
+				10,
+				12
 			]
 		},
 		{
@@ -140,7 +117,8 @@
 				5,
 				7,
 				9,
-				11
+				11,
+				13
 			]
 		}
 	],
@@ -149,67 +127,78 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/core/BufferPool.cpp",
+			"path" : "src/vulkanwrapper/Buffer.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/core/BufferPool.hpp",
+			"path" : "src/vulkanwrapper/Buffer.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/core/GenericBuffer.cpp",
+			"path" : "src/vulkanwrapper/CommandBuffer.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/core/GenericBuffer.hpp",
+			"path" : "src/vulkanwrapper/CommandBuffer.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/core/HostBuffer.cpp",
+			"path" : "src/vulkanwrapper/CommandPool.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/core/HostBuffer.hpp",
+			"path" : "src/vulkanwrapper/CommandPool.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/core/PersistentDeviceBuffer.cpp",
+			"path" : "src/vulkanwrapper/DescriptorPool.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/core/PersistentDeviceBuffer.hpp",
+			"path" : "src/vulkanwrapper/DescriptorPool.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/core/PersistentStagingBuffer.cpp",
+			"path" : "src/vulkanwrapper/Fence.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/core/PersistentStagingBuffer.hpp",
+			"path" : "src/vulkanwrapper/Fence.hpp",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/core/SceneBuffer.cpp",
+			"path" : "src/vulkanwrapper/Resource.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "src/core/SceneBuffer.hpp",
+			"path" : "src/vulkanwrapper/Resource.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/vulkanwrapper/ShaderModule.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "src/vulkanwrapper/ShaderModule.hpp",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -12,13 +12,13 @@ struct DrawCommand
 };
 
 // GPU only - C
-layout(set=0, binding=2) buffer ssbo_2
+layout(set=0, binding=0) buffer ssbo_2
 {
     uint data;
 } visibleCount;
 
 // Buffer pool - D
-layout(set=0, binding=3) buffer ssbo_3
+layout(set=0, binding=1) buffer ssbo_3
 {
     DrawCommand data[];
 }  drawCommands; 

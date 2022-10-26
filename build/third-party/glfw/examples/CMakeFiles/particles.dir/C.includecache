@@ -88,19 +88,19 @@ GL/gl.h
 GL/glext.h
 -
 
-/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/deps/getopt.c
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/deps/getopt.c
 getopt.h
-/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/deps/getopt.h
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/deps/getopt.h
 stddef.h
 -
 string.h
 -
 
-/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/deps/getopt.h
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/deps/getopt.h
 
-/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/deps/tinycthread.c
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/deps/tinycthread.c
 tinycthread.h
-/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/deps/tinycthread.h
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/deps/tinycthread.h
 stdlib.h
 -
 signal.h
@@ -118,7 +118,7 @@ process.h
 sys/timeb.h
 -
 
-/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/deps/tinycthread.h
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/deps/tinycthread.h
 time.h
 -
 sys/time.h
@@ -128,7 +128,7 @@ pthread.h
 windows.h
 -
 
-/home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/examples/particles.c
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/particles.c
 stdlib.h
 -
 stdio.h

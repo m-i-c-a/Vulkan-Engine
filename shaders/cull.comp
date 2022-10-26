@@ -63,6 +63,22 @@ void main()
     {
         uint visibleID = atomicAdd(visibleCount.data, 1);
         visibleRenderables.data[visibleID] = loadedRenderableInfo;
-        atomicAdd(drawCommands.data[loadedRenderableInfo.meshID].instanceCount, 1);
+        uint instance = atomicAdd(drawCommands.data[loadedRenderableInfo.meshID].instanceCount, 1);
+        if (instance == 0)
+        {
+            // renderableCount++
+        }
     }
 }
+
+// DISPATCH
+// # of loaded renderables
+
+// IN
+// Buffer - RenderableInfo per loaded renderable
+
+// OUT
+// Buffer - # of visible meshes
+// Buffer - # of visible renderables
+// Buffer - IndirectDrawCommand per mesh, with visible instance count
+// Buffer - RenderableInfo per visible renderable

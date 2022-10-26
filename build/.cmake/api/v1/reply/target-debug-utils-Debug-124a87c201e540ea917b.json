@@ -54,7 +54,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -DDEBUG  "
+					"fragment" : "-g -DDEBUG  "
 				},
 				{
 					"backtrace" : 2,
@@ -69,7 +69,7 @@
 			[
 				{
 					"backtrace" : 4,
-					"path" : "/home/mica/Desktop/Repos/Vulkan-Engine/src/common"
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/common"
 				}
 			],
 			"language" : "CXX",

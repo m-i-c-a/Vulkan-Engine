@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Repos/Vulkan-Engine/src/core
+# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
