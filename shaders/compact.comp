@@ -41,6 +41,14 @@ layout(set=0, binding=1) buffer readonly ssbo_1
     int data[];
 } ssbo_meshToCommandMapping;
 
+layout(set=0, binding=6) buffer readonly ssbo_6
+{
+    // init     = 0 (set by CPU)
+    uint x;
+    uint y;
+    uint z;
+} ssbo_visibleRenderableCount;
+
 
 // WRITE
 
@@ -69,6 +77,7 @@ layout(set=0, binding=5) buffer ssbo_5
 } ssbo_drawInfos;
 
 
+
 void populateRenderableInfo(in uint innvocID, inout uint meshID, inout uint objID)
 {
     RenderableInfo info = ssbo_renderableInfos.data[innvocID];
@@ -79,7 +88,7 @@ void populateRenderableInfo(in uint innvocID, inout uint meshID, inout uint objI
 
 void main()
 {
-    if (gl_GlobalInvocationID.x >= 3)
+    if (gl_GlobalInvocationID.x >= ssbo_visibleRenderableCount.x)
         return;
 
 

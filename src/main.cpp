@@ -69,7 +69,7 @@ struct ObjectData
 */
 
 constexpr uint32_t MAX_MESHES = 2;
-constexpr uint32_t MAX_RENDERABLES = 3;
+constexpr uint32_t MAX_RENDERABLES = 10;
 
 struct Mesh
 {
@@ -190,6 +190,20 @@ void updateBufferDescriptorSet(const VkDevice vk_device, const VkDescriptorSet v
 
     vkUpdateDescriptorSets(vk_device, 1, &vk_writeDescriptorSet, 0, nullptr);
 }
+
+VkDescriptorSet allocateDescSet(const VkDevice vk_device, const VkDescriptorPool vk_descPool, const VkDescriptorSetLayout vk_descSetLayout)
+{
+    const VkDescriptorSetAllocateInfo vk_descSetAllocInfo {
+        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO,
+        .descriptorPool = vk_descPool,
+        .descriptorSetCount = 1,
+        .pSetLayouts = &vk_descSetLayout
+    };
+
+    VkDescriptorSet vk_descSet = VK_NULL_HANDLE;
+    VK_CHECK(vkAllocateDescriptorSets(vk_device, &vk_descSetAllocInfo, &vk_descSet));
+    return vk_descSet;
+} 
 
 void createGraphicsPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
 {
@@ -537,6 +551,13 @@ void createCompactPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
             .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
             .pImmutableSamplers = nullptr,
         },
+        {
+            .binding = 6,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
     };
 
     const VkDescriptorSetLayoutCreateInfo vk_descSetLayoutCreateInfo {
@@ -601,7 +622,6 @@ void createResetPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
 
     VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &appCore.m_vkResetPipelineLayout));
 }
-
 
 void createPipelines(const VulkanCore& vulkanCore, AppCore& appCore)
 {
@@ -702,26 +722,6 @@ void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
     }
 }
 
-struct Foo
-{
-    int arr[10] { 0 };
-};
-
-VkDescriptorSet allocateDescSet(const VkDevice vk_device, const VkDescriptorPool vk_descPool, const VkDescriptorSetLayout vk_descSetLayout)
-{
-    const VkDescriptorSetAllocateInfo vk_descSetAllocInfo {
-        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO,
-        .descriptorPool = vk_descPool,
-        .descriptorSetCount = 1,
-        .pSetLayouts = &vk_descSetLayout
-    };
-
-    VkDescriptorSet vk_descSet = VK_NULL_HANDLE;
-    VK_CHECK(vkAllocateDescriptorSets(vk_device, &vk_descSetAllocInfo, &vk_descSet));
-    return vk_descSet;
-} 
-
-
 void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
 {
     appCore.m_cmdPool = new VulkanWrapper::CommandPool();
@@ -757,7 +757,7 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
 
     // maybe set to all zeros?
     appCore.m_ssboVisibleRenderableCount = new VulkanWrapper::Buffer();
-    appCore.m_ssboVisibleRenderableCount->create(3 * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
+    appCore.m_ssboVisibleRenderableCount->create(MAX_RENDERABLES * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
     appCore.m_ssboVisibleRenderableCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     appCore.m_ssboVisibleRenderableCount->bind();
 
@@ -854,6 +854,7 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboFirstInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawCommands->m_vkBuffer, 0, VK_WHOLE_SIZE });
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 5, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 6, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
 
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, { appCore.m_globalUBO->vkBuffer(), 0, VK_WHOLE_SIZE });
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, appCore.m_objectDataPool->getDescBufferInfo());
@@ -888,97 +889,6 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
 
     VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
     VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
-
-#if 0
-    // // StorageBuffer<Device>* storageBuffer = new StorageBuffer<Device>(sizeof(Foo), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-
-    // Buffer<BufferModel::Host> uniformBuffer(sizeof(Foo), VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT);
-    // uniformBuffer.model.
-
-    // Buffer* cullVisibleCounterBuffer = new Buffer();
-    // cullVisibleCounterBuffer->create(sizeof(uint32_t), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    // cullVisibleCounterBuffer->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    // cullVisibleCounterBuffer->bind();
-
-    // // upload 0
-
-    // Buffer* compactInstanceCounterBuffer = new Buffer();
-    // compactInstanceCounterBuffer->create(sizeof(uint32_t), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    // compactInstanceCounterBuffer->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    // compactInstanceCounterBuffer->bind();
-
-    // // upload 0
-
-    // Buffer* compactMeshActiveBuffer = new Buffer();
-    // compactMeshActiveBuffer->create(MAX_MESHES * sizeof(uint32_t), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    // compactMeshActiveBuffer->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    // compactMeshActiveBuffer->bind();
-
-    // // upload list of 0s
-
-    // // createPipelines(vulkanCore, appCore);
-    // // createDescriptors(vulkanCore, appCore);
-    // // loadMeshes(vulkanCore, appCore);
-#endif
-
-    // constexpr VkCommandBufferBeginInfo vk_cmdBeginInfo {
-    //     .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
-    //     .flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT,
-    // };
-
-    // VK_CHECK(vkResetCommandPool(vulkanCore.vk_device, appCore.m_cmdPool->m_vkCmdPool, 0x0));
-    // VK_CHECK(vkBeginCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff, &vk_cmdBeginInfo));
-
-    // // input: 
-    // //      * loaded renderable count           (readonly)
-    // //      * buffer of draw indirect commands 
-
-    // // output:
-    // //      * buffer containing (meshId, objectID) pair
-    // //      * buffer containing count of visible renderables
-    // //      * buffer of draw indirect commands  (modifying instance count)
-
-    // vkCmdBindPipeline(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCullPipeline);
-    
-    // vkCmdBindDescriptorSets(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCullPipelineLayout, 0, 1, &appCore.m_vkCullDescSet, 0, nullptr);
-
-    // uint32_t renderableCount = 1;
-    // vkCmdPushConstants(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_vkCullPipelineLayout, VK_SHADER_STAGE_COMPUTE_BIT, 0, sizeof(uint32_t), &renderableCount);
-
-    // vkCmdDispatch(appCore.m_cmdBuff->m_vkCmdBuff, 1, 1, 1);
-
-    // // pipeline barrier
-
-    // // input:
-    // //      * buffer of draw indirect commands                
-    // //      * buffer of bools (per loaded renderable)
-    // //      * buffer containing (meshId, objectID) pair       (readonly)
-    // //      * buffer containing count of visible renderables  (readonly)
-
-    // // ouptut:
-    // //      * buffer of draw indirect commands (modifying first instance)
-    // //      * buffer containing count of visible meshes
-
-    // vkCmdBindPipeline(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_compactPipeline);
-
-    // // vkCmdBindDescriptorSets();
-
-    // // vkCmdDispatchIndirect()
-
-    // // pipeline barrier
-
-    // // input:
-    // //      * buffer of draw indirect commands             (readonly)
-    // //      * buffer containing count of visible meshes    (readonly)
-
-    // // vkCmdBindPipeline()
-
-    // // vkCmdDrawIndexedIndirectCount()
-
-    // VK_CHECK(vkEndCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff));
-
-    // VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
-    // VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
 }
 
 void appIndirectCull(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -995,10 +905,10 @@ void appIndirectCull(const VulkanCore& vulkanCore, AppCore& appCore)
     
     vkCmdBindDescriptorSets(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCullPipelineLayout, 0, 1, &appCore.m_vkCullDescSet, 0, nullptr);
 
-    uint32_t renderableCount = 3;
+    uint32_t renderableCount = MAX_RENDERABLES;
     vkCmdPushConstants(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_vkCullPipelineLayout, VK_SHADER_STAGE_COMPUTE_BIT, 0, sizeof(uint32_t), &renderableCount);
 
-    vkCmdDispatch(appCore.m_cmdBuff->m_vkCmdBuff, 3, 1, 1);
+    vkCmdDispatch(appCore.m_cmdBuff->m_vkCmdBuff, MAX_RENDERABLES, 1, 1);
 
     VK_CHECK(vkEndCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff));
 
@@ -1064,7 +974,7 @@ void appIndirectReset(const VulkanCore& vulkanCore, AppCore& appCore)
     
     vkCmdBindDescriptorSets(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkResetPipelineLayout, 0, 1, &appCore.m_vkResetDescSet, 0, nullptr);
 
-    uint32_t renderableCount = 1;
+    uint32_t renderableCount = MAX_RENDERABLES;
     vkCmdPushConstants(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_vkResetPipelineLayout, VK_SHADER_STAGE_COMPUTE_BIT, 0, sizeof(uint32_t), &renderableCount);
 
     vkCmdDispatch(appCore.m_cmdBuff->m_vkCmdBuff, 1, 1, 1);
