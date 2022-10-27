@@ -27,6 +27,17 @@
 // #include "core/Test/StagingBuffer.hpp"
 
 /*
+Next:
+
+Obj Loading
+Camera
+ImGui
+Hard Instancing Test (50x50x50)
+Replace wait idles with PipelineBarriers + Semaphores 
+Materials
+
+
+
 Programmable Vertex Pulling (PVP) on Triangle
 PVP on obj file mesh
 Phong Shading
@@ -69,7 +80,7 @@ struct ObjectData
 */
 
 constexpr uint32_t MAX_MESHES = 2;
-constexpr uint32_t MAX_RENDERABLES = 10;
+constexpr uint32_t MAX_RENDERABLES = 20;
 
 struct Mesh
 {
