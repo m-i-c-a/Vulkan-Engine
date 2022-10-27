@@ -687,11 +687,13 @@ void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
     MeshInfo& _meshInfoTriangle = appCore.m_meshInfoPool->getWritableBlock(meshInfoTriangleBlockIdx);
     _meshInfoTriangle = meshInfoTriangle;
 
-    for (int i = 0; i < 3; ++i)
+    for (int i = 0; i < MAX_RENDERABLES; ++i)
     {
         const uint32_t objectDataBlockIdx = (uint32_t)appCore.m_objectDataPool->acquireBlock();
         ObjectData& objectData = appCore.m_objectDataPool->getWritableBlock(objectDataBlockIdx);
         objectData.modelMatrix = glm::mat4(1.0f);
+        objectData.modelMatrix = glm::translate(objectData.modelMatrix, glm::vec3((2.0f * i) / MAX_RENDERABLES - 1.0f, 0.0f, 0.0f));
+        objectData.modelMatrix = glm::scale(objectData.modelMatrix, glm::vec3(0.1f, 0.1f, 1.0f));
 
         const uint32_t renderableInfoBlockIdx = (uint32_t)appCore.m_renderableInfoPool->acquireBlock();
         RenderableInfo& renderableInfo = appCore.m_renderableInfoPool->getWritableBlock(renderableInfoBlockIdx);
@@ -722,7 +724,6 @@ VkDescriptorSet allocateDescSet(const VkDevice vk_device, const VkDescriptorPool
 
 void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
 {
-
     appCore.m_cmdPool = new VulkanWrapper::CommandPool();
     appCore.m_cmdPool->create(0x0, vulkanCore.graphicsQFamIdx);
 
