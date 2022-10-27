@@ -113,6 +113,13 @@ void main()
     if (gl_GlobalInvocationID.x >= pc_loadedRenderableCount.data)
         return;
 
+    if (gl_GlobalInvocationID.x == 0)
+    {
+        ssbo_visibleRenderableCount.y = 1;
+        ssbo_visibleRenderableCount.z = 1;
+    }
+
+
     uint meshID = 0;
     uint objID  = 0;
     populateRenderableInfo(gl_GlobalInvocationID.x, meshID, objID);

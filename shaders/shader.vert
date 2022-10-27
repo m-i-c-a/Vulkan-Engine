@@ -1,8 +1,13 @@
 #version 450
 
-struct DrawData
+struct ObjectData
 {
     mat4 modelMatrix;
+};
+
+struct DrawInfo
+{
+    uint objID;
 };
 
 layout(location=0) in vec3 a_pos;
@@ -13,33 +18,31 @@ layout(set=0, binding=0) uniform ubo_0
 {
     mat4 projMatrix;
     mat4 viewMatrix;
-} globalUBO;
+} ubo_global;
 
 layout(set=0, binding=1) buffer readonly ssbo_0
 {
-    DrawData data[];
-} objectSSBO;
+    ObjectData data[];
+} ssbo_objectData;
+
+layout(set=0, binding=2) buffer readonly ssbo_1
+{
+    DrawInfo data[];
+} ssbo_drawInfo;
 
 
-// struct DrawID
-// {
-//     uint matID;
-//     uint objID;
-// };
-
-// layout(set=0, binding=2) buffer readonly ssbo_1
-// {
-//     DrawID data[];
-// } ssbo_IDs;
-
+void getIDs(in uint instanceIndex, inout uint objID)
+{
+    DrawInfo info = ssbo_drawInfo.data[instanceIndex];
+    objID  = info.objID;
+}
 
 
 void main()
 {
-    // DrawID drawID = ssbo_IDs.data[gl_InstanceIndex];
-    // MatData matData = ssbo_matData.data[drawID.matID];
-    // ObjData objData = ssbo_objData.data[drawID.objID];
+    uint objID = 0;
+    getIDs(gl_InstanceIndex, objID);
 
-    DrawData drawData = objectSSBO.data[gl_InstanceIndex];
-    gl_Position = globalUBO.projMatrix * globalUBO.viewMatrix * drawData.modelMatrix * vec4(a_pos, 1.0f);
+    ObjectData objectData = ssbo_objectData.data[objID];
+    gl_Position = ubo_global.projMatrix * ubo_global.viewMatrix * objectData.modelMatrix * vec4(a_pos, 1.0f);
 }

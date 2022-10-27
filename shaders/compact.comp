@@ -79,6 +79,10 @@ void populateRenderableInfo(in uint innvocID, inout uint meshID, inout uint objI
 
 void main()
 {
+    if (gl_GlobalInvocationID.x >= 3)
+        return;
+
+
     uint meshID = 0;
     uint objID  = 0;
     populateRenderableInfo(gl_GlobalInvocationID.x, meshID, objID);
@@ -99,6 +103,7 @@ void main()
 
     // memory barrier - need for first index to be set before writing to drawID array
     groupMemoryBarrier();
+    // bufferMemoryBarrier(); // shouldnt need this
 
     int commandID = ssbo_meshToCommandMapping.data[meshID];
     uint firstInstance = ssbo_drawCommands.data[commandID].firstInstance;
