@@ -1,6 +1,13 @@
 file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/Loader.cpp.o"
   "CMakeFiles/engine.dir/VulkanCore.cpp.o"
+  "CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.o"
+  "CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o"
+  "CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.o"
+  "CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o"
+  "CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o"
+  "CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o"
+  "CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.o"
   "CMakeFiles/engine.dir/main.cpp.o"
   "engine"
   "engine.pdb"

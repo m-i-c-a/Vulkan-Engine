@@ -14,6 +14,9 @@ layout(location=0) in vec3 a_pos;
 layout(location=1) in vec3 a_norm;
 layout(location=2) in vec2 a_uv;
 
+layout(location=0) out vec3 o_norm;
+layout(location=1) out vec2 o_uv;
+
 layout(set=0, binding=0) uniform ubo_0
 {
     mat4 projMatrix;
@@ -37,7 +40,6 @@ void getIDs(in uint instanceIndex, inout uint objID)
     objID  = info.objID;
 }
 
-
 void main()
 {
     uint objID = 0;
@@ -45,4 +47,6 @@ void main()
 
     ObjectData objectData = ssbo_objectData.data[objID];
     gl_Position = ubo_global.projMatrix * ubo_global.viewMatrix * objectData.modelMatrix * vec4(a_pos, 1.0f);
+    o_norm = a_norm; 
+    o_uv = a_uv;
 }

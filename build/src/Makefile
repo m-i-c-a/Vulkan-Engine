@@ -225,6 +225,195 @@ VulkanCore.cpp.s:
 	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/VulkanCore.cpp.s
 .PHONY : VulkanCore.cpp.s
 
+__/third-party/imgui/backends/imgui_impl_glfw.o: __/third-party/imgui/backends/imgui_impl_glfw.cpp.o
+
+.PHONY : __/third-party/imgui/backends/imgui_impl_glfw.o
+
+# target to build an object file
+__/third-party/imgui/backends/imgui_impl_glfw.cpp.o:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.o
+.PHONY : __/third-party/imgui/backends/imgui_impl_glfw.cpp.o
+
+__/third-party/imgui/backends/imgui_impl_glfw.i: __/third-party/imgui/backends/imgui_impl_glfw.cpp.i
+
+.PHONY : __/third-party/imgui/backends/imgui_impl_glfw.i
+
+# target to preprocess a source file
+__/third-party/imgui/backends/imgui_impl_glfw.cpp.i:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.i
+.PHONY : __/third-party/imgui/backends/imgui_impl_glfw.cpp.i
+
+__/third-party/imgui/backends/imgui_impl_glfw.s: __/third-party/imgui/backends/imgui_impl_glfw.cpp.s
+
+.PHONY : __/third-party/imgui/backends/imgui_impl_glfw.s
+
+# target to generate assembly for a file
+__/third-party/imgui/backends/imgui_impl_glfw.cpp.s:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.s
+.PHONY : __/third-party/imgui/backends/imgui_impl_glfw.cpp.s
+
+__/third-party/imgui/backends/imgui_impl_vulkan.o: __/third-party/imgui/backends/imgui_impl_vulkan.cpp.o
+
+.PHONY : __/third-party/imgui/backends/imgui_impl_vulkan.o
+
+# target to build an object file
+__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o
+.PHONY : __/third-party/imgui/backends/imgui_impl_vulkan.cpp.o
+
+__/third-party/imgui/backends/imgui_impl_vulkan.i: __/third-party/imgui/backends/imgui_impl_vulkan.cpp.i
+
+.PHONY : __/third-party/imgui/backends/imgui_impl_vulkan.i
+
+# target to preprocess a source file
+__/third-party/imgui/backends/imgui_impl_vulkan.cpp.i:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.i
+.PHONY : __/third-party/imgui/backends/imgui_impl_vulkan.cpp.i
+
+__/third-party/imgui/backends/imgui_impl_vulkan.s: __/third-party/imgui/backends/imgui_impl_vulkan.cpp.s
+
+.PHONY : __/third-party/imgui/backends/imgui_impl_vulkan.s
+
+# target to generate assembly for a file
+__/third-party/imgui/backends/imgui_impl_vulkan.cpp.s:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.s
+.PHONY : __/third-party/imgui/backends/imgui_impl_vulkan.cpp.s
+
+__/third-party/imgui/imgui.o: __/third-party/imgui/imgui.cpp.o
+
+.PHONY : __/third-party/imgui/imgui.o
+
+# target to build an object file
+__/third-party/imgui/imgui.cpp.o:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.o
+.PHONY : __/third-party/imgui/imgui.cpp.o
+
+__/third-party/imgui/imgui.i: __/third-party/imgui/imgui.cpp.i
+
+.PHONY : __/third-party/imgui/imgui.i
+
+# target to preprocess a source file
+__/third-party/imgui/imgui.cpp.i:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.i
+.PHONY : __/third-party/imgui/imgui.cpp.i
+
+__/third-party/imgui/imgui.s: __/third-party/imgui/imgui.cpp.s
+
+.PHONY : __/third-party/imgui/imgui.s
+
+# target to generate assembly for a file
+__/third-party/imgui/imgui.cpp.s:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.s
+.PHONY : __/third-party/imgui/imgui.cpp.s
+
+__/third-party/imgui/imgui_demo.o: __/third-party/imgui/imgui_demo.cpp.o
+
+.PHONY : __/third-party/imgui/imgui_demo.o
+
+# target to build an object file
+__/third-party/imgui/imgui_demo.cpp.o:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o
+.PHONY : __/third-party/imgui/imgui_demo.cpp.o
+
+__/third-party/imgui/imgui_demo.i: __/third-party/imgui/imgui_demo.cpp.i
+
+.PHONY : __/third-party/imgui/imgui_demo.i
+
+# target to preprocess a source file
+__/third-party/imgui/imgui_demo.cpp.i:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.i
+.PHONY : __/third-party/imgui/imgui_demo.cpp.i
+
+__/third-party/imgui/imgui_demo.s: __/third-party/imgui/imgui_demo.cpp.s
+
+.PHONY : __/third-party/imgui/imgui_demo.s
+
+# target to generate assembly for a file
+__/third-party/imgui/imgui_demo.cpp.s:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.s
+.PHONY : __/third-party/imgui/imgui_demo.cpp.s
+
+__/third-party/imgui/imgui_draw.o: __/third-party/imgui/imgui_draw.cpp.o
+
+.PHONY : __/third-party/imgui/imgui_draw.o
+
+# target to build an object file
+__/third-party/imgui/imgui_draw.cpp.o:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o
+.PHONY : __/third-party/imgui/imgui_draw.cpp.o
+
+__/third-party/imgui/imgui_draw.i: __/third-party/imgui/imgui_draw.cpp.i
+
+.PHONY : __/third-party/imgui/imgui_draw.i
+
+# target to preprocess a source file
+__/third-party/imgui/imgui_draw.cpp.i:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.i
+.PHONY : __/third-party/imgui/imgui_draw.cpp.i
+
+__/third-party/imgui/imgui_draw.s: __/third-party/imgui/imgui_draw.cpp.s
+
+.PHONY : __/third-party/imgui/imgui_draw.s
+
+# target to generate assembly for a file
+__/third-party/imgui/imgui_draw.cpp.s:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.s
+.PHONY : __/third-party/imgui/imgui_draw.cpp.s
+
+__/third-party/imgui/imgui_tables.o: __/third-party/imgui/imgui_tables.cpp.o
+
+.PHONY : __/third-party/imgui/imgui_tables.o
+
+# target to build an object file
+__/third-party/imgui/imgui_tables.cpp.o:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o
+.PHONY : __/third-party/imgui/imgui_tables.cpp.o
+
+__/third-party/imgui/imgui_tables.i: __/third-party/imgui/imgui_tables.cpp.i
+
+.PHONY : __/third-party/imgui/imgui_tables.i
+
+# target to preprocess a source file
+__/third-party/imgui/imgui_tables.cpp.i:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.i
+.PHONY : __/third-party/imgui/imgui_tables.cpp.i
+
+__/third-party/imgui/imgui_tables.s: __/third-party/imgui/imgui_tables.cpp.s
+
+.PHONY : __/third-party/imgui/imgui_tables.s
+
+# target to generate assembly for a file
+__/third-party/imgui/imgui_tables.cpp.s:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.s
+.PHONY : __/third-party/imgui/imgui_tables.cpp.s
+
+__/third-party/imgui/imgui_widgets.o: __/third-party/imgui/imgui_widgets.cpp.o
+
+.PHONY : __/third-party/imgui/imgui_widgets.o
+
+# target to build an object file
+__/third-party/imgui/imgui_widgets.cpp.o:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.o
+.PHONY : __/third-party/imgui/imgui_widgets.cpp.o
+
+__/third-party/imgui/imgui_widgets.i: __/third-party/imgui/imgui_widgets.cpp.i
+
+.PHONY : __/third-party/imgui/imgui_widgets.i
+
+# target to preprocess a source file
+__/third-party/imgui/imgui_widgets.cpp.i:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.i
+.PHONY : __/third-party/imgui/imgui_widgets.cpp.i
+
+__/third-party/imgui/imgui_widgets.s: __/third-party/imgui/imgui_widgets.cpp.s
+
+.PHONY : __/third-party/imgui/imgui_widgets.s
+
+# target to generate assembly for a file
+__/third-party/imgui/imgui_widgets.cpp.s:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.s
+.PHONY : __/third-party/imgui/imgui_widgets.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -271,6 +460,27 @@ help:
 	@echo "... VulkanCore.o"
 	@echo "... VulkanCore.i"
 	@echo "... VulkanCore.s"
+	@echo "... __/third-party/imgui/backends/imgui_impl_glfw.o"
+	@echo "... __/third-party/imgui/backends/imgui_impl_glfw.i"
+	@echo "... __/third-party/imgui/backends/imgui_impl_glfw.s"
+	@echo "... __/third-party/imgui/backends/imgui_impl_vulkan.o"
+	@echo "... __/third-party/imgui/backends/imgui_impl_vulkan.i"
+	@echo "... __/third-party/imgui/backends/imgui_impl_vulkan.s"
+	@echo "... __/third-party/imgui/imgui.o"
+	@echo "... __/third-party/imgui/imgui.i"
+	@echo "... __/third-party/imgui/imgui.s"
+	@echo "... __/third-party/imgui/imgui_demo.o"
+	@echo "... __/third-party/imgui/imgui_demo.i"
+	@echo "... __/third-party/imgui/imgui_demo.s"
+	@echo "... __/third-party/imgui/imgui_draw.o"
+	@echo "... __/third-party/imgui/imgui_draw.i"
+	@echo "... __/third-party/imgui/imgui_draw.s"
+	@echo "... __/third-party/imgui/imgui_tables.o"
+	@echo "... __/third-party/imgui/imgui_tables.i"
+	@echo "... __/third-party/imgui/imgui_tables.s"
+	@echo "... __/third-party/imgui/imgui_widgets.o"
+	@echo "... __/third-party/imgui/imgui_widgets.i"
+	@echo "... __/third-party/imgui/imgui_widgets.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

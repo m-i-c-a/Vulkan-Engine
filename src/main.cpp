@@ -4,6 +4,10 @@
 #include <vulkan/vulkan.h>
 #include <GLFW/glfw3.h>
 
+#include <imgui/imgui.h>
+#include <imgui/backends/imgui_impl_glfw.h>
+#include <imgui/backends/imgui_impl_vulkan.h>
+
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform.hpp>
 
@@ -80,8 +84,9 @@ struct ObjectData
 };ne layout formed by the union of all the reflection info
 */
 
-constexpr uint32_t MAX_MESHES = 1;
-constexpr uint32_t MAX_RENDERABLES = 1;
+constexpr uint32_t MAX_MESHES = 3;
+constexpr uint32_t MAX_RENDERABLES = 1000;
+constexpr uint32_t CURRENT_RENDERABLES = 1;
 
 struct Mesh
 {
@@ -154,7 +159,25 @@ struct AppCore
     VulkanWrapper::Buffer* m_ssboMeshInstanceCount = nullptr;
     VulkanWrapper::Buffer* m_ssboFirstInstanceCount = nullptr;
     VulkanWrapper::Buffer* m_ssboDrawInfos = nullptr;
+
+    VkRenderPass m_vkImGuiRenderPass = VK_NULL_HANDLE;
+    std::vector<VkFramebuffer> m_vkImGuiFramebuffers;
+    VkDescriptorPool m_vkImguiDescriptorPool = VK_NULL_HANDLE;
 };
+
+uint32_t loadMesh(AppCore& appCore, const std::string_view& filename)
+{
+    static uint32_t meshID = 0;
+
+    ObjectBufferData vertexIndexData = loadObjFile(filename);
+    const MeshInfo meshInfo = appCore.m_sceneBuffer->queueUpload(meshID, sizeof(Vertex) * vertexIndexData.vertices.size(), (void*)vertexIndexData.vertices.data(), sizeof(uint32_t) * vertexIndexData.indices.size(), vertexIndexData.indices.data());
+
+    const uint32_t meshInfoBlockIdx = (uint32_t)appCore.m_meshInfoPool->acquireBlock();
+    MeshInfo& _meshInfo = appCore.m_meshInfoPool->getWritableBlock(meshInfoBlockIdx);
+    _meshInfo = meshInfo;
+
+    return meshID++;
+}
 
 void updateBufferDescriptorSet(const VkDevice vk_device, const VkDescriptorSet vk_descSet, const uint32_t descBinding, const VkDescriptorType vk_descType, VkDescriptorBufferInfo&& vk_descBufferInfo)
 {
@@ -673,35 +696,52 @@ void createPipelines(const VulkanCore& vulkanCore, AppCore& appCore)
     delete cullShaderModule;
 }
 
-
-uint32_t loadMesh(AppCore& appCore, const std::string_view& filename)
-{
-    static uint32_t meshID = 0;
-
-    ObjectBufferData vertexIndexData = loadObjFile(filename);
-    const MeshInfo meshInfo = appCore.m_sceneBuffer->queueUpload(meshID, sizeof(Vertex) * vertexIndexData.vertices.size(), (void*)vertexIndexData.vertices.data(), sizeof(uint32_t) * vertexIndexData.indices.size(), vertexIndexData.indices.data());
-
-    const uint32_t meshInfoBlockIdx = (uint32_t)appCore.m_meshInfoPool->acquireBlock();
-    MeshInfo& _meshInfo = appCore.m_meshInfoPool->getWritableBlock(meshInfoBlockIdx);
-    _meshInfo = meshInfo;
-
-    return meshID++;
-}
-
-
 void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
 {
     const uint32_t meshSphereID = loadMesh(appCore, "../obj-files/sphere.obj");
+    const uint32_t meshTorusID = loadMesh(appCore, "../obj-files/torus.obj");
+    const uint32_t meshMonkeyID = loadMesh(appCore, "../obj-files/monkey.obj");
 
-    const uint32_t objectDataBlockIdx = (uint32_t)appCore.m_objectDataPool->acquireBlock();
-    ObjectData& objectData = appCore.m_objectDataPool->getWritableBlock(objectDataBlockIdx);
-    objectData.modelMatrix = glm::mat4(1.0f);
+    const int dim = 1;
+    const int halfDim = dim / 2;
+    for (int x = 0; x < dim; x++)
+    {
+        for (int y = 0; y < dim; y++)
+        {
+            const int y_mod = y % 3;
+            uint32_t meshID = UINT32_MAX;
+            switch (y_mod)
+            {
+            case 0:
+                meshID = meshSphereID;
+                break;
+            case 1:
+                meshID = meshTorusID;
+                break;
+            case 2:
+                meshID = meshMonkeyID;
+                break;
+            }
 
-    const uint32_t renderableInfoBlockIdx = (uint32_t)appCore.m_renderableInfoPool->acquireBlock();
-    RenderableInfo& renderableInfo = appCore.m_renderableInfoPool->getWritableBlock(renderableInfoBlockIdx);
-    renderableInfo.meshID = meshSphereID;
-    renderableInfo.objectID = objectDataBlockIdx;
+            for (int z = 0; z < dim; z++)
+            {
+                const uint32_t objectDataBlockIdx = (uint32_t)appCore.m_objectDataPool->acquireBlock();
+                ObjectData& objectData = appCore.m_objectDataPool->getWritableBlock(objectDataBlockIdx);
+                objectData.modelMatrix = glm::mat4(1.0f);
+                objectData.modelMatrix = glm::translate(objectData.modelMatrix, glm::vec3(x - halfDim, y - halfDim, z - halfDim));
+                objectData.modelMatrix = glm::scale(objectData.modelMatrix, glm::vec3(0.1, 0.1, 0.1));
+
+                const uint32_t renderableInfoBlockIdx = (uint32_t)appCore.m_renderableInfoPool->acquireBlock();
+                RenderableInfo& renderableInfo = appCore.m_renderableInfoPool->getWritableBlock(renderableInfoBlockIdx);
+                renderableInfo.meshID = meshID;
+                renderableInfo.objectID = objectDataBlockIdx;
+            }
+        }
+    }
 }
+
+
+
 
 void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
 {
@@ -886,10 +926,10 @@ void appIndirectCull(const VulkanCore& vulkanCore, AppCore& appCore)
     
     vkCmdBindDescriptorSets(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCullPipelineLayout, 0, 1, &appCore.m_vkCullDescSet, 0, nullptr);
 
-    uint32_t renderableCount = MAX_RENDERABLES;
+    uint32_t renderableCount = CURRENT_RENDERABLES;
     vkCmdPushConstants(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_vkCullPipelineLayout, VK_SHADER_STAGE_COMPUTE_BIT, 0, sizeof(uint32_t), &renderableCount);
 
-    vkCmdDispatch(appCore.m_cmdBuff->m_vkCmdBuff, MAX_RENDERABLES, 1, 1);
+    vkCmdDispatch(appCore.m_cmdBuff->m_vkCmdBuff, renderableCount, 1, 1);
 
     VK_CHECK(vkEndCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff));
 
@@ -1016,6 +1056,55 @@ void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkCompactPipeline, nullptr);
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkResetPipeline, nullptr);
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkGraphicsPipeline, nullptr);
+
+    vkDestroyRenderPass(vulkanCore.vk_device, appCore.m_vkImGuiRenderPass, nullptr);
+    vkDestroyDescriptorPool(vulkanCore.vk_device, appCore.m_vkImguiDescriptorPool, nullptr);
+
+    for (uint32_t i = 0; i < appCore.m_vkImGuiFramebuffers.size(); ++i)
+        vkDestroyFramebuffer(vulkanCore.vk_device, appCore.m_vkImGuiFramebuffers[i], nullptr);
+}
+
+void gui(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    static const VkCommandBufferBeginInfo vk_cmdBuffBeginInfo {
+        .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
+        .flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT
+    };
+
+    static const VkClearValue vk_clearValue {
+        .color = {0.22f, 0.22f, 0.22f, 1.0f}
+    };
+
+    VkRenderPassBeginInfo vk_renderPassBeginInfo {
+        .sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO,
+        .renderPass = appCore.m_vkImGuiRenderPass,
+        .framebuffer = appCore.m_vkImGuiFramebuffers[appCore.m_uActiveSwapchainImageIdx],
+        .renderArea = {
+            .offset = {.x = 0, .y = 0},
+            .extent = vulkanCore.vk_swapchainExtent
+        },
+        // .clearValueCount = 1,
+        // .pClearValues = &vk_clearValue
+    };
+
+    vkCmdBeginRenderPass(appCore.m_cmdBuff->m_vkCmdBuff, &vk_renderPassBeginInfo, VK_SUBPASS_CONTENTS_INLINE);
+
+    // Start the Dear ImGui frame
+    ImGui_ImplVulkan_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
+    ImGui::NewFrame();
+
+    if (ImGui::Begin("Gui"))
+    {
+
+    }
+    ImGui::End();
+
+    ImGui::Render();
+    ImDrawData* draw_data = ImGui::GetDrawData();
+    ImGui_ImplVulkan_RenderDrawData(draw_data, appCore.m_cmdBuff->m_vkCmdBuff);
+
+    vkCmdEndRenderPass(appCore.m_cmdBuff->m_vkCmdBuff);
 }
 
 void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -1100,30 +1189,38 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 
     vkCmdEndRendering(vk_cmdBuff);
 
-    const VkImageMemoryBarrier vk_colorAttachmentPostRenderBarrier {
-        .sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER,
-        .srcAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT,
-        .dstAccessMask = VK_ACCESS_NONE,
-        .oldLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-        .newLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR,
-        .image = vulkanCore.vk_swapchainImages[appCore.m_uActiveSwapchainImageIdx],
-        .subresourceRange = {
-            .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
-            .baseMipLevel = 0,
-            .levelCount = 1,
-            .baseArrayLayer = 0,
-            .layerCount = 1,
-        }
-    };
+    if constexpr (true)
+    {
+        gui(vulkanCore, appCore);
+    }
+    else
+    {
+        const VkImageMemoryBarrier vk_colorAttachmentPostRenderBarrier {
+            .sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER,
+            .srcAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT,
+            .dstAccessMask = VK_ACCESS_NONE,
+            .oldLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+            .newLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR,
+            .image = vulkanCore.vk_swapchainImages[appCore.m_uActiveSwapchainImageIdx],
+            .subresourceRange = {
+                .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
+                .baseMipLevel = 0,
+                .levelCount = 1,
+                .baseArrayLayer = 0,
+                .layerCount = 1,
+            }
+        };
 
-    vkCmdPipelineBarrier(vk_cmdBuff,
-        VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT, // srcStageMask
-        VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT,          // dstStageMask
-        0,
-        0, nullptr,
-        0, nullptr,
-        1, &vk_colorAttachmentPostRenderBarrier // pImageMemoryBarriers
-    );
+        vkCmdPipelineBarrier(vk_cmdBuff,
+            VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT, // srcStageMask
+            VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT,          // dstStageMask
+            0,
+            0, nullptr,
+            0, nullptr,
+            1, &vk_colorAttachmentPostRenderBarrier // pImageMemoryBarriers
+        );
+    }
+
 
     VK_CHECK(vkEndCommandBuffer(vk_cmdBuff));
 }
@@ -1157,6 +1254,191 @@ void appSubmit(const VulkanCore& vulkanCore, AppCore& appCore)
 
         VK_CHECK(vkQueuePresentKHR(vulkanCore.vk_graphicsQ, &vk_presentInfo));
         VK_CHECK(vkDeviceWaitIdle(vulkanCore.vk_device));
+}
+
+void createGuiRenderpass(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    // Create imgui resources (descriptor pool + render pass)
+
+    const VkAttachmentDescription vk_attachmentDescription {
+        .format = vulkanCore.vk_swapchainImageFormat,
+        .samples = VK_SAMPLE_COUNT_1_BIT,
+        .loadOp = VK_ATTACHMENT_LOAD_OP_LOAD,
+        .storeOp = VK_ATTACHMENT_STORE_OP_STORE,
+        .stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE,
+        .stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE,
+        .initialLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
+        .finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR,
+    };
+
+    const VkAttachmentReference vk_attachmentReference {
+        .attachment = 0,
+        .layout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL
+    };
+
+    const VkSubpassDescription vk_subpassDescription {
+        .pipelineBindPoint = VK_PIPELINE_BIND_POINT_GRAPHICS,
+        .inputAttachmentCount = 0,
+        .pInputAttachments = nullptr,
+        .colorAttachmentCount = 1,
+        .pColorAttachments = &vk_attachmentReference,
+        .pResolveAttachments = nullptr,
+        .pDepthStencilAttachment = nullptr,
+        .preserveAttachmentCount = 0,
+        .pPreserveAttachments = nullptr
+    };
+
+    const VkSubpassDependency vk_subpassDeps [2] {
+        {// First dependency at the start of the renderpass
+            // Does the transition from final to initial layout
+            .srcSubpass = VK_SUBPASS_EXTERNAL,                             // Producer of the dependency
+            .dstSubpass = 0,                                               // Consumer is our single subpass that will wait for the execution dependency
+            .srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT, // Match our pWaitDstStageMask when we vkQueueSubmit
+            .dstStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT, // is a loadOp stage for color attachments
+            .srcAccessMask = 0,                                            // semaphore wait already does memory dependency for us
+            .dstAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT,         // is a loadOp CLEAR access mask for color attachments
+            .dependencyFlags = VK_DEPENDENCY_BY_REGION_BIT},
+        {// Second dependency at the end the renderpass
+            // Does the transition from the initial to the final layout
+            // Technically this is the same as the implicit subpass dependency, but we are gonna state it explicitly here
+            .srcSubpass = 0,                                               // Producer of the dependency is our single subpass
+            .dstSubpass = VK_SUBPASS_EXTERNAL,                             // Consumer are all commands outside of the renderpass
+            .srcStageMask = VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT, // is a storeOp stage for color attachments
+            .dstStageMask = VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT,          // Do not block any subsequent work
+            .srcAccessMask = VK_ACCESS_COLOR_ATTACHMENT_WRITE_BIT,         // is a storeOp `STORE` access mask for color attachments
+            .dstAccessMask = 0,
+            .dependencyFlags = VK_DEPENDENCY_BY_REGION_BIT
+        }
+    };
+
+    const VkRenderPassCreateInfo vk_renderpassCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO,
+        .pNext = nullptr,
+        .flags = 0x0,
+        .attachmentCount = 1,
+        .pAttachments = &vk_attachmentDescription,
+        .subpassCount = 1,
+        .pSubpasses = &vk_subpassDescription,
+        .dependencyCount = 2,
+        .pDependencies = vk_subpassDeps
+    };
+
+    VK_CHECK(vkCreateRenderPass(vulkanCore.vk_device, &vk_renderpassCreateInfo, nullptr, &appCore.m_vkImGuiRenderPass));
+}
+
+void createGuiFramebuffers(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    VkFramebufferCreateInfo vk_framebufferCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO,
+        .renderPass = appCore.m_vkImGuiRenderPass,
+        .attachmentCount = 1,
+        .width = vulkanCore.vk_swapchainExtent.width,
+        .height = vulkanCore.vk_swapchainExtent.height,
+        .layers = 1
+    };
+
+    appCore.m_vkImGuiFramebuffers.resize(vulkanCore.vk_swapchainImages.size());
+    for (size_t i = 0; i < appCore.m_vkImGuiFramebuffers.size(); ++i)
+    {
+        const VkImageView vk_imageView[1] = { vulkanCore.vk_swapchainImageViews[i] };
+
+        vk_framebufferCreateInfo.pAttachments = vk_imageView;
+
+        VK_CHECK(vkCreateFramebuffer(vulkanCore.vk_device, &vk_framebufferCreateInfo, nullptr, &appCore.m_vkImGuiFramebuffers[i]));
+    }
+}
+
+void createGuiDesciptorPool(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    // No idea how many descriptors imgui needs
+    std::array<VkDescriptorPoolSize, 11> vk_descPoolSizes {{
+        { VK_DESCRIPTOR_TYPE_SAMPLER, 1000 },
+        { VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER, 1000 },
+        { VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, 1000 },
+        { VK_DESCRIPTOR_TYPE_STORAGE_IMAGE, 1000 },
+        { VK_DESCRIPTOR_TYPE_UNIFORM_TEXEL_BUFFER, 1000 },
+        { VK_DESCRIPTOR_TYPE_STORAGE_TEXEL_BUFFER, 1000 },
+        { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 1000 },
+        { VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 1000 },
+        { VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC, 1000 },
+        { VK_DESCRIPTOR_TYPE_STORAGE_BUFFER_DYNAMIC, 1000 },
+        { VK_DESCRIPTOR_TYPE_INPUT_ATTACHMENT, 1000 }
+    }};
+
+    const VkDescriptorPoolCreateInfo vk_descPoolCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO,
+        .pNext = nullptr,
+        .flags = 0x0,
+        .maxSets = 2u,
+        .poolSizeCount = static_cast<uint32_t>(vk_descPoolSizes.size()),
+        .pPoolSizes = vk_descPoolSizes.data(),
+    };
+
+    VK_CHECK(vkCreateDescriptorPool(vulkanCore.vk_device, &vk_descPoolCreateInfo, nullptr, &appCore.m_vkImguiDescriptorPool));
+}
+
+
+void guiInit(GLFWwindow* glfw_window, const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    createGuiRenderpass(vulkanCore, appCore);
+    createGuiFramebuffers(vulkanCore, appCore);
+    createGuiDesciptorPool(vulkanCore, appCore);
+
+    // Setup Dear ImGui context
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+
+    // Setup Dear ImGui style
+    ImGui::StyleColorsDark();
+
+    // Setup Platform/Renderer backends
+    ImGui_ImplGlfw_InitForVulkan(glfw_window, true);
+    ImGui_ImplVulkan_InitInfo init_info = {};
+    init_info.Instance = vulkanCore.vk_instance;
+    init_info.PhysicalDevice = vulkanCore.vk_physicalDevice;
+    init_info.Device = vulkanCore.vk_device;
+    init_info.QueueFamily = vulkanCore.graphicsQFamIdx;
+    init_info.Queue = vulkanCore.vk_graphicsQ;
+    init_info.PipelineCache = VK_NULL_HANDLE;
+    init_info.DescriptorPool = appCore.m_vkImguiDescriptorPool;
+    init_info.Subpass = 0;
+    init_info.MinImageCount = 2;
+    init_info.ImageCount = static_cast<uint32_t>(vulkanCore.vk_swapchainImages.size());
+    init_info.MSAASamples = VK_SAMPLE_COUNT_1_BIT;
+    init_info.Allocator = nullptr;
+    init_info.CheckVkResultFn = nullptr;
+    ImGui_ImplVulkan_Init(&init_info, appCore.m_vkImGuiRenderPass);
+
+
+    const VkCommandBufferBeginInfo command_buffer_begin_info {
+        .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
+        .flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT
+    };
+
+    VK_CHECK(vkResetCommandPool(vulkanCore.vk_device, appCore.m_cmdPool->m_vkCmdPool, 0x0));
+    VK_CHECK(vkBeginCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff, &command_buffer_begin_info));
+
+    ImGui_ImplVulkan_CreateFontsTexture(appCore.m_cmdBuff->m_vkCmdBuff);
+
+    VK_CHECK(vkEndCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff));
+
+    const VkSubmitInfo vk_submitInfo {
+        .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
+        .commandBufferCount = 1,
+        .pCommandBuffers = &appCore.m_cmdBuff->m_vkCmdBuff
+    };
+
+    VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
+    VK_CHECK(vkDeviceWaitIdle(vulkanCore.vk_device));
+    ImGui_ImplVulkan_DestroyFontUploadObjects();
+}
+
+void guiCleanup()
+{
+    ImGui_ImplVulkan_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
 }
 
 
@@ -1198,17 +1480,15 @@ int main()
 
     VulkanCore vulkanCore = initVulkan(vulkanInitInfo);
 
-    // Resource::initResources(vulkanCore.vk_physicalDevice, vulkanCore.vk_device);
     VulkanWrapper::Resource::initResources(vulkanCore.vk_physicalDevice, vulkanCore.vk_device);
     DebugUtilsEXT::init(vulkanCore.vk_instance, vulkanCore.vk_device);
 
     AppCore appCore {};
-
-    // appInit(vulkanCore, appCore);
     appIndirectInit(vulkanCore, appCore);
     appIndirectCull(vulkanCore, appCore);
     appIndirectCompact(vulkanCore, appCore);
 
+    guiInit(glfw_window, vulkanCore, appCore);
 
     while (!glfwWindowShouldClose(glfw_window))
     {
@@ -1219,8 +1499,10 @@ int main()
         appSubmit(vulkanCore, appCore);
     }
 
-    appCleanup(vulkanCore, appCore);
+    VK_CHECK(vkDeviceWaitIdle(vulkanCore.vk_device));
 
+    guiCleanup();
+    appCleanup(vulkanCore, appCore);
     cleanupVulkan(vulkanCore);
 
     glfwDestroyWindow(glfw_window);

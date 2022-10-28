@@ -68,6 +68,97 @@ src/CMakeFiles/engine.dir/VulkanCore.cpp.o
  /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xcb.h
  /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib.h
  /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib_xrandr.h
+src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.o
+ ../third-party/glfw/include/GLFW/glfw3.h
+ ../third-party/glfw/include/GLFW/glfw3native.h
+ ../third-party/imgui/imconfig.h
+ ../third-party/imgui/imgui.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/backends/imgui_impl_glfw.cpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/backends/imgui_impl_glfw.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std_encode.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std_decode.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std_encode.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_platform.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_android.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_beta.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_core.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_directfb.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_fuchsia.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_ggp.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_ios.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_macos.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_metal.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_screen.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_vi.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_wayland.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_win32.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xcb.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib_xrandr.h
+src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o
+ ../third-party/imgui/imconfig.h
+ ../third-party/imgui/imgui.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/backends/imgui_impl_vulkan.cpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/backends/imgui_impl_vulkan.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std_encode.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std_decode.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std_encode.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_platform.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_android.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_beta.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_core.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_directfb.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_fuchsia.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_ggp.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_ios.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_macos.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_metal.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_screen.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_vi.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_wayland.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_win32.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xcb.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib.h
+ /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib_xrandr.h
+src/CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.o
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imconfig.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui.cpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_internal.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imstb_textedit.h
+src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imconfig.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_demo.cpp
+src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imconfig.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_draw.cpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_internal.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imstb_rectpack.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imstb_textedit.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imstb_truetype.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/misc/freetype/imgui_freetype.h
+src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imconfig.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_internal.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_tables.cpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imstb_textedit.h
+src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.o
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imconfig.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_internal.h
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_widgets.cpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imstb_textedit.h
 src/CMakeFiles/engine.dir/main.cpp.o
  ../src/common/Defines.hpp
  ../src/common/ShaderStructs.hpp
@@ -236,6 +327,10 @@ src/CMakeFiles/engine.dir/main.cpp.o
  ../third-party/glm/glm/vec3.hpp
  ../third-party/glm/glm/vec4.hpp
  ../third-party/glm/glm/vector_relational.hpp
+ ../third-party/imgui/backends/imgui_impl_glfw.h
+ ../third-party/imgui/backends/imgui_impl_vulkan.h
+ ../third-party/imgui/imconfig.h
+ ../third-party/imgui/imgui.h
  /home/mica/Desktop/Repos/Vulkan-Engine/src/Loader.hpp
  /home/mica/Desktop/Repos/Vulkan-Engine/src/VulkanCore.hpp
  /home/mica/Desktop/Repos/Vulkan-Engine/src/core/BufferPool.hpp
