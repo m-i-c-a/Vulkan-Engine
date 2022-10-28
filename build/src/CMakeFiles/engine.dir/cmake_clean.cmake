@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/engine.dir/Loader.cpp.o"
   "CMakeFiles/engine.dir/VulkanCore.cpp.o"
   "CMakeFiles/engine.dir/main.cpp.o"
   "engine"

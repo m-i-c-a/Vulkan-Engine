@@ -171,6 +171,33 @@ engine/fast:
 	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/build
 .PHONY : engine/fast
 
+Loader.o: Loader.cpp.o
+
+.PHONY : Loader.o
+
+# target to build an object file
+Loader.cpp.o:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/Loader.cpp.o
+.PHONY : Loader.cpp.o
+
+Loader.i: Loader.cpp.i
+
+.PHONY : Loader.i
+
+# target to preprocess a source file
+Loader.cpp.i:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/Loader.cpp.i
+.PHONY : Loader.cpp.i
+
+Loader.s: Loader.cpp.s
+
+.PHONY : Loader.s
+
+# target to generate assembly for a file
+Loader.cpp.s:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/Loader.cpp.s
+.PHONY : Loader.cpp.s
+
 VulkanCore.o: VulkanCore.cpp.o
 
 .PHONY : VulkanCore.o
@@ -238,6 +265,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... engine"
+	@echo "... Loader.o"
+	@echo "... Loader.i"
+	@echo "... Loader.s"
 	@echo "... VulkanCore.o"
 	@echo "... VulkanCore.i"
 	@echo "... VulkanCore.s"

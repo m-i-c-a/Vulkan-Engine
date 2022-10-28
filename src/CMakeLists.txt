@@ -4,7 +4,10 @@ add_subdirectory(vulkanwrapper)
 add_subdirectory(core)
 add_subdirectory(debug-utils)
 
-add_executable(${PROJECT_NAME} main.cpp VulkanCore.cpp VulkanCore.hpp)
+add_executable(${PROJECT_NAME} main.cpp 
+    VulkanCore.cpp VulkanCore.hpp
+    Loader.cpp     Loader.hpp    
+)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE glfw glm $ENV{VULKAN_SDK}/lib/libvulkan.so vulkanwrapper core debug-utils)
 target_include_directories(${PROJECT_NAME} PRIVATE glfw_INCLUDE_DIRS glm_INCLUDE_DIRS $ENV{VULKAN_SDK}/include ${CMAKE_CURRENT_SOURCE_DIR})

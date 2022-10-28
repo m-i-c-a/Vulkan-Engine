@@ -1164,6 +1164,16 @@ detail/setup.hpp
 detail/func_vector_relational.inl
 ../third-party/glm/glm/detail/func_vector_relational.inl
 
+/home/mica/Desktop/Repos/Vulkan-Engine/src/Loader.hpp
+glm/vec2.hpp
+-
+glm/vec3.hpp
+-
+vector
+-
+string
+-
+
 /home/mica/Desktop/Repos/Vulkan-Engine/src/VulkanCore.hpp
 vector
 -
@@ -1237,6 +1247,8 @@ ShaderStructs.hpp
 /home/mica/Desktop/Repos/Vulkan-Engine/src/ShaderStructs.hpp
 VulkanCore.hpp
 /home/mica/Desktop/Repos/Vulkan-Engine/src/VulkanCore.hpp
+Loader.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/Loader.hpp
 debug-utils/DebugUtilsEXT.hpp
 /home/mica/Desktop/Repos/Vulkan-Engine/src/debug-utils/DebugUtilsEXT.hpp
 core/BufferPool.hpp

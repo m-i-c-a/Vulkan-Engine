@@ -10,6 +10,7 @@
 #include "Defines.hpp"
 #include "ShaderStructs.hpp"
 #include "VulkanCore.hpp"
+#include "Loader.hpp"
 #include "debug-utils/DebugUtilsEXT.hpp"
 // #include "core/Buffer.hpp"
 // #include "core/BufferPool.hpp"
@@ -79,8 +80,8 @@ struct ObjectData
 };ne layout formed by the union of all the reflection info
 */
 
-constexpr uint32_t MAX_MESHES = 2;
-constexpr uint32_t MAX_RENDERABLES = 20;
+constexpr uint32_t MAX_MESHES = 1;
+constexpr uint32_t MAX_RENDERABLES = 1;
 
 struct Mesh
 {
@@ -99,36 +100,6 @@ struct Renderable
     uint32_t m_uMeshIdx = 0;
     uint32_t m_uObjectIdx = 0;
 };
-
-struct Vertex
-{
-    float pos[3];
-    float normal[3];
-    float uv[2];
-};
-
-constexpr Vertex planeVertexData[] {
-     { { -0.5f, -0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 0.0f, 1.0f } }, // top left
-     { { -0.5f,  0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 0.0f, 0.0f } }, // bot left
-     { {  0.5f,  0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 1.0f, 0.0f } }, // bot right
-     { {  0.5f, -0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 1.0f, 1.0f } }  // top right
-};
-
-constexpr uint32_t planeIndexData[] {
-    0, 1, 2,
-    0, 2, 3
-};
-
-constexpr Vertex triangleVertexData[] {
-     { { -0.5f, -0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 0.0f, 1.0f } }, // top left
-     { {  0.0f,  0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 0.0f, 0.0f } }, // bot left
-     { {  0.5f, -0.5f, 0.0f  }, { 0.0f, 0.0f, 1.0f }, { 1.0f, 0.0f } }, // bot right
-};
-
-constexpr uint32_t triangleIndexData[] {
-    0, 1, 2,
-};
-
 
 #include "core/BufferPool.hpp"
 #include "core/PersistentDeviceBuffer.hpp"
@@ -703,34 +674,33 @@ void createPipelines(const VulkanCore& vulkanCore, AppCore& appCore)
 }
 
 
+uint32_t loadMesh(AppCore& appCore, const std::string_view& filename)
+{
+    static uint32_t meshID = 0;
+
+    ObjectBufferData vertexIndexData = loadObjFile(filename);
+    const MeshInfo meshInfo = appCore.m_sceneBuffer->queueUpload(meshID, sizeof(Vertex) * vertexIndexData.vertices.size(), (void*)vertexIndexData.vertices.data(), sizeof(uint32_t) * vertexIndexData.indices.size(), vertexIndexData.indices.data());
+
+    const uint32_t meshInfoBlockIdx = (uint32_t)appCore.m_meshInfoPool->acquireBlock();
+    MeshInfo& _meshInfo = appCore.m_meshInfoPool->getWritableBlock(meshInfoBlockIdx);
+    _meshInfo = meshInfo;
+
+    return meshID++;
+}
+
+
 void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
 {
-    constexpr uint32_t MESH_ID_PLANE = 0;
-    constexpr uint32_t MESH_ID_TRIANGLE = 1;
-    const MeshInfo meshInfoPlane = appCore.m_sceneBuffer->queueUpload(MESH_ID_PLANE, sizeof(planeVertexData), (void*)planeVertexData, sizeof(planeIndexData), planeIndexData);
-    const MeshInfo meshInfoTriangle = appCore.m_sceneBuffer->queueUpload(MESH_ID_TRIANGLE, sizeof(triangleVertexData), (void*)triangleVertexData, sizeof(triangleIndexData), triangleIndexData);
+    const uint32_t meshSphereID = loadMesh(appCore, "../obj-files/sphere.obj");
 
-    const uint32_t meshInfoPlaneBlockIdx = (uint32_t)appCore.m_meshInfoPool->acquireBlock();
-    MeshInfo& _meshInfoPlane = appCore.m_meshInfoPool->getWritableBlock(meshInfoPlaneBlockIdx);
-    _meshInfoPlane = meshInfoPlane;
+    const uint32_t objectDataBlockIdx = (uint32_t)appCore.m_objectDataPool->acquireBlock();
+    ObjectData& objectData = appCore.m_objectDataPool->getWritableBlock(objectDataBlockIdx);
+    objectData.modelMatrix = glm::mat4(1.0f);
 
-    const uint32_t meshInfoTriangleBlockIdx = (uint32_t)appCore.m_meshInfoPool->acquireBlock();
-    MeshInfo& _meshInfoTriangle = appCore.m_meshInfoPool->getWritableBlock(meshInfoTriangleBlockIdx);
-    _meshInfoTriangle = meshInfoTriangle;
-
-    for (int i = 0; i < MAX_RENDERABLES; ++i)
-    {
-        const uint32_t objectDataBlockIdx = (uint32_t)appCore.m_objectDataPool->acquireBlock();
-        ObjectData& objectData = appCore.m_objectDataPool->getWritableBlock(objectDataBlockIdx);
-        objectData.modelMatrix = glm::mat4(1.0f);
-        objectData.modelMatrix = glm::translate(objectData.modelMatrix, glm::vec3((2.0f * i) / MAX_RENDERABLES - 1.0f, 0.0f, 0.0f));
-        objectData.modelMatrix = glm::scale(objectData.modelMatrix, glm::vec3(0.1f, 0.1f, 1.0f));
-
-        const uint32_t renderableInfoBlockIdx = (uint32_t)appCore.m_renderableInfoPool->acquireBlock();
-        RenderableInfo& renderableInfo = appCore.m_renderableInfoPool->getWritableBlock(renderableInfoBlockIdx);
-        renderableInfo.meshID = i % 2 == 0 ? MESH_ID_PLANE : MESH_ID_TRIANGLE;
-        renderableInfo.objectID = objectDataBlockIdx;
-    }
+    const uint32_t renderableInfoBlockIdx = (uint32_t)appCore.m_renderableInfoPool->acquireBlock();
+    RenderableInfo& renderableInfo = appCore.m_renderableInfoPool->getWritableBlock(renderableInfoBlockIdx);
+    renderableInfo.meshID = meshSphereID;
+    renderableInfo.objectID = objectDataBlockIdx;
 }
 
 void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -768,7 +738,7 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
 
     // maybe set to all zeros?
     appCore.m_ssboVisibleRenderableCount = new VulkanWrapper::Buffer();
-    appCore.m_ssboVisibleRenderableCount->create(MAX_RENDERABLES * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
+    appCore.m_ssboVisibleRenderableCount->create(3 * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
     appCore.m_ssboVisibleRenderableCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     appCore.m_ssboVisibleRenderableCount->bind();
 
