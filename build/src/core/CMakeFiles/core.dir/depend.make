@@ -18,6 +18,7 @@ src/core/CMakeFiles/core.dir/HostBuffer.cpp.o: ../src/core/GenericBuffer.hpp
 src/core/CMakeFiles/core.dir/HostBuffer.cpp.o: ../src/core/HostBuffer.cpp
 src/core/CMakeFiles/core.dir/HostBuffer.cpp.o: ../src/core/HostBuffer.hpp
 
+src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o: ../src/common/Defines.hpp
 src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o: ../src/vulkanwrapper/Buffer.hpp
 src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o: ../src/vulkanwrapper/Resource.hpp
 src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o: ../src/core/GenericBuffer.hpp

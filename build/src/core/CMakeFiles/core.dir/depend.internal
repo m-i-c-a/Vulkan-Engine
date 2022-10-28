@@ -19,6 +19,7 @@ src/core/CMakeFiles/core.dir/HostBuffer.cpp.o
  /home/mica/Desktop/Repos/Vulkan-Engine/src/core/HostBuffer.cpp
  /home/mica/Desktop/Repos/Vulkan-Engine/src/core/HostBuffer.hpp
 src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o
+ ../src/common/Defines.hpp
  ../src/vulkanwrapper/Buffer.hpp
  ../src/vulkanwrapper/Resource.hpp
  /home/mica/Desktop/Repos/Vulkan-Engine/src/core/GenericBuffer.hpp

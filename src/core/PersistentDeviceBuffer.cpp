@@ -1,6 +1,7 @@
 #include "PersistentDeviceBuffer.hpp"
 #include "PersistentStagingBuffer.hpp"
 #include "vulkanwrapper/Buffer.hpp"
+#include "Defines.hpp"
 
 PersistentDeviceBuffer::PersistentDeviceBuffer(const VkDeviceSize vk_size, const VkBufferUsageFlags vk_bufferUsageFlags, const VkMemoryPropertyFlags vk_memProps) // , const VkBuffer vk_stagingBuffer, const VkDeviceSize vk_stagingOffset, char* pData)
     : GenericBuffer     { vk_size, vk_bufferUsageFlags, vk_memProps }
@@ -30,6 +31,11 @@ void PersistentDeviceBuffer::update(const VkDeviceSize vk_offset, const VkDevice
 
 void PersistentDeviceBuffer::flush(const VkCommandBuffer vk_cmdBuff)
 {
+#ifdef DEBUG
+    if (vk_bufferCopies.size() == 0)
+        LOG("WARNING - Trying to flush a buffer which is not dirty! This should never happen!\n");
+#endif
+
     vkCmdCopyBuffer(vk_cmdBuff, m_vkStagingBuffer, m_buffer->m_vkBuffer, static_cast<uint32_t>(vk_bufferCopies.size()), vk_bufferCopies.data());
 
     vk_bufferCopies.clear();

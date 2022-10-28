@@ -88,6 +88,16 @@ constexpr uint32_t MAX_MESHES = 3;
 constexpr uint32_t MAX_RENDERABLES = 1000;
 constexpr uint32_t CURRENT_RENDERABLES = 1;
 
+static constexpr int windowWidth = 500;
+static constexpr int windowHeight = 500;
+
+static bool renderGui = true;
+static bool globalUBODirty = false;
+static float FOV = 45.0f;
+static float nearZ = 1.0f;
+static float farZ = 100.0f;
+static glm::vec3 camPos { 0.0f, 0.0f, -5.0f };
+
 struct Mesh
 {
     uint32_t m_uIndexCount = 0;
@@ -164,6 +174,34 @@ struct AppCore
     std::vector<VkFramebuffer> m_vkImGuiFramebuffers;
     VkDescriptorPool m_vkImguiDescriptorPool = VK_NULL_HANDLE;
 };
+
+void updateProjectionMatrix(AppCore& appCore)
+{
+    glm::mat4 newProjMat = glm::perspective(glm::radians(FOV), ((float)windowWidth) / windowHeight, nearZ, farZ);
+    appCore.m_globalUBO->update(offsetof(GlobalUBO, projMatrix), sizeof(glm::mat4), &(newProjMat[0][0]));
+    globalUBODirty = true;
+}
+
+void updateViewMatrix(AppCore& appCore)
+{
+    glm::mat4 newViewMat = glm::mat4(1.0f);
+    newViewMat = glm::translate(newViewMat, camPos);
+    appCore.m_globalUBO->update(offsetof(GlobalUBO, viewMatrix), sizeof(glm::mat4), &(newViewMat[0][0]));
+    globalUBODirty = true;
+}
+
+void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods)
+{
+    switch (key)
+    {
+        case GLFW_KEY_ESCAPE:
+            if (action == GLFW_PRESS)
+                renderGui = !renderGui;
+            break;
+        default:
+            break;
+    };
+}
 
 uint32_t loadMesh(AppCore& appCore, const std::string_view& filename)
 {
@@ -766,9 +804,11 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_globalUBO = appCore.m_persistentStagingBuffer->registerDeviceBuffer(sizeof(GlobalUBO), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     appCore.m_persistentStagingBuffer->completeRegistration();
 
-    glm::mat4 identMat { 1.0f };
-    appCore.m_globalUBO->update(offsetof(GlobalUBO, projMatrix), sizeof(glm::mat4), &(identMat[0][0]));
-    appCore.m_globalUBO->update(offsetof(GlobalUBO, viewMatrix), sizeof(glm::mat4), &(identMat[0][0]));
+    glm::mat4 projMat = glm::perspective(FOV, ((float)windowWidth) / windowHeight, nearZ, farZ);
+    glm::mat4 viewMat = glm::mat4(1.0f);
+    viewMat = glm::translate(viewMat, camPos);
+    appCore.m_globalUBO->update(offsetof(GlobalUBO, projMatrix), sizeof(glm::mat4), &(projMat[0][0]));
+    appCore.m_globalUBO->update(offsetof(GlobalUBO, viewMatrix), sizeof(glm::mat4), &(viewMat[0][0]));
 
     // maybe set to all zeros?
     appCore.m_ssboVisibleRenderableInfos = new VulkanWrapper::Buffer();
@@ -1071,10 +1111,6 @@ void gui(const VulkanCore& vulkanCore, AppCore& appCore)
         .flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT
     };
 
-    static const VkClearValue vk_clearValue {
-        .color = {0.22f, 0.22f, 0.22f, 1.0f}
-    };
-
     VkRenderPassBeginInfo vk_renderPassBeginInfo {
         .sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO,
         .renderPass = appCore.m_vkImGuiRenderPass,
@@ -1083,8 +1119,6 @@ void gui(const VulkanCore& vulkanCore, AppCore& appCore)
             .offset = {.x = 0, .y = 0},
             .extent = vulkanCore.vk_swapchainExtent
         },
-        // .clearValueCount = 1,
-        // .pClearValues = &vk_clearValue
     };
 
     vkCmdBeginRenderPass(appCore.m_cmdBuff->m_vkCmdBuff, &vk_renderPassBeginInfo, VK_SUBPASS_CONTENTS_INLINE);
@@ -1096,7 +1130,28 @@ void gui(const VulkanCore& vulkanCore, AppCore& appCore)
 
     if (ImGui::Begin("Gui"))
     {
+        if (ImGui::CollapsingHeader("Camera"))
+        {
+            if (ImGui::SliderFloat("FOV", &FOV, 1.0, 89.0, "%.1f"))
+            {
+                updateProjectionMatrix(appCore);
+            }
 
+            if (ImGui::SliderFloat("Near Z Plane", &nearZ, 0.01, 1.9, "%.1f"))
+            {
+                updateProjectionMatrix(appCore);
+            }
+
+            if(ImGui::SliderFloat("Far Z Plane", &farZ, 2.0, 1000.0, "%.1f"))
+            {
+                updateProjectionMatrix(appCore);
+            }
+
+            if (ImGui::InputFloat3("Camera Position", &camPos[0]))
+            {
+                updateViewMatrix(appCore);
+            }
+        }
     }
     ImGui::End();
 
@@ -1147,6 +1202,13 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 
     VK_CHECK(vkBeginCommandBuffer(vk_cmdBuff, &vk_cmdBuffBeginInfo));
 
+    // TODO - need to make this a dirty queue flush
+    if (globalUBODirty)
+    {
+        appCore.m_globalUBO->flush(vk_cmdBuff);
+        globalUBODirty = false;
+    }
+
     const VkImageMemoryBarrier vk_colorAttachmentPreRenderBarrier {
         .sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER,
         .srcAccessMask = VK_ACCESS_NONE,
@@ -1189,7 +1251,7 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 
     vkCmdEndRendering(vk_cmdBuff);
 
-    if constexpr (true)
+    if (renderGui)
     {
         gui(vulkanCore, appCore);
     }
@@ -1444,8 +1506,6 @@ void guiCleanup()
 
 int main()
 {
-    const int windowWidth = 500;
-    const int windowHeight = 500;
     const char* windowName = "Engine";
     bool continueExecuting = true;
 
@@ -1454,6 +1514,7 @@ int main()
     glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
     GLFWwindow* glfw_window = glfwCreateWindow(windowWidth, windowHeight, windowName, nullptr, nullptr);
     assert(glfw_window && "Failed to create window");
+    glfwSetKeyCallback(glfw_window, keyCallback);
 
     const VkPhysicalDeviceVulkan12Features vk_physicalDeviceFeature12 {
         .sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_2_FEATURES,
