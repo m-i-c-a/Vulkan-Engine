@@ -85,8 +85,8 @@ struct ObjectData
 */
 
 constexpr uint32_t MAX_MESHES = 3;
-constexpr uint32_t MAX_RENDERABLES = 1000;
-constexpr uint32_t CURRENT_RENDERABLES = 1;
+constexpr uint32_t MAX_RENDERABLES = 8000;
+constexpr uint32_t CURRENT_RENDERABLES = 8000;
 
 static constexpr int windowWidth = 500;
 static constexpr int windowHeight = 500;
@@ -96,7 +96,7 @@ static bool globalUBODirty = false;
 static float FOV = 45.0f;
 static float nearZ = 1.0f;
 static float farZ = 100.0f;
-static glm::vec3 camPos { 0.0f, 0.0f, -5.0f };
+static glm::vec3 camPos { 0.0f, 0.0f, -10.0f };
 
 struct Mesh
 {
@@ -144,21 +144,29 @@ struct AppCore
     BufferPool<MeshInfo>* m_meshInfoPool = nullptr;
 
     VkDescriptorSetLayout m_vkCullDescSetLayout = VK_NULL_HANDLE;
-    VkDescriptorSetLayout m_vkCompactDescSetLayout = VK_NULL_HANDLE;
+    VkDescriptorSetLayout m_vkCompactDrawsDescSetLayout = VK_NULL_HANDLE;
+    VkDescriptorSetLayout m_vkCompactBindlessDescSetLayout = VK_NULL_HANDLE;
     VkDescriptorSetLayout m_vkResetDescSetLayout = VK_NULL_HANDLE;
     VkDescriptorSetLayout m_vkGraphicsDescSetLayout = VK_NULL_HANDLE;
     VkPipelineLayout m_vkCullPipelineLayout = VK_NULL_HANDLE;
-    VkPipelineLayout m_vkCompactPipelineLayout = VK_NULL_HANDLE;
+    VkPipelineLayout m_vkCompactDrawsPipelineLayout = VK_NULL_HANDLE;
+    VkPipelineLayout m_vkCompactBindlessPipelineLayout = VK_NULL_HANDLE;
     VkPipelineLayout m_vkResetPipelineLayout = VK_NULL_HANDLE;
     VkPipelineLayout m_vkGraphicsPipelineLayout = VK_NULL_HANDLE;
     VkPipeline m_vkCullPipeline = VK_NULL_HANDLE;
-    VkPipeline m_vkCompactPipeline = VK_NULL_HANDLE;
+    VkPipeline m_vkCompactDrawsPipeline = VK_NULL_HANDLE;
+    VkPipeline m_vkCompactBindlessPipeline = VK_NULL_HANDLE;
     VkPipeline m_vkResetPipeline = VK_NULL_HANDLE;
     VkPipeline m_vkGraphicsPipeline = VK_NULL_HANDLE;
     VkDescriptorSet m_vkCullDescSet = VK_NULL_HANDLE;
-    VkDescriptorSet m_vkCompactDescSet = VK_NULL_HANDLE;
+    VkDescriptorSet m_vkCompactDrawsDescSet = VK_NULL_HANDLE;
+    VkDescriptorSet m_vkCompactBindlessDescSet = VK_NULL_HANDLE;
     VkDescriptorSet m_vkResetDescSet = VK_NULL_HANDLE;
     VkDescriptorSet m_vkGraphicsDescSet = VK_NULL_HANDLE;
+
+
+    VulkanWrapper::Buffer* m_ssboMeshInstanceCount = nullptr;
+    VulkanWrapper::Buffer* m_ssboActiveMesh = nullptr;
 
     VulkanWrapper::Buffer* m_ssboVisibleRenderableInfos = nullptr;
     VulkanWrapper::Buffer* m_ssboVisibleRenderableCount = nullptr;
@@ -166,7 +174,6 @@ struct AppCore
     VulkanWrapper::Buffer* m_ssboMeshVisible = nullptr;
     VulkanWrapper::Buffer* m_ssboDrawCommands = nullptr;
     VulkanWrapper::Buffer* m_ssboDrawCommandCount = nullptr;
-    VulkanWrapper::Buffer* m_ssboMeshInstanceCount = nullptr;
     VulkanWrapper::Buffer* m_ssboFirstInstanceCount = nullptr;
     VulkanWrapper::Buffer* m_ssboDrawInfos = nullptr;
 
@@ -463,164 +470,7 @@ void createGraphicsPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
     delete vertexShaderModule;
 }
 
-void createCullPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
-{
-    const VkDescriptorSetLayoutBinding vk_descSetLayoutBindings[] {
-        {
-            .binding = 0,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 1,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 2,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 3,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 4,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 5,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 6,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 7,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-    };
 
-    const VkDescriptorSetLayoutCreateInfo vk_descSetLayoutCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO,
-        .bindingCount = ARRAYSIZE(vk_descSetLayoutBindings),
-        .pBindings = vk_descSetLayoutBindings,
-    };
-
-    VK_CHECK(vkCreateDescriptorSetLayout(vulkanCore.vk_device, &vk_descSetLayoutCreateInfo, nullptr, &appCore.m_vkCullDescSetLayout));
-
-    const VkPushConstantRange vk_pushConstantRange {
-        .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-        .offset = 0,
-        .size = sizeof(uint32_t),
-    };
-
-    const VkPipelineLayoutCreateInfo vk_pipelineLayoutCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
-        .setLayoutCount = 1,
-        .pSetLayouts = &appCore.m_vkCullDescSetLayout,
-        .pushConstantRangeCount = 1,
-        .pPushConstantRanges = &vk_pushConstantRange,
-    };
-
-    VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &appCore.m_vkCullPipelineLayout));
-}
-
-void createCompactPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
-{
-    const VkDescriptorSetLayoutBinding vk_descSetLayoutBindings[] {
-        {
-            .binding = 0,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 1,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 2,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 3,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 4,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 5,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 6,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-    };
-
-    const VkDescriptorSetLayoutCreateInfo vk_descSetLayoutCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO,
-        .bindingCount = ARRAYSIZE(vk_descSetLayoutBindings),
-        .pBindings = vk_descSetLayoutBindings,
-    };
-
-    VK_CHECK(vkCreateDescriptorSetLayout(vulkanCore.vk_device, &vk_descSetLayoutCreateInfo, nullptr, &appCore.m_vkCompactDescSetLayout));
-
-    const VkPipelineLayoutCreateInfo vk_pipelineLayoutCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
-        .setLayoutCount = 1,
-        .pSetLayouts = &appCore.m_vkCompactDescSetLayout,
-        .pushConstantRangeCount = 0,
-        .pPushConstantRanges = nullptr
-    };
-
-    VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &appCore.m_vkCompactPipelineLayout));
-}
 
 void createResetPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
 {
@@ -668,36 +518,13 @@ void createResetPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
 
 void createPipelines(const VulkanCore& vulkanCore, AppCore& appCore)
 {
-    createCullPipelineLayout(vulkanCore, appCore);
-    createCompactPipelineLayout(vulkanCore, appCore);
     createResetPipelineLayout(vulkanCore, appCore);
     createGraphicsPipelineLayout(vulkanCore, appCore);
     createGraphicsPipeline(vulkanCore, appCore);
 
-    VulkanWrapper::ShaderModule* cullShaderModule = new VulkanWrapper::ShaderModule();
-    cullShaderModule->create("../shaders/spirv/cull-comp.spv");
-
-    VulkanWrapper::ShaderModule* compactShaderModule = new VulkanWrapper::ShaderModule();
-    compactShaderModule->create("../shaders/spirv/compact-comp.spv");
 
     VulkanWrapper::ShaderModule* resetShaderModule = new VulkanWrapper::ShaderModule();
     resetShaderModule->create("../shaders/spirv/reset-comp.spv");
-
-    const VkPipelineShaderStageCreateInfo vk_cullShaderStageCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
-        .stage = VK_SHADER_STAGE_COMPUTE_BIT,
-        .module = cullShaderModule->m_vkShaderModule,
-        .pName = "main",
-        .pSpecializationInfo = nullptr
-    };
-
-    const VkPipelineShaderStageCreateInfo vk_compactShaderStageCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
-        .stage = VK_SHADER_STAGE_COMPUTE_BIT,
-        .module = compactShaderModule->m_vkShaderModule,
-        .pName = "main",
-        .pSpecializationInfo = nullptr
-    };
 
     const VkPipelineShaderStageCreateInfo vk_resetShaderStageCreateInfo {
         .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
@@ -707,31 +534,15 @@ void createPipelines(const VulkanCore& vulkanCore, AppCore& appCore)
         .pSpecializationInfo = nullptr
     };
 
-    const VkComputePipelineCreateInfo vk_cullPipelineCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_CREATE_INFO,
-        .stage = vk_cullShaderStageCreateInfo,
-        .layout = appCore.m_vkCullPipelineLayout
-    };
-
-    const VkComputePipelineCreateInfo vk_compactPipelineCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_CREATE_INFO,
-        .stage = vk_compactShaderStageCreateInfo,
-        .layout = appCore.m_vkCompactPipelineLayout
-    };
-
     const VkComputePipelineCreateInfo vk_resetPipelineCreateInfo {
         .sType = VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_CREATE_INFO,
         .stage = vk_resetShaderStageCreateInfo,
         .layout = appCore.m_vkResetPipelineLayout
     };
 
-    VK_CHECK(vkCreateComputePipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_cullPipelineCreateInfo, nullptr, &appCore.m_vkCullPipeline));
-    VK_CHECK(vkCreateComputePipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_compactPipelineCreateInfo, nullptr, &appCore.m_vkCompactPipeline));
     VK_CHECK(vkCreateComputePipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_resetPipelineCreateInfo, nullptr, &appCore.m_vkResetPipeline));
 
     delete resetShaderModule;
-    delete compactShaderModule;
-    delete cullShaderModule;
 }
 
 void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -740,7 +551,7 @@ void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
     const uint32_t meshTorusID = loadMesh(appCore, "../obj-files/torus.obj");
     const uint32_t meshMonkeyID = loadMesh(appCore, "../obj-files/monkey.obj");
 
-    const int dim = 1;
+    const int dim = 20;
     const int halfDim = dim / 2;
     for (int x = 0; x < dim; x++)
     {
@@ -773,11 +584,347 @@ void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
                 RenderableInfo& renderableInfo = appCore.m_renderableInfoPool->getWritableBlock(renderableInfoBlockIdx);
                 renderableInfo.meshID = meshID;
                 renderableInfo.objectID = objectDataBlockIdx;
+                LOG("renderable ID %u\n", objectDataBlockIdx);
             }
         }
     }
 }
 
+
+
+
+
+
+void createCullPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    const VkDescriptorSetLayoutBinding vk_descSetLayoutBindings[] {
+        {
+            .binding = 0,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 1,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 2,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 3,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 4,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+    };
+
+    const VkDescriptorSetLayoutCreateInfo vk_descSetLayoutCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO,
+        .bindingCount = ARRAYSIZE(vk_descSetLayoutBindings),
+        .pBindings = vk_descSetLayoutBindings,
+    };
+
+    VK_CHECK(vkCreateDescriptorSetLayout(vulkanCore.vk_device, &vk_descSetLayoutCreateInfo, nullptr, &appCore.m_vkCullDescSetLayout));
+
+    const VkPushConstantRange vk_pushConstantRange {
+        .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+        .offset = 0,
+        .size = sizeof(uint32_t),
+    };
+
+    const VkPipelineLayoutCreateInfo vk_pipelineLayoutCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
+        .setLayoutCount = 1,
+        .pSetLayouts = &appCore.m_vkCullDescSetLayout,
+        .pushConstantRangeCount = 1,
+        .pPushConstantRanges = &vk_pushConstantRange,
+    };
+
+    VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &appCore.m_vkCullPipelineLayout));
+}
+
+void createCullResources(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    createCullPipelineLayout(vulkanCore, appCore);
+
+    VulkanWrapper::ShaderModule* cullShaderModule = new VulkanWrapper::ShaderModule();
+    cullShaderModule->create("../shaders/spirv/cull-comp.spv");
+
+    const VkPipelineShaderStageCreateInfo vk_cullShaderStageCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
+        .stage = VK_SHADER_STAGE_COMPUTE_BIT,
+        .module = cullShaderModule->m_vkShaderModule,
+        .pName = "main",
+        .pSpecializationInfo = nullptr
+    };
+
+    const VkComputePipelineCreateInfo vk_cullPipelineCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_CREATE_INFO,
+        .stage = vk_cullShaderStageCreateInfo,
+        .layout = appCore.m_vkCullPipelineLayout
+    };
+
+    VK_CHECK(vkCreateComputePipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_cullPipelineCreateInfo, nullptr, &appCore.m_vkCullPipeline));
+
+    delete cullShaderModule;
+
+    appCore.m_ssboMeshInstanceCount = new VulkanWrapper::Buffer();
+    appCore.m_ssboMeshInstanceCount->create(MAX_MESHES * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    appCore.m_ssboMeshInstanceCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboMeshInstanceCount->bind();
+
+    appCore.m_ssboActiveMesh = new VulkanWrapper::Buffer();
+    appCore.m_ssboActiveMesh->create(MAX_MESHES * sizeof(uint32_t) + 3 * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
+    appCore.m_ssboActiveMesh->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboActiveMesh->bind();
+
+    appCore.m_ssboVisibleRenderableInfos = new VulkanWrapper::Buffer();
+    appCore.m_ssboVisibleRenderableInfos->create(MAX_RENDERABLES * sizeof(RenderableInfo) + 3 * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
+    appCore.m_ssboVisibleRenderableInfos->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboVisibleRenderableInfos->bind();
+
+    appCore.m_ssboMeshToCommandMapping = new VulkanWrapper::Buffer();
+    appCore.m_ssboMeshToCommandMapping->create(MAX_MESHES * sizeof(MeshInfo), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    appCore.m_ssboMeshToCommandMapping->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboMeshToCommandMapping->bind();
+
+    appCore.m_vkCullDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkCullDescSetLayout);
+
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, appCore.m_renderableInfoPool->getDescBufferInfo());
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboActiveMesh->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
+}
+
+
+void createCompactDrawsPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    const VkDescriptorSetLayoutBinding vk_descSetLayoutBindings[] {
+        {
+            .binding = 0,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 1,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 2,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 3,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 4,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 5,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+    };
+
+    const VkDescriptorSetLayoutCreateInfo vk_descSetLayoutCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO,
+        .bindingCount = ARRAYSIZE(vk_descSetLayoutBindings),
+        .pBindings = vk_descSetLayoutBindings,
+    };
+
+    VK_CHECK(vkCreateDescriptorSetLayout(vulkanCore.vk_device, &vk_descSetLayoutCreateInfo, nullptr, &appCore.m_vkCompactDrawsDescSetLayout));
+
+    const VkPipelineLayoutCreateInfo vk_pipelineLayoutCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
+        .setLayoutCount = 1,
+        .pSetLayouts = &appCore.m_vkCompactDrawsDescSetLayout,
+        .pushConstantRangeCount = 0,
+        .pPushConstantRanges = nullptr
+    };
+
+    VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &appCore.m_vkCompactDrawsPipelineLayout));
+}
+
+void createCompactDrawsResources(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    createCompactDrawsPipelineLayout(vulkanCore, appCore);
+
+    VulkanWrapper::ShaderModule* compactShaderModule = new VulkanWrapper::ShaderModule();
+    compactShaderModule->create("../shaders/spirv/compact-draws-comp.spv");
+
+    const VkPipelineShaderStageCreateInfo vk_compactDrawsShaderStageCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
+        .stage = VK_SHADER_STAGE_COMPUTE_BIT,
+        .module = compactShaderModule->m_vkShaderModule,
+        .pName = "main",
+        .pSpecializationInfo = nullptr
+    };
+
+    const VkComputePipelineCreateInfo vk_compactPipelineCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_CREATE_INFO,
+        .stage = vk_compactDrawsShaderStageCreateInfo,
+        .layout = appCore.m_vkCompactDrawsPipelineLayout
+    };
+
+    VK_CHECK(vkCreateComputePipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_compactPipelineCreateInfo, nullptr, &appCore.m_vkCompactDrawsPipeline));
+
+    delete compactShaderModule;
+
+    appCore.m_ssboFirstInstanceCount = new VulkanWrapper::Buffer();
+    appCore.m_ssboFirstInstanceCount->create(sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    appCore.m_ssboFirstInstanceCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboFirstInstanceCount->bind();
+
+    appCore.m_ssboDrawCommands = new VulkanWrapper::Buffer();
+    appCore.m_ssboDrawCommands->create(MAX_MESHES * sizeof(VkDrawIndexedIndirectCommand), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
+    appCore.m_ssboDrawCommands->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboDrawCommands->bind();
+
+    appCore.m_vkCompactDrawsDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkCompactDrawsDescSetLayout);
+
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboActiveMesh->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, appCore.m_meshInfoPool->getDescBufferInfo());
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboFirstInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 5, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawCommands->m_vkBuffer, 0, VK_WHOLE_SIZE });
+}
+
+
+void createCompactBindlessPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    const VkDescriptorSetLayoutBinding vk_descSetLayoutBindings[] {
+        {
+            .binding = 0,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 1,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 2,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 3,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 4,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+    };
+
+    const VkDescriptorSetLayoutCreateInfo vk_descSetLayoutCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO,
+        .bindingCount = ARRAYSIZE(vk_descSetLayoutBindings),
+        .pBindings = vk_descSetLayoutBindings,
+    };
+
+    VK_CHECK(vkCreateDescriptorSetLayout(vulkanCore.vk_device, &vk_descSetLayoutCreateInfo, nullptr, &appCore.m_vkCompactBindlessDescSetLayout));
+
+    const VkPipelineLayoutCreateInfo vk_pipelineLayoutCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
+        .setLayoutCount = 1,
+        .pSetLayouts = &appCore.m_vkCompactBindlessDescSetLayout,
+        .pushConstantRangeCount = 0,
+        .pPushConstantRanges = nullptr
+    };
+
+    VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &appCore.m_vkCompactBindlessPipelineLayout));
+
+}
+
+void createCompactBindlessResources(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    createCompactBindlessPipelineLayout(vulkanCore, appCore);
+
+    VulkanWrapper::ShaderModule* compactBindlessShaderModule = new VulkanWrapper::ShaderModule();
+    compactBindlessShaderModule->create("../shaders/spirv/compact-bindless-comp.spv");
+
+    const VkPipelineShaderStageCreateInfo vk_compactBindlessShaderStageCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
+        .stage = VK_SHADER_STAGE_COMPUTE_BIT,
+        .module = compactBindlessShaderModule->m_vkShaderModule,
+        .pName = "main",
+        .pSpecializationInfo = nullptr
+    };
+
+    const VkComputePipelineCreateInfo vk_compactBindlessPipelineCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_CREATE_INFO,
+        .stage = vk_compactBindlessShaderStageCreateInfo,
+        .layout = appCore.m_vkCompactBindlessPipelineLayout
+    };
+
+    VK_CHECK(vkCreateComputePipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_compactBindlessPipelineCreateInfo, nullptr, &appCore.m_vkCompactBindlessPipeline));
+
+    delete compactBindlessShaderModule;
+
+    appCore.m_ssboDrawInfos = new VulkanWrapper::Buffer();
+    appCore.m_ssboDrawInfos->create(MAX_RENDERABLES * sizeof(DrawInfo), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    appCore.m_ssboDrawInfos->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboDrawInfos->bind();
+
+    appCore.m_vkCompactBindlessDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkCompactBindlessDescSetLayout);
+
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawCommands->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
+}
 
 
 
@@ -797,8 +944,21 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_renderableInfoPool = new BufferPool<RenderableInfo>(MAX_RENDERABLES, MAX_RENDERABLES); 
     appCore.m_meshInfoPool = new BufferPool<MeshInfo>(MAX_MESHES, MAX_MESHES); 
 
+    appCore.m_descPool = new VulkanWrapper::DescriptorPool();
+    appCore.m_descPool->create(5, {{
+                            .type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
+                            .descriptorCount = 1
+                        },
+                        {
+                            .type = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+                            .descriptorCount = 20
+                        }});
+
     createPipelines(vulkanCore, appCore);
     loadMeshes(vulkanCore, appCore);
+    createCullResources(vulkanCore, appCore);
+    createCompactDrawsResources(vulkanCore, appCore);
+    createCompactBindlessResources(vulkanCore, appCore);
 
     appCore.m_persistentStagingBuffer = new PersistentStagingBuffer();
     appCore.m_globalUBO = appCore.m_persistentStagingBuffer->registerDeviceBuffer(sizeof(GlobalUBO), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
@@ -811,34 +971,10 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_globalUBO->update(offsetof(GlobalUBO, viewMatrix), sizeof(glm::mat4), &(viewMat[0][0]));
 
     // maybe set to all zeros?
-    appCore.m_ssboVisibleRenderableInfos = new VulkanWrapper::Buffer();
-    appCore.m_ssboVisibleRenderableInfos->create(MAX_RENDERABLES * sizeof(RenderableInfo), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    appCore.m_ssboVisibleRenderableInfos->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboVisibleRenderableInfos->bind();
-
-    // maybe set to all zeros?
-    appCore.m_ssboVisibleRenderableCount = new VulkanWrapper::Buffer();
-    appCore.m_ssboVisibleRenderableCount->create(3 * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
-    appCore.m_ssboVisibleRenderableCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboVisibleRenderableCount->bind();
-
-    // maybe set to all zeros?
-    appCore.m_ssboMeshToCommandMapping = new VulkanWrapper::Buffer();
-    appCore.m_ssboMeshToCommandMapping->create(MAX_MESHES * sizeof(MeshInfo), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    appCore.m_ssboMeshToCommandMapping->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboMeshToCommandMapping->bind();
-
-    // maybe set to all zeros?
     appCore.m_ssboMeshVisible = new VulkanWrapper::Buffer();
-    appCore.m_ssboMeshVisible->create(MAX_MESHES * sizeof(int), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    appCore.m_ssboMeshVisible->create(MAX_MESHES * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
     appCore.m_ssboMeshVisible->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     appCore.m_ssboMeshVisible->bind();
-
-    // maybe set to all zeros?
-    appCore.m_ssboDrawCommands = new VulkanWrapper::Buffer();
-    appCore.m_ssboDrawCommands->create(MAX_MESHES * sizeof(VkDrawIndexedIndirectCommand), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
-    appCore.m_ssboDrawCommands->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboDrawCommands->bind();
 
     // maybe set to all zeros?
     appCore.m_ssboDrawCommandCount = new VulkanWrapper::Buffer();
@@ -846,23 +982,6 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_ssboDrawCommandCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     appCore.m_ssboDrawCommandCount->bind();
 
-    // maybe set to all zeros?
-    appCore.m_ssboMeshInstanceCount = new VulkanWrapper::Buffer();
-    appCore.m_ssboMeshInstanceCount->create(MAX_MESHES * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    appCore.m_ssboMeshInstanceCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboMeshInstanceCount->bind();
-
-    // maybe set to all zeros?
-    appCore.m_ssboFirstInstanceCount = new VulkanWrapper::Buffer();
-    appCore.m_ssboFirstInstanceCount->create(sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    appCore.m_ssboFirstInstanceCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboFirstInstanceCount->bind();
-
-    // maybe set to all zeros?
-    appCore.m_ssboDrawInfos = new VulkanWrapper::Buffer();
-    appCore.m_ssboDrawInfos->create(MAX_RENDERABLES * sizeof(DrawInfo), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    appCore.m_ssboDrawInfos->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboDrawInfos->bind();
 
 #ifdef DEBUG
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_sceneBuffer->getVertexBuffer(), "Vertex Buffer");
@@ -872,50 +991,21 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_renderableInfoPool->getStagingBufferHandle(), "BufferPool - RenderableInfo - Staging");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_renderableInfoPool->getStorageBufferHandle(), "BufferPool - RenderableInfo - Storage");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, "VisibleRenderableInfos");
-    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboVisibleRenderableCount->m_vkBuffer, "VisibleCountBuffer");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboDrawCommandCount->m_vkBuffer, "DrawCommandCount");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboDrawCommands->m_vkBuffer, "DrawCommands");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboDrawInfos->m_vkBuffer, "DrawInfos");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboFirstInstanceCount->m_vkBuffer, "FirstInstanceCount");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboMeshToCommandMapping->m_vkBuffer, "MeshToCommandMapptig");
-    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboMeshVisible->m_vkBuffer, "MeshVisible");
+    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboMeshVisible->m_vkBuffer, "Cull - MeshInstanceCount");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboMeshInstanceCount->m_vkBuffer, "MeshInstanceCount");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_meshInfoPool->getStagingBufferHandle(), "MeshInfoStaging");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_meshInfoPool->getStorageBufferHandle(), "MeshInfoStorage");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_globalUBO->vkBuffer(), "GlobalUBO");
+    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboActiveMesh->m_vkBuffer, "ActiveMesh");
 #endif
 
-    appCore.m_descPool = new VulkanWrapper::DescriptorPool();
-    appCore.m_descPool->create(4, {{
-                            .type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER,
-                            .descriptorCount = 1
-                        },
-                        {
-                            .type = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-                            .descriptorCount = 20
-                        }});
-
-    appCore.m_vkCullDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkCullDescSetLayout);
-    appCore.m_vkCompactDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkCompactDescSetLayout);
     appCore.m_vkResetDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkResetDescSetLayout);
     appCore.m_vkGraphicsDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkGraphicsDescSetLayout);
-
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, appCore.m_renderableInfoPool->getDescBufferInfo());
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, appCore.m_meshInfoPool->getDescBufferInfo());
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 5, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshVisible->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 6, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawCommands->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 7, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawCommandCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
-
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboFirstInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawCommands->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 5, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDescSet, 6, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
 
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, { appCore.m_globalUBO->vkBuffer(), 0, VK_WHOLE_SIZE });
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, appCore.m_objectDataPool->getDescBufferInfo());
@@ -988,7 +1078,7 @@ void appIndirectCull(const VulkanCore& vulkanCore, AppCore& appCore)
     VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
 }
 
-void appIndirectCompact(const VulkanCore& vulkanCore, AppCore& appCore)
+void appIndirectCompactDraws(const VulkanCore& vulkanCore, AppCore& appCore)
 {
     constexpr VkCommandBufferBeginInfo vk_cmdBeginInfo {
         .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
@@ -998,11 +1088,44 @@ void appIndirectCompact(const VulkanCore& vulkanCore, AppCore& appCore)
     VK_CHECK(vkResetCommandPool(vulkanCore.vk_device, appCore.m_cmdPool->m_vkCmdPool, 0x0));
     VK_CHECK(vkBeginCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff, &vk_cmdBeginInfo));
 
-    vkCmdBindPipeline(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCompactPipeline);
+    vkCmdBindPipeline(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCompactDrawsPipeline);
     
-    vkCmdBindDescriptorSets(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCompactPipelineLayout, 0, 1, &appCore.m_vkCompactDescSet, 0, nullptr);
+    vkCmdBindDescriptorSets(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCompactDrawsPipelineLayout, 0, 1, &appCore.m_vkCompactDrawsDescSet, 0, nullptr);
 
-    vkCmdDispatchIndirect(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_ssboVisibleRenderableCount->m_vkBuffer, 0);
+    vkCmdDispatchIndirect(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_ssboActiveMesh->m_vkBuffer, 0);
+
+    VK_CHECK(vkEndCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff));
+
+    const VkSubmitInfo vk_submitInfo {
+        .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
+        .waitSemaphoreCount = 0,
+        .pWaitSemaphores = nullptr,
+        .pWaitDstStageMask = nullptr,
+        .commandBufferCount = 1,
+        .pCommandBuffers = &appCore.m_cmdBuff->m_vkCmdBuff,
+        .signalSemaphoreCount = 0,
+        .pSignalSemaphores = 0,
+    };
+
+    VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
+    VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
+}
+
+void appIndirectCompactBindless(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    constexpr VkCommandBufferBeginInfo vk_cmdBeginInfo {
+        .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO,
+        .flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT,
+    };
+
+    VK_CHECK(vkResetCommandPool(vulkanCore.vk_device, appCore.m_cmdPool->m_vkCmdPool, 0x0));
+    VK_CHECK(vkBeginCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff, &vk_cmdBeginInfo));
+
+    vkCmdBindPipeline(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCompactBindlessPipeline);
+    
+    vkCmdBindDescriptorSets(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCompactBindlessPipelineLayout, 0, 1, &appCore.m_vkCompactBindlessDescSet, 0, nullptr);
+
+    vkCmdDispatchIndirect(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, 0);
 
     VK_CHECK(vkEndCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff));
 
@@ -1083,17 +1206,17 @@ void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
     delete appCore.m_ssboDrawInfos;
 
     vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkCullDescSetLayout, nullptr);
-    vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkCompactDescSetLayout, nullptr);
+    vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSetLayout, nullptr);
     vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkResetDescSetLayout, nullptr);
     vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkGraphicsDescSetLayout, nullptr);
 
     vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkCullPipelineLayout, nullptr);
-    vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkCompactPipelineLayout, nullptr);
+    vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkCompactDrawsPipelineLayout, nullptr);
     vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkResetPipelineLayout, nullptr);
     vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkGraphicsPipelineLayout, nullptr);
 
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkCullPipeline, nullptr);
-    vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkCompactPipeline, nullptr);
+    vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkCompactDrawsPipeline, nullptr);
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkResetPipeline, nullptr);
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkGraphicsPipeline, nullptr);
 
@@ -1247,7 +1370,7 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 
     vkCmdBindPipeline(vk_cmdBuff, VK_PIPELINE_BIND_POINT_GRAPHICS, appCore.m_vkGraphicsPipeline);
 
-    vkCmdDrawIndexedIndirectCount(vk_cmdBuff, appCore.m_ssboDrawCommands->m_vkBuffer, 0, appCore.m_ssboDrawCommandCount->m_vkBuffer, 0, MAX_MESHES, sizeof(VkDrawIndexedIndirectCommand));
+    vkCmdDrawIndexedIndirectCount(vk_cmdBuff, appCore.m_ssboDrawCommands->m_vkBuffer, 0, appCore.m_ssboActiveMesh->m_vkBuffer, 0, MAX_MESHES, sizeof(VkDrawIndexedIndirectCommand));
 
     vkCmdEndRendering(vk_cmdBuff);
 
@@ -1547,7 +1670,8 @@ int main()
     AppCore appCore {};
     appIndirectInit(vulkanCore, appCore);
     appIndirectCull(vulkanCore, appCore);
-    appIndirectCompact(vulkanCore, appCore);
+    appIndirectCompactDraws(vulkanCore, appCore);
+    appIndirectCompactBindless(vulkanCore, appCore);
 
     guiInit(glfw_window, vulkanCore, appCore);
 

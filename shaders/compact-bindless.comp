@@ -1,0 +1,80 @@
+#version 450
+
+layout (local_size_x = 32) in;
+
+struct RenderableInfo
+{
+    uint meshID;
+    uint objID;
+};
+
+struct DrawCommand
+{
+    uint indexCount;
+    uint instanceCount;
+    uint firstIndex;
+    int  vertexOffset;
+    uint firstInstance;
+};
+
+struct DrawInfo
+{
+    uint objID;
+};
+
+// READ
+
+layout(set=0, binding=0) buffer readonly ssbo_0 
+{
+    uint x, y, z;
+    RenderableInfo data[];
+} ssbo_activeRenderableInfos;
+
+layout(set=0, binding=1) buffer readonly ssbo_1
+{
+    int commandIDs[];
+} ssbo_meshToCommandMapping;
+
+layout(set=0, binding=2) buffer readonly ssbo_2
+{
+    DrawCommand commands[];
+} ssbo_drawCommands;
+
+// WRITE
+
+layout(set=0, binding=3) buffer ssbo_3
+{
+    uint data[];  
+} ssbo_meshInstanceCount; 
+
+layout(set=0, binding=4) buffer ssbo_4
+{
+    // size = max # of loaded renderables
+    DrawInfo data[];
+} ssbo_drawInfos;
+
+
+void populateRenderableInfo(in uint innvocID, inout uint meshID, inout uint objID);
+
+void main()
+{
+    if (gl_GlobalInvocationID.x >= ssbo_activeRenderableInfos.x)
+        return;
+
+    uint meshID = 0;
+    uint objID  = 0;
+    populateRenderableInfo(gl_GlobalInvocationID.x, meshID, objID);
+
+    int commandID = ssbo_meshToCommandMapping.commandIDs[meshID];
+    uint firstInstance = ssbo_drawCommands.commands[commandID].firstInstance;
+    uint instance = atomicAdd(ssbo_meshInstanceCount.data[meshID], -1) - 1;
+
+    ssbo_drawInfos.data[firstInstance + instance].objID = objID;
+}
+
+void populateRenderableInfo(in uint innvocID, inout uint meshID, inout uint objID)
+{
+    RenderableInfo info = ssbo_activeRenderableInfos.data[innvocID];
+    meshID = info.meshID;
+    objID  = info.objID;
+}

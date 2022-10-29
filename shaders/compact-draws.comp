@@ -1,0 +1,85 @@
+#version 450
+
+layout (local_size_x = 32) in;
+
+struct MeshInfo
+{
+    uint indexCount;
+    uint firstIndex;
+    int  vertexOffset;
+};
+
+struct DrawCommand
+{
+    uint indexCount;
+    uint instanceCount;
+    uint firstIndex;
+    int  vertexOffset;
+    uint firstInstance;
+};
+
+// READ
+
+layout(set=0, binding=0) buffer readonly ssbo_0
+{
+    uint x, y, z;      // # of mesh ids in array
+    uint meshIDs[];  // array of active mesh ids (packed)
+} ssbo_activeMesh;
+
+layout(set=0, binding=1) buffer readonly ssbo_1
+{
+    int commandIDs[]; // array of draw command ids (packed)
+} ssbo_meshToCommandMapping;
+
+layout(set=0, binding=2) buffer readonly ssbo_2 
+{
+    // capacity = max # of meshes 
+    // size     = # of loaded meshes
+    // init     = set by CPU
+    MeshInfo data[];
+} ssbo_loadedMeshInfos;
+
+layout(set=0, binding=3) buffer readonly ssbo_3
+{
+    // size = # of loaded meshes
+    // init = { 0, 0, 0, 0, 0, ... }
+    uint data[];  
+}  ssbo_meshInstanceCount; 
+
+// WRITE
+
+layout(set=0, binding=4) buffer ssbo_4
+{
+    // init = 0
+    uint data;
+}  ssbo_firstInstanceCount;
+
+layout(set=0, binding=5) buffer writeonly ssbo_5
+{
+    // capacity = max # of meshes
+    // size     = # of visible meshes
+    // init     = does not matter
+    DrawCommand command[];
+} ssbo_drawCommands;
+
+// dispatch # of active meshes
+void main()
+{
+    if (gl_GlobalInvocationID.x >= ssbo_activeMesh.x)
+        return;
+
+    uint meshID    = ssbo_activeMesh.meshIDs[gl_GlobalInvocationID.x];
+    uint commandID = ssbo_meshToCommandMapping.commandIDs[meshID];
+
+    // grab mesh info + instance count + first instance
+    MeshInfo meshInfo  = ssbo_loadedMeshInfos.data[meshID];
+    uint instanceCount = ssbo_meshInstanceCount.data[meshID];
+    uint firstInstance = atomicAdd(ssbo_firstInstanceCount.data, instanceCount);
+
+    // populate current command with mesh info + instance count + first instance
+    ssbo_drawCommands.command[commandID].indexCount    = meshInfo.indexCount;
+    ssbo_drawCommands.command[commandID].firstIndex    = meshInfo.firstIndex;
+    ssbo_drawCommands.command[commandID].vertexOffset  = meshInfo.vertexOffset;
+    ssbo_drawCommands.command[commandID].firstInstance = firstInstance;
+    ssbo_drawCommands.command[commandID].instanceCount = instanceCount;
+}
