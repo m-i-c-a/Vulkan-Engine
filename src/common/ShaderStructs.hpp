@@ -8,6 +8,7 @@ struct GlobalUBO
 {
     glm::mat4 projMatrix { 1.0f };
     glm::mat4 viewMatrix { 1.0f };
+    glm::mat4 projViewMatrix { 1.0f };
 };
 
 struct ObjectData 

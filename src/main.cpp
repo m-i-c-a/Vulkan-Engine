@@ -85,8 +85,8 @@ struct ObjectData
 */
 
 constexpr uint32_t MAX_MESHES = 3;
-constexpr uint32_t MAX_RENDERABLES = 8000;
-constexpr uint32_t CURRENT_RENDERABLES = 8000;
+constexpr uint32_t MAX_RENDERABLES = 27000;
+constexpr uint32_t CURRENT_RENDERABLES = 27000;
 
 static constexpr int windowWidth = 500;
 static constexpr int windowHeight = 500;
@@ -96,7 +96,7 @@ static bool globalUBODirty = false;
 static float FOV = 45.0f;
 static float nearZ = 1.0f;
 static float farZ = 100.0f;
-static glm::vec3 camPos { 0.0f, 0.0f, -10.0f };
+static glm::vec3 camPos { 0.0f, 0.0f, -35.0f };
 
 struct Mesh
 {
@@ -185,7 +185,12 @@ struct AppCore
 void updateProjectionMatrix(AppCore& appCore)
 {
     glm::mat4 newProjMat = glm::perspective(glm::radians(FOV), ((float)windowWidth) / windowHeight, nearZ, farZ);
+    glm::mat4 viewMat;
+    memcpy(&(viewMat[0][0]), appCore.m_globalUBO->get() + offsetof(GlobalUBO, viewMatrix), sizeof(glm::mat4));
+    glm::mat4 newProjViewMat = newProjMat * viewMat;
+
     appCore.m_globalUBO->update(offsetof(GlobalUBO, projMatrix), sizeof(glm::mat4), &(newProjMat[0][0]));
+    appCore.m_globalUBO->update(offsetof(GlobalUBO, projViewMatrix), sizeof(glm::mat4), &(newProjViewMat[0][0]));
     globalUBODirty = true;
 }
 
@@ -193,7 +198,12 @@ void updateViewMatrix(AppCore& appCore)
 {
     glm::mat4 newViewMat = glm::mat4(1.0f);
     newViewMat = glm::translate(newViewMat, camPos);
+    glm::mat4 newProjViewMat; 
+    memcpy(&(newProjViewMat[0][0]), appCore.m_globalUBO->get() + offsetof(GlobalUBO, projMatrix), sizeof(glm::mat4));
+    newProjViewMat *= newViewMat;
+
     appCore.m_globalUBO->update(offsetof(GlobalUBO, viewMatrix), sizeof(glm::mat4), &(newViewMat[0][0]));
+    appCore.m_globalUBO->update(offsetof(GlobalUBO, projViewMatrix), sizeof(glm::mat4), &(newProjViewMat[0][0]));
     globalUBODirty = true;
 }
 
@@ -472,77 +482,12 @@ void createGraphicsPipeline(const VulkanCore& vulkanCore, AppCore& appCore)
 
 
 
-void createResetPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
-{
-    const VkDescriptorSetLayoutBinding vk_descSetLayoutBindings[] {
-        {
-            .binding = 0,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 1,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-            .pImmutableSamplers = nullptr,
-        },
-    };
 
-    const VkDescriptorSetLayoutCreateInfo vk_descSetLayoutCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO,
-        .bindingCount = ARRAYSIZE(vk_descSetLayoutBindings),
-        .pBindings = vk_descSetLayoutBindings,
-    };
-
-    VK_CHECK(vkCreateDescriptorSetLayout(vulkanCore.vk_device, &vk_descSetLayoutCreateInfo, nullptr, &appCore.m_vkResetDescSetLayout));
-
-    const VkPushConstantRange vk_pushConstantRange {
-        .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
-        .offset = 0,
-        .size = sizeof(uint32_t),
-    };
-
-    const VkPipelineLayoutCreateInfo vk_pipelineLayoutCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
-        .setLayoutCount = 1,
-        .pSetLayouts = &appCore.m_vkResetDescSetLayout,
-        .pushConstantRangeCount = 1,
-        .pPushConstantRanges = &vk_pushConstantRange,
-    };
-
-    VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &appCore.m_vkResetPipelineLayout));
-}
 
 void createPipelines(const VulkanCore& vulkanCore, AppCore& appCore)
 {
-    createResetPipelineLayout(vulkanCore, appCore);
     createGraphicsPipelineLayout(vulkanCore, appCore);
     createGraphicsPipeline(vulkanCore, appCore);
-
-
-    VulkanWrapper::ShaderModule* resetShaderModule = new VulkanWrapper::ShaderModule();
-    resetShaderModule->create("../shaders/spirv/reset-comp.spv");
-
-    const VkPipelineShaderStageCreateInfo vk_resetShaderStageCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
-        .stage = VK_SHADER_STAGE_COMPUTE_BIT,
-        .module = resetShaderModule->m_vkShaderModule,
-        .pName = "main",
-        .pSpecializationInfo = nullptr
-    };
-
-    const VkComputePipelineCreateInfo vk_resetPipelineCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_CREATE_INFO,
-        .stage = vk_resetShaderStageCreateInfo,
-        .layout = appCore.m_vkResetPipelineLayout
-    };
-
-    VK_CHECK(vkCreateComputePipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_resetPipelineCreateInfo, nullptr, &appCore.m_vkResetPipeline));
-
-    delete resetShaderModule;
 }
 
 void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -551,7 +496,7 @@ void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
     const uint32_t meshTorusID = loadMesh(appCore, "../obj-files/torus.obj");
     const uint32_t meshMonkeyID = loadMesh(appCore, "../obj-files/monkey.obj");
 
-    const int dim = 20;
+    const int dim = 30;
     const int halfDim = dim / 2;
     for (int x = 0; x < dim; x++)
     {
@@ -589,7 +534,6 @@ void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
         }
     }
 }
-
 
 
 
@@ -927,6 +871,86 @@ void createCompactBindlessResources(const VulkanCore& vulkanCore, AppCore& appCo
 }
 
 
+void createResetPipelineLayout(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    const VkDescriptorSetLayoutBinding vk_descSetLayoutBindings[] {
+        {
+            .binding = 0,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 1,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 2,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_COMPUTE_BIT,
+            .pImmutableSamplers = nullptr,
+        },
+    };
+
+    const VkDescriptorSetLayoutCreateInfo vk_descSetLayoutCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO,
+        .bindingCount = ARRAYSIZE(vk_descSetLayoutBindings),
+        .pBindings = vk_descSetLayoutBindings,
+    };
+
+    VK_CHECK(vkCreateDescriptorSetLayout(vulkanCore.vk_device, &vk_descSetLayoutCreateInfo, nullptr, &appCore.m_vkResetDescSetLayout));
+
+    const VkPipelineLayoutCreateInfo vk_pipelineLayoutCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
+        .setLayoutCount = 1,
+        .pSetLayouts = &appCore.m_vkResetDescSetLayout,
+        .pushConstantRangeCount = 0,
+        .pPushConstantRanges = nullptr
+    };
+
+    VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &appCore.m_vkResetPipelineLayout));
+}
+
+void createResetResources(const VulkanCore& vulkanCore, AppCore& appCore)
+{
+    createResetPipelineLayout(vulkanCore, appCore);
+
+    VulkanWrapper::ShaderModule* resetShaderModule = new VulkanWrapper::ShaderModule();
+    resetShaderModule->create("../shaders/spirv/reset-comp.spv");
+
+    const VkPipelineShaderStageCreateInfo vk_resetShaderStageCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
+        .stage = VK_SHADER_STAGE_COMPUTE_BIT,
+        .module = resetShaderModule->m_vkShaderModule,
+        .pName = "main",
+        .pSpecializationInfo = nullptr
+    };
+
+    const VkComputePipelineCreateInfo vk_resetPipelineCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_COMPUTE_PIPELINE_CREATE_INFO,
+        .stage = vk_resetShaderStageCreateInfo,
+        .layout = appCore.m_vkResetPipelineLayout
+    };
+
+    VK_CHECK(vkCreateComputePipelines(vulkanCore.vk_device, VK_NULL_HANDLE, 1, &vk_resetPipelineCreateInfo, nullptr, &appCore.m_vkResetPipeline));
+
+    delete resetShaderModule;
+
+    appCore.m_vkResetDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkResetDescSetLayout);
+
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkResetDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboFirstInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkResetDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkResetDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboActiveMesh->m_vkBuffer, 0, VK_WHOLE_SIZE });
+}
+
+
+
+
 
 void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
 {
@@ -959,6 +983,7 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     createCullResources(vulkanCore, appCore);
     createCompactDrawsResources(vulkanCore, appCore);
     createCompactBindlessResources(vulkanCore, appCore);
+    createResetResources(vulkanCore, appCore);
 
     appCore.m_persistentStagingBuffer = new PersistentStagingBuffer();
     appCore.m_globalUBO = appCore.m_persistentStagingBuffer->registerDeviceBuffer(sizeof(GlobalUBO), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
@@ -967,8 +992,10 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     glm::mat4 projMat = glm::perspective(FOV, ((float)windowWidth) / windowHeight, nearZ, farZ);
     glm::mat4 viewMat = glm::mat4(1.0f);
     viewMat = glm::translate(viewMat, camPos);
+    glm::mat4 projViewMat = projMat * viewMat;
     appCore.m_globalUBO->update(offsetof(GlobalUBO, projMatrix), sizeof(glm::mat4), &(projMat[0][0]));
     appCore.m_globalUBO->update(offsetof(GlobalUBO, viewMatrix), sizeof(glm::mat4), &(viewMat[0][0]));
+    appCore.m_globalUBO->update(offsetof(GlobalUBO, projViewMatrix), sizeof(glm::mat4), &(projViewMat[0][0]));
 
     // maybe set to all zeros?
     appCore.m_ssboMeshVisible = new VulkanWrapper::Buffer();
@@ -981,7 +1008,6 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_ssboDrawCommandCount->create(sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
     appCore.m_ssboDrawCommandCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     appCore.m_ssboDrawCommandCount->bind();
-
 
 #ifdef DEBUG
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_sceneBuffer->getVertexBuffer(), "Vertex Buffer");
@@ -1004,7 +1030,6 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboActiveMesh->m_vkBuffer, "ActiveMesh");
 #endif
 
-    appCore.m_vkResetDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkResetDescSetLayout);
     appCore.m_vkGraphicsDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkGraphicsDescSetLayout);
 
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, { appCore.m_globalUBO->vkBuffer(), 0, VK_WHOLE_SIZE });
@@ -1041,6 +1066,9 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
     VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
 }
+
+
+
 
 void appIndirectCull(const VulkanCore& vulkanCore, AppCore& appCore)
 {
@@ -1158,9 +1186,6 @@ void appIndirectReset(const VulkanCore& vulkanCore, AppCore& appCore)
     
     vkCmdBindDescriptorSets(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkResetPipelineLayout, 0, 1, &appCore.m_vkResetDescSet, 0, nullptr);
 
-    uint32_t renderableCount = MAX_RENDERABLES;
-    vkCmdPushConstants(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_vkResetPipelineLayout, VK_SHADER_STAGE_COMPUTE_BIT, 0, sizeof(uint32_t), &renderableCount);
-
     vkCmdDispatch(appCore.m_cmdBuff->m_vkCmdBuff, 1, 1, 1);
 
     VK_CHECK(vkEndCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff));
@@ -1204,19 +1229,23 @@ void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
     delete appCore.m_ssboMeshInstanceCount;
     delete appCore.m_ssboFirstInstanceCount;
     delete appCore.m_ssboDrawInfos;
+    delete appCore.m_ssboActiveMesh;
 
     vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkCullDescSetLayout, nullptr);
     vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSetLayout, nullptr);
+    vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSetLayout, nullptr);
     vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkResetDescSetLayout, nullptr);
     vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkGraphicsDescSetLayout, nullptr);
 
     vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkCullPipelineLayout, nullptr);
     vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkCompactDrawsPipelineLayout, nullptr);
+    vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkCompactBindlessPipelineLayout, nullptr);
     vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkResetPipelineLayout, nullptr);
     vkDestroyPipelineLayout(vulkanCore.vk_device, appCore.m_vkGraphicsPipelineLayout, nullptr);
 
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkCullPipeline, nullptr);
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkCompactDrawsPipeline, nullptr);
+    vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkCompactBindlessPipeline, nullptr);
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkResetPipeline, nullptr);
     vkDestroyPipeline(vulkanCore.vk_device, appCore.m_vkGraphicsPipeline, nullptr);
 
@@ -1291,9 +1320,9 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
     VK_CHECK(vkWaitForFences(vulkanCore.vk_device, 1, &appCore.m_swapchainImageAcquireFence->m_vkFence, VK_TRUE, UINT64_MAX));
     VK_CHECK(vkResetFences(vulkanCore.vk_device, 1, &appCore.m_swapchainImageAcquireFence->m_vkFence));
 
-    // appIndirectCull(vulkanCore, appCore);
-    // appIndirectCompact(vulkanCore, appCore);
-    // appIndirectReset(vulkanCore, appCore);
+    appIndirectCull(vulkanCore, appCore);
+    appIndirectCompactDraws(vulkanCore, appCore);
+    appIndirectCompactBindless(vulkanCore, appCore);
 
     const VkRenderingAttachmentInfo vk_baseColorAttachmentInfo {
         .sType = VK_STRUCTURE_TYPE_RENDERING_ATTACHMENT_INFO,
@@ -1412,33 +1441,35 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 
 void appSubmit(const VulkanCore& vulkanCore, AppCore& appCore)
 {
-      const VkSubmitInfo vk_submitInfo {
-            .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
-            .waitSemaphoreCount = 0,
-            .pWaitSemaphores = nullptr,
-            .pWaitDstStageMask = nullptr,
-            .commandBufferCount = 1,
-            .pCommandBuffers = &appCore.m_cmdBuff->m_vkCmdBuff,
-            .signalSemaphoreCount = 0,
-            .pSignalSemaphores = nullptr,
-        };
+    const VkSubmitInfo vk_submitInfo {
+        .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
+        .waitSemaphoreCount = 0,
+        .pWaitSemaphores = nullptr,
+        .pWaitDstStageMask = nullptr,
+        .commandBufferCount = 1,
+        .pCommandBuffers = &appCore.m_cmdBuff->m_vkCmdBuff,
+        .signalSemaphoreCount = 0,
+        .pSignalSemaphores = nullptr,
+    };
 
-        VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
-        VK_CHECK(vkDeviceWaitIdle(vulkanCore.vk_device));
+    VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
+    VK_CHECK(vkDeviceWaitIdle(vulkanCore.vk_device));
 
-        //*** Present (wait for graphics work to complete)
-        const VkPresentInfoKHR vk_presentInfo {
-            .sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR,
-            .waitSemaphoreCount = 0,
-            .pWaitSemaphores = nullptr,
-            .swapchainCount = 1,
-            .pSwapchains = &vulkanCore.vk_swapchain,
-            .pImageIndices = &appCore.m_uActiveSwapchainImageIdx,
-            .pResults = nullptr,
-        };
+    //*** Present (wait for graphics work to complete)
+    const VkPresentInfoKHR vk_presentInfo {
+        .sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR,
+        .waitSemaphoreCount = 0,
+        .pWaitSemaphores = nullptr,
+        .swapchainCount = 1,
+        .pSwapchains = &vulkanCore.vk_swapchain,
+        .pImageIndices = &appCore.m_uActiveSwapchainImageIdx,
+        .pResults = nullptr,
+    };
 
-        VK_CHECK(vkQueuePresentKHR(vulkanCore.vk_graphicsQ, &vk_presentInfo));
-        VK_CHECK(vkDeviceWaitIdle(vulkanCore.vk_device));
+    VK_CHECK(vkQueuePresentKHR(vulkanCore.vk_graphicsQ, &vk_presentInfo));
+    VK_CHECK(vkDeviceWaitIdle(vulkanCore.vk_device));
+
+    appIndirectReset(vulkanCore, appCore);
 }
 
 void createGuiRenderpass(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -1652,7 +1683,9 @@ int main()
 
     const VulkanInitInfo vulkanInitInfo {
         .window = glfw_window,
+#ifdef DEBUG
         .requestedInstanceLayerNames = { "VK_LAYER_KHRONOS_validation" },
+#endif
         .requestedInstanceExtensionNames = { "VK_KHR_surface", "VK_KHR_xcb_surface", VK_EXT_DEBUG_UTILS_EXTENSION_NAME },
         .requestedDeviceExtensionNames = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, "VK_KHR_dynamic_rendering" },
         .requestedSwapchainImageCount = 3,
@@ -1669,9 +1702,10 @@ int main()
 
     AppCore appCore {};
     appIndirectInit(vulkanCore, appCore);
-    appIndirectCull(vulkanCore, appCore);
-    appIndirectCompactDraws(vulkanCore, appCore);
-    appIndirectCompactBindless(vulkanCore, appCore);
+    // appIndirectCull(vulkanCore, appCore);
+    // appIndirectCompactDraws(vulkanCore, appCore);
+    // appIndirectCompactBindless(vulkanCore, appCore);
+    // appIndirectReset(vulkanCore, appCore);
 
     guiInit(glfw_window, vulkanCore, appCore);
 

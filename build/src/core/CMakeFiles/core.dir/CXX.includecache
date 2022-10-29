@@ -14,6 +14,10 @@ stdio.h
 stdlib.h
 -
 
+../src/common/ShaderStructs.hpp
+glm/mat4x4.hpp
+-
+
 ../src/vulkanwrapper/Buffer.hpp
 vulkan/vulkan.h
 -
@@ -24,9 +28,31 @@ Resource.hpp
 vulkan/vulkan.h
 -
 
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/BufferPool.cpp
+BufferPool.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/BufferPool.hpp
+ShaderStructs.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/ShaderStructs.hpp
+vulkanwrapper/Buffer.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/vulkanwrapper/Buffer.hpp
+
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/BufferPool.hpp
+vector
+-
+stack
+-
+vulkan/vulkan.h
+-
+
 /home/mica/Desktop/Repos/Vulkan-Engine/src/core/GenericBuffer.hpp
 vulkan/vulkan.h
 -
+
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/HostBuffer.hpp
+vulkan/vulkan.h
+-
+GenericBuffer.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/GenericBuffer.hpp
 
 /home/mica/Desktop/Repos/Vulkan-Engine/src/core/PersistentDeviceBuffer.cpp
 PersistentDeviceBuffer.hpp
@@ -46,6 +72,16 @@ vulkan/vulkan.h
 GenericBuffer.hpp
 /home/mica/Desktop/Repos/Vulkan-Engine/src/core/GenericBuffer.hpp
 
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/PersistentStagingBuffer.cpp
+Defines.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/Defines.hpp
+PersistentStagingBuffer.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/PersistentStagingBuffer.hpp
+PersistentDeviceBuffer.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/PersistentDeviceBuffer.hpp
+HostBuffer.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/HostBuffer.hpp
+
 /home/mica/Desktop/Repos/Vulkan-Engine/src/core/PersistentStagingBuffer.hpp
 string.h
 -
@@ -57,4 +93,26 @@ atomic
 -
 vulkan/vulkan.h
 -
+
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/SceneBuffer.cpp
+string.h
+-
+Defines.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/Defines.hpp
+SceneBuffer.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/SceneBuffer.hpp
+vulkanwrapper/Buffer.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/vulkanwrapper/Buffer.hpp
+
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/SceneBuffer.hpp
+vector
+-
+stack
+-
+unordered_map
+-
+vulkan/vulkan.h
+-
+ShaderStructs.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/core/ShaderStructs.hpp
 

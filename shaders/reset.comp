@@ -2,39 +2,36 @@
 
 layout (local_size_x = 32) in;
 
-struct DrawCommand
+struct RenderableInfo
 {
-    uint indexCount;
-    uint instanceCount;
-    uint firstIndex;
-    int  vertexOffset;
-    uint firstInstance;
+    uint meshID;
+    uint objID;
 };
 
-// GPU only - C
-layout(set=0, binding=0) buffer ssbo_2
+layout(set=0, binding=0) buffer ssbo_0
 {
+    // init = 0
     uint data;
-} visibleCount;
+}  ssbo_firstInstanceCount;
 
-// Buffer pool - D
-layout(set=0, binding=1) buffer ssbo_3
+layout(set=0, binding=1) buffer writeonly ssbo_1 
 {
-    DrawCommand data[];
-}  drawCommands; 
+    uint x, y, z;
+    RenderableInfo infos[];
+} ssbo_visibleRenderables;
 
-layout(push_constant) uniform pc
+layout(set=0, binding=2) buffer ssbo_2
 {
-    uint loadedMeshCount;
-} pushConst;
+    uint x, y, z;
+    uint meshIDs[];  // array of active mesh ids (packed)
+} ssbo_activeMesh;
 
 void main()
 {
-    if (gl_GlobalInvocationID.x >= pushConst.loadedMeshCount)
+    if (gl_GlobalInvocationID.x >= 1)
         return;
 
-    if (gl_GlobalInvocationID.x == 0)
-        visibleCount.data = 0;
-
-    drawCommands.data[gl_GlobalInvocationID.x].instanceCount = 0;
+    ssbo_firstInstanceCount.data = 0;
+    ssbo_activeMesh.x = 0;
+    ssbo_visibleRenderables.x = 0;
 }

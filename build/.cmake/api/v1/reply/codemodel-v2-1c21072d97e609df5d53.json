@@ -1,0 +1,391 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						7
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "third-party",
+					"childIndexes" : 
+					[
+						2,
+						5
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "third-party"
+				},
+				{
+					"build" : "third-party/glfw",
+					"childIndexes" : 
+					[
+						3,
+						4
+					],
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "third-party/glfw",
+					"targetIndexes" : 
+					[
+						13
+					]
+				},
+				{
+					"build" : "third-party/glfw/src",
+					"hasInstallRule" : true,
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "third-party/glfw/src",
+					"targetIndexes" : 
+					[
+						5,
+						14
+					]
+				},
+				{
+					"build" : "third-party/glfw/examples",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 1,
+					"source" : "third-party/glfw/examples",
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "third-party/glm",
+					"childIndexes" : 
+					[
+						6
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "third-party/glm"
+				},
+				{
+					"build" : "third-party/glm/glm",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 5,
+					"projectIndex" : 2,
+					"source" : "third-party/glm/glm"
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						8,
+						9,
+						10
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/vulkanwrapper",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 0,
+					"source" : "src/vulkanwrapper",
+					"targetIndexes" : 
+					[
+						15
+					]
+				},
+				{
+					"build" : "src/core",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 0,
+					"source" : "src/core",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "src/debug-utils",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.13"
+					},
+					"parentIndex" : 7,
+					"projectIndex" : 0,
+					"source" : "src/debug-utils",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						7,
+						8,
+						9,
+						10
+					],
+					"name" : "engine",
+					"targetIndexes" : 
+					[
+						1,
+						2,
+						3,
+						15
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"name" : "GLFW",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						0,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						16,
+						17
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5,
+						6
+					],
+					"name" : "glm",
+					"parentIndex" : 0
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 4,
+					"id" : "boing::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-boing-Release-7a308757bd49e7f1d339.json",
+					"name" : "boing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 9,
+					"id" : "core::@0618756b1ff51bca1a0e",
+					"jsonFile" : "target-core-Release-140ca93d0f1ce9bc13ed.json",
+					"name" : "core",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 10,
+					"id" : "debug-utils::@0ff46f553156cc3e85ba",
+					"jsonFile" : "target-debug-utils-Release-153b7e1d5d8782e0ae02.json",
+					"name" : "debug-utils",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "engine::@145eef247bfb46b6828c",
+					"jsonFile" : "target-engine-Release-c1bedc8c6e5f4b071f80.json",
+					"name" : "engine",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "gears::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-gears-Release-0a5e0b1895b0994d5a06.json",
+					"name" : "gears",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "glfw::@281570e8f3ee925e5575",
+					"jsonFile" : "target-glfw-Release-197fa0dc105574fb7576.json",
+					"name" : "glfw",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "heightmap::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-heightmap-Release-daa780c34fade5e3a3e5.json",
+					"name" : "heightmap",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "offscreen::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-offscreen-Release-284ebd81f17e6dea73e5.json",
+					"name" : "offscreen",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "particles::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-particles-Release-60740cf2362e1d363187.json",
+					"name" : "particles",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "sharing::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-sharing-Release-e49f2b8f11556f852c2d.json",
+					"name" : "sharing",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "splitview::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-splitview-Release-d873d06b5678c3de58e0.json",
+					"name" : "splitview",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "triangle-opengl::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-triangle-opengl-Release-2055f772961e9bc7fea4.json",
+					"name" : "triangle-opengl",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "triangle-opengles::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-triangle-opengles-Release-172dcd06ebb65df745f0.json",
+					"name" : "triangle-opengles",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "uninstall::@556c92c420f14367ed0b",
+					"jsonFile" : "target-uninstall-Release-69bba0648a8f65d0230b.json",
+					"name" : "uninstall",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "update_mappings::@281570e8f3ee925e5575",
+					"jsonFile" : "target-update_mappings-Release-0e220fe820b5e956d580.json",
+					"name" : "update_mappings",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 8,
+					"id" : "vulkanwrapper::@5b0520fd85aed38ea988",
+					"jsonFile" : "target-vulkanwrapper-Release-c5a909f10884052b1ca7.json",
+					"name" : "vulkanwrapper",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "wave::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-wave-Release-1671388f7e17c5e0e75e.json",
+					"name" : "wave",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "windows::@95b4158757d24bba1cf5",
+					"jsonFile" : "target-windows-Release-e778375097ad31433742.json",
+					"name" : "windows",
+					"projectIndex" : 1
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/mica/Desktop/Repos/Vulkan-Engine/build",
+		"source" : "/home/mica/Desktop/Repos/Vulkan-Engine"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

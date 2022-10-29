@@ -25,6 +25,8 @@ private:
 public:
     const VkDeviceSize m_vkSize = 0;
 
+    void* get() { return m_pStagingData; };
+
     void update(const VkDeviceSize vk_offset, const VkDeviceSize vk_size, const void* pData);
     void flush(const VkCommandBuffer vk_cmdBuff);
 };

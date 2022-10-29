@@ -21,6 +21,7 @@ layout(set=0, binding=0) uniform ubo_0
 {
     mat4 projMatrix;
     mat4 viewMatrix;
+    mat4 projViewMatrix;
 } ubo_global;
 
 layout(set=0, binding=1) buffer readonly ssbo_0
@@ -46,7 +47,7 @@ void main()
     getIDs(gl_InstanceIndex, objID);
 
     ObjectData objectData = ssbo_objectData.data[objID];
-    gl_Position = ubo_global.projMatrix * ubo_global.viewMatrix * objectData.modelMatrix * vec4(a_pos, 1.0f);
+    gl_Position = ubo_global.projViewMatrix * objectData.modelMatrix * vec4(a_pos, 1.0f);
     o_norm = a_norm; 
     o_uv = a_uv;
 }
