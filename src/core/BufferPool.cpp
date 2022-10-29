@@ -3,7 +3,7 @@
 #include "vulkanwrapper/Buffer.hpp"
 
 template<class T>
-BufferPool<T>::BufferPool(const uint16_t blockCount, const uint16_t dirtyCount, const VkBufferUsageFlags vk_bufferUsage)
+BufferPool<T>::BufferPool(const uint32_t blockCount, const uint32_t dirtyCount, const VkBufferUsageFlags vk_bufferUsage)
 {
     m_dirtyBlocks.resize(dirtyCount);
 
@@ -36,21 +36,21 @@ BufferPool<T>::~BufferPool()
 }
 
 template<class T>
-uint16_t BufferPool<T>::acquireBlock()
+uint32_t BufferPool<T>::acquireBlock()
 {
-    uint16_t blockIdx = m_freeBlocks.top();
+    uint32_t blockIdx = m_freeBlocks.top();
     m_freeBlocks.pop();
     return blockIdx;
 }
 
 template<class T>
-const T& BufferPool<T>::getReadableBlock(const uint16_t id) const
+const T& BufferPool<T>::getReadableBlock(const uint32_t id) const
 {
     return m_cpuBlocks[id];
 }
 
 template<class T>
-T& BufferPool<T>::getWritableBlock(const uint16_t id)
+T& BufferPool<T>::getWritableBlock(const uint32_t id)
 {
     m_dirtyBlocks[m_activeDirtyBlockCount++] = id;
     return m_cpuBlocks[id];
@@ -61,9 +61,9 @@ void BufferPool<T>::flushDirtyBlocks(const VkCommandBuffer vk_cmdBuff)
 {
     std::vector<VkBufferCopy> vk_bufferCopies(m_activeDirtyBlockCount);
 
-    for (uint16_t i = 0; i < m_activeDirtyBlockCount; ++i)
+    for (uint32_t i = 0; i < m_activeDirtyBlockCount; ++i)
     {
-        const uint16_t ssboIdx = m_dirtyBlocks[i];
+        const uint32_t ssboIdx = m_dirtyBlocks[i];
 
         VkBufferCopy vk_bufferCopy {
             .srcOffset = i * sizeof(T),

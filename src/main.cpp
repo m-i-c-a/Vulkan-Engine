@@ -85,8 +85,10 @@ struct ObjectData
 */
 
 constexpr uint32_t MAX_MESHES = 3;
-constexpr uint32_t MAX_RENDERABLES = 27000;
-constexpr uint32_t CURRENT_RENDERABLES = 27000;
+constexpr uint32_t MAX_RENDERABLES = 125000;
+constexpr uint32_t CURRENT_RENDERABLES = 125000;
+// constexpr uint32_t MAX_RENDERABLES = 8000;
+// constexpr uint32_t CURRENT_RENDERABLES = 8000;
 
 static constexpr int windowWidth = 500;
 static constexpr int windowHeight = 500;
@@ -96,7 +98,7 @@ static bool globalUBODirty = false;
 static float FOV = 45.0f;
 static float nearZ = 1.0f;
 static float farZ = 100.0f;
-static glm::vec3 camPos { 0.0f, 0.0f, -35.0f };
+static glm::vec3 camPos { 0.0f, 0.0f, -65.0f };
 
 struct Mesh
 {
@@ -492,11 +494,14 @@ void createPipelines(const VulkanCore& vulkanCore, AppCore& appCore)
 
 void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
 {
-    const uint32_t meshSphereID = loadMesh(appCore, "../obj-files/sphere.obj");
-    const uint32_t meshTorusID = loadMesh(appCore, "../obj-files/torus.obj");
-    const uint32_t meshMonkeyID = loadMesh(appCore, "../obj-files/monkey.obj");
+    // const uint32_t meshSphereID = loadMesh(appCore, "../obj-files/sphere.obj");
+    const uint32_t meshSphereID = loadMesh(appCore, "../obj-files/low_res_isosphere.obj");
+    const uint32_t meshTorusID = loadMesh(appCore, "../obj-files/cube.obj");
+    // const uint32_t meshTorusID = loadMesh(appCore, "../obj-files/torus.obj");
+    // const uint32_t meshMonkeyID = loadMesh(appCore, "../obj-files/monkey.obj");
+    const uint32_t meshMonkeyID = loadMesh(appCore, "../obj-files/low_res_cylinder.obj");
 
-    const int dim = 30;
+    const int dim = 50;
     const int halfDim = dim / 2;
     for (int x = 0; x < dim; x++)
     {

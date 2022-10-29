@@ -35,7 +35,7 @@ layout(set=0, binding=2) buffer readonly ssbo_1
 } ssbo_drawInfo;
 
 
-void getIDs(in uint instanceIndex, inout uint objID)
+void getIDs(in uint instanceIndex, out uint objID)
 {
     DrawInfo info = ssbo_drawInfo.data[instanceIndex];
     objID  = info.objID;
