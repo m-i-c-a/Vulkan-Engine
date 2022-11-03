@@ -1303,6 +1303,10 @@ vulkanwrapper/DescriptorPool.hpp
 /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.hpp
 vulkanwrapper/Fence.hpp
 /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Fence.hpp
+vulkanwrapper/Image.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Image.hpp
+vulkanwrapper/ImageView.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/ImageView.hpp
 vulkanwrapper/ShaderModule.hpp
 /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/ShaderModule.hpp
 
@@ -1333,6 +1337,18 @@ Resource.hpp
 /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 
 /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Fence.hpp
+vulkan/vulkan.h
+-
+Resource.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+
+/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Image.hpp
+vulkan/vulkan.h
+-
+Resource.hpp
+/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+
+/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/ImageView.hpp
 vulkan/vulkan.h
 -
 Resource.hpp

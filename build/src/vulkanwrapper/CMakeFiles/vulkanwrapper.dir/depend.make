@@ -26,6 +26,16 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/vulkanwrapper
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/vulkanwrapper/Fence.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/vulkanwrapper/Resource.hpp
 
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o: ../src/common/Defines.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o: ../src/vulkanwrapper/Image.cpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o: ../src/vulkanwrapper/Image.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o: ../src/vulkanwrapper/Resource.hpp
+
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/common/Defines.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/vulkanwrapper/ImageView.cpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/vulkanwrapper/ImageView.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/vulkanwrapper/Resource.hpp
+
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o: ../src/common/Defines.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o: ../src/vulkanwrapper/Resource.cpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o: ../src/vulkanwrapper/Resource.hpp

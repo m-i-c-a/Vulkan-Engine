@@ -306,6 +306,60 @@ Fence.cpp.s:
 	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.s
 .PHONY : Fence.cpp.s
 
+Image.o: Image.cpp.o
+
+.PHONY : Image.o
+
+# target to build an object file
+Image.cpp.o:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o
+.PHONY : Image.cpp.o
+
+Image.i: Image.cpp.i
+
+.PHONY : Image.i
+
+# target to preprocess a source file
+Image.cpp.i:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.i
+.PHONY : Image.cpp.i
+
+Image.s: Image.cpp.s
+
+.PHONY : Image.s
+
+# target to generate assembly for a file
+Image.cpp.s:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.s
+.PHONY : Image.cpp.s
+
+ImageView.o: ImageView.cpp.o
+
+.PHONY : ImageView.o
+
+# target to build an object file
+ImageView.cpp.o:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o
+.PHONY : ImageView.cpp.o
+
+ImageView.i: ImageView.cpp.i
+
+.PHONY : ImageView.i
+
+# target to preprocess a source file
+ImageView.cpp.i:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.i
+.PHONY : ImageView.cpp.i
+
+ImageView.s: ImageView.cpp.s
+
+.PHONY : ImageView.s
+
+# target to generate assembly for a file
+ImageView.cpp.s:
+	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.s
+.PHONY : ImageView.cpp.s
+
 Resource.o: Resource.cpp.o
 
 .PHONY : Resource.o
@@ -388,6 +442,12 @@ help:
 	@echo "... Fence.o"
 	@echo "... Fence.i"
 	@echo "... Fence.s"
+	@echo "... Image.o"
+	@echo "... Image.i"
+	@echo "... Image.s"
+	@echo "... ImageView.o"
+	@echo "... ImageView.i"
+	@echo "... ImageView.s"
 	@echo "... Resource.o"
 	@echo "... Resource.i"
 	@echo "... Resource.s"

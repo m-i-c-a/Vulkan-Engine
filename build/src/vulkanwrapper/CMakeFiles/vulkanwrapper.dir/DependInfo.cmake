@@ -9,6 +9,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/CommandPool.cpp" "/home/mica/Desktop/Repos/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/CommandPool.cpp.o"
   "/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.cpp" "/home/mica/Desktop/Repos/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o"
   "/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Fence.cpp" "/home/mica/Desktop/Repos/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o"
+  "/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Image.cpp" "/home/mica/Desktop/Repos/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o"
+  "/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/ImageView.cpp" "/home/mica/Desktop/Repos/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o"
   "/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Resource.cpp" "/home/mica/Desktop/Repos/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o"
   "/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/ShaderModule.cpp" "/home/mica/Desktop/Repos/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ShaderModule.cpp.o"
   )

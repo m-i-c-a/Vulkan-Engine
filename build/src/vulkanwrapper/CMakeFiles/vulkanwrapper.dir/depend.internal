@@ -26,6 +26,16 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o
  /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Fence.cpp
  /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Fence.hpp
  /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o
+ ../src/common/Defines.hpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Image.cpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Image.hpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o
+ ../src/common/Defines.hpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/ImageView.cpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/ImageView.hpp
+ /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o
  ../src/common/Defines.hpp
  /home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Resource.cpp

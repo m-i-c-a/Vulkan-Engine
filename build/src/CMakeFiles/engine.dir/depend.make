@@ -344,6 +344,8 @@ src/CMakeFiles/engine.dir/main.cpp.o: ../src/vulkanwrapper/CommandBuffer.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/vulkanwrapper/CommandPool.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/vulkanwrapper/DescriptorPool.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/vulkanwrapper/Fence.hpp
+src/CMakeFiles/engine.dir/main.cpp.o: ../src/vulkanwrapper/Image.hpp
+src/CMakeFiles/engine.dir/main.cpp.o: ../src/vulkanwrapper/ImageView.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/vulkanwrapper/Resource.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/vulkanwrapper/ShaderModule.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std.h

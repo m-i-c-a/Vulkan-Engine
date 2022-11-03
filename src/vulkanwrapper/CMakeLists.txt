@@ -4,6 +4,8 @@ add_library(vulkanwrapper STATIC
     CommandPool.cpp    CommandPool.hpp
     DescriptorPool.cpp DescriptorPool.hpp
     Fence.cpp          Fence.hpp
+    Image.cpp          Image.hpp
+    ImageView.cpp      ImageView.hpp
     Resource.cpp       Resource.hpp
     ShaderModule.cpp   ShaderModule.hpp
 )
