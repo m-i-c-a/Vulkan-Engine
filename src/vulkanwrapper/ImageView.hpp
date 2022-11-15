@@ -10,12 +10,10 @@ namespace VulkanWrapper
 
 struct ImageView : public Resource
 {
-    VkImageView m_vkImageView;
+    VkImageView m_vkImageView = VK_NULL_HANDLE;
 
-    ImageView() = default;
+    ImageView(const VkImageViewCreateInfo& vk_createInfo);
     ~ImageView();
-
-    void create(const VkImage vk_image, const VkImageViewType vk_imageViewType, const VkFormat vk_imageViewFormat, const VkImageSubresourceRange& vk_imageSubresourceRange);
 };
 
 }; // VulkanWrapper

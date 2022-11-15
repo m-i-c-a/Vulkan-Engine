@@ -7,6 +7,7 @@ add_library(vulkanwrapper STATIC
     Image.cpp          Image.hpp
     ImageView.cpp      ImageView.hpp
     Resource.cpp       Resource.hpp
+    Sampler.cpp        Sampler.hpp
     ShaderModule.cpp   ShaderModule.hpp
 )
 

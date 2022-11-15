@@ -39,6 +39,8 @@ Camera
 ImGui
 Hard Instancing Test (50x50x50)
 Depth Buffer
+Sparse Textures
+
 LODs
 Replace wait idles with PipelineBarriers + Semaphores 
 Materials
@@ -87,7 +89,7 @@ struct ObjectData
 */
 
 constexpr uint32_t MAX_MESHES = 3;
-constexpr uint32_t DIM = 20;
+constexpr uint32_t DIM = 1;
 constexpr uint32_t MAX_RENDERABLES = DIM * DIM * DIM;
 constexpr uint32_t CURRENT_RENDERABLES = MAX_RENDERABLES;
 // constexpr uint32_t MAX_RENDERABLES = 8000;
@@ -99,9 +101,9 @@ static constexpr int windowHeight = 500;
 static bool renderGui = true;
 static bool globalUBODirty = false;
 static float FOV = 45.0f;
-static float nearZ = 1.0f;
+static float nearZ = 0.1f;
 static float farZ = 100.0f;
-static glm::vec3 camPos { 0.0f, 0.0f, -1.0f * (float)DIM - 5.0f };
+static glm::vec3 camPos { 0.0f, 0.0f, -1.0f * (float)DIM };
 
 struct Mesh
 {
@@ -125,6 +127,8 @@ struct Renderable
 #include "core/PersistentDeviceBuffer.hpp"
 #include "core/PersistentStagingBuffer.hpp"
 #include "core/SceneBuffer.hpp"
+#include "core/Texture.hpp"
+
 #include "vulkanwrapper/Buffer.hpp"
 #include "vulkanwrapper/CommandBuffer.hpp"
 #include "vulkanwrapper/CommandPool.hpp"
@@ -132,6 +136,7 @@ struct Renderable
 #include "vulkanwrapper/Fence.hpp"
 #include "vulkanwrapper/Image.hpp"
 #include "vulkanwrapper/ImageView.hpp"
+#include "vulkanwrapper/Sampler.hpp"
 #include "vulkanwrapper/ShaderModule.hpp"
 
 struct AppCore
@@ -1111,26 +1116,122 @@ void createAttachments(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_depthImage->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     appCore.m_depthImage->bind();
 
-    const VkImageSubresourceRange range {
-        .aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT,
-        .baseMipLevel = 0,
-        .levelCount = 1,
-        .baseArrayLayer = 0,
-        .layerCount = 1,
+    const VkImageViewCreateInfo vk_imageViewCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO,
+        .image = appCore.m_depthImage->m_vkImage,
+        .viewType = VK_IMAGE_VIEW_TYPE_2D,
+        .format = VK_FORMAT_D32_SFLOAT,
+        .components = {
+            .r = VK_COMPONENT_SWIZZLE_IDENTITY,
+            .g = VK_COMPONENT_SWIZZLE_IDENTITY,
+            .b = VK_COMPONENT_SWIZZLE_IDENTITY,
+            .a = VK_COMPONENT_SWIZZLE_IDENTITY },
+        .subresourceRange = {
+            .aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT,
+            .baseMipLevel = 0,
+            .levelCount = 1,
+            .baseArrayLayer = 0,
+            .layerCount = 1,
+        }
     };
 
-    appCore.m_depthImageView = new VulkanWrapper::ImageView();
-    appCore.m_depthImageView->create(appCore.m_depthImage->m_vkImage, VK_IMAGE_VIEW_TYPE_2D, VK_FORMAT_D32_SFLOAT, range);
+    appCore.m_depthImageView = new VulkanWrapper::ImageView(vk_imageViewCreateInfo);
+}
+
+VkDeviceMemory acquireMemory(const VkImage vk_image)
+{
+    return VK_NULL_HANDLE;
+}
+
+void createTexture()
+{
+    const VkFormat vk_format   = VK_FORMAT_R8G8B8_SNORM;
+    const uint32_t mipCount    = 1;
+    const uint32_t layerCount  = 1;
+    const VkExtent3D vk_extent = {};
+    const VkImageType vk_imageType = VK_IMAGE_TYPE_2D;
+    const VkImageViewType vk_imageViewType = VK_IMAGE_VIEW_TYPE_2D;
+
+    const VkImageCreateInfo vk_imageCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO,
+        .imageType = vk_imageType,
+        .format = vk_format,
+        .extent = vk_extent,
+        .mipLevels = mipCount,
+        .arrayLayers = layerCount,
+        .samples = VK_SAMPLE_COUNT_1_BIT,
+        .tiling = VK_IMAGE_TILING_OPTIMAL,
+        .usage = VK_IMAGE_USAGE_SAMPLED_BIT | VK_IMAGE_USAGE_TRANSFER_DST_BIT,
+        .sharingMode = VK_SHARING_MODE_EXCLUSIVE,
+        .initialLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+    };
+
+    VkImageViewCreateInfo vk_imageViewCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO,
+        .viewType = vk_imageViewType,
+        .format = vk_format,
+        .components = {
+            .r = VK_COMPONENT_SWIZZLE_IDENTITY,
+            .g = VK_COMPONENT_SWIZZLE_IDENTITY,
+            .b = VK_COMPONENT_SWIZZLE_IDENTITY,
+            .a = VK_COMPONENT_SWIZZLE_IDENTITY },
+        .subresourceRange = {
+            .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
+            .baseMipLevel = 0,
+            .levelCount = mipCount,
+            .baseArrayLayer = 0,
+            .layerCount = layerCount,
+        }
+    };
+
+    VulkanWrapper::Sampler* sampler;
+    Core::Texture* texture = new Core::Texture(vk_imageCreateInfo, vk_imageViewCreateInfo, sampler);
+}
+
+
+void loadTexture()
+{
+    // read file data / add to staging
+    
+    createTexture();
 }
 
 void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
 {
+    const VkSamplerCreateInfo vk_samplerCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO,
+        .magFilter = VK_FILTER_LINEAR,
+        .minFilter = VK_FILTER_LINEAR,
+        .mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR,
+        .addressModeU = VK_SAMPLER_ADDRESS_MODE_REPEAT,
+        .addressModeV = VK_SAMPLER_ADDRESS_MODE_REPEAT,
+        .addressModeW = VK_SAMPLER_ADDRESS_MODE_REPEAT,
+        .mipLodBias = 0.0,
+        .anisotropyEnable = VK_FALSE,
+        .compareEnable = VK_FALSE,
+        .minLod = 0.0f,
+        .maxLod = 0.0f,
+        .unnormalizedCoordinates = VK_FALSE,
+    };
+
+    VulkanWrapper::Sampler* sampler = new VulkanWrapper::Sampler(vk_samplerCreateInfo);
+
+    VulkanWrapper::Image* image = new VulkanWrapper::Image();
+    image->create(VK_IMAGE_TYPE_2D, VK_FORMAT_D32_SFLOAT, { vulkanCore.vk_swapchainExtent.width, vulkanCore.vk_swapchainExtent.height, 1}, 1, VK_SAMPLE_COUNT_1_BIT, VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, 1, VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL);
+    image->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    image->bind();
+
+    VkImage vk_image;
+
+    VulkanWrapper::ImageView* imageView = new VulkanWrapper::ImageView(vk_imageViewCreateInfo);
+
     // const uint32_t meshSphereID = loadMesh(appCore, "../obj-files/sphere.obj");
-    const uint32_t meshSphereID = loadMesh(appCore, "../obj-files/low_res_isosphere.obj");
-    const uint32_t meshTorusID = loadMesh(appCore, "../obj-files/cube.obj");
+    // const uint32_t meshSphereID = loadMesh(appCore, "../obj-files/low_res_isosphere.obj");
+    // const uint32_t meshTorusID = loadMesh(appCore, "../obj-files/cube.obj");
     // const uint32_t meshTorusID = loadMesh(appCore, "../obj-files/torus.obj");
     // const uint32_t meshMonkeyID = loadMesh(appCore, "../obj-files/monkey.obj");
-    const uint32_t meshMonkeyID = loadMesh(appCore, "../obj-files/low_res_cylinder.obj");
+    // const uint32_t meshMonkeyID = loadMesh(appCore, "../obj-files/low_res_cylinder.obj");
+    const uint32_t meshPlaneID = loadMesh(appCore, "../obj-files/plane.obj");
 
     const int dim = DIM;
     const int halfDim = dim / 2;
@@ -1138,20 +1239,21 @@ void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
     {
         for (int y = 0; y < dim; y++)
         {
-            const int y_mod = y % 3;
-            uint32_t meshID = UINT32_MAX;
-            switch (y_mod)
-            {
-            case 0:
-                meshID = meshMonkeyID;
-                break;
-            case 1:
-                meshID = meshTorusID;
-                break;
-            case 2:
-                meshID = meshSphereID;
-                break;
-            }
+            // const int y_mod = y % 3;
+            // uint32_t meshID = UINT32_MAX;
+            // switch (y_mod)
+            // {
+            // case 0:
+            //     meshID = meshMonkeyID;
+            //     break;
+            // case 1:
+            //     meshID = meshTorusID;
+            //     break;
+            // case 2:
+            //     meshID = meshSphereID;
+            //     break;
+            // }
+            uint meshID = meshPlaneID;
 
             for (int z = 0; z < dim; z++)
             {
@@ -1159,6 +1261,7 @@ void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
                 ObjectData& objectData = appCore.m_objectDataPool->getWritableBlock(objectDataBlockIdx);
                 objectData.modelMatrix = glm::mat4(1.0f);
                 objectData.modelMatrix = glm::translate(objectData.modelMatrix, glm::vec3(x - halfDim, y - halfDim, z - halfDim));
+                objectData.modelMatrix = glm::rotate(objectData.modelMatrix, glm::half_pi<float>(), glm::vec3(1.0, 0.0, 0.0)); // glm::vec3(glm::half_pi<double>(), 0.0f, 0.0f));
                 objectData.modelMatrix = glm::scale(objectData.modelMatrix, glm::vec3(0.1, 0.1, 0.1));
 
                 const uint32_t renderableInfoBlockIdx = (uint32_t)appCore.m_renderableInfoPool->acquireBlock();
@@ -1195,7 +1298,17 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
                         {
                             .type = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
                             .descriptorCount = 20
-                        }});
+                        },
+                        {
+                            .type = VK_DESCRIPTOR_TYPE_SAMPLER,
+                            .descriptorCount = 1
+                        },
+                        {
+                            .type = VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE,
+                            .descriptorCount = 1
+                        },
+                        
+                        });
 
     appCore.m_persistentStagingBuffer = new PersistentStagingBuffer();
     appCore.m_globalUBO = appCore.m_persistentStagingBuffer->registerDeviceBuffer(sizeof(GlobalUBO), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
