@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Repos/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Repos/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/engine.dir/depend.make
@@ -59,139 +59,153 @@ include src/CMakeFiles/engine.dir/flags.make
 
 src/CMakeFiles/engine.dir/main.cpp.o: src/CMakeFiles/engine.dir/flags.make
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/engine.dir/main.cpp.o"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/main.cpp.o -c /home/mica/Desktop/Repos/Vulkan-Engine/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/engine.dir/main.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/main.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/main.cpp
 
 src/CMakeFiles/engine.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/main.cpp.i"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Repos/Vulkan-Engine/src/main.cpp > CMakeFiles/engine.dir/main.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/src/main.cpp > CMakeFiles/engine.dir/main.cpp.i
 
 src/CMakeFiles/engine.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/main.cpp.s"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Repos/Vulkan-Engine/src/main.cpp -o CMakeFiles/engine.dir/main.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/main.cpp -o CMakeFiles/engine.dir/main.cpp.s
 
 src/CMakeFiles/engine.dir/VulkanCore.cpp.o: src/CMakeFiles/engine.dir/flags.make
 src/CMakeFiles/engine.dir/VulkanCore.cpp.o: ../src/VulkanCore.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/engine.dir/VulkanCore.cpp.o"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/VulkanCore.cpp.o -c /home/mica/Desktop/Repos/Vulkan-Engine/src/VulkanCore.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/engine.dir/VulkanCore.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/VulkanCore.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/VulkanCore.cpp
 
 src/CMakeFiles/engine.dir/VulkanCore.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/VulkanCore.cpp.i"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Repos/Vulkan-Engine/src/VulkanCore.cpp > CMakeFiles/engine.dir/VulkanCore.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/src/VulkanCore.cpp > CMakeFiles/engine.dir/VulkanCore.cpp.i
 
 src/CMakeFiles/engine.dir/VulkanCore.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/VulkanCore.cpp.s"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Repos/Vulkan-Engine/src/VulkanCore.cpp -o CMakeFiles/engine.dir/VulkanCore.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/VulkanCore.cpp -o CMakeFiles/engine.dir/VulkanCore.cpp.s
 
 src/CMakeFiles/engine.dir/Loader.cpp.o: src/CMakeFiles/engine.dir/flags.make
 src/CMakeFiles/engine.dir/Loader.cpp.o: ../src/Loader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/engine.dir/Loader.cpp.o"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Loader.cpp.o -c /home/mica/Desktop/Repos/Vulkan-Engine/src/Loader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/CMakeFiles/engine.dir/Loader.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/Loader.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.cpp
 
 src/CMakeFiles/engine.dir/Loader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/Loader.cpp.i"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Repos/Vulkan-Engine/src/Loader.cpp > CMakeFiles/engine.dir/Loader.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.cpp > CMakeFiles/engine.dir/Loader.cpp.i
 
 src/CMakeFiles/engine.dir/Loader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/Loader.cpp.s"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Repos/Vulkan-Engine/src/Loader.cpp -o CMakeFiles/engine.dir/Loader.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.cpp -o CMakeFiles/engine.dir/Loader.cpp.s
+
+src/CMakeFiles/engine.dir/TextureLoader.cpp.o: src/CMakeFiles/engine.dir/flags.make
+src/CMakeFiles/engine.dir/TextureLoader.cpp.o: ../src/TextureLoader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/engine.dir/TextureLoader.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/TextureLoader.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/TextureLoader.cpp
+
+src/CMakeFiles/engine.dir/TextureLoader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/TextureLoader.cpp.i"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/src/TextureLoader.cpp > CMakeFiles/engine.dir/TextureLoader.cpp.i
+
+src/CMakeFiles/engine.dir/TextureLoader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/TextureLoader.cpp.s"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/TextureLoader.cpp -o CMakeFiles/engine.dir/TextureLoader.cpp.s
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o: src/CMakeFiles/engine.dir/flags.make
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o: ../third-party/imgui/imgui_demo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o -c /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_demo.cpp
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.i"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_demo.cpp > CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_demo.cpp > CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.i
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.s"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_demo.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_demo.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.s
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o: src/CMakeFiles/engine.dir/flags.make
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o: ../third-party/imgui/imgui_draw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o -c /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_draw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_draw.cpp
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.i"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_draw.cpp > CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_draw.cpp > CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.i
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.s"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_draw.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_draw.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.s
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o: src/CMakeFiles/engine.dir/flags.make
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o: ../third-party/imgui/imgui_tables.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o -c /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_tables.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_tables.cpp
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.i"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_tables.cpp > CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_tables.cpp > CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.i
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.s"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_tables.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_tables.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.s
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.o: src/CMakeFiles/engine.dir/flags.make
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.o: ../third-party/imgui/imgui_widgets.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.o"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.o -c /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_widgets.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_widgets.cpp
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.i"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_widgets.cpp > CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_widgets.cpp > CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.i
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.s"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui_widgets.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui_widgets.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/imgui_widgets.cpp.s
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.o: src/CMakeFiles/engine.dir/flags.make
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.o: ../third-party/imgui/imgui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.o"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.o -c /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui.cpp
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.i"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui.cpp > CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui.cpp > CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.i
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.s"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/imgui.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/imgui.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/imgui.cpp.s
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.o: src/CMakeFiles/engine.dir/flags.make
 src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.o: ../third-party/imgui/backends/imgui_impl_glfw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.o"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.o -c /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/backends/imgui_impl_glfw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/backends/imgui_impl_glfw.cpp
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.i"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/backends/imgui_impl_glfw.cpp > CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/backends/imgui_impl_glfw.cpp > CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.i
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.s"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.s
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o: src/CMakeFiles/engine.dir/flags.make
 src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o: ../third-party/imgui/backends/imgui_impl_vulkan.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o -c /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/backends/imgui_impl_vulkan.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/backends/imgui_impl_vulkan.cpp
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.i"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/backends/imgui_impl_vulkan.cpp > CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/backends/imgui_impl_vulkan.cpp > CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.i
 
 src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.s"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Repos/Vulkan-Engine/third-party/imgui/backends/imgui_impl_vulkan.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/imgui/backends/imgui_impl_vulkan.cpp -o CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.s
 
 # Object files for target engine
 engine_OBJECTS = \
 "CMakeFiles/engine.dir/main.cpp.o" \
 "CMakeFiles/engine.dir/VulkanCore.cpp.o" \
 "CMakeFiles/engine.dir/Loader.cpp.o" \
+"CMakeFiles/engine.dir/TextureLoader.cpp.o" \
 "CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o" \
 "CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o" \
 "CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o" \
@@ -206,6 +220,7 @@ engine_EXTERNAL_OBJECTS =
 src/engine: src/CMakeFiles/engine.dir/main.cpp.o
 src/engine: src/CMakeFiles/engine.dir/VulkanCore.cpp.o
 src/engine: src/CMakeFiles/engine.dir/Loader.cpp.o
+src/engine: src/CMakeFiles/engine.dir/TextureLoader.cpp.o
 src/engine: src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_demo.cpp.o
 src/engine: src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_draw.cpp.o
 src/engine: src/CMakeFiles/engine.dir/__/third-party/imgui/imgui_tables.cpp.o
@@ -215,7 +230,8 @@ src/engine: src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_g
 src/engine: src/CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o
 src/engine: src/CMakeFiles/engine.dir/build.make
 src/engine: third-party/glfw/src/libglfw3.a
-src/engine: /home/mica/Desktop/Vulkan/1.3.224.1/x86_64/lib/libvulkan.so
+src/engine: third-party/KTX-Software/libktx.so.4.1.0
+src/engine: /home/mica/Downloads/1.3.204.1/x86_64/lib/libvulkan.so
 src/engine: src/vulkanwrapper/libvulkanwrapper.a
 src/engine: src/core/libcore.a
 src/engine: src/debug-utils/libdebug-utils.a
@@ -223,8 +239,8 @@ src/engine: /usr/lib/x86_64-linux-gnu/librt.so
 src/engine: /usr/lib/x86_64-linux-gnu/libm.so
 src/engine: src/vulkanwrapper/libvulkanwrapper.a
 src/engine: src/CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable engine"
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable engine"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/engine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/engine.dir/build: src/engine
@@ -232,10 +248,10 @@ src/CMakeFiles/engine.dir/build: src/engine
 .PHONY : src/CMakeFiles/engine.dir/build
 
 src/CMakeFiles/engine.dir/clean:
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build/src && $(CMAKE_COMMAND) -P CMakeFiles/engine.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src && $(CMAKE_COMMAND) -P CMakeFiles/engine.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/engine.dir/clean
 
 src/CMakeFiles/engine.dir/depend:
-	cd /home/mica/Desktop/Repos/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Repos/Vulkan-Engine /home/mica/Desktop/Repos/Vulkan-Engine/src /home/mica/Desktop/Repos/Vulkan-Engine/build /home/mica/Desktop/Repos/Vulkan-Engine/build/src /home/mica/Desktop/Repos/Vulkan-Engine/build/src/CMakeFiles/engine.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/src /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/CMakeFiles/engine.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/engine.dir/depend
 

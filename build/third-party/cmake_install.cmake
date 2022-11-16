@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Repos/Vulkan-Engine/third-party
+# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "Release")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -39,8 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/mica/Desktop/Repos/Vulkan-Engine/build/third-party/glfw/cmake_install.cmake")
-  include("/home/mica/Desktop/Repos/Vulkan-Engine/build/third-party/glm/cmake_install.cmake")
+  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/cmake_install.cmake")
+  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glm/cmake_install.cmake")
+  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/cmake_install.cmake")
 
 endif()
 

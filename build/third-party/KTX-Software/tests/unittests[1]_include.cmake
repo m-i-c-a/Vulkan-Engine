@@ -1,0 +1,5 @@
+if(EXISTS "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/unittests[1]_tests.cmake")
+  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/unittests[1]_tests.cmake")
+else()
+  add_test(unittests_NOT_BUILT unittests_NOT_BUILT)
+endif()

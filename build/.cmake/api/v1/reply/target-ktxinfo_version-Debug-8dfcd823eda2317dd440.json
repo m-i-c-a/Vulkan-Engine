@@ -1,0 +1,81 @@
+{
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"create_version_header"
+		],
+		"files" : 
+		[
+			"third-party/KTX-Software/cmake/version.cmake",
+			"third-party/KTX-Software/tools/ktxinfo/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 193,
+				"parent" : 1
+			}
+		]
+	},
+	"id" : "ktxinfo_version::@06b0119fbdc72fe1817e",
+	"name" : "ktxinfo_version",
+	"paths" : 
+	{
+		"build" : "third-party/KTX-Software/tools/ktxinfo",
+		"source" : "third-party/KTX-Software/tools/ktxinfo"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "third-party/KTX-Software/tools/ktxinfo/version.h.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

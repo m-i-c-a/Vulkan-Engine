@@ -1,0 +1,81 @@
+{
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"create_version_header"
+		],
+		"files" : 
+		[
+			"third-party/KTX-Software/cmake/version.cmake",
+			"third-party/KTX-Software/tools/ktx2ktx2/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 193,
+				"parent" : 1
+			}
+		]
+	},
+	"id" : "ktx2ktx2_version::@6b7df1aa046df4e18a35",
+	"name" : "ktx2ktx2_version",
+	"paths" : 
+	{
+		"build" : "third-party/KTX-Software/tools/ktx2ktx2",
+		"source" : "third-party/KTX-Software/tools/ktx2ktx2"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"isGenerated" : true,
+			"path" : "build/third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "third-party/KTX-Software/tools/ktx2ktx2/version.h.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

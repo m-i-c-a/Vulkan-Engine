@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -DDEBUG  -g CMakeFiles/transcodetests.dir/transcodetests.cc.o  -o transcodetests  -Wl,-rpath,/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software ../gtest/libgtest.a ../../libktx.so.4.1.0 ../../interface/basisu_c_binding/libobj_basisu_cbind.a -lpthread -ldl -lpthread 

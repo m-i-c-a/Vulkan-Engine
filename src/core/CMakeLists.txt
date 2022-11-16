@@ -5,6 +5,7 @@ add_library(core STATIC
     PersistentDeviceBuffer.cpp    PersistentDeviceBuffer.hpp
     PersistentStagingBuffer.cpp   PersistentStagingBuffer.hpp
     SceneBuffer.cpp               SceneBuffer.hpp
+    Texture.cpp                   Texture.hpp
 )
 
 target_link_libraries(core PRIVATE vulkanwrapper)

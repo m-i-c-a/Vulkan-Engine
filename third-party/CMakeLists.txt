@@ -1,6 +1,7 @@
 set(GLFW_BUILD_EXAMPLES 1)
 add_subdirectory(glfw)
 add_subdirectory(glm)
+add_subdirectory(KTX-Software)
 
 set(IMGUI_INCLUDE_DIRS ${PROJECT_SOURCE_DIR}/third-party ${PROJECT_SOURCE_DIR}/third-party/imgui PARENT_SCOPE)
 

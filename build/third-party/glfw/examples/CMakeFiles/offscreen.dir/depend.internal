@@ -6,4 +6,4 @@ third-party/glfw/examples/CMakeFiles/offscreen.dir/offscreen.c.o
  ../third-party/glfw/deps/linmath.h
  ../third-party/glfw/deps/stb_image_write.h
  ../third-party/glfw/include/GLFW/glfw3.h
- /home/mica/Desktop/Repos/Vulkan-Engine/third-party/glfw/examples/offscreen.c
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/offscreen.c

@@ -7,6 +7,7 @@ namespace VulkanWrapper
 {
 
 class Image;
+class DeviceMemory;
 class ImageView;
 class Sampler;
 
@@ -22,6 +23,7 @@ private:
     VkDescriptorImageInfo m_vkDescriptorInfo = {};
 
     VulkanWrapper::Image*         m_image     = nullptr;
+    VulkanWrapper::DeviceMemory*  m_memory    = nullptr;
     VulkanWrapper::ImageView*     m_imageView = nullptr;
     const VulkanWrapper::Sampler* m_sampler   = nullptr;
 public:

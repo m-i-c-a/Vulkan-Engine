@@ -14,19 +14,19 @@ stdio.h
 stdlib.h
 -
 
-/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Image.cpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Image.cpp
 Image.hpp
-/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Image.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Image.hpp
 Defines.hpp
-/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Defines.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Defines.hpp
 
-/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Image.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Image.hpp
 vulkan/vulkan.h
 -
 Resource.hpp
-/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 
-/home/mica/Desktop/Repos/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 vulkan/vulkan.h
 -
 

@@ -15,6 +15,7 @@
 #include "ShaderStructs.hpp"
 #include "VulkanCore.hpp"
 #include "Loader.hpp"
+#include "TextureLoader.hpp"
 #include "debug-utils/DebugUtilsEXT.hpp"
 // #include "core/Buffer.hpp"
 // #include "core/BufferPool.hpp"
@@ -128,6 +129,8 @@ struct Renderable
 #include "core/PersistentStagingBuffer.hpp"
 #include "core/SceneBuffer.hpp"
 #include "core/Texture.hpp"
+
+#include "vulkanwrapper/Generic.hpp"
 
 #include "vulkanwrapper/Buffer.hpp"
 #include "vulkanwrapper/CommandBuffer.hpp"
@@ -1143,57 +1146,14 @@ VkDeviceMemory acquireMemory(const VkImage vk_image)
     return VK_NULL_HANDLE;
 }
 
-void createTexture()
-{
-    const VkFormat vk_format   = VK_FORMAT_R8G8B8_SNORM;
-    const uint32_t mipCount    = 1;
-    const uint32_t layerCount  = 1;
-    const VkExtent3D vk_extent = {};
-    const VkImageType vk_imageType = VK_IMAGE_TYPE_2D;
-    const VkImageViewType vk_imageViewType = VK_IMAGE_VIEW_TYPE_2D;
-
-    const VkImageCreateInfo vk_imageCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO,
-        .imageType = vk_imageType,
-        .format = vk_format,
-        .extent = vk_extent,
-        .mipLevels = mipCount,
-        .arrayLayers = layerCount,
-        .samples = VK_SAMPLE_COUNT_1_BIT,
-        .tiling = VK_IMAGE_TILING_OPTIMAL,
-        .usage = VK_IMAGE_USAGE_SAMPLED_BIT | VK_IMAGE_USAGE_TRANSFER_DST_BIT,
-        .sharingMode = VK_SHARING_MODE_EXCLUSIVE,
-        .initialLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
-    };
-
-    VkImageViewCreateInfo vk_imageViewCreateInfo {
-        .sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO,
-        .viewType = vk_imageViewType,
-        .format = vk_format,
-        .components = {
-            .r = VK_COMPONENT_SWIZZLE_IDENTITY,
-            .g = VK_COMPONENT_SWIZZLE_IDENTITY,
-            .b = VK_COMPONENT_SWIZZLE_IDENTITY,
-            .a = VK_COMPONENT_SWIZZLE_IDENTITY },
-        .subresourceRange = {
-            .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
-            .baseMipLevel = 0,
-            .levelCount = mipCount,
-            .baseArrayLayer = 0,
-            .layerCount = layerCount,
-        }
-    };
-
-    VulkanWrapper::Sampler* sampler;
-    Core::Texture* texture = new Core::Texture(vk_imageCreateInfo, vk_imageViewCreateInfo, sampler);
-}
 
 
 void loadTexture()
 {
     // read file data / add to staging
     
-    createTexture();
+    // createTexture();
+    loadTexture("../textures/container.ktx");
 }
 
 void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -1223,7 +1183,7 @@ void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
 
     VkImage vk_image;
 
-    VulkanWrapper::ImageView* imageView = new VulkanWrapper::ImageView(vk_imageViewCreateInfo);
+    // VulkanWrapper::ImageView* imageView = new VulkanWrapper::ImageView(vk_imageViewCreateInfo);
 
     // const uint32_t meshSphereID = loadMesh(appCore, "../obj-files/sphere.obj");
     // const uint32_t meshSphereID = loadMesh(appCore, "../obj-files/low_res_isosphere.obj");
@@ -1847,6 +1807,7 @@ int main()
 
     VulkanCore vulkanCore = initVulkan(vulkanInitInfo);
 
+    VulkanWrapper::init(vulkanCore.vk_physicalDevice, vulkanCore.vk_device);
     VulkanWrapper::Resource::initResources(vulkanCore.vk_physicalDevice, vulkanCore.vk_device);
     DebugUtilsEXT::init(vulkanCore.vk_instance, vulkanCore.vk_device);
 

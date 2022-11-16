@@ -44,10 +44,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Repos/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Repos/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -156,20 +156,350 @@ src/vulkanwrapper/clean: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/clean
 # Recursive "all" directory target.
 third-party/all: third-party/glfw/all
 third-party/all: third-party/glm/all
+third-party/all: third-party/KTX-Software/all
 
 .PHONY : third-party/all
 
 # Recursive "preinstall" directory target.
 third-party/preinstall: third-party/glfw/preinstall
 third-party/preinstall: third-party/glm/preinstall
+third-party/preinstall: third-party/KTX-Software/preinstall
 
 .PHONY : third-party/preinstall
 
 # Recursive "clean" directory target.
 third-party/clean: third-party/glfw/clean
 third-party/clean: third-party/glm/clean
+third-party/clean: third-party/KTX-Software/clean
 
 .PHONY : third-party/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software
+
+# Recursive "all" directory target.
+third-party/KTX-Software/all: third-party/KTX-Software/CMakeFiles/ktx_read.dir/all
+third-party/KTX-Software/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
+third-party/KTX-Software/all: third-party/KTX-Software/CMakeFiles/objUtil.dir/all
+third-party/KTX-Software/all: third-party/KTX-Software/interface/basisu_c_binding/all
+third-party/KTX-Software/all: third-party/KTX-Software/lib/astc-encoder/all
+third-party/KTX-Software/all: third-party/KTX-Software/tools/all
+third-party/KTX-Software/all: third-party/KTX-Software/tests/all
+
+.PHONY : third-party/KTX-Software/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/preinstall: third-party/KTX-Software/interface/basisu_c_binding/preinstall
+third-party/KTX-Software/preinstall: third-party/KTX-Software/lib/astc-encoder/preinstall
+third-party/KTX-Software/preinstall: third-party/KTX-Software/tools/preinstall
+third-party/KTX-Software/preinstall: third-party/KTX-Software/tests/preinstall
+
+.PHONY : third-party/KTX-Software/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ktx_version.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ktx_read.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ktx.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/mkvk.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/NightlyTest.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/Experimental.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/Continuous.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/Nightly.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/NightlyStart.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/objUtil.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/interface/basisu_c_binding/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/lib/astc-encoder/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/tools/clean
+third-party/KTX-Software/clean: third-party/KTX-Software/tests/clean
+
+.PHONY : third-party/KTX-Software/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/interface/basisu_c_binding
+
+# Recursive "all" directory target.
+third-party/KTX-Software/interface/basisu_c_binding/all: third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/all
+
+.PHONY : third-party/KTX-Software/interface/basisu_c_binding/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/interface/basisu_c_binding/preinstall:
+
+.PHONY : third-party/KTX-Software/interface/basisu_c_binding/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/interface/basisu_c_binding/clean: third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/clean
+
+.PHONY : third-party/KTX-Software/interface/basisu_c_binding/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/lib/astc-encoder
+
+# Recursive "all" directory target.
+third-party/KTX-Software/lib/astc-encoder/all: third-party/KTX-Software/lib/astc-encoder/Source/all
+
+.PHONY : third-party/KTX-Software/lib/astc-encoder/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/lib/astc-encoder/preinstall: third-party/KTX-Software/lib/astc-encoder/Source/preinstall
+
+.PHONY : third-party/KTX-Software/lib/astc-encoder/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/lib/astc-encoder/clean: third-party/KTX-Software/lib/astc-encoder/Source/clean
+
+.PHONY : third-party/KTX-Software/lib/astc-encoder/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/lib/astc-encoder/Source
+
+# Recursive "all" directory target.
+third-party/KTX-Software/lib/astc-encoder/Source/all: third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/all
+
+.PHONY : third-party/KTX-Software/lib/astc-encoder/Source/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/lib/astc-encoder/Source/preinstall:
+
+.PHONY : third-party/KTX-Software/lib/astc-encoder/Source/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/lib/astc-encoder/Source/clean: third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/clean
+
+.PHONY : third-party/KTX-Software/lib/astc-encoder/Source/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/tests
+
+# Recursive "all" directory target.
+third-party/KTX-Software/tests/all: third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/all
+third-party/KTX-Software/tests/all: third-party/KTX-Software/tests/CMakeFiles/unittests.dir/all
+third-party/KTX-Software/tests/all: third-party/KTX-Software/tests/gtest/all
+third-party/KTX-Software/tests/all: third-party/KTX-Software/tests/transcodetests/all
+third-party/KTX-Software/tests/all: third-party/KTX-Software/tests/streamtests/all
+
+.PHONY : third-party/KTX-Software/tests/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/tests/preinstall: third-party/KTX-Software/tests/gtest/preinstall
+third-party/KTX-Software/tests/preinstall: third-party/KTX-Software/tests/transcodetests/preinstall
+third-party/KTX-Software/tests/preinstall: third-party/KTX-Software/tests/streamtests/preinstall
+
+.PHONY : third-party/KTX-Software/tests/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/tests/clean: third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/clean
+third-party/KTX-Software/tests/clean: third-party/KTX-Software/tests/CMakeFiles/unittests.dir/clean
+third-party/KTX-Software/tests/clean: third-party/KTX-Software/tests/gtest/clean
+third-party/KTX-Software/tests/clean: third-party/KTX-Software/tests/transcodetests/clean
+third-party/KTX-Software/tests/clean: third-party/KTX-Software/tests/streamtests/clean
+
+.PHONY : third-party/KTX-Software/tests/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/tests/gtest
+
+# Recursive "all" directory target.
+third-party/KTX-Software/tests/gtest/all: third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/all
+
+.PHONY : third-party/KTX-Software/tests/gtest/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/tests/gtest/preinstall:
+
+.PHONY : third-party/KTX-Software/tests/gtest/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/tests/gtest/clean: third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/clean
+
+.PHONY : third-party/KTX-Software/tests/gtest/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/tests/streamtests
+
+# Recursive "all" directory target.
+third-party/KTX-Software/tests/streamtests/all: third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/all
+
+.PHONY : third-party/KTX-Software/tests/streamtests/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/tests/streamtests/preinstall:
+
+.PHONY : third-party/KTX-Software/tests/streamtests/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/tests/streamtests/clean: third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/clean
+
+.PHONY : third-party/KTX-Software/tests/streamtests/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/tests/transcodetests
+
+# Recursive "all" directory target.
+third-party/KTX-Software/tests/transcodetests/all: third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/all
+
+.PHONY : third-party/KTX-Software/tests/transcodetests/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/tests/transcodetests/preinstall:
+
+.PHONY : third-party/KTX-Software/tests/transcodetests/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/tests/transcodetests/clean: third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/clean
+
+.PHONY : third-party/KTX-Software/tests/transcodetests/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/tools
+
+# Recursive "all" directory target.
+third-party/KTX-Software/tools/all: third-party/KTX-Software/tools/ktx2check/all
+third-party/KTX-Software/tools/all: third-party/KTX-Software/tools/ktx2ktx2/all
+third-party/KTX-Software/tools/all: third-party/KTX-Software/tools/ktxinfo/all
+third-party/KTX-Software/tools/all: third-party/KTX-Software/tools/ktxsc/all
+third-party/KTX-Software/tools/all: third-party/KTX-Software/tools/toktx/all
+
+.PHONY : third-party/KTX-Software/tools/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/tools/preinstall: third-party/KTX-Software/tools/ktx2check/preinstall
+third-party/KTX-Software/tools/preinstall: third-party/KTX-Software/tools/ktx2ktx2/preinstall
+third-party/KTX-Software/tools/preinstall: third-party/KTX-Software/tools/ktxinfo/preinstall
+third-party/KTX-Software/tools/preinstall: third-party/KTX-Software/tools/ktxsc/preinstall
+third-party/KTX-Software/tools/preinstall: third-party/KTX-Software/tools/toktx/preinstall
+
+.PHONY : third-party/KTX-Software/tools/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/tools/clean: third-party/KTX-Software/tools/ktx2check/clean
+third-party/KTX-Software/tools/clean: third-party/KTX-Software/tools/ktx2ktx2/clean
+third-party/KTX-Software/tools/clean: third-party/KTX-Software/tools/ktxinfo/clean
+third-party/KTX-Software/tools/clean: third-party/KTX-Software/tools/ktxsc/clean
+third-party/KTX-Software/tools/clean: third-party/KTX-Software/tools/toktx/clean
+
+.PHONY : third-party/KTX-Software/tools/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/tools/ktx2check
+
+# Recursive "all" directory target.
+third-party/KTX-Software/tools/ktx2check/all: third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/all
+
+.PHONY : third-party/KTX-Software/tools/ktx2check/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/tools/ktx2check/preinstall:
+
+.PHONY : third-party/KTX-Software/tools/ktx2check/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/tools/ktx2check/clean: third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/clean
+third-party/KTX-Software/tools/ktx2check/clean: third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/clean
+
+.PHONY : third-party/KTX-Software/tools/ktx2check/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/tools/ktx2ktx2
+
+# Recursive "all" directory target.
+third-party/KTX-Software/tools/ktx2ktx2/all: third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/all
+
+.PHONY : third-party/KTX-Software/tools/ktx2ktx2/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/tools/ktx2ktx2/preinstall:
+
+.PHONY : third-party/KTX-Software/tools/ktx2ktx2/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/tools/ktx2ktx2/clean: third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/clean
+third-party/KTX-Software/tools/ktx2ktx2/clean: third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/clean
+
+.PHONY : third-party/KTX-Software/tools/ktx2ktx2/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/tools/ktxinfo
+
+# Recursive "all" directory target.
+third-party/KTX-Software/tools/ktxinfo/all: third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/all
+
+.PHONY : third-party/KTX-Software/tools/ktxinfo/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/tools/ktxinfo/preinstall:
+
+.PHONY : third-party/KTX-Software/tools/ktxinfo/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/tools/ktxinfo/clean: third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/clean
+third-party/KTX-Software/tools/ktxinfo/clean: third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/clean
+
+.PHONY : third-party/KTX-Software/tools/ktxinfo/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/tools/ktxsc
+
+# Recursive "all" directory target.
+third-party/KTX-Software/tools/ktxsc/all: third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/all
+
+.PHONY : third-party/KTX-Software/tools/ktxsc/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/tools/ktxsc/preinstall:
+
+.PHONY : third-party/KTX-Software/tools/ktxsc/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/tools/ktxsc/clean: third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/clean
+third-party/KTX-Software/tools/ktxsc/clean: third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/clean
+
+.PHONY : third-party/KTX-Software/tools/ktxsc/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/KTX-Software/tools/toktx
+
+# Recursive "all" directory target.
+third-party/KTX-Software/tools/toktx/all: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/all
+
+.PHONY : third-party/KTX-Software/tools/toktx/all
+
+# Recursive "preinstall" directory target.
+third-party/KTX-Software/tools/toktx/preinstall:
+
+.PHONY : third-party/KTX-Software/tools/toktx/preinstall
+
+# Recursive "clean" directory target.
+third-party/KTX-Software/tools/toktx/clean: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/clean
+third-party/KTX-Software/tools/toktx/clean: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/clean
+
+.PHONY : third-party/KTX-Software/tools/toktx/clean
 
 #=============================================================================
 # Directory level rules for directory third-party/glfw
@@ -177,12 +507,14 @@ third-party/clean: third-party/glm/clean
 # Recursive "all" directory target.
 third-party/glfw/all: third-party/glfw/src/all
 third-party/glfw/all: third-party/glfw/examples/all
+third-party/glfw/all: third-party/glfw/docs/all
 
 .PHONY : third-party/glfw/all
 
 # Recursive "preinstall" directory target.
 third-party/glfw/preinstall: third-party/glfw/src/preinstall
 third-party/glfw/preinstall: third-party/glfw/examples/preinstall
+third-party/glfw/preinstall: third-party/glfw/docs/preinstall
 
 .PHONY : third-party/glfw/preinstall
 
@@ -190,8 +522,27 @@ third-party/glfw/preinstall: third-party/glfw/examples/preinstall
 third-party/glfw/clean: third-party/glfw/CMakeFiles/uninstall.dir/clean
 third-party/glfw/clean: third-party/glfw/src/clean
 third-party/glfw/clean: third-party/glfw/examples/clean
+third-party/glfw/clean: third-party/glfw/docs/clean
 
 .PHONY : third-party/glfw/clean
+
+#=============================================================================
+# Directory level rules for directory third-party/glfw/docs
+
+# Recursive "all" directory target.
+third-party/glfw/docs/all: third-party/glfw/docs/CMakeFiles/docs.dir/all
+
+.PHONY : third-party/glfw/docs/all
+
+# Recursive "preinstall" directory target.
+third-party/glfw/docs/preinstall:
+
+.PHONY : third-party/glfw/docs/preinstall
+
+# Recursive "clean" directory target.
+third-party/glfw/docs/clean: third-party/glfw/docs/CMakeFiles/docs.dir/clean
+
+.PHONY : third-party/glfw/docs/clean
 
 #=============================================================================
 # Directory level rules for directory third-party/glfw/examples
@@ -293,14 +644,14 @@ third-party/glm/glm/clean:
 third-party/glfw/CMakeFiles/uninstall.dir/all:
 	$(MAKE) -f third-party/glfw/CMakeFiles/uninstall.dir/build.make third-party/glfw/CMakeFiles/uninstall.dir/depend
 	$(MAKE) -f third-party/glfw/CMakeFiles/uninstall.dir/build.make third-party/glfw/CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : third-party/glfw/CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -320,14 +671,14 @@ third-party/glfw/CMakeFiles/uninstall.dir/clean:
 third-party/glfw/src/CMakeFiles/update_mappings.dir/all:
 	$(MAKE) -f third-party/glfw/src/CMakeFiles/update_mappings.dir/build.make third-party/glfw/src/CMakeFiles/update_mappings.dir/depend
 	$(MAKE) -f third-party/glfw/src/CMakeFiles/update_mappings.dir/build.make third-party/glfw/src/CMakeFiles/update_mappings.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=65 "Built target update_mappings"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=93 "Built target update_mappings"
 .PHONY : third-party/glfw/src/CMakeFiles/update_mappings.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/src/CMakeFiles/update_mappings.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/src/CMakeFiles/update_mappings.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/src/CMakeFiles/update_mappings.dir/rule
 
 # Convenience name for target.
@@ -347,14 +698,14 @@ third-party/glfw/src/CMakeFiles/update_mappings.dir/clean:
 third-party/glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) -f third-party/glfw/src/CMakeFiles/glfw.dir/build.make third-party/glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) -f third-party/glfw/src/CMakeFiles/glfw.dir/build.make third-party/glfw/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=22,23,24,25,26,27,28,29,30,31 "Built target glfw"
 .PHONY : third-party/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 24
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/src/CMakeFiles/glfw.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/src/CMakeFiles/glfw.dir/rule
 
 # Convenience name for target.
@@ -374,14 +725,14 @@ third-party/glfw/src/CMakeFiles/glfw.dir/clean:
 third-party/glfw/examples/CMakeFiles/boing.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/boing.dir/build.make third-party/glfw/examples/CMakeFiles/boing.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/boing.dir/build.make third-party/glfw/examples/CMakeFiles/boing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=1,2 "Built target boing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=11 "Built target boing"
 .PHONY : third-party/glfw/examples/CMakeFiles/boing.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/boing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/boing.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/boing.dir/rule
 
 # Convenience name for target.
@@ -401,14 +752,14 @@ third-party/glfw/examples/CMakeFiles/boing.dir/clean:
 third-party/glfw/examples/CMakeFiles/gears.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/gears.dir/build.make third-party/glfw/examples/CMakeFiles/gears.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/gears.dir/build.make third-party/glfw/examples/CMakeFiles/gears.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=23,24 "Built target gears"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=21 "Built target gears"
 .PHONY : third-party/glfw/examples/CMakeFiles/gears.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/gears.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/gears.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/gears.dir/rule
 
 # Convenience name for target.
@@ -428,14 +779,14 @@ third-party/glfw/examples/CMakeFiles/gears.dir/clean:
 third-party/glfw/examples/CMakeFiles/heightmap.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/heightmap.dir/build.make third-party/glfw/examples/CMakeFiles/heightmap.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/heightmap.dir/build.make third-party/glfw/examples/CMakeFiles/heightmap.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=49,50 "Built target heightmap"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target heightmap"
 .PHONY : third-party/glfw/examples/CMakeFiles/heightmap.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/heightmap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/heightmap.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/heightmap.dir/rule
 
 # Convenience name for target.
@@ -455,14 +806,14 @@ third-party/glfw/examples/CMakeFiles/heightmap.dir/clean:
 third-party/glfw/examples/CMakeFiles/sharing.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/sharing.dir/build.make third-party/glfw/examples/CMakeFiles/sharing.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/sharing.dir/build.make third-party/glfw/examples/CMakeFiles/sharing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=57,58 "Built target sharing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=82 "Built target sharing"
 .PHONY : third-party/glfw/examples/CMakeFiles/sharing.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/sharing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/sharing.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/sharing.dir/rule
 
 # Convenience name for target.
@@ -482,14 +833,14 @@ third-party/glfw/examples/CMakeFiles/sharing.dir/clean:
 third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/build.make third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/build.make third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=63,64 "Built target triangle-opengles"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=91 "Built target triangle-opengles"
 .PHONY : third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/rule
 
 # Convenience name for target.
@@ -509,14 +860,14 @@ third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/clean:
 third-party/glfw/examples/CMakeFiles/particles.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/particles.dir/build.make third-party/glfw/examples/CMakeFiles/particles.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/particles.dir/build.make third-party/glfw/examples/CMakeFiles/particles.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=53,54,55,56 "Built target particles"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=80,81 "Built target particles"
 .PHONY : third-party/glfw/examples/CMakeFiles/particles.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/particles.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 28
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/particles.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/particles.dir/rule
 
 # Convenience name for target.
@@ -536,14 +887,14 @@ third-party/glfw/examples/CMakeFiles/particles.dir/clean:
 third-party/glfw/examples/CMakeFiles/splitview.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/splitview.dir/build.make third-party/glfw/examples/CMakeFiles/splitview.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/splitview.dir/build.make third-party/glfw/examples/CMakeFiles/splitview.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=59,60 "Built target splitview"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=83 "Built target splitview"
 .PHONY : third-party/glfw/examples/CMakeFiles/splitview.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/splitview.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/splitview.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/splitview.dir/rule
 
 # Convenience name for target.
@@ -563,14 +914,14 @@ third-party/glfw/examples/CMakeFiles/splitview.dir/clean:
 third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/build.make third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/build.make third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=61,62 "Built target triangle-opengl"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=90 "Built target triangle-opengl"
 .PHONY : third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/rule
 
 # Convenience name for target.
@@ -590,14 +941,14 @@ third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/clean:
 third-party/glfw/examples/CMakeFiles/offscreen.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/offscreen.dir/build.make third-party/glfw/examples/CMakeFiles/offscreen.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/offscreen.dir/build.make third-party/glfw/examples/CMakeFiles/offscreen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=51,52 "Built target offscreen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=79 "Built target offscreen"
 .PHONY : third-party/glfw/examples/CMakeFiles/offscreen.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/offscreen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/offscreen.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/offscreen.dir/rule
 
 # Convenience name for target.
@@ -617,14 +968,14 @@ third-party/glfw/examples/CMakeFiles/offscreen.dir/clean:
 third-party/glfw/examples/CMakeFiles/wave.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/wave.dir/build.make third-party/glfw/examples/CMakeFiles/wave.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/wave.dir/build.make third-party/glfw/examples/CMakeFiles/wave.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=76,77 "Built target wave"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=99 "Built target wave"
 .PHONY : third-party/glfw/examples/CMakeFiles/wave.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/wave.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/wave.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/wave.dir/rule
 
 # Convenience name for target.
@@ -644,14 +995,14 @@ third-party/glfw/examples/CMakeFiles/wave.dir/clean:
 third-party/glfw/examples/CMakeFiles/windows.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/windows.dir/build.make third-party/glfw/examples/CMakeFiles/windows.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/windows.dir/build.make third-party/glfw/examples/CMakeFiles/windows.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=78,79 "Built target windows"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=100 "Built target windows"
 .PHONY : third-party/glfw/examples/CMakeFiles/windows.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/windows.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/windows.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/windows.dir/rule
 
 # Convenience name for target.
@@ -665,23 +1016,1503 @@ third-party/glfw/examples/CMakeFiles/windows.dir/clean:
 .PHONY : third-party/glfw/examples/CMakeFiles/windows.dir/clean
 
 #=============================================================================
+# Target rules for target third-party/glfw/docs/CMakeFiles/docs.dir
+
+# All Build rule for target.
+third-party/glfw/docs/CMakeFiles/docs.dir/all:
+	$(MAKE) -f third-party/glfw/docs/CMakeFiles/docs.dir/build.make third-party/glfw/docs/CMakeFiles/docs.dir/depend
+	$(MAKE) -f third-party/glfw/docs/CMakeFiles/docs.dir/build.make third-party/glfw/docs/CMakeFiles/docs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target docs"
+.PHONY : third-party/glfw/docs/CMakeFiles/docs.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/glfw/docs/CMakeFiles/docs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/docs/CMakeFiles/docs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/glfw/docs/CMakeFiles/docs.dir/rule
+
+# Convenience name for target.
+docs: third-party/glfw/docs/CMakeFiles/docs.dir/rule
+
+.PHONY : docs
+
+# clean rule for target.
+third-party/glfw/docs/CMakeFiles/docs.dir/clean:
+	$(MAKE) -f third-party/glfw/docs/CMakeFiles/docs.dir/build.make third-party/glfw/docs/CMakeFiles/docs.dir/clean
+.PHONY : third-party/glfw/docs/CMakeFiles/docs.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ktx_version.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ktx_version.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_version.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_version.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_version.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_version.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ktx_version"
+.PHONY : third-party/KTX-Software/CMakeFiles/ktx_version.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ktx_version.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx_version.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ktx_version.dir/rule
+
+# Convenience name for target.
+ktx_version: third-party/KTX-Software/CMakeFiles/ktx_version.dir/rule
+
+.PHONY : ktx_version
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ktx_version.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_version.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_version.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ktx_version.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ktx_read.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ktx_read.dir/all: third-party/KTX-Software/CMakeFiles/mkvk.dir/all
+third-party/KTX-Software/CMakeFiles/ktx_read.dir/all: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=59,60,61,62,63,64,65,66,67,68,69,70,71 "Built target ktx_read"
+.PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 15
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx_read.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule
+
+# Convenience name for target.
+ktx_read: third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule
+
+.PHONY : ktx_read
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ktx_read.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ktx.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ktx.dir/all: third-party/KTX-Software/CMakeFiles/ktx_version.dir/all
+third-party/KTX-Software/CMakeFiles/ktx.dir/all: third-party/KTX-Software/CMakeFiles/mkvk.dir/all
+third-party/KTX-Software/CMakeFiles/ktx.dir/all: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all
+third-party/KTX-Software/CMakeFiles/ktx.dir/all: third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/all
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55 "Built target ktx"
+.PHONY : third-party/KTX-Software/CMakeFiles/ktx.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ktx.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 34
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ktx.dir/rule
+
+# Convenience name for target.
+ktx: third-party/KTX-Software/CMakeFiles/ktx.dir/rule
+
+.PHONY : ktx
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ktx.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ktx.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/mkvk.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/mkvk.dir/all: third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/all
+third-party/KTX-Software/CMakeFiles/mkvk.dir/all: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all
+third-party/KTX-Software/CMakeFiles/mkvk.dir/all: third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/all
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvk.dir/build.make third-party/KTX-Software/CMakeFiles/mkvk.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvk.dir/build.make third-party/KTX-Software/CMakeFiles/mkvk.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target mkvk"
+.PHONY : third-party/KTX-Software/CMakeFiles/mkvk.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/mkvk.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/mkvk.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/mkvk.dir/rule
+
+# Convenience name for target.
+mkvk: third-party/KTX-Software/CMakeFiles/mkvk.dir/rule
+
+.PHONY : mkvk
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/mkvk.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvk.dir/build.make third-party/KTX-Software/CMakeFiles/mkvk.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/mkvk.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/makedfd2vk.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/all: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build.make third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build.make third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target makedfd2vk"
+.PHONY : third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/rule
+
+# Convenience name for target.
+makedfd2vk: third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/rule
+
+.PHONY : makedfd2vk
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build.make third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target NightlyMemCheck"
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/rule
+
+# Convenience name for target.
+NightlyMemCheck: third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/rule
+
+.PHONY : NightlyMemCheck
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/NightlyTest.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyTest.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyTest.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target NightlyTest"
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyTest.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/NightlyTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyTest.dir/rule
+
+# Convenience name for target.
+NightlyTest: third-party/KTX-Software/CMakeFiles/NightlyTest.dir/rule
+
+.PHONY : NightlyTest
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyTest.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyTest.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyTest.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ContinuousConfigure"
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/rule
+
+# Convenience name for target.
+ContinuousConfigure: third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/rule
+
+.PHONY : ContinuousConfigure
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ContinuousBuild"
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/rule
+
+# Convenience name for target.
+ContinuousBuild: third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/rule
+
+.PHONY : ContinuousBuild
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target NightlyConfigure"
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/rule
+
+# Convenience name for target.
+NightlyConfigure: third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/rule
+
+.PHONY : NightlyConfigure
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target NightlyMemoryCheck"
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/rule
+
+# Convenience name for target.
+NightlyMemoryCheck: third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/rule
+
+.PHONY : NightlyMemoryCheck
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ExperimentalTest"
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/rule
+
+# Convenience name for target.
+ExperimentalTest: third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/rule
+
+.PHONY : ExperimentalTest
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ContinuousUpdate"
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/rule
+
+# Convenience name for target.
+ContinuousUpdate: third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/rule
+
+.PHONY : ContinuousUpdate
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target NightlyUpdate"
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/rule
+
+# Convenience name for target.
+NightlyUpdate: third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/rule
+
+.PHONY : NightlyUpdate
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ExperimentalMemCheck"
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/rule
+
+# Convenience name for target.
+ExperimentalMemCheck: third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/rule
+
+.PHONY : ExperimentalMemCheck
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ExperimentalSubmit"
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/rule
+
+# Convenience name for target.
+ExperimentalSubmit: third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/rule
+
+.PHONY : ExperimentalSubmit
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/Experimental.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/Experimental.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Experimental.dir/build.make third-party/KTX-Software/CMakeFiles/Experimental.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Experimental.dir/build.make third-party/KTX-Software/CMakeFiles/Experimental.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target Experimental"
+.PHONY : third-party/KTX-Software/CMakeFiles/Experimental.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/Experimental.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/Experimental.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/Experimental.dir/rule
+
+# Convenience name for target.
+Experimental: third-party/KTX-Software/CMakeFiles/Experimental.dir/rule
+
+.PHONY : Experimental
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/Experimental.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Experimental.dir/build.make third-party/KTX-Software/CMakeFiles/Experimental.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/Experimental.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ContinuousCoverage"
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/rule
+
+# Convenience name for target.
+ContinuousCoverage: third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/rule
+
+.PHONY : ContinuousCoverage
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/build.make third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/build.make third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=77 "Built target mkvkformatfiles"
+.PHONY : third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/rule
+
+# Convenience name for target.
+mkvkformatfiles: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/rule
+
+.PHONY : mkvkformatfiles
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/build.make third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ExperimentalConfigure"
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/rule
+
+# Convenience name for target.
+ExperimentalConfigure: third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/rule
+
+.PHONY : ExperimentalConfigure
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/Continuous.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/Continuous.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Continuous.dir/build.make third-party/KTX-Software/CMakeFiles/Continuous.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Continuous.dir/build.make third-party/KTX-Software/CMakeFiles/Continuous.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target Continuous"
+.PHONY : third-party/KTX-Software/CMakeFiles/Continuous.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/Continuous.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/Continuous.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/Continuous.dir/rule
+
+# Convenience name for target.
+Continuous: third-party/KTX-Software/CMakeFiles/Continuous.dir/rule
+
+.PHONY : Continuous
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/Continuous.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Continuous.dir/build.make third-party/KTX-Software/CMakeFiles/Continuous.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/Continuous.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/Nightly.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/Nightly.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Nightly.dir/build.make third-party/KTX-Software/CMakeFiles/Nightly.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Nightly.dir/build.make third-party/KTX-Software/CMakeFiles/Nightly.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target Nightly"
+.PHONY : third-party/KTX-Software/CMakeFiles/Nightly.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/Nightly.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/Nightly.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/Nightly.dir/rule
+
+# Convenience name for target.
+Nightly: third-party/KTX-Software/CMakeFiles/Nightly.dir/rule
+
+.PHONY : Nightly
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/Nightly.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Nightly.dir/build.make third-party/KTX-Software/CMakeFiles/Nightly.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/Nightly.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/NightlySubmit.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/build.make third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/build.make third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target NightlySubmit"
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/rule
+
+# Convenience name for target.
+NightlySubmit: third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/rule
+
+.PHONY : NightlySubmit
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/build.make third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/NightlyStart.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyStart.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyStart.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyStart.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyStart.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyStart.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target NightlyStart"
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyStart.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/NightlyStart.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyStart.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyStart.dir/rule
+
+# Convenience name for target.
+NightlyStart: third-party/KTX-Software/CMakeFiles/NightlyStart.dir/rule
+
+.PHONY : NightlyStart
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyStart.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyStart.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyStart.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyStart.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ExperimentalCoverage"
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/rule
+
+# Convenience name for target.
+ExperimentalCoverage: third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/rule
+
+.PHONY : ExperimentalCoverage
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target NightlyCoverage"
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/rule
+
+# Convenience name for target.
+NightlyCoverage: third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/rule
+
+.PHONY : NightlyCoverage
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/makevk2dfd.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/all: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/build.make third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/build.make third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=76 "Built target makevk2dfd"
+.PHONY : third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/rule
+
+# Convenience name for target.
+makevk2dfd: third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/rule
+
+.PHONY : makevk2dfd
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/build.make third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ExperimentalStart"
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/rule
+
+# Convenience name for target.
+ExperimentalStart: third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/rule
+
+.PHONY : ExperimentalStart
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/NightlyBuild.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target NightlyBuild"
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/rule
+
+# Convenience name for target.
+NightlyBuild: third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/rule
+
+.PHONY : NightlyBuild
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ExperimentalBuild"
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/rule
+
+# Convenience name for target.
+ExperimentalBuild: third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/rule
+
+.PHONY : ExperimentalBuild
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ExperimentalUpdate"
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/rule
+
+# Convenience name for target.
+ExperimentalUpdate: third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/rule
+
+.PHONY : ExperimentalUpdate
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ContinuousStart.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ContinuousStart"
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/rule
+
+# Convenience name for target.
+ContinuousStart: third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/rule
+
+.PHONY : ContinuousStart
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/objUtil.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/objUtil.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target objUtil"
+.PHONY : third-party/KTX-Software/CMakeFiles/objUtil.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/objUtil.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/objUtil.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/objUtil.dir/rule
+
+# Convenience name for target.
+objUtil: third-party/KTX-Software/CMakeFiles/objUtil.dir/rule
+
+.PHONY : objUtil
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/objUtil.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/objUtil.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ContinuousMemCheck"
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/rule
+
+# Convenience name for target.
+ContinuousMemCheck: third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/rule
+
+.PHONY : ContinuousMemCheck
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ContinuousTest.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ContinuousTest"
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/rule
+
+# Convenience name for target.
+ContinuousTest: third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/rule
+
+.PHONY : ContinuousTest
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir
+
+# All Build rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/all:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/depend
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ContinuousSubmit"
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/rule
+
+# Convenience name for target.
+ContinuousSubmit: third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/rule
+
+.PHONY : ContinuousSubmit
+
+# clean rule for target.
+third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/clean
+.PHONY : third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir
+
+# All Build rule for target.
+third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/all:
+	$(MAKE) -f third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/build.make third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/depend
+	$(MAKE) -f third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/build.make third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=78 "Built target obj_basisu_cbind"
+.PHONY : third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/rule
+
+# Convenience name for target.
+obj_basisu_cbind: third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/rule
+
+.PHONY : obj_basisu_cbind
+
+# clean rule for target.
+third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/build.make third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/clean
+.PHONY : third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir
+
+# All Build rule for target.
+third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/all:
+	$(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/depend
+	$(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10 "Built target astcenc-avx2-static"
+.PHONY : third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 10
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/rule
+
+# Convenience name for target.
+astcenc-avx2-static: third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/rule
+
+.PHONY : astcenc-avx2-static
+
+# clean rule for target.
+third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/clean
+.PHONY : third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/all:
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ktx2check_version"
+.PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/rule
+
+# Convenience name for target.
+ktx2check_version: third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/rule
+
+.PHONY : ktx2check_version
+
+# clean rule for target.
+third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/clean
+.PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
+third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/all: third-party/KTX-Software/CMakeFiles/objUtil.dir/all
+third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/all: third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/all
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=56 "Built target ktx2check"
+.PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 35
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/rule
+
+# Convenience name for target.
+ktx2check: third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/rule
+
+.PHONY : ktx2check
+
+# clean rule for target.
+third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/clean
+.PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/all:
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ktx2ktx2_version"
+.PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/rule
+
+# Convenience name for target.
+ktx2ktx2_version: third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/rule
+
+.PHONY : ktx2ktx2_version
+
+# clean rule for target.
+third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/clean
+.PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
+third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/all: third-party/KTX-Software/CMakeFiles/objUtil.dir/all
+third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/all: third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/all
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=57,58 "Built target ktx2ktx2"
+.PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 36
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/rule
+
+# Convenience name for target.
+ktx2ktx2: third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/rule
+
+.PHONY : ktx2ktx2
+
+# clean rule for target.
+third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/clean
+.PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/all:
+	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=73 "Built target ktxinfo_version"
+.PHONY : third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/rule
+
+# Convenience name for target.
+ktxinfo_version: third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/rule
+
+.PHONY : ktxinfo_version
+
+# clean rule for target.
+third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/clean
+.PHONY : third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
+third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/all: third-party/KTX-Software/CMakeFiles/objUtil.dir/all
+third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/all: third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/all
+	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=72 "Built target ktxinfo"
+.PHONY : third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 36
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/rule
+
+# Convenience name for target.
+ktxinfo: third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/rule
+
+.PHONY : ktxinfo
+
+# clean rule for target.
+third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/clean
+.PHONY : third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/all:
+	$(MAKE) -f third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/build.make third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/build.make third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=75 "Built target ktxsc_version"
+.PHONY : third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/rule
+
+# Convenience name for target.
+ktxsc_version: third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/rule
+
+.PHONY : ktxsc_version
+
+# clean rule for target.
+third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/build.make third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/clean
+.PHONY : third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
+third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/all: third-party/KTX-Software/CMakeFiles/objUtil.dir/all
+third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/all: third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/all
+	$(MAKE) -f third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/build.make third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/build.make third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=74 "Built target ktxsc"
+.PHONY : third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 36
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/rule
+
+# Convenience name for target.
+ktxsc: third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/rule
+
+.PHONY : ktxsc
+
+# clean rule for target.
+third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/build.make third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/clean
+.PHONY : third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/all:
+	$(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target toktx_version"
+.PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/rule
+
+# Convenience name for target.
+toktx_version: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/rule
+
+.PHONY : toktx_version
+
+# clean rule for target.
+third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/clean
+.PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
+third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/all: third-party/KTX-Software/CMakeFiles/objUtil.dir/all
+third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/all: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/all
+	$(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=85,86,87,88 "Built target toktx"
+.PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 38
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/rule
+
+# Convenience name for target.
+toktx: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/rule
+
+.PHONY : toktx
+
+# clean rule for target.
+third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/clean
+.PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tests/CMakeFiles/texturetests.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
+third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/all: third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=84 "Built target texturetests"
+.PHONY : third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 37
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/rule
+
+# Convenience name for target.
+texturetests: third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/rule
+
+.PHONY : texturetests
+
+# clean rule for target.
+third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/clean
+.PHONY : third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tests/CMakeFiles/unittests.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tests/CMakeFiles/unittests.dir/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
+third-party/KTX-Software/tests/CMakeFiles/unittests.dir/all: third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=92 "Built target unittests"
+.PHONY : third-party/KTX-Software/tests/CMakeFiles/unittests.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tests/CMakeFiles/unittests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 37
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tests/CMakeFiles/unittests.dir/rule
+
+# Convenience name for target.
+unittests: third-party/KTX-Software/tests/CMakeFiles/unittests.dir/rule
+
+.PHONY : unittests
+
+# clean rule for target.
+third-party/KTX-Software/tests/CMakeFiles/unittests.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/clean
+.PHONY : third-party/KTX-Software/tests/CMakeFiles/unittests.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/all:
+	$(MAKE) -f third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/build.make third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/build.make third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=32,33 "Built target gtest"
+.PHONY : third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/rule
+
+# Convenience name for target.
+gtest: third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/rule
+
+.PHONY : gtest
+
+# clean rule for target.
+third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/build.make third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/clean
+.PHONY : third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
+third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/all: third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/all
+third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/all: third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/build.make third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/build.make third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=89 "Built target transcodetests"
+.PHONY : third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 38
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/rule
+
+# Convenience name for target.
+transcodetests: third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/rule
+
+.PHONY : transcodetests
+
+# clean rule for target.
+third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/build.make third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/clean
+.PHONY : third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/clean
+
+#=============================================================================
+# Target rules for target third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir
+
+# All Build rule for target.
+third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
+third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/all: third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/build.make third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/depend
+	$(MAKE) -f third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/build.make third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target streamtests"
+.PHONY : third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/all
+
+# Build rule for subdir invocation for target.
+third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 36
+	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+.PHONY : third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/rule
+
+# Convenience name for target.
+streamtests: third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/rule
+
+.PHONY : streamtests
+
+# clean rule for target.
+third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/clean:
+	$(MAKE) -f third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/build.make third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/clean
+.PHONY : third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/clean
+
+#=============================================================================
 # Target rules for target src/CMakeFiles/engine.dir
 
 # All Build rule for target.
 src/CMakeFiles/engine.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
+src/CMakeFiles/engine.dir/all: third-party/KTX-Software/CMakeFiles/ktx.dir/all
 src/CMakeFiles/engine.dir/all: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/all
 src/CMakeFiles/engine.dir/all: src/core/CMakeFiles/core.dir/all
 src/CMakeFiles/engine.dir/all: src/debug-utils/CMakeFiles/debug-utils.dir/all
 	$(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/depend
 	$(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=12,13,14,15,16,17,18,19,20,21,22 "Built target engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=16,17,18,19,20 "Built target engine"
 .PHONY : src/CMakeFiles/engine.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/engine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 54
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 58
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/engine.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/engine.dir/rule
 
 # Convenience name for target.
@@ -701,14 +2532,14 @@ src/CMakeFiles/engine.dir/clean:
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/all:
 	$(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/depend
 	$(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=66,67,68,69,70,71,72,73,74,75 "Built target vulkanwrapper"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=94,95,96,97,98 "Built target vulkanwrapper"
 .PHONY : src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/all
 
 # Build rule for subdir invocation for target.
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/rule
 
 # Convenience name for target.
@@ -728,14 +2559,14 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/clean:
 src/core/CMakeFiles/core.dir/all: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/all
 	$(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/depend
 	$(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=3,4,5,6,7,8,9 "Built target core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=12,13,14 "Built target core"
 .PHONY : src/core/CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.
 src/core/CMakeFiles/core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 src/core/CMakeFiles/core.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : src/core/CMakeFiles/core.dir/rule
 
 # Convenience name for target.
@@ -755,14 +2586,14 @@ src/core/CMakeFiles/core.dir/clean:
 src/debug-utils/CMakeFiles/debug-utils.dir/all:
 	$(MAKE) -f src/debug-utils/CMakeFiles/debug-utils.dir/build.make src/debug-utils/CMakeFiles/debug-utils.dir/depend
 	$(MAKE) -f src/debug-utils/CMakeFiles/debug-utils.dir/build.make src/debug-utils/CMakeFiles/debug-utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles --progress-num=10,11 "Built target debug-utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=15 "Built target debug-utils"
 .PHONY : src/debug-utils/CMakeFiles/debug-utils.dir/all
 
 # Build rule for subdir invocation for target.
 src/debug-utils/CMakeFiles/debug-utils.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 src/debug-utils/CMakeFiles/debug-utils.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : src/debug-utils/CMakeFiles/debug-utils.dir/rule
 
 # Convenience name for target.

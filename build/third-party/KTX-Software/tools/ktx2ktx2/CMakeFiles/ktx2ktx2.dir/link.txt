@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -DDEBUG  -g CMakeFiles/ktx2ktx2.dir/ktx2ktx2.cpp.o  -o ktx2ktx2  -Wl,-rpath,/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software: ../../libktx.so.4.1.0 ../../libobjUtil.a -ldl -lpthread 

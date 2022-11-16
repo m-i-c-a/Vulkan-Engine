@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/engine.dir/Loader.cpp.o"
+  "CMakeFiles/engine.dir/TextureLoader.cpp.o"
   "CMakeFiles/engine.dir/VulkanCore.cpp.o"
   "CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_glfw.cpp.o"
   "CMakeFiles/engine.dir/__/third-party/imgui/backends/imgui_impl_vulkan.cpp.o"

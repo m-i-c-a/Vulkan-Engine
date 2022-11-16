@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Repos/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Repos/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,6 +80,28 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -94,7 +116,7 @@ install/fast: preinstall/fast
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"dev\" \"library\" \"tools\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -113,22 +135,22 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	/usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target package
+package/fast: package
 
-.PHONY : edit_cache/fast
+.PHONY : package/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Repos/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -339,6 +361,708 @@ windows/fast:
 .PHONY : windows/fast
 
 #=============================================================================
+# Target rules for targets named docs
+
+# Build rule for target.
+docs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 docs
+.PHONY : docs
+
+# fast build rule for target.
+docs/fast:
+	$(MAKE) -f third-party/glfw/docs/CMakeFiles/docs.dir/build.make third-party/glfw/docs/CMakeFiles/docs.dir/build
+.PHONY : docs/fast
+
+#=============================================================================
+# Target rules for targets named ktx_version
+
+# Build rule for target.
+ktx_version: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktx_version
+.PHONY : ktx_version
+
+# fast build rule for target.
+ktx_version/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_version.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_version.dir/build
+.PHONY : ktx_version/fast
+
+#=============================================================================
+# Target rules for targets named ktx_read
+
+# Build rule for target.
+ktx_read: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktx_read
+.PHONY : ktx_read
+
+# fast build rule for target.
+ktx_read/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/build
+.PHONY : ktx_read/fast
+
+#=============================================================================
+# Target rules for targets named ktx
+
+# Build rule for target.
+ktx: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktx
+.PHONY : ktx
+
+# fast build rule for target.
+ktx/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/build
+.PHONY : ktx/fast
+
+#=============================================================================
+# Target rules for targets named mkvk
+
+# Build rule for target.
+mkvk: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mkvk
+.PHONY : mkvk
+
+# fast build rule for target.
+mkvk/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvk.dir/build.make third-party/KTX-Software/CMakeFiles/mkvk.dir/build
+.PHONY : mkvk/fast
+
+#=============================================================================
+# Target rules for targets named makedfd2vk
+
+# Build rule for target.
+makedfd2vk: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 makedfd2vk
+.PHONY : makedfd2vk
+
+# fast build rule for target.
+makedfd2vk/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build.make third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build
+.PHONY : makedfd2vk/fast
+
+#=============================================================================
+# Target rules for targets named NightlyMemCheck
+
+# Build rule for target.
+NightlyMemCheck: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyMemCheck
+.PHONY : NightlyMemCheck
+
+# fast build rule for target.
+NightlyMemCheck/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/build
+.PHONY : NightlyMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named NightlyTest
+
+# Build rule for target.
+NightlyTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyTest
+.PHONY : NightlyTest
+
+# fast build rule for target.
+NightlyTest/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build
+.PHONY : NightlyTest/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousConfigure
+
+# Build rule for target.
+ContinuousConfigure: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousConfigure
+.PHONY : ContinuousConfigure
+
+# fast build rule for target.
+ContinuousConfigure/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/build
+.PHONY : ContinuousConfigure/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousBuild
+
+# Build rule for target.
+ContinuousBuild: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousBuild
+.PHONY : ContinuousBuild
+
+# fast build rule for target.
+ContinuousBuild/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/build
+.PHONY : ContinuousBuild/fast
+
+#=============================================================================
+# Target rules for targets named NightlyConfigure
+
+# Build rule for target.
+NightlyConfigure: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyConfigure
+.PHONY : NightlyConfigure
+
+# fast build rule for target.
+NightlyConfigure/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/build
+.PHONY : NightlyConfigure/fast
+
+#=============================================================================
+# Target rules for targets named NightlyMemoryCheck
+
+# Build rule for target.
+NightlyMemoryCheck: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyMemoryCheck
+.PHONY : NightlyMemoryCheck
+
+# fast build rule for target.
+NightlyMemoryCheck/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/build
+.PHONY : NightlyMemoryCheck/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalTest
+
+# Build rule for target.
+ExperimentalTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalTest
+.PHONY : ExperimentalTest
+
+# fast build rule for target.
+ExperimentalTest/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/build
+.PHONY : ExperimentalTest/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousUpdate
+
+# Build rule for target.
+ContinuousUpdate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousUpdate
+.PHONY : ContinuousUpdate
+
+# fast build rule for target.
+ContinuousUpdate/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/build
+.PHONY : ContinuousUpdate/fast
+
+#=============================================================================
+# Target rules for targets named NightlyUpdate
+
+# Build rule for target.
+NightlyUpdate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyUpdate
+.PHONY : NightlyUpdate
+
+# fast build rule for target.
+NightlyUpdate/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/build
+.PHONY : NightlyUpdate/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalMemCheck
+
+# Build rule for target.
+ExperimentalMemCheck: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalMemCheck
+.PHONY : ExperimentalMemCheck
+
+# fast build rule for target.
+ExperimentalMemCheck/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/build
+.PHONY : ExperimentalMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalSubmit
+
+# Build rule for target.
+ExperimentalSubmit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalSubmit
+.PHONY : ExperimentalSubmit
+
+# fast build rule for target.
+ExperimentalSubmit/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/build
+.PHONY : ExperimentalSubmit/fast
+
+#=============================================================================
+# Target rules for targets named Experimental
+
+# Build rule for target.
+Experimental: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Experimental
+.PHONY : Experimental
+
+# fast build rule for target.
+Experimental/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Experimental.dir/build.make third-party/KTX-Software/CMakeFiles/Experimental.dir/build
+.PHONY : Experimental/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousCoverage
+
+# Build rule for target.
+ContinuousCoverage: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousCoverage
+.PHONY : ContinuousCoverage
+
+# fast build rule for target.
+ContinuousCoverage/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/build
+.PHONY : ContinuousCoverage/fast
+
+#=============================================================================
+# Target rules for targets named mkvkformatfiles
+
+# Build rule for target.
+mkvkformatfiles: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mkvkformatfiles
+.PHONY : mkvkformatfiles
+
+# fast build rule for target.
+mkvkformatfiles/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/build.make third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/build
+.PHONY : mkvkformatfiles/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalConfigure
+
+# Build rule for target.
+ExperimentalConfigure: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalConfigure
+.PHONY : ExperimentalConfigure
+
+# fast build rule for target.
+ExperimentalConfigure/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/build
+.PHONY : ExperimentalConfigure/fast
+
+#=============================================================================
+# Target rules for targets named Continuous
+
+# Build rule for target.
+Continuous: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Continuous
+.PHONY : Continuous
+
+# fast build rule for target.
+Continuous/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Continuous.dir/build.make third-party/KTX-Software/CMakeFiles/Continuous.dir/build
+.PHONY : Continuous/fast
+
+#=============================================================================
+# Target rules for targets named Nightly
+
+# Build rule for target.
+Nightly: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Nightly
+.PHONY : Nightly
+
+# fast build rule for target.
+Nightly/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/Nightly.dir/build.make third-party/KTX-Software/CMakeFiles/Nightly.dir/build
+.PHONY : Nightly/fast
+
+#=============================================================================
+# Target rules for targets named NightlySubmit
+
+# Build rule for target.
+NightlySubmit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlySubmit
+.PHONY : NightlySubmit
+
+# fast build rule for target.
+NightlySubmit/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/build.make third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/build
+.PHONY : NightlySubmit/fast
+
+#=============================================================================
+# Target rules for targets named NightlyStart
+
+# Build rule for target.
+NightlyStart: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyStart
+.PHONY : NightlyStart
+
+# fast build rule for target.
+NightlyStart/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyStart.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyStart.dir/build
+.PHONY : NightlyStart/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalCoverage
+
+# Build rule for target.
+ExperimentalCoverage: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalCoverage
+.PHONY : ExperimentalCoverage
+
+# fast build rule for target.
+ExperimentalCoverage/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/build
+.PHONY : ExperimentalCoverage/fast
+
+#=============================================================================
+# Target rules for targets named NightlyCoverage
+
+# Build rule for target.
+NightlyCoverage: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyCoverage
+.PHONY : NightlyCoverage
+
+# fast build rule for target.
+NightlyCoverage/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/build
+.PHONY : NightlyCoverage/fast
+
+#=============================================================================
+# Target rules for targets named makevk2dfd
+
+# Build rule for target.
+makevk2dfd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 makevk2dfd
+.PHONY : makevk2dfd
+
+# fast build rule for target.
+makevk2dfd/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/build.make third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/build
+.PHONY : makevk2dfd/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalStart
+
+# Build rule for target.
+ExperimentalStart: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalStart
+.PHONY : ExperimentalStart
+
+# fast build rule for target.
+ExperimentalStart/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/build
+.PHONY : ExperimentalStart/fast
+
+#=============================================================================
+# Target rules for targets named NightlyBuild
+
+# Build rule for target.
+NightlyBuild: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 NightlyBuild
+.PHONY : NightlyBuild
+
+# fast build rule for target.
+NightlyBuild/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/build
+.PHONY : NightlyBuild/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalBuild
+
+# Build rule for target.
+ExperimentalBuild: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalBuild
+.PHONY : ExperimentalBuild
+
+# fast build rule for target.
+ExperimentalBuild/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/build
+.PHONY : ExperimentalBuild/fast
+
+#=============================================================================
+# Target rules for targets named ExperimentalUpdate
+
+# Build rule for target.
+ExperimentalUpdate: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ExperimentalUpdate
+.PHONY : ExperimentalUpdate
+
+# fast build rule for target.
+ExperimentalUpdate/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/build
+.PHONY : ExperimentalUpdate/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousStart
+
+# Build rule for target.
+ContinuousStart: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousStart
+.PHONY : ContinuousStart
+
+# fast build rule for target.
+ContinuousStart/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/build
+.PHONY : ContinuousStart/fast
+
+#=============================================================================
+# Target rules for targets named objUtil
+
+# Build rule for target.
+objUtil: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 objUtil
+.PHONY : objUtil
+
+# fast build rule for target.
+objUtil/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/build
+.PHONY : objUtil/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousMemCheck
+
+# Build rule for target.
+ContinuousMemCheck: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousMemCheck
+.PHONY : ContinuousMemCheck
+
+# fast build rule for target.
+ContinuousMemCheck/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/build
+.PHONY : ContinuousMemCheck/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousTest
+
+# Build rule for target.
+ContinuousTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousTest
+.PHONY : ContinuousTest
+
+# fast build rule for target.
+ContinuousTest/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/build
+.PHONY : ContinuousTest/fast
+
+#=============================================================================
+# Target rules for targets named ContinuousSubmit
+
+# Build rule for target.
+ContinuousSubmit: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ContinuousSubmit
+.PHONY : ContinuousSubmit
+
+# fast build rule for target.
+ContinuousSubmit/fast:
+	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/build
+.PHONY : ContinuousSubmit/fast
+
+#=============================================================================
+# Target rules for targets named obj_basisu_cbind
+
+# Build rule for target.
+obj_basisu_cbind: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 obj_basisu_cbind
+.PHONY : obj_basisu_cbind
+
+# fast build rule for target.
+obj_basisu_cbind/fast:
+	$(MAKE) -f third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/build.make third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/build
+.PHONY : obj_basisu_cbind/fast
+
+#=============================================================================
+# Target rules for targets named astcenc-avx2-static
+
+# Build rule for target.
+astcenc-avx2-static: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 astcenc-avx2-static
+.PHONY : astcenc-avx2-static
+
+# fast build rule for target.
+astcenc-avx2-static/fast:
+	$(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build
+.PHONY : astcenc-avx2-static/fast
+
+#=============================================================================
+# Target rules for targets named ktx2check_version
+
+# Build rule for target.
+ktx2check_version: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktx2check_version
+.PHONY : ktx2check_version
+
+# fast build rule for target.
+ktx2check_version/fast:
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build
+.PHONY : ktx2check_version/fast
+
+#=============================================================================
+# Target rules for targets named ktx2check
+
+# Build rule for target.
+ktx2check: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktx2check
+.PHONY : ktx2check
+
+# fast build rule for target.
+ktx2check/fast:
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build
+.PHONY : ktx2check/fast
+
+#=============================================================================
+# Target rules for targets named ktx2ktx2_version
+
+# Build rule for target.
+ktx2ktx2_version: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktx2ktx2_version
+.PHONY : ktx2ktx2_version
+
+# fast build rule for target.
+ktx2ktx2_version/fast:
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build
+.PHONY : ktx2ktx2_version/fast
+
+#=============================================================================
+# Target rules for targets named ktx2ktx2
+
+# Build rule for target.
+ktx2ktx2: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktx2ktx2
+.PHONY : ktx2ktx2
+
+# fast build rule for target.
+ktx2ktx2/fast:
+	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/build
+.PHONY : ktx2ktx2/fast
+
+#=============================================================================
+# Target rules for targets named ktxinfo_version
+
+# Build rule for target.
+ktxinfo_version: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktxinfo_version
+.PHONY : ktxinfo_version
+
+# fast build rule for target.
+ktxinfo_version/fast:
+	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/build
+.PHONY : ktxinfo_version/fast
+
+#=============================================================================
+# Target rules for targets named ktxinfo
+
+# Build rule for target.
+ktxinfo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktxinfo
+.PHONY : ktxinfo
+
+# fast build rule for target.
+ktxinfo/fast:
+	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/build
+.PHONY : ktxinfo/fast
+
+#=============================================================================
+# Target rules for targets named ktxsc_version
+
+# Build rule for target.
+ktxsc_version: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktxsc_version
+.PHONY : ktxsc_version
+
+# fast build rule for target.
+ktxsc_version/fast:
+	$(MAKE) -f third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/build.make third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/build
+.PHONY : ktxsc_version/fast
+
+#=============================================================================
+# Target rules for targets named ktxsc
+
+# Build rule for target.
+ktxsc: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ktxsc
+.PHONY : ktxsc
+
+# fast build rule for target.
+ktxsc/fast:
+	$(MAKE) -f third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/build.make third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc.dir/build
+.PHONY : ktxsc/fast
+
+#=============================================================================
+# Target rules for targets named toktx_version
+
+# Build rule for target.
+toktx_version: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 toktx_version
+.PHONY : toktx_version
+
+# fast build rule for target.
+toktx_version/fast:
+	$(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build
+.PHONY : toktx_version/fast
+
+#=============================================================================
+# Target rules for targets named toktx
+
+# Build rule for target.
+toktx: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 toktx
+.PHONY : toktx
+
+# fast build rule for target.
+toktx/fast:
+	$(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build
+.PHONY : toktx/fast
+
+#=============================================================================
+# Target rules for targets named texturetests
+
+# Build rule for target.
+texturetests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 texturetests
+.PHONY : texturetests
+
+# fast build rule for target.
+texturetests/fast:
+	$(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build
+.PHONY : texturetests/fast
+
+#=============================================================================
+# Target rules for targets named unittests
+
+# Build rule for target.
+unittests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 unittests
+.PHONY : unittests
+
+# fast build rule for target.
+unittests/fast:
+	$(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build
+.PHONY : unittests/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) -f third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/build.make third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named transcodetests
+
+# Build rule for target.
+transcodetests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 transcodetests
+.PHONY : transcodetests
+
+# fast build rule for target.
+transcodetests/fast:
+	$(MAKE) -f third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/build.make third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/build
+.PHONY : transcodetests/fast
+
+#=============================================================================
+# Target rules for targets named streamtests
+
+# Build rule for target.
+streamtests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 streamtests
+.PHONY : streamtests
+
+# fast build rule for target.
+streamtests/fast:
+	$(MAKE) -f third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/build.make third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/build
+.PHONY : streamtests/fast
+
+#=============================================================================
 # Target rules for targets named engine
 
 # Build rule for target.
@@ -398,10 +1122,12 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
+	@echo "... package_source"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
+	@echo "... package"
 	@echo "... uninstall"
 	@echo "... update_mappings"
 	@echo "... glfw"
@@ -416,6 +1142,60 @@ help:
 	@echo "... offscreen"
 	@echo "... wave"
 	@echo "... windows"
+	@echo "... docs"
+	@echo "... ktx_version"
+	@echo "... ktx_read"
+	@echo "... ktx"
+	@echo "... mkvk"
+	@echo "... makedfd2vk"
+	@echo "... NightlyMemCheck"
+	@echo "... NightlyTest"
+	@echo "... ContinuousConfigure"
+	@echo "... ContinuousBuild"
+	@echo "... NightlyConfigure"
+	@echo "... NightlyMemoryCheck"
+	@echo "... ExperimentalTest"
+	@echo "... ContinuousUpdate"
+	@echo "... NightlyUpdate"
+	@echo "... ExperimentalMemCheck"
+	@echo "... ExperimentalSubmit"
+	@echo "... Experimental"
+	@echo "... ContinuousCoverage"
+	@echo "... mkvkformatfiles"
+	@echo "... ExperimentalConfigure"
+	@echo "... Continuous"
+	@echo "... Nightly"
+	@echo "... NightlySubmit"
+	@echo "... NightlyStart"
+	@echo "... ExperimentalCoverage"
+	@echo "... NightlyCoverage"
+	@echo "... makevk2dfd"
+	@echo "... ExperimentalStart"
+	@echo "... NightlyBuild"
+	@echo "... ExperimentalBuild"
+	@echo "... ExperimentalUpdate"
+	@echo "... ContinuousStart"
+	@echo "... objUtil"
+	@echo "... ContinuousMemCheck"
+	@echo "... ContinuousTest"
+	@echo "... ContinuousSubmit"
+	@echo "... obj_basisu_cbind"
+	@echo "... astcenc-avx2-static"
+	@echo "... ktx2check_version"
+	@echo "... ktx2check"
+	@echo "... ktx2ktx2_version"
+	@echo "... ktx2ktx2"
+	@echo "... ktxinfo_version"
+	@echo "... ktxinfo"
+	@echo "... ktxsc_version"
+	@echo "... ktxsc"
+	@echo "... toktx_version"
+	@echo "... toktx"
+	@echo "... texturetests"
+	@echo "... unittests"
+	@echo "... gtest"
+	@echo "... transcodetests"
+	@echo "... streamtests"
 	@echo "... engine"
 	@echo "... vulkanwrapper"
 	@echo "... core"

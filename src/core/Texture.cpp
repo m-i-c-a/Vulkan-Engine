@@ -1,5 +1,6 @@
 #include "Texture.hpp"
-#include "vulkanwrapper/Generic.hpp"
+// #include "vulkanwrapper/Generic.hpp"
+#include "DeviceMemory.hpp"
 #include "vulkanwrapper/Image.hpp"
 #include "vulkanwrapper/ImageView.hpp"
 #include "vulkanwrapper/Sampler.hpp"
@@ -11,10 +12,10 @@ Texture::Texture(const VkImageCreateInfo& vk_imageCreateInfo, VkImageViewCreateI
     : m_sampler { sampler }
 {
     m_image = new VulkanWrapper::Image(vk_imageCreateInfo);
-    m_vkImageMemory = VulkanWrapper::acquireMemory(m_image->m_vkImage);
-    VulkanWrapper::bindMemory(m_image->m_vkImage, m_vkImageMemory, 0);
+    m_memory = new VulkanWrapper::DeviceMemory(m_image->vk_handle, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    m_memory->bind(m_image->vk_handle, 0);
 
-    vk_imageViewCreateInfo.image = m_image->m_vkImage;
+    vk_imageViewCreateInfo.image = m_image->vk_handle;
     m_imageView = new VulkanWrapper::ImageView(vk_imageViewCreateInfo);
 
     m_vkDescriptorInfo.sampler = m_sampler->m_vkSampler;
@@ -25,13 +26,13 @@ Texture::Texture(const VkImageCreateInfo& vk_imageCreateInfo, VkImageViewCreateI
 Texture::~Texture()
 {
     delete m_image;
+    delete m_memory;
     delete m_imageView;
 
     m_image = nullptr;
+    m_memory = nullptr;
     m_imageView = nullptr;
     m_sampler = nullptr;
-
-    VulkanWrapper::releaseMemory(m_vkImageMemory);
 }
 
 void Texture::updateSampler(VulkanWrapper::Sampler* sampler)

@@ -40,3 +40,11 @@ src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o: ../src/vulkanwrapper/Resource.hp
 src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o: ../src/core/SceneBuffer.cpp
 src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o: ../src/core/SceneBuffer.hpp
 
+src/core/CMakeFiles/core.dir/Texture.cpp.o: ../src/vulkanwrapper/Generic.hpp
+src/core/CMakeFiles/core.dir/Texture.cpp.o: ../src/vulkanwrapper/Image.hpp
+src/core/CMakeFiles/core.dir/Texture.cpp.o: ../src/vulkanwrapper/ImageView.hpp
+src/core/CMakeFiles/core.dir/Texture.cpp.o: ../src/vulkanwrapper/Resource.hpp
+src/core/CMakeFiles/core.dir/Texture.cpp.o: ../src/vulkanwrapper/Sampler.hpp
+src/core/CMakeFiles/core.dir/Texture.cpp.o: ../src/core/Texture.cpp
+src/core/CMakeFiles/core.dir/Texture.cpp.o: ../src/core/Texture.hpp
+

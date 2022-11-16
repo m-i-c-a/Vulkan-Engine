@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/utils/argparser.cpp
+assert.h
+-
+argparser.h
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/utils/argparser.h
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/utils/argparser.h
+ios
+-
+sstream
+-
+string
+-
+vector
+-
+tchar.h
+-
+
