@@ -136,6 +136,7 @@ struct Renderable
 #include "vulkanwrapper/CommandBuffer.hpp"
 #include "vulkanwrapper/CommandPool.hpp"
 #include "vulkanwrapper/DescriptorPool.hpp"
+#include "vulkanwrapper/DeviceMemory.hpp"
 #include "vulkanwrapper/Fence.hpp"
 #include "vulkanwrapper/Image.hpp"
 #include "vulkanwrapper/ImageView.hpp"
@@ -153,10 +154,10 @@ struct AppCore
     PersistentStagingBuffer* m_persistentStagingBuffer = nullptr;
     PersistentDeviceBuffer*  m_globalUBO = nullptr;
 
-    SceneBuffer* m_sceneBuffer = nullptr;
-    BufferPool<ObjectData>* m_objectDataPool = nullptr;
-    BufferPool<RenderableInfo>* m_renderableInfoPool = nullptr;
-    BufferPool<MeshInfo>* m_meshInfoPool = nullptr;
+    Core::SceneBuffer* m_sceneBuffer = nullptr;
+    Core::BufferPool<ObjectData>* m_objectDataPool = nullptr;
+    Core::BufferPool<RenderableInfo>* m_renderableInfoPool = nullptr;
+    Core::BufferPool<MeshInfo>* m_meshInfoPool = nullptr;
 
     VkDescriptorSetLayout m_vkCullDescSetLayout = VK_NULL_HANDLE;
     VkDescriptorSetLayout m_vkCompactDrawsDescSetLayout = VK_NULL_HANDLE;
@@ -179,18 +180,28 @@ struct AppCore
     VkDescriptorSet m_vkResetDescSet = VK_NULL_HANDLE;
     VkDescriptorSet m_vkGraphicsDescSet = VK_NULL_HANDLE;
 
-    VulkanWrapper::Image* m_depthImage = nullptr;
+    VulkanWrapper::Image* m_depthImage         = nullptr;
     VulkanWrapper::ImageView* m_depthImageView = nullptr;
 
-    VulkanWrapper::Buffer* m_ssboMeshInstanceCount = nullptr;
-    VulkanWrapper::Buffer* m_ssboActiveMesh = nullptr;
+    VulkanWrapper::DeviceMemory* m_depthImageMemory     = nullptr;
 
+    VulkanWrapper::Buffer* m_ssboMeshInstanceCount      = nullptr;
+    VulkanWrapper::Buffer* m_ssboActiveMesh             = nullptr;
     VulkanWrapper::Buffer* m_ssboVisibleRenderableInfos = nullptr;
     VulkanWrapper::Buffer* m_ssboVisibleRenderableCount = nullptr;
-    VulkanWrapper::Buffer* m_ssboMeshToCommandMapping = nullptr;
-    VulkanWrapper::Buffer* m_ssboDrawCommands = nullptr;
-    VulkanWrapper::Buffer* m_ssboFirstInstanceCount = nullptr;
-    VulkanWrapper::Buffer* m_ssboDrawInfos = nullptr;
+    VulkanWrapper::Buffer* m_ssboMeshToCommandMapping   = nullptr;
+    VulkanWrapper::Buffer* m_ssboDrawCommands           = nullptr;
+    VulkanWrapper::Buffer* m_ssboFirstInstanceCount     = nullptr;
+    VulkanWrapper::Buffer* m_ssboDrawInfos              = nullptr;
+
+    VulkanWrapper::DeviceMemory* m_ssboMeshInstanceCountMemory      = nullptr;
+    VulkanWrapper::DeviceMemory* m_ssboActiveMeshMemory             = nullptr;
+    VulkanWrapper::DeviceMemory* m_ssboVisibleRenderableInfosMemory = nullptr;
+    VulkanWrapper::DeviceMemory* m_ssboVisibleRenderableCountMemory = nullptr;
+    VulkanWrapper::DeviceMemory* m_ssboMeshToCommandMappingMemory   = nullptr;
+    VulkanWrapper::DeviceMemory* m_ssboDrawCommandsMemory           = nullptr;
+    VulkanWrapper::DeviceMemory* m_ssboFirstInstanceCountMemory     = nullptr;
+    VulkanWrapper::DeviceMemory* m_ssboDrawInfosMemory              = nullptr;
 
     VkRenderPass m_vkImGuiRenderPass = VK_NULL_HANDLE;
     std::vector<VkFramebuffer> m_vkImGuiFramebuffers;
@@ -201,7 +212,7 @@ void updateProjectionMatrix(AppCore& appCore)
 {
     glm::mat4 newProjMat = glm::perspective(glm::radians(FOV), ((float)windowWidth) / windowHeight, nearZ, farZ);
     glm::mat4 viewMat;
-    memcpy(&(viewMat[0][0]), appCore.m_globalUBO->get() + offsetof(GlobalUBO, viewMatrix), sizeof(glm::mat4));
+    memcpy(&(viewMat[0][0]), (char*)appCore.m_globalUBO->getData() + offsetof(GlobalUBO, viewMatrix), sizeof(glm::mat4));
     glm::mat4 newProjViewMat = newProjMat * viewMat;
 
     appCore.m_globalUBO->update(offsetof(GlobalUBO, projMatrix), sizeof(glm::mat4), &(newProjMat[0][0]));
@@ -214,7 +225,7 @@ void updateViewMatrix(AppCore& appCore)
     glm::mat4 newViewMat = glm::mat4(1.0f);
     newViewMat = glm::translate(newViewMat, camPos);
     glm::mat4 newProjViewMat; 
-    memcpy(&(newProjViewMat[0][0]), appCore.m_globalUBO->get() + offsetof(GlobalUBO, projMatrix), sizeof(glm::mat4));
+    memcpy(&(newProjViewMat[0][0]), (char*)appCore.m_globalUBO->getData() + offsetof(GlobalUBO, projMatrix), sizeof(glm::mat4));
     newProjViewMat *= newViewMat;
 
     appCore.m_globalUBO->update(offsetof(GlobalUBO, viewMatrix), sizeof(glm::mat4), &(newViewMat[0][0]));
@@ -512,9 +523,9 @@ void createGraphicsResources(const VulkanCore& vulkanCore, AppCore& appCore)
 
     appCore.m_vkGraphicsDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkGraphicsDescSetLayout);
 
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, { appCore.m_globalUBO->vkBuffer(), 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, { appCore.m_globalUBO->getBuffer(), 0, VK_WHOLE_SIZE });
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, appCore.m_objectDataPool->getDescBufferInfo());
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawInfos->vk_handle, 0, VK_WHOLE_SIZE });
 }
 
 
@@ -608,33 +619,29 @@ void createCullResources(const VulkanCore& vulkanCore, AppCore& appCore)
 
     delete cullShaderModule;
 
-    appCore.m_ssboMeshInstanceCount = new VulkanWrapper::Buffer();
-    appCore.m_ssboMeshInstanceCount->create(MAX_MESHES * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    appCore.m_ssboMeshInstanceCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboMeshInstanceCount->bind();
+    appCore.m_ssboMeshInstanceCount       = new VulkanWrapper::Buffer(MAX_MESHES * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    appCore.m_ssboMeshInstanceCountMemory = new VulkanWrapper::DeviceMemory(appCore.m_ssboMeshInstanceCount->vk_handle, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboMeshInstanceCountMemory->bind(appCore.m_ssboMeshInstanceCount->vk_handle, 0);
 
-    appCore.m_ssboActiveMesh = new VulkanWrapper::Buffer();
-    appCore.m_ssboActiveMesh->create(MAX_MESHES * sizeof(uint32_t) + 3 * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
-    appCore.m_ssboActiveMesh->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboActiveMesh->bind();
+    appCore.m_ssboActiveMesh       = new VulkanWrapper::Buffer(MAX_MESHES * sizeof(uint32_t) + 3 * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
+    appCore.m_ssboActiveMeshMemory = new VulkanWrapper::DeviceMemory(appCore.m_ssboActiveMesh->vk_handle, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboActiveMeshMemory->bind(appCore.m_ssboActiveMesh->vk_handle, 0);
 
-    appCore.m_ssboVisibleRenderableInfos = new VulkanWrapper::Buffer();
-    appCore.m_ssboVisibleRenderableInfos->create(MAX_RENDERABLES * sizeof(RenderableInfo) + 3 * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
-    appCore.m_ssboVisibleRenderableInfos->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboVisibleRenderableInfos->bind();
+    appCore.m_ssboVisibleRenderableInfos       = new VulkanWrapper::Buffer(MAX_RENDERABLES * sizeof(RenderableInfo) + 3 * sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
+    appCore.m_ssboVisibleRenderableInfosMemory = new VulkanWrapper::DeviceMemory(appCore.m_ssboVisibleRenderableInfos->vk_handle, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboVisibleRenderableInfosMemory->bind(appCore.m_ssboVisibleRenderableInfos->vk_handle, 0);
 
-    appCore.m_ssboMeshToCommandMapping = new VulkanWrapper::Buffer();
-    appCore.m_ssboMeshToCommandMapping->create(MAX_MESHES * sizeof(MeshInfo), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    appCore.m_ssboMeshToCommandMapping->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboMeshToCommandMapping->bind();
-
+    appCore.m_ssboMeshToCommandMapping       = new VulkanWrapper::Buffer(MAX_MESHES * sizeof(MeshInfo), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    appCore.m_ssboMeshToCommandMappingMemory = new VulkanWrapper::DeviceMemory(appCore.m_ssboMeshToCommandMapping->vk_handle, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboMeshToCommandMappingMemory->bind(appCore.m_ssboMeshToCommandMapping->vk_handle, 0);
+    
     appCore.m_vkCullDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkCullDescSetLayout);
 
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, appCore.m_renderableInfoPool->getDescBufferInfo());
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboActiveMesh->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshInstanceCount->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboActiveMesh->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCullDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->vk_handle, 0, VK_WHOLE_SIZE });
 }
 
 
@@ -729,24 +736,22 @@ void createCompactDrawsResources(const VulkanCore& vulkanCore, AppCore& appCore)
 
     delete compactShaderModule;
 
-    appCore.m_ssboFirstInstanceCount = new VulkanWrapper::Buffer();
-    appCore.m_ssboFirstInstanceCount->create(sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    appCore.m_ssboFirstInstanceCount->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboFirstInstanceCount->bind();
+    appCore.m_ssboFirstInstanceCount       = new VulkanWrapper::Buffer(sizeof(uint32_t), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    appCore.m_ssboFirstInstanceCountMemory = new VulkanWrapper::DeviceMemory(appCore.m_ssboFirstInstanceCount->vk_handle, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboFirstInstanceCountMemory->bind(appCore.m_ssboFirstInstanceCount->vk_handle, 0);
 
-    appCore.m_ssboDrawCommands = new VulkanWrapper::Buffer();
-    appCore.m_ssboDrawCommands->create(MAX_MESHES * sizeof(VkDrawIndexedIndirectCommand), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
-    appCore.m_ssboDrawCommands->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboDrawCommands->bind();
+    appCore.m_ssboDrawCommands       = new VulkanWrapper::Buffer(MAX_MESHES * sizeof(VkDrawIndexedIndirectCommand), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT | VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
+    appCore.m_ssboDrawCommandsMemory = new VulkanWrapper::DeviceMemory(appCore.m_ssboDrawCommands->vk_handle, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboDrawCommandsMemory->bind(appCore.m_ssboDrawCommands->vk_handle, 0);
 
     appCore.m_vkCompactDrawsDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkCompactDrawsDescSetLayout);
 
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboActiveMesh->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboActiveMesh->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->vk_handle, 0, VK_WHOLE_SIZE });
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, appCore.m_meshInfoPool->getDescBufferInfo());
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboFirstInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 5, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawCommands->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshInstanceCount->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboFirstInstanceCount->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactDrawsDescSet, 5, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawCommands->vk_handle, 0, VK_WHOLE_SIZE });
 }
 
 
@@ -835,18 +840,17 @@ void createCompactBindlessResources(const VulkanCore& vulkanCore, AppCore& appCo
 
     delete compactBindlessShaderModule;
 
-    appCore.m_ssboDrawInfos = new VulkanWrapper::Buffer();
-    appCore.m_ssboDrawInfos->create(MAX_RENDERABLES * sizeof(DrawInfo), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-    appCore.m_ssboDrawInfos->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_ssboDrawInfos->bind();
+    appCore.m_ssboDrawInfos       = new VulkanWrapper::Buffer(MAX_RENDERABLES * sizeof(DrawInfo), VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+    appCore.m_ssboDrawInfosMemory = new VulkanWrapper::DeviceMemory(appCore.m_ssboDrawInfos->vk_handle, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_ssboDrawInfosMemory->bind(appCore.m_ssboDrawInfos->vk_handle, 0);
 
     appCore.m_vkCompactBindlessDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkCompactBindlessDescSetLayout);
 
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawCommands->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshToCommandMapping->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawCommands->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 3, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboMeshInstanceCount->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkCompactBindlessDescSet, 4, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawInfos->vk_handle, 0, VK_WHOLE_SIZE });
 }
 
 
@@ -922,9 +926,9 @@ void createResetResources(const VulkanCore& vulkanCore, AppCore& appCore)
 
     appCore.m_vkResetDescSet = allocateDescSet(vulkanCore.vk_device, appCore.m_descPool->m_vkDescPool, appCore.m_vkResetDescSetLayout);
 
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkResetDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboFirstInstanceCount->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkResetDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, 0, VK_WHOLE_SIZE });
-    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkResetDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboActiveMesh->m_vkBuffer, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkResetDescSet, 0, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboFirstInstanceCount->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkResetDescSet, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboVisibleRenderableInfos->vk_handle, 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkResetDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboActiveMesh->vk_handle, 0, VK_WHOLE_SIZE });
 }
 
 
@@ -1114,14 +1118,29 @@ void guiInit(GLFWwindow* glfw_window, const VulkanCore& vulkanCore, AppCore& app
 
 void createAttachments(const VulkanCore& vulkanCore, AppCore& appCore)
 {
-    appCore.m_depthImage = new VulkanWrapper::Image();
-    appCore.m_depthImage->create(VK_IMAGE_TYPE_2D, VK_FORMAT_D32_SFLOAT, { vulkanCore.vk_swapchainExtent.width, vulkanCore.vk_swapchainExtent.height, 1}, 1, VK_SAMPLE_COUNT_1_BIT, VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, 1, VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL);
-    appCore.m_depthImage->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    appCore.m_depthImage->bind();
+    const VkImageCreateInfo vk_depthImageCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO,
+        .imageType = VK_IMAGE_TYPE_2D,
+        .format = VK_FORMAT_D32_SFLOAT,
+        .extent = { vulkanCore.vk_swapchainExtent.width, vulkanCore.vk_swapchainExtent.height,1 },
+        .mipLevels = 1,
+        .arrayLayers = 1,
+        .samples = VK_SAMPLE_COUNT_1_BIT,
+        .tiling = VK_IMAGE_TILING_OPTIMAL,
+        .usage = VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT,
+        .sharingMode = VK_SHARING_MODE_EXCLUSIVE,
+        .queueFamilyIndexCount = 0,
+        .pQueueFamilyIndices   = nullptr,
+        .initialLayout = VK_IMAGE_LAYOUT_UNDEFINED,
+    };
+
+    appCore.m_depthImage = new VulkanWrapper::Image(vk_depthImageCreateInfo);
+    appCore.m_depthImageMemory = new VulkanWrapper::DeviceMemory(appCore.m_depthImage->vk_handle, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    appCore.m_depthImageMemory->bind(appCore.m_depthImage->vk_handle, 0);
 
     const VkImageViewCreateInfo vk_imageViewCreateInfo {
         .sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO,
-        .image = appCore.m_depthImage->m_vkImage,
+        .image = appCore.m_depthImage->vk_handle,
         .viewType = VK_IMAGE_VIEW_TYPE_2D,
         .format = VK_FORMAT_D32_SFLOAT,
         .components = {
@@ -1174,14 +1193,14 @@ void loadMeshes(const VulkanCore& vulkanCore, AppCore& appCore)
         .unnormalizedCoordinates = VK_FALSE,
     };
 
-    VulkanWrapper::Sampler* sampler = new VulkanWrapper::Sampler(vk_samplerCreateInfo);
+    // VulkanWrapper::Sampler* sampler = new VulkanWrapper::Sampler(vk_samplerCreateInfo);
 
-    VulkanWrapper::Image* image = new VulkanWrapper::Image();
-    image->create(VK_IMAGE_TYPE_2D, VK_FORMAT_D32_SFLOAT, { vulkanCore.vk_swapchainExtent.width, vulkanCore.vk_swapchainExtent.height, 1}, 1, VK_SAMPLE_COUNT_1_BIT, VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, 1, VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL);
-    image->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
-    image->bind();
+    // VulkanWrapper::Image* image = new VulkanWrapper::Image();
+    // image->create(VK_IMAGE_TYPE_2D, VK_FORMAT_D32_SFLOAT, { vulkanCore.vk_swapchainExtent.width, vulkanCore.vk_swapchainExtent.height, 1}, 1, VK_SAMPLE_COUNT_1_BIT, VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT, 1, VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL);
+    // image->allocate(VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    // image->bind();
 
-    VkImage vk_image;
+    // VkImage vk_image;
 
     // VulkanWrapper::ImageView* imageView = new VulkanWrapper::ImageView(vk_imageViewCreateInfo);
 
@@ -1245,10 +1264,11 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_swapchainImageAcquireFence = new VulkanWrapper::Fence();
     appCore.m_swapchainImageAcquireFence->create(0x0);
 
-    appCore.m_sceneBuffer = new SceneBuffer(sizeof(Vertex), 5000000, 2000000, 5000000);
-    appCore.m_objectDataPool = new BufferPool<ObjectData>(MAX_RENDERABLES, MAX_RENDERABLES);
-    appCore.m_renderableInfoPool = new BufferPool<RenderableInfo>(MAX_RENDERABLES, MAX_RENDERABLES); 
-    appCore.m_meshInfoPool = new BufferPool<MeshInfo>(MAX_MESHES, MAX_MESHES); 
+    appCore.m_sceneBuffer = new Core::SceneBuffer(sizeof(Vertex), 5000000, 2000000, 5000000);
+
+    appCore.m_objectDataPool     = new Core::BufferPool<ObjectData>(MAX_RENDERABLES, MAX_RENDERABLES);
+    appCore.m_renderableInfoPool = new Core::BufferPool<RenderableInfo>(MAX_RENDERABLES, MAX_RENDERABLES); 
+    appCore.m_meshInfoPool       = new Core::BufferPool<MeshInfo>(MAX_MESHES, MAX_MESHES); 
 
     appCore.m_descPool = new VulkanWrapper::DescriptorPool();
     appCore.m_descPool->create(5, {{
@@ -1274,6 +1294,7 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_globalUBO = appCore.m_persistentStagingBuffer->registerDeviceBuffer(sizeof(GlobalUBO), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     appCore.m_persistentStagingBuffer->completeRegistration();
 
+
     glm::mat4 projMat = glm::perspective(FOV, ((float)windowWidth) / windowHeight, nearZ, farZ);
     glm::mat4 viewMat = glm::mat4(1.0f);
     viewMat = glm::translate(viewMat, camPos);
@@ -1298,16 +1319,16 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_objectDataPool->getStorageBufferHandle(), "BufferPool - ObjectData - Storage");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_renderableInfoPool->getStagingBufferHandle(), "BufferPool - RenderableInfo - Staging");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_renderableInfoPool->getStorageBufferHandle(), "BufferPool - RenderableInfo - Storage");
-    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, "VisibleRenderableInfos");
-    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboDrawCommands->m_vkBuffer, "DrawCommands");
-    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboDrawInfos->m_vkBuffer, "DrawInfos");
-    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboFirstInstanceCount->m_vkBuffer, "FirstInstanceCount");
-    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboMeshToCommandMapping->m_vkBuffer, "MeshToCommandMapptig");
-    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboMeshInstanceCount->m_vkBuffer, "MeshInstanceCount");
+    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboVisibleRenderableInfos->vk_handle, "VisibleRenderableInfos");
+    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboDrawCommands->vk_handle, "DrawCommands");
+    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboDrawInfos->vk_handle, "DrawInfos");
+    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboFirstInstanceCount->vk_handle, "FirstInstanceCount");
+    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboMeshToCommandMapping->vk_handle, "MeshToCommandMapptig");
+    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboMeshInstanceCount->vk_handle, "MeshInstanceCount");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_meshInfoPool->getStagingBufferHandle(), "MeshInfoStaging");
     DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_meshInfoPool->getStorageBufferHandle(), "MeshInfoStorage");
-    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_globalUBO->vkBuffer(), "GlobalUBO");
-    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboActiveMesh->m_vkBuffer, "ActiveMesh");
+    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_globalUBO->getBuffer(), "GlobalUBO");
+    DebugUtilsEXT::setObjectName(VK_OBJECT_TYPE_BUFFER, (uint64_t)appCore.m_ssboActiveMesh->vk_handle, "ActiveMesh");
 #endif
 
     constexpr VkCommandBufferBeginInfo vk_cmdBeginInfo {
@@ -1318,10 +1339,10 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     VK_CHECK(vkResetCommandPool(vulkanCore.vk_device, appCore.m_cmdPool->m_vkCmdPool, 0x0));
     VK_CHECK(vkBeginCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff, &vk_cmdBeginInfo));
 
-    appCore.m_sceneBuffer->flushQueuedUploads(appCore.m_cmdBuff->m_vkCmdBuff);
-    appCore.m_objectDataPool->flushDirtyBlocks(appCore.m_cmdBuff->m_vkCmdBuff);
-    appCore.m_renderableInfoPool->flushDirtyBlocks(appCore.m_cmdBuff->m_vkCmdBuff);
-    appCore.m_meshInfoPool->flushDirtyBlocks(appCore.m_cmdBuff->m_vkCmdBuff);
+    appCore.m_sceneBuffer->flushQueuedUploads(appCore.m_cmdBuff->m_vkCmdBuff, true);
+    appCore.m_objectDataPool->flushDirtyBlocks(appCore.m_cmdBuff->m_vkCmdBuff, true);
+    appCore.m_renderableInfoPool->flushDirtyBlocks(appCore.m_cmdBuff->m_vkCmdBuff, true);
+    appCore.m_meshInfoPool->flushDirtyBlocks(appCore.m_cmdBuff->m_vkCmdBuff, true);
     appCore.m_globalUBO->flush(appCore.m_cmdBuff->m_vkCmdBuff);
 
     VK_CHECK(vkEndCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff));
@@ -1395,7 +1416,7 @@ void appIndirectCompactDraws(const VulkanCore& vulkanCore, AppCore& appCore)
     
     vkCmdBindDescriptorSets(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCompactDrawsPipelineLayout, 0, 1, &appCore.m_vkCompactDrawsDescSet, 0, nullptr);
 
-    vkCmdDispatchIndirect(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_ssboActiveMesh->m_vkBuffer, 0);
+    vkCmdDispatchIndirect(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_ssboActiveMesh->vk_handle, 0);
 
     VK_CHECK(vkEndCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff));
 
@@ -1428,7 +1449,7 @@ void appIndirectCompactBindless(const VulkanCore& vulkanCore, AppCore& appCore)
     
     vkCmdBindDescriptorSets(appCore.m_cmdBuff->m_vkCmdBuff, VK_PIPELINE_BIND_POINT_COMPUTE, appCore.m_vkCompactBindlessPipelineLayout, 0, 1, &appCore.m_vkCompactBindlessDescSet, 0, nullptr);
 
-    vkCmdDispatchIndirect(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_ssboVisibleRenderableInfos->m_vkBuffer, 0);
+    vkCmdDispatchIndirect(appCore.m_cmdBuff->m_vkCmdBuff, appCore.m_ssboVisibleRenderableInfos->vk_handle, 0);
 
     VK_CHECK(vkEndCommandBuffer(appCore.m_cmdBuff->m_vkCmdBuff));
 
@@ -1632,7 +1653,7 @@ void appRender(const VulkanCore& vulkanCore, AppCore& appCore)
 
     vkCmdBindPipeline(vk_cmdBuff, VK_PIPELINE_BIND_POINT_GRAPHICS, appCore.m_vkGraphicsPipeline);
 
-    vkCmdDrawIndexedIndirectCount(vk_cmdBuff, appCore.m_ssboDrawCommands->m_vkBuffer, 0, appCore.m_ssboActiveMesh->m_vkBuffer, 0, MAX_MESHES, sizeof(VkDrawIndexedIndirectCommand));
+    vkCmdDrawIndexedIndirectCount(vk_cmdBuff, appCore.m_ssboDrawCommands->vk_handle, 0, appCore.m_ssboActiveMesh->vk_handle, 0, MAX_MESHES, sizeof(VkDrawIndexedIndirectCommand));
 
     vkCmdEndRendering(vk_cmdBuff);
 
@@ -1705,7 +1726,6 @@ void appSubmit(const VulkanCore& vulkanCore, AppCore& appCore)
     appIndirectReset(vulkanCore, appCore);
 }
 
-
 // TEARDOWN
 
 void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
@@ -1732,7 +1752,17 @@ void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
     delete appCore.m_ssboDrawInfos;
     delete appCore.m_ssboActiveMesh;
 
+    delete appCore.m_ssboMeshInstanceCountMemory     ;
+    delete appCore.m_ssboActiveMeshMemory            ;
+    delete appCore.m_ssboVisibleRenderableInfosMemory;
+    delete appCore.m_ssboVisibleRenderableCountMemory;
+    delete appCore.m_ssboMeshToCommandMappingMemory  ;
+    delete appCore.m_ssboDrawCommandsMemory          ;
+    delete appCore.m_ssboFirstInstanceCountMemory    ;
+    delete appCore.m_ssboDrawInfosMemory             ;
+
     delete appCore.m_depthImage;
+    delete appCore.m_depthImageMemory;
     delete appCore.m_depthImageView;
 
     vkDestroyDescriptorSetLayout(vulkanCore.vk_device, appCore.m_vkCullDescSetLayout, nullptr);
@@ -1780,14 +1810,15 @@ int main()
     assert(glfw_window && "Failed to create window");
     glfwSetKeyCallback(glfw_window, keyCallback);
 
-    const VkPhysicalDeviceVulkan12Features vk_physicalDeviceFeature12 {
+    const VkPhysicalDeviceVulkan12Features vk_physicalDeviceFeatures12 {
         .sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_2_FEATURES,
         .drawIndirectCount = VK_TRUE
     };
 
     const VkPhysicalDeviceVulkan13Features vk_physicalDeviceFeatures13 {
         .sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_3_FEATURES,
-        .pNext = (void*)&vk_physicalDeviceFeature12,
+        .pNext = (void*)&vk_physicalDeviceFeatures12,
+        .synchronization2 = VK_TRUE,
         .dynamicRendering = VK_TRUE
     };
 
@@ -1797,7 +1828,7 @@ int main()
         .requestedInstanceLayerNames = { "VK_LAYER_KHRONOS_validation" },
 #endif
         .requestedInstanceExtensionNames = { "VK_KHR_surface", "VK_KHR_xcb_surface", VK_EXT_DEBUG_UTILS_EXTENSION_NAME },
-        .requestedDeviceExtensionNames = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, "VK_KHR_dynamic_rendering" },
+        .requestedDeviceExtensionNames = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, "VK_KHR_dynamic_rendering", VK_KHR_SYNCHRONIZATION_2_EXTENSION_NAME },
         .requestedSwapchainImageCount = 3,
         .requestedSwapchainImageFormat = VK_FORMAT_R8G8B8_SRGB,
         .requestedSwapchainImageExtent = { windowWidth, windowHeight },
@@ -1813,10 +1844,6 @@ int main()
 
     AppCore appCore {};
     appIndirectInit(vulkanCore, appCore);
-    // appIndirectCull(vulkanCore, appCore);
-    // appIndirectCompactDraws(vulkanCore, appCore);
-    // appIndirectCompactBindless(vulkanCore, appCore);
-    // appIndirectReset(vulkanCore, appCore);
 
     guiInit(glfw_window, vulkanCore, appCore);
 

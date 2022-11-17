@@ -21,6 +21,11 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o: ../src/vulk
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o: ../src/vulkanwrapper/DescriptorPool.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o: ../src/vulkanwrapper/Resource.hpp
 
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o: ../src/common/Defines.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o: ../src/vulkanwrapper/DeviceMemory.cpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o: ../src/vulkanwrapper/DeviceMemory.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o: ../src/vulkanwrapper/Resource.hpp
+
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/common/Defines.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/vulkanwrapper/Fence.cpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/vulkanwrapper/Fence.hpp

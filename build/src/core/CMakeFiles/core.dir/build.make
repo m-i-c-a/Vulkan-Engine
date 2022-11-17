@@ -70,35 +70,9 @@ src/core/CMakeFiles/core.dir/BufferPool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/BufferPool.cpp.s"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/BufferPool.cpp -o CMakeFiles/core.dir/BufferPool.cpp.s
 
-src/core/CMakeFiles/core.dir/GenericBuffer.cpp.o: src/core/CMakeFiles/core.dir/flags.make
-src/core/CMakeFiles/core.dir/GenericBuffer.cpp.o: ../src/core/GenericBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/core/CMakeFiles/core.dir/GenericBuffer.cpp.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/GenericBuffer.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/GenericBuffer.cpp
-
-src/core/CMakeFiles/core.dir/GenericBuffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/GenericBuffer.cpp.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/GenericBuffer.cpp > CMakeFiles/core.dir/GenericBuffer.cpp.i
-
-src/core/CMakeFiles/core.dir/GenericBuffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/GenericBuffer.cpp.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/GenericBuffer.cpp -o CMakeFiles/core.dir/GenericBuffer.cpp.s
-
-src/core/CMakeFiles/core.dir/HostBuffer.cpp.o: src/core/CMakeFiles/core.dir/flags.make
-src/core/CMakeFiles/core.dir/HostBuffer.cpp.o: ../src/core/HostBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/core/CMakeFiles/core.dir/HostBuffer.cpp.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/HostBuffer.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/HostBuffer.cpp
-
-src/core/CMakeFiles/core.dir/HostBuffer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/HostBuffer.cpp.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/HostBuffer.cpp > CMakeFiles/core.dir/HostBuffer.cpp.i
-
-src/core/CMakeFiles/core.dir/HostBuffer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/HostBuffer.cpp.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/HostBuffer.cpp -o CMakeFiles/core.dir/HostBuffer.cpp.s
-
 src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o: src/core/CMakeFiles/core.dir/flags.make
 src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o: ../src/core/PersistentDeviceBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentDeviceBuffer.cpp
 
 src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.i: cmake_force
@@ -111,7 +85,7 @@ src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.s: cmake_force
 
 src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o: src/core/CMakeFiles/core.dir/flags.make
 src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o: ../src/core/PersistentStagingBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentStagingBuffer.cpp
 
 src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.i: cmake_force
@@ -124,7 +98,7 @@ src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.s: cmake_force
 
 src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o: src/core/CMakeFiles/core.dir/flags.make
 src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o: ../src/core/SceneBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/SceneBuffer.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.cpp
 
 src/core/CMakeFiles/core.dir/SceneBuffer.cpp.i: cmake_force
@@ -137,7 +111,7 @@ src/core/CMakeFiles/core.dir/SceneBuffer.cpp.s: cmake_force
 
 src/core/CMakeFiles/core.dir/Texture.cpp.o: src/core/CMakeFiles/core.dir/flags.make
 src/core/CMakeFiles/core.dir/Texture.cpp.o: ../src/core/Texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/core/CMakeFiles/core.dir/Texture.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/core/CMakeFiles/core.dir/Texture.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/Texture.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/Texture.cpp
 
 src/core/CMakeFiles/core.dir/Texture.cpp.i: cmake_force
@@ -151,8 +125,6 @@ src/core/CMakeFiles/core.dir/Texture.cpp.s: cmake_force
 # Object files for target core
 core_OBJECTS = \
 "CMakeFiles/core.dir/BufferPool.cpp.o" \
-"CMakeFiles/core.dir/GenericBuffer.cpp.o" \
-"CMakeFiles/core.dir/HostBuffer.cpp.o" \
 "CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o" \
 "CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o" \
 "CMakeFiles/core.dir/SceneBuffer.cpp.o" \
@@ -162,15 +134,13 @@ core_OBJECTS = \
 core_EXTERNAL_OBJECTS =
 
 src/core/libcore.a: src/core/CMakeFiles/core.dir/BufferPool.cpp.o
-src/core/libcore.a: src/core/CMakeFiles/core.dir/GenericBuffer.cpp.o
-src/core/libcore.a: src/core/CMakeFiles/core.dir/HostBuffer.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/Texture.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/build.make
 src/core/libcore.a: src/core/CMakeFiles/core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libcore.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libcore.a"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && $(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean_target.cmake
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core.dir/link.txt --verbose=$(VERBOSE)
 

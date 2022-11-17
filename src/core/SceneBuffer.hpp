@@ -56,7 +56,7 @@ public:
 
     void flushQueuedUploads(const VkCommandBuffer vk_cmdBuff, const bool externallySynchronized);
 
-    const MeshInfo& getMeshInfo(const uint32_t id) const;
+    // const MeshInfo& getMeshInfo(const uint32_t id) const;
 
     const VkBuffer getVertexBuffer() const;
     const VkBuffer getIndexBuffer() const;

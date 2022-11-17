@@ -21,6 +21,11 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.cpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o
+ ../src/common/Defines.hpp
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DeviceMemory.cpp
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DeviceMemory.hpp
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o
  ../src/common/Defines.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Fence.cpp

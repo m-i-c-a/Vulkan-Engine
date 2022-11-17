@@ -1,21 +1,28 @@
-#ifndef MICA_CORE_STAGING_BUFFER_HPP
-#define MICA_CORE_STAGING_BUFFER_HPP
-
-#include <string.h>
+#ifndef MICA_CORE_PERSISTENT_STAGING_BUFFER_HPP
+#define MICA_CORE_PERSISTENT_STAGING_BUFFER_HPP
 
 #include <vector>
-#include <unordered_map>
-#include <atomic>
 
 #include <vulkan/vulkan.h>
 
 class HostBuffer;
 class PersistentDeviceBuffer;
 
+namespace VulkanWrapper
+{
+
+class Buffer;
+class DeviceMemory;
+
+};
+
+
 class PersistentStagingBuffer
 {
 private:
-    HostBuffer*  m_buffer   = nullptr;
+    VulkanWrapper::Buffer*       m_buffer = nullptr;
+    VulkanWrapper::DeviceMemory* m_memory = nullptr;
+
     VkDeviceSize m_vkSize   = 0;
     std::vector<PersistentDeviceBuffer*> m_registeredDeviceBuffers;
 public:
@@ -28,4 +35,4 @@ public:
     VkBuffer vkBuffer() const;
 };
 
-#endif // MICA_STAGING_BUFFER_HPP
+#endif // MICA_CORE_PERSISTENT_STAGING_BUFFER_HPP

@@ -109,9 +109,22 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.s"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.cpp -o CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.s
 
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/flags.make
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o: ../src/vulkanwrapper/DeviceMemory.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DeviceMemory.cpp
+
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.i"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DeviceMemory.cpp > CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.i
+
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.s"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DeviceMemory.cpp -o CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.s
+
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/flags.make
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/vulkanwrapper/Fence.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vulkanwrapper.dir/Fence.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Fence.cpp
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.i: cmake_force
@@ -124,7 +137,7 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.s: cmake_force
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Generic.cpp.o: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/flags.make
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Generic.cpp.o: ../src/vulkanwrapper/Generic.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Generic.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Generic.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vulkanwrapper.dir/Generic.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Generic.cpp
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Generic.cpp.i: cmake_force
@@ -137,7 +150,7 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Generic.cpp.s: cmake_force
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/flags.make
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o: ../src/vulkanwrapper/Image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vulkanwrapper.dir/Image.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Image.cpp
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.i: cmake_force
@@ -150,7 +163,7 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.s: cmake_force
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/flags.make
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/vulkanwrapper/ImageView.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/ImageView.cpp
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.i: cmake_force
@@ -163,7 +176,7 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.s: cmake_force
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/flags.make
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o: ../src/vulkanwrapper/Resource.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vulkanwrapper.dir/Resource.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.cpp
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.i: cmake_force
@@ -176,7 +189,7 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.s: cmake_force
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Sampler.cpp.o: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/flags.make
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Sampler.cpp.o: ../src/vulkanwrapper/Sampler.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Sampler.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Sampler.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vulkanwrapper.dir/Sampler.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Sampler.cpp
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Sampler.cpp.i: cmake_force
@@ -189,7 +202,7 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Sampler.cpp.s: cmake_force
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ShaderModule.cpp.o: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/flags.make
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ShaderModule.cpp.o: ../src/vulkanwrapper/ShaderModule.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ShaderModule.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ShaderModule.cpp.o"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/vulkanwrapper.dir/ShaderModule.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/ShaderModule.cpp
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ShaderModule.cpp.i: cmake_force
@@ -206,6 +219,7 @@ vulkanwrapper_OBJECTS = \
 "CMakeFiles/vulkanwrapper.dir/CommandBuffer.cpp.o" \
 "CMakeFiles/vulkanwrapper.dir/CommandPool.cpp.o" \
 "CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o" \
+"CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o" \
 "CMakeFiles/vulkanwrapper.dir/Fence.cpp.o" \
 "CMakeFiles/vulkanwrapper.dir/Generic.cpp.o" \
 "CMakeFiles/vulkanwrapper.dir/Image.cpp.o" \
@@ -221,6 +235,7 @@ src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper
 src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/CommandBuffer.cpp.o
 src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/CommandPool.cpp.o
 src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o
+src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o
 src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o
 src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Generic.cpp.o
 src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o
@@ -230,7 +245,7 @@ src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper
 src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ShaderModule.cpp.o
 src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make
 src/vulkanwrapper/libvulkanwrapper.a: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX static library libvulkanwrapper.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX static library libvulkanwrapper.a"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && $(CMAKE_COMMAND) -P CMakeFiles/vulkanwrapper.dir/cmake_clean_target.cmake
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/vulkanwrapper.dir/link.txt --verbose=$(VERBOSE)
 

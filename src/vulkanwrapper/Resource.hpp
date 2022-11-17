@@ -8,13 +8,10 @@ namespace VulkanWrapper
 
 struct Resource
 {
-private:
-    static VkPhysicalDeviceMemoryProperties s_vkPhysicalDeviceMemProps; 
 protected:
-
-    // static uint32_t getHeapIndex(const uint32_t memoryTypeIndices, const VkMemoryPropertyFlags memoryPropertyFlags);
-public:
+    static VkPhysicalDeviceMemoryProperties s_vkPhysicalDeviceMemProps; 
     static VkDevice s_vkDevice;
+public:
     static void initResources(VkPhysicalDevice vk_physicalDevice, VkDevice vk_device);
 };
 

@@ -124,7 +124,7 @@ void loadTexture(const char* filename)
         .vk_imageViewType = vk_imageViewType
     };
 
-    createTexture(initInfo);
+    // createTexture(initInfo);
 
 
     ktx_uint8_t* data = ktxTexture_GetData(tex);
@@ -144,5 +144,5 @@ void loadTexture(const char* filename)
         .imageExtent = initInfo.vk_extent
     };
 
-    ktxTexture_Destroy(ktxTexture);
+    ktxTexture_Destroy(tex);
 }

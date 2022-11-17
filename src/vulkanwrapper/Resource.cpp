@@ -13,19 +13,4 @@ void Resource::initResources(const VkPhysicalDevice vk_physicalDevice, const VkD
  vkGetPhysicalDeviceMemoryProperties(vk_physicalDevice, &s_vkPhysicalDeviceMemProps);
 }
 
-uint32_t Resource::getHeapIndex(const uint32_t memoryTypeIndices, const VkMemoryPropertyFlags memoryPropertyFlags)
-{
-	// Iterate over all memory types available for the device used in this example
-	for (uint32_t i = 0; i < s_vkPhysicalDeviceMemProps.memoryTypeCount; i++)
-	{
-		if (memoryTypeIndices & (1 << i) && (s_vkPhysicalDeviceMemProps.memoryTypes[i].propertyFlags & memoryPropertyFlags) == memoryPropertyFlags)
-		{
-			return i;
-		}
-	}
-
-    EXIT("Could not find suitable memory type!");
-    return 0;
-}
-
 }; // VulkanWrapper

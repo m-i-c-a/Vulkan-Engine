@@ -25,8 +25,8 @@ target_include_directories(${PROJECT_NAME} PUBLIC
     glfw_INCLUDE_DIRS
     glm_INCLUDE_DIRS 
     ktx_INCLUDE_DIRS
-    $ENV{VULKAN_SDK}/include 
     ${IMGUI_INCLUDE_DIRS}
+    $ENV{VULKAN_SDK}/include 
     ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_compile_options(${PROJECT_NAME} PRIVATE -g -std=c++17)

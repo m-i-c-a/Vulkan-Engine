@@ -3,6 +3,7 @@ add_library(vulkanwrapper STATIC
     CommandBuffer.cpp  CommandBuffer.hpp
     CommandPool.cpp    CommandPool.hpp
     DescriptorPool.cpp DescriptorPool.hpp
+    DeviceMemory.cpp   DeviceMemory.hpp
     Fence.cpp          Fence.hpp
     Generic.cpp        Generic.hpp
     Image.cpp          Image.hpp

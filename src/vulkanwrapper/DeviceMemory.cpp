@@ -4,6 +4,21 @@
 namespace VulkanWrapper
 {
 
+uint32_t DeviceMemory::getHeapIndex(const uint32_t memoryTypeIndices, const VkMemoryPropertyFlags memoryPropertyFlags)
+{
+	// Iterate over all memory types available for the device used in this example
+	for (uint32_t i = 0; i < s_vkPhysicalDeviceMemProps.memoryTypeCount; i++)
+	{
+		if (memoryTypeIndices & (1 << i) && (s_vkPhysicalDeviceMemProps.memoryTypes[i].propertyFlags & memoryPropertyFlags) == memoryPropertyFlags)
+		{
+			return i;
+		}
+	}
+
+    EXIT("Could not find suitable memory type!");
+    return 0;
+}
+
 VkDeviceMemory DeviceMemory::allocate(const VkDeviceSize vk_size, const uint32_t memoryType, const VkMemoryPropertyFlags vk_memProps)
 {
     const VkMemoryAllocateInfo vk_allocInfo {

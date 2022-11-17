@@ -5,8 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/BufferPool.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/BufferPool.cpp.o"
-  "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/GenericBuffer.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/GenericBuffer.cpp.o"
-  "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/HostBuffer.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/HostBuffer.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentDeviceBuffer.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentStagingBuffer.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o"
@@ -18,6 +16,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../src/common"
   "../src"
+  "/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include"
   )
 
 # Targets to which this target links.

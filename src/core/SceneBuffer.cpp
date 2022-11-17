@@ -65,6 +65,7 @@ int32_t SceneBuffer::queueVertexUpload(const VkDeviceSize vk_size, const void* p
 #endif
 
     VkBufferCopy2 vk_buffCopy {
+        .sType = VK_STRUCTURE_TYPE_BUFFER_COPY_2,
         .srcOffset = m_vkStagingBufferOffset,
         .dstOffset = m_vkVertexBufferOffset,
         .size = vk_size
@@ -98,6 +99,7 @@ uint32_t SceneBuffer::queueIndexUpload(const VkDeviceSize vk_size, const uint32_
 #endif
 
     VkBufferCopy2 vk_buffCopy {
+        .sType = VK_STRUCTURE_TYPE_BUFFER_COPY_2,
         .srcOffset = m_vkStagingBufferOffset,
         .dstOffset = m_vkIndexBufferOffset,
         .size = vk_size
@@ -173,7 +175,7 @@ void SceneBuffer::flushQueuedUploads(const VkCommandBuffer vk_cmdBuff, const boo
                 .pImageMemoryBarriers = nullptr,
             };
 
-            vkCmdPipelineBarrier2KHR(vk_cmdBuff, &vk_dependencyInfo);
+            vkCmdPipelineBarrier2(vk_cmdBuff, &vk_dependencyInfo);
         }
         else
         {
@@ -227,10 +229,10 @@ MeshInfo SceneBuffer::queueUpload(const uint32_t id, const VkDeviceSize vk_verte
 }
 
 
-const MeshInfo& SceneBuffer::getMeshInfo(const uint32_t id) const
-{
-    return {};
-}
+// const MeshInfo& SceneBuffer::getMeshInfo(const uint32_t id) const
+// {
+//     return {};
+// }
 
 
 const VkBuffer SceneBuffer::getVertexBuffer() const { return m_vertexBuffer->vk_handle; }

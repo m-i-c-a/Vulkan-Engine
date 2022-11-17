@@ -1,6 +1,6 @@
 #include "Texture.hpp"
 // #include "vulkanwrapper/Generic.hpp"
-#include "DeviceMemory.hpp"
+#include "vulkanwrapper/DeviceMemory.hpp"
 #include "vulkanwrapper/Image.hpp"
 #include "vulkanwrapper/ImageView.hpp"
 #include "vulkanwrapper/Sampler.hpp"

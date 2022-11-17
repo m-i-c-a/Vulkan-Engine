@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/CommandBuffer.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/CommandBuffer.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/CommandPool.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/CommandPool.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o"
+  "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DeviceMemory.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Fence.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Generic.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Generic.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Image.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Image.cpp.o"

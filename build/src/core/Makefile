@@ -220,60 +220,6 @@ BufferPool.cpp.s:
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/BufferPool.cpp.s
 .PHONY : BufferPool.cpp.s
 
-GenericBuffer.o: GenericBuffer.cpp.o
-
-.PHONY : GenericBuffer.o
-
-# target to build an object file
-GenericBuffer.cpp.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/GenericBuffer.cpp.o
-.PHONY : GenericBuffer.cpp.o
-
-GenericBuffer.i: GenericBuffer.cpp.i
-
-.PHONY : GenericBuffer.i
-
-# target to preprocess a source file
-GenericBuffer.cpp.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/GenericBuffer.cpp.i
-.PHONY : GenericBuffer.cpp.i
-
-GenericBuffer.s: GenericBuffer.cpp.s
-
-.PHONY : GenericBuffer.s
-
-# target to generate assembly for a file
-GenericBuffer.cpp.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/GenericBuffer.cpp.s
-.PHONY : GenericBuffer.cpp.s
-
-HostBuffer.o: HostBuffer.cpp.o
-
-.PHONY : HostBuffer.o
-
-# target to build an object file
-HostBuffer.cpp.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/HostBuffer.cpp.o
-.PHONY : HostBuffer.cpp.o
-
-HostBuffer.i: HostBuffer.cpp.i
-
-.PHONY : HostBuffer.i
-
-# target to preprocess a source file
-HostBuffer.cpp.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/HostBuffer.cpp.i
-.PHONY : HostBuffer.cpp.i
-
-HostBuffer.s: HostBuffer.cpp.s
-
-.PHONY : HostBuffer.s
-
-# target to generate assembly for a file
-HostBuffer.cpp.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/HostBuffer.cpp.s
-.PHONY : HostBuffer.cpp.s
-
 PersistentDeviceBuffer.o: PersistentDeviceBuffer.cpp.o
 
 .PHONY : PersistentDeviceBuffer.o
@@ -400,12 +346,6 @@ help:
 	@echo "... BufferPool.o"
 	@echo "... BufferPool.i"
 	@echo "... BufferPool.s"
-	@echo "... GenericBuffer.o"
-	@echo "... GenericBuffer.i"
-	@echo "... GenericBuffer.s"
-	@echo "... HostBuffer.o"
-	@echo "... HostBuffer.i"
-	@echo "... HostBuffer.s"
 	@echo "... PersistentDeviceBuffer.o"
 	@echo "... PersistentDeviceBuffer.i"
 	@echo "... PersistentDeviceBuffer.s"

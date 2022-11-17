@@ -12,6 +12,7 @@ struct DeviceMemory : public Resource
 {
 private:
     static VkDeviceMemory allocate(const VkDeviceSize vk_size, const uint32_t memoryType, const VkMemoryPropertyFlags vk_memProps);
+    static uint32_t getHeapIndex(const uint32_t memoryTypeIndices, const VkMemoryPropertyFlags memoryPropertyFlags);
 public:
     VkDeviceMemory vk_handle = VK_NULL_HANDLE;
 

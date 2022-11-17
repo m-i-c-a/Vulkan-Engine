@@ -301,6 +301,33 @@ DescriptorPool.cpp.s:
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.s
 .PHONY : DescriptorPool.cpp.s
 
+DeviceMemory.o: DeviceMemory.cpp.o
+
+.PHONY : DeviceMemory.o
+
+# target to build an object file
+DeviceMemory.cpp.o:
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o
+.PHONY : DeviceMemory.cpp.o
+
+DeviceMemory.i: DeviceMemory.cpp.i
+
+.PHONY : DeviceMemory.i
+
+# target to preprocess a source file
+DeviceMemory.cpp.i:
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.i
+.PHONY : DeviceMemory.cpp.i
+
+DeviceMemory.s: DeviceMemory.cpp.s
+
+.PHONY : DeviceMemory.s
+
+# target to generate assembly for a file
+DeviceMemory.cpp.s:
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.s
+.PHONY : DeviceMemory.cpp.s
+
 Fence.o: Fence.cpp.o
 
 .PHONY : Fence.o
@@ -517,6 +544,9 @@ help:
 	@echo "... DescriptorPool.o"
 	@echo "... DescriptorPool.i"
 	@echo "... DescriptorPool.s"
+	@echo "... DeviceMemory.o"
+	@echo "... DeviceMemory.i"
+	@echo "... DeviceMemory.s"
 	@echo "... Fence.o"
 	@echo "... Fence.i"
 	@echo "... Fence.s"
