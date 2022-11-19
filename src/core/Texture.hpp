@@ -32,6 +32,9 @@ public:
 
     void updateSampler(VulkanWrapper::Sampler* sampler);
     const VkDescriptorImageInfo* const viewDescriptorInfo() const { return &m_vkDescriptorInfo; }
+
+    VkImage     getVkImage();
+    VkImageView getVkImageView();
 };
 
 } // Core

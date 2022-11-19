@@ -44,6 +44,7 @@ src/CMakeFiles/engine.dir/TextureLoader.cpp.o: ../third-party/KTX-Software/inclu
 src/CMakeFiles/engine.dir/TextureLoader.cpp.o: ../third-party/KTX-Software/include/ktxvulkan.h
 src/CMakeFiles/engine.dir/TextureLoader.cpp.o: ../src/TextureLoader.cpp
 src/CMakeFiles/engine.dir/TextureLoader.cpp.o: ../src/TextureLoader.hpp
+src/CMakeFiles/engine.dir/TextureLoader.cpp.o: ../src/core/StagingBuffer.hpp
 src/CMakeFiles/engine.dir/TextureLoader.cpp.o: ../src/core/Texture.hpp
 src/CMakeFiles/engine.dir/TextureLoader.cpp.o: ../src/vulkanwrapper/Buffer.hpp
 src/CMakeFiles/engine.dir/TextureLoader.cpp.o: ../src/vulkanwrapper/Image.hpp
@@ -373,6 +374,7 @@ src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/BufferPool.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/PersistentDeviceBuffer.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/PersistentStagingBuffer.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/SceneBuffer.hpp
+src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/StagingBuffer.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/Texture.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/debug-utils/DebugUtilsEXT.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/main.cpp

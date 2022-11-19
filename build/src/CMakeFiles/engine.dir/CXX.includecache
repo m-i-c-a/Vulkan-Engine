@@ -1192,6 +1192,22 @@ assert.h
 imgui_user.h
 ../third-party/imgui/imgui_user.h
 
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.cpp
+Loader.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.hpp
+fstream
+-
+assert.h
+-
+sstream
+-
+iostream
+-
+unordered_map
+-
+array
+-
+
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.hpp
 glm/vec2.hpp
 -
@@ -1242,6 +1258,16 @@ vulkan/vulkan.h
 ShaderStructs.hpp
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/ShaderStructs.hpp
 
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/StagingBuffer.hpp
+vulkan/vulkan.h
+-
+vector
+-
+unordered_map
+-
+atomic
+-
+
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/Texture.hpp
 vulkan/vulkan.h
 -
@@ -1289,6 +1315,8 @@ core/PersistentStagingBuffer.hpp
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentStagingBuffer.hpp
 core/SceneBuffer.hpp
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
+core/StagingBuffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/StagingBuffer.hpp
 core/Texture.hpp
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/Texture.hpp
 vulkanwrapper/Generic.hpp

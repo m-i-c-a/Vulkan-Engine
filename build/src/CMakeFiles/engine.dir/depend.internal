@@ -45,6 +45,7 @@ src/CMakeFiles/engine.dir/TextureLoader.cpp.o
  ../third-party/KTX-Software/include/ktxvulkan.h
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/TextureLoader.cpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/TextureLoader.hpp
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/StagingBuffer.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/Texture.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Buffer.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Image.hpp
@@ -374,6 +375,7 @@ src/CMakeFiles/engine.dir/main.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentDeviceBuffer.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentStagingBuffer.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/StagingBuffer.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/Texture.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/debug-utils/DebugUtilsEXT.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/main.cpp

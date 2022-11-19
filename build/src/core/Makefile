@@ -301,6 +301,33 @@ SceneBuffer.cpp.s:
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/SceneBuffer.cpp.s
 .PHONY : SceneBuffer.cpp.s
 
+StagingBuffer.o: StagingBuffer.cpp.o
+
+.PHONY : StagingBuffer.o
+
+# target to build an object file
+StagingBuffer.cpp.o:
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/StagingBuffer.cpp.o
+.PHONY : StagingBuffer.cpp.o
+
+StagingBuffer.i: StagingBuffer.cpp.i
+
+.PHONY : StagingBuffer.i
+
+# target to preprocess a source file
+StagingBuffer.cpp.i:
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/StagingBuffer.cpp.i
+.PHONY : StagingBuffer.cpp.i
+
+StagingBuffer.s: StagingBuffer.cpp.s
+
+.PHONY : StagingBuffer.s
+
+# target to generate assembly for a file
+StagingBuffer.cpp.s:
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/StagingBuffer.cpp.s
+.PHONY : StagingBuffer.cpp.s
+
 Texture.o: Texture.cpp.o
 
 .PHONY : Texture.o
@@ -355,6 +382,9 @@ help:
 	@echo "... SceneBuffer.o"
 	@echo "... SceneBuffer.i"
 	@echo "... SceneBuffer.s"
+	@echo "... StagingBuffer.o"
+	@echo "... StagingBuffer.i"
+	@echo "... StagingBuffer.s"
 	@echo "... Texture.o"
 	@echo "... Texture.i"
 	@echo "... Texture.s"

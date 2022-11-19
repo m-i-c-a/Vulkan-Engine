@@ -32,6 +32,8 @@
         "unordered_set": "cpp",
         "mutex": "cpp",
         "shared_mutex": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "chrono": "cpp",
+        "variant": "cpp"
     }
 }

@@ -1,7 +1,7 @@
 #ifndef MICA_CORE_STAGING_BUFFER_HPP 
 #define MICA_CORE_STAGING_BUFFER_HPP
 
-#include <vulkan.h>
+#include <vulkan/vulkan.h>
 
 #include <vector>
 #include <unordered_map> 
@@ -50,7 +50,17 @@ public:
     StagingBuffer(const VkDeviceSize vk_size, const uint32_t batchCount);
     ~StagingBuffer();
 
-    void uploadData(const VkImage vk_image, const VkBufferImageCopy2 vk_bufferImageCopy2, const VkDeviceSize vk_size, const void* const data);
+    struct BarrierInfo
+    {
+        VkImageLayout         vk_currentImageLayout     = VK_IMAGE_LAYOUT_MAX_ENUM;
+        VkImageLayout         vk_imageLayoutAfterUpload = VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL;
+        VkPipelineStageFlags2 vk_srcStageMask           = VK_PIPELINE_STAGE_2_NONE;
+        VkAccessFlags2        vk_srcAccessMask          = VK_ACCESS_2_NONE;
+        VkPipelineStageFlags2 vk_dstStageMask           = VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT;
+        VkAccessFlags2        vk_dstAccessMask          = VK_ACCESS_2_SHADER_READ_BIT;
+    };
+
+    void uploadData(const VkImage vk_image, VkBufferImageCopy2 vk_bufferImageCopy2, const BarrierInfo& barrierInfo, const VkDeviceSize vk_size, void* data);
     void uploadData(const VkBuffer vk_buffer, VkBufferCopy2 vk_bufferCopy2, const void* const data);
 
     void flush(const VkCommandBuffer vk_cmdBuff);

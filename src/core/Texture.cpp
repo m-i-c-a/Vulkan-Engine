@@ -41,4 +41,15 @@ void Texture::updateSampler(VulkanWrapper::Sampler* sampler)
     m_sampler = sampler;
 }
 
+
+VkImage Texture::getVkImage()
+{
+    return m_image->vk_handle;
+}
+
+VkImageView Texture::getVkImageView()
+{
+    return m_imageView->m_vkImageView;
+}
+
 }; // Core

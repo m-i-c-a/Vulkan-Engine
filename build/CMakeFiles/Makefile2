@@ -698,12 +698,12 @@ third-party/glfw/src/CMakeFiles/update_mappings.dir/clean:
 third-party/glfw/src/CMakeFiles/glfw.dir/all:
 	$(MAKE) -f third-party/glfw/src/CMakeFiles/glfw.dir/build.make third-party/glfw/src/CMakeFiles/glfw.dir/depend
 	$(MAKE) -f third-party/glfw/src/CMakeFiles/glfw.dir/build.make third-party/glfw/src/CMakeFiles/glfw.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=21,22,23,24,25,26,27,28,29,30,31 "Built target glfw"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=22,23,24,25,26,27,28,29,30,31 "Built target glfw"
 .PHONY : third-party/glfw/src/CMakeFiles/glfw.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/src/CMakeFiles/glfw.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/src/CMakeFiles/glfw.dir/rule
@@ -730,7 +730,7 @@ third-party/glfw/examples/CMakeFiles/boing.dir/all: third-party/glfw/src/CMakeFi
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/boing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/boing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/boing.dir/rule
@@ -752,7 +752,7 @@ third-party/glfw/examples/CMakeFiles/boing.dir/clean:
 third-party/glfw/examples/CMakeFiles/gears.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/gears.dir/build.make third-party/glfw/examples/CMakeFiles/gears.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/gears.dir/build.make third-party/glfw/examples/CMakeFiles/gears.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target gears"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=21 "Built target gears"
 .PHONY : third-party/glfw/examples/CMakeFiles/gears.dir/all
 
 # Build rule for subdir invocation for target.
@@ -784,7 +784,7 @@ third-party/glfw/examples/CMakeFiles/heightmap.dir/all: third-party/glfw/src/CMa
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/heightmap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/heightmap.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/heightmap.dir/rule
@@ -811,7 +811,7 @@ third-party/glfw/examples/CMakeFiles/sharing.dir/all: third-party/glfw/src/CMake
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/sharing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/sharing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/sharing.dir/rule
@@ -838,7 +838,7 @@ third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/all: third-party/glfw
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/triangle-opengles.dir/rule
@@ -865,7 +865,7 @@ third-party/glfw/examples/CMakeFiles/particles.dir/all: third-party/glfw/src/CMa
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/particles.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/particles.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/particles.dir/rule
@@ -892,7 +892,7 @@ third-party/glfw/examples/CMakeFiles/splitview.dir/all: third-party/glfw/src/CMa
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/splitview.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/splitview.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/splitview.dir/rule
@@ -919,7 +919,7 @@ third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/all: third-party/glfw/s
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/triangle-opengl.dir/rule
@@ -946,7 +946,7 @@ third-party/glfw/examples/CMakeFiles/offscreen.dir/all: third-party/glfw/src/CMa
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/offscreen.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/offscreen.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/offscreen.dir/rule
@@ -973,7 +973,7 @@ third-party/glfw/examples/CMakeFiles/wave.dir/all: third-party/glfw/src/CMakeFil
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/wave.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/wave.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/wave.dir/rule
@@ -1000,7 +1000,7 @@ third-party/glfw/examples/CMakeFiles/windows.dir/all: third-party/glfw/src/CMake
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/windows.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/windows.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/windows.dir/rule
@@ -1022,12 +1022,12 @@ third-party/glfw/examples/CMakeFiles/windows.dir/clean:
 third-party/glfw/docs/CMakeFiles/docs.dir/all:
 	$(MAKE) -f third-party/glfw/docs/CMakeFiles/docs.dir/build.make third-party/glfw/docs/CMakeFiles/docs.dir/depend
 	$(MAKE) -f third-party/glfw/docs/CMakeFiles/docs.dir/build.make third-party/glfw/docs/CMakeFiles/docs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target docs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=15 "Built target docs"
 .PHONY : third-party/glfw/docs/CMakeFiles/docs.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/docs/CMakeFiles/docs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/docs/CMakeFiles/docs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/docs/CMakeFiles/docs.dir/rule
@@ -1077,12 +1077,12 @@ third-party/KTX-Software/CMakeFiles/ktx_read.dir/all: third-party/KTX-Software/C
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/all: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all
 	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/depend
 	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=58,59,60,61,62,63,64,65,66,67,68,69,70 "Built target ktx_read"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=59,60,61,62,63,64,65,66,67,68,69,70 "Built target ktx_read"
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 15
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx_read.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule
@@ -2137,12 +2137,12 @@ third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/clean:
 third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/all:
 	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/depend
 	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ktx2ktx2_version"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=58 "Built target ktx2ktx2_version"
 .PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/rule
@@ -2171,7 +2171,7 @@ third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/all: third-party
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 36
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 37
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/rule
@@ -2505,12 +2505,12 @@ src/CMakeFiles/engine.dir/all: src/core/CMakeFiles/core.dir/all
 src/CMakeFiles/engine.dir/all: src/debug-utils/CMakeFiles/debug-utils.dir/all
 	$(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/depend
 	$(MAKE) -f src/CMakeFiles/engine.dir/build.make src/CMakeFiles/engine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=15,16,17,18,19,20 "Built target engine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=16,17,18,19,20 "Built target engine"
 .PHONY : src/CMakeFiles/engine.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/engine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 60
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 58
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/engine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/engine.dir/rule

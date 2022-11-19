@@ -3,6 +3,7 @@ add_library(core STATIC
     PersistentDeviceBuffer.cpp    PersistentDeviceBuffer.hpp
     PersistentStagingBuffer.cpp   PersistentStagingBuffer.hpp
     SceneBuffer.cpp               SceneBuffer.hpp
+    StagingBuffer.cpp             StagingBuffer.hpp
     Texture.cpp                   Texture.hpp
 )
 

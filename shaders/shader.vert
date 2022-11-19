@@ -7,7 +7,7 @@ struct ObjectData
 
 struct DrawInfo
 {
-    uint matID;
+    // uint matID;
     uint objID;
 };
 
@@ -17,7 +17,7 @@ layout(location=2) in vec2 a_uv;
 
 layout(location=0) out vec3 o_norm;
 layout(location=1) out vec2 o_uv;
-layout(location=1) flat out uint o_matID;
+// layout(location=1) flat out uint o_matID;
 
 layout(set=0, binding=0) uniform ubo_0
 {
@@ -38,12 +38,12 @@ layout(set=0, binding=2) buffer readonly ssbo_1
 
 void main()
 {
-    DrawInfo drawInfo = ssbo_drawInfo.data[instanceIndex];
+    DrawInfo drawInfo = ssbo_drawInfo.data[gl_InstanceIndex];
 
     ObjectData objectData = ssbo_objectData.data[drawInfo.objID];
 
     gl_Position = ubo_global.projViewMatrix * objectData.modelMatrix * vec4(a_pos, 1.0f);
     o_norm = a_norm; 
     o_uv = a_uv;
-    o_matID = drawInfo.matID;
+    // o_matID = drawInfo.matID;
 }

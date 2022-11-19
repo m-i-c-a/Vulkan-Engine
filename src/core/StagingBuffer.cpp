@@ -16,6 +16,7 @@ StagingBuffer::StagingBuffer(const VkDeviceSize vk_size, const uint32_t batchCou
 {
     m_buffer = new VulkanWrapper::Buffer(vk_size, VK_BUFFER_USAGE_TRANSFER_SRC_BIT);
     m_memory = new VulkanWrapper::DeviceMemory(m_buffer->vk_handle, VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT);
+    m_memory->bind(m_buffer->vk_handle, 0);
     m_pMappedData = m_memory->map(0, vk_size);
 
     m_batches.resize(batchCount);
@@ -114,15 +115,8 @@ void StagingBuffer::uploadData(const VkBuffer vk_buffer, VkBufferCopy2 vk_buffer
     }
 }
 
-void StagingBuffer::uploadData(const VkImage vk_image, VkBufferImageCopy2 vk_bufferImageCopy2, const VkDeviceSize vk_size, const void* const data)
+void StagingBuffer::uploadData(const VkImage vk_image, VkBufferImageCopy2 vk_bufferImageCopy2, const BarrierInfo& barrierInfo, const VkDeviceSize vk_size, void* data)
 {
-    VkImageLayout vk_currentImageLayout = VK_IMAGE_LAYOUT_MAX_ENUM;
-    VkImageLayout vk_imageLayoutAfterUpload = VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL;
-    VkPipelineStageFlags2 vk_srcStageMask = VK_PIPELINE_STAGE_2_NONE;
-    VkAccessFlags2 vk_srcAccessMask = VK_ACCESS_2_NONE;
-    VkPipelineStageFlags2 vk_dstStageMask = VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT;
-    VkAccessFlags2 vk_dstAccessMask = VK_ACCESS_2_SHADER_READ_BIT;
-
     constexpr bool isUnifiedGraphicsAndTransferQueue = true;
 
     const VkDeviceSize vk_availableSize = std::max(0ul, m_vkSize - m_vkOffset.fetch_add(vk_size));  
@@ -150,11 +144,11 @@ void StagingBuffer::uploadData(const VkImage vk_image, VkBufferImageCopy2 vk_buf
 
             const VkImageMemoryBarrier2 vk_preCopyImageMemoryBarrier2 {
                 .sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2,
-                .srcStageMask = vk_srcStageMask,
-                .srcAccessMask = vk_srcAccessMask,
+                .srcStageMask = barrierInfo.vk_srcStageMask,
+                .srcAccessMask = barrierInfo.vk_srcAccessMask,
                 .dstStageMask = VK_PIPELINE_STAGE_2_TRANSFER_BIT,
                 .dstAccessMask = VK_ACCESS_2_MEMORY_WRITE_BIT,
-                .oldLayout = vk_currentImageLayout,
+                .oldLayout = barrierInfo.vk_currentImageLayout,
                 .newLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
                 .srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED,
                 .dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED,
@@ -166,10 +160,10 @@ void StagingBuffer::uploadData(const VkImage vk_image, VkBufferImageCopy2 vk_buf
                 .sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2,
                 .srcStageMask = VK_PIPELINE_STAGE_2_TRANSFER_BIT,
                 .srcAccessMask = VK_ACCESS_2_TRANSFER_WRITE_BIT,
-                .dstStageMask = vk_dstStageMask,
-                .dstAccessMask = vk_dstAccessMask,
+                .dstStageMask = barrierInfo.vk_dstStageMask,
+                .dstAccessMask = barrierInfo.vk_dstAccessMask,
                 .oldLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
-                .newLayout = vk_imageLayoutAfterUpload,
+                .newLayout = barrierInfo.vk_imageLayoutAfterUpload,
                 .srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED,
                 .dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED,
                 .image = vk_image,

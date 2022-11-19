@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentDeviceBuffer.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentStagingBuffer.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o"
+  "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/StagingBuffer.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/StagingBuffer.cpp.o"
   "/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/Texture.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/core.dir/Texture.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

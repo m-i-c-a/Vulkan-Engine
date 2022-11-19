@@ -1,6 +1,7 @@
 #include "TextureLoader.hpp"
 #include "Defines.hpp"
 
+#include "core/StagingBuffer.hpp"
 #include "core/Texture.hpp"
 
 #include "vulkanwrapper/Buffer.hpp"
@@ -21,7 +22,7 @@ struct TextureInitInfo
     const VkImageViewType vk_imageViewType = VK_IMAGE_VIEW_TYPE_2D;
 };
 
-void createTexture(const TextureInitInfo& initInfo)
+Core::Texture* createTexture(const TextureInitInfo& initInfo, VulkanWrapper::Sampler* sampler)
 {
     const VkImageCreateInfo vk_imageCreateInfo {
         .sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO,
@@ -34,7 +35,7 @@ void createTexture(const TextureInitInfo& initInfo)
         .tiling = VK_IMAGE_TILING_OPTIMAL,
         .usage = VK_IMAGE_USAGE_SAMPLED_BIT | VK_IMAGE_USAGE_TRANSFER_DST_BIT,
         .sharingMode = VK_SHARING_MODE_EXCLUSIVE,
-        .initialLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+        .initialLayout = VK_IMAGE_LAYOUT_UNDEFINED
     };
 
     VkImageViewCreateInfo vk_imageViewCreateInfo {
@@ -55,13 +56,9 @@ void createTexture(const TextureInitInfo& initInfo)
         }
     };
 
-    // Choose sampler from global sampler pool based on params
-
-    VulkanWrapper::Sampler* sampler = nullptr;
     Core::Texture* texture = new Core::Texture(vk_imageCreateInfo, vk_imageViewCreateInfo, sampler);
+    return texture;
 }
-
-
 
 bool getImageType(const uint32_t numDimensions, VkImageType& vk_imageType, VkImageViewType& vk_imageViewType)
 {
@@ -73,11 +70,11 @@ bool getImageType(const uint32_t numDimensions, VkImageType& vk_imageType, VkIma
             break;
         case 2:
             vk_imageType = VK_IMAGE_TYPE_2D;
-            vk_imageViewType = VK_IMAGE_VIEW_TYPE_1D;
+            vk_imageViewType = VK_IMAGE_VIEW_TYPE_2D;
             break;
         case 3:
             vk_imageType = VK_IMAGE_TYPE_3D;
-            vk_imageViewType = VK_IMAGE_VIEW_TYPE_1D;
+            vk_imageViewType = VK_IMAGE_VIEW_TYPE_3D;
             break;
         default:
             return false;
@@ -86,7 +83,7 @@ bool getImageType(const uint32_t numDimensions, VkImageType& vk_imageType, VkIma
     return true;
 }
 
-void loadTexture(const char* filename)
+Core::Texture* loadTexture(const char* filename, Core::StagingBuffer* stagingBuffer, VulkanWrapper::Sampler* sampler)
 {
     ktxTexture* tex = nullptr;
     const ktxResult result = ktxTexture_CreateFromNamedFile(filename, KTX_TEXTURE_CREATE_LOAD_IMAGE_DATA_BIT, &tex);
@@ -105,12 +102,6 @@ void loadTexture(const char* filename)
         EXIT("Failed to load texture %s - invalid # of dimensions %u\n", filename, tex->numDimensions);
     }
 
-
-
-    // get staging pointer (incrementing internal atomic staging internals)
-
-    // copy to staging pointer
-
     const TextureInitInfo initInfo {
         .vk_format = ktxTexture_GetVkFormat(tex),
         .mipCount = static_cast<uint32_t>(tex->numLevels),
@@ -124,13 +115,13 @@ void loadTexture(const char* filename)
         .vk_imageViewType = vk_imageViewType
     };
 
-    // createTexture(initInfo);
-
+    Core::Texture* texture = createTexture(initInfo, sampler);
 
     ktx_uint8_t* data = ktxTexture_GetData(tex);
-    ktx_size_t size; // = ktxTexture_GetSize(tex);
+    ktx_size_t size = ktxTexture_GetDataSize(tex);
 
-    VkBufferImageCopy vk_bufferImageCopy {
+    VkBufferImageCopy2 vk_bufferImageCopy {
+        .sType = VK_STRUCTURE_TYPE_BUFFER_IMAGE_COPY_2,
         .bufferOffset = 0,
         .bufferRowLength = 0,
         .bufferImageHeight = 0,
@@ -144,5 +135,18 @@ void loadTexture(const char* filename)
         .imageExtent = initInfo.vk_extent
     };
 
+    const Core::StagingBuffer::BarrierInfo barrierInfo {
+        .vk_currentImageLayout     = VK_IMAGE_LAYOUT_UNDEFINED,
+        .vk_imageLayoutAfterUpload = VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL,
+        .vk_srcStageMask           = VK_PIPELINE_STAGE_NONE,
+        .vk_srcAccessMask          = VK_ACCESS_2_NONE,
+        .vk_dstStageMask           = VK_PIPELINE_STAGE_2_FRAGMENT_SHADER_BIT,
+        .vk_dstAccessMask          = VK_ACCESS_2_SHADER_READ_BIT,
+    };
+
+    stagingBuffer->uploadData(texture->getVkImage(), vk_bufferImageCopy, barrierInfo, size, (void*)data);
+
     ktxTexture_Destroy(tex);
+
+    return texture;
 }
