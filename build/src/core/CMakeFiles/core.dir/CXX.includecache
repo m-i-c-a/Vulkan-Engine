@@ -14,6 +14,10 @@ stdio.h
 stdlib.h
 -
 
+../src/common/ShaderStructs.hpp
+glm/mat4x4.hpp
+-
+
 ../src/vulkanwrapper/Buffer.hpp
 vulkan/vulkan.h
 -
@@ -30,9 +34,29 @@ Resource.hpp
 vulkan/vulkan.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/StagingBuffer.cpp
-StagingBuffer.hpp
-/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/StagingBuffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/BufferPool.cpp
+BufferPool.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/BufferPool.hpp
+Defines.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/Defines.hpp
+ShaderStructs.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/ShaderStructs.hpp
+vulkanwrapper/Buffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/vulkanwrapper/Buffer.hpp
+vulkanwrapper/DeviceMemory.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/vulkanwrapper/DeviceMemory.hpp
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/BufferPool.hpp
+vector
+-
+stack
+-
+vulkan/vulkan.h
+-
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.cpp
+SceneBuffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
 Defines.hpp
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/Defines.hpp
 vulkanwrapper/Buffer.hpp
@@ -42,15 +66,17 @@ vulkanwrapper/DeviceMemory.hpp
 string.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/StagingBuffer.hpp
-vulkan/vulkan.h
--
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
 vector
+-
+stack
 -
 unordered_map
 -
-atomic
+vulkan/vulkan.h
 -
+ShaderStructs.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/ShaderStructs.hpp
 
 /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h264std.h
 stdint.h

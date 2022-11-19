@@ -96,7 +96,8 @@ constexpr uint32_t CURRENT_RENDERABLES = MAX_RENDERABLES;
 // constexpr uint32_t MAX_RENDERABLES = 8000;
 // constexpr uint32_t CURRENT_RENDERABLES = 8000;
 
-constexpr uint32_t ARRAY_OF_TEXTURES_SIZE = 1;
+constexpr uint32_t ARRAY_OF_TEXTURES_SIZE = 10;
+constexpr uint32_t ACTIVE_TEXTURES = 4;
 
 static constexpr int windowWidth = 500;
 static constexpr int windowHeight = 500;
@@ -107,6 +108,8 @@ static float FOV = 45.0f;
 static float nearZ = 0.1f;
 static float farZ = 100.0f;
 static glm::vec3 camPos { 0.0f, 0.0f, -1.0f * (float)DIM };
+
+static int activeTextureID = 0;
 
 struct Mesh
 {
@@ -184,7 +187,7 @@ struct AppCore
     Core::BufferPool<MeshInfo>* m_meshInfoPool = nullptr;
     Core::StagingBuffer* m_stagingBuffer = nullptr;
 
-    Core::Texture* m_defaultTexture = nullptr;
+    Core::Texture* m_textures[ARRAY_OF_TEXTURES_SIZE] { nullptr };
 
     VulkanWrapper::Sampler* m_defaultSampler = nullptr;
 
@@ -574,20 +577,22 @@ void createGraphicsResources(const VulkanCore& vulkanCore, AppCore& appCore)
     updateBufferDescriptorSet(vulkanCore.vk_device, appCore.m_vkGraphicsDescSet, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, { appCore.m_ssboDrawInfos->vk_handle, 0, VK_WHOLE_SIZE });
 
 
-    VkDescriptorImageInfo vk_descImageInfo {
-        .sampler = appCore.m_defaultSampler->m_vkSampler,
-        .imageView = appCore.m_defaultTexture->getVkImageView(),
-        .imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,
-    };
+    VkDescriptorImageInfo vk_descImageInfo[ACTIVE_TEXTURES];
+    for (uint32_t i = 0; i < ACTIVE_TEXTURES; ++i)
+    {
+        vk_descImageInfo[i].sampler = appCore.m_defaultSampler->m_vkSampler;
+        vk_descImageInfo[i].imageView =  appCore.m_textures[i]->getVkImageView();
+        vk_descImageInfo[i].imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+    }
 
     VkWriteDescriptorSet vk_writeDescSet {
         .sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET,
         .dstSet = appCore.m_vkGraphicsDescSet,
         .dstBinding = 3,
         .dstArrayElement = 0,
-        .descriptorCount = 1,
+        .descriptorCount = ACTIVE_TEXTURES,
         .descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER,
-        .pImageInfo = &vk_descImageInfo,
+        .pImageInfo = vk_descImageInfo,
     };
 
     vkUpdateDescriptorSets(vulkanCore.vk_device, 1, &vk_writeDescSet, 0, nullptr);
@@ -1337,7 +1342,10 @@ void appIndirectInit(const VulkanCore& vulkanCore, AppCore& appCore)
     appCore.m_globalUBO = appCore.m_persistentStagingBuffer->registerDeviceBuffer(sizeof(GlobalUBO), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     appCore.m_persistentStagingBuffer->completeRegistration();
 
-    appCore.m_defaultTexture = loadTexture("../textures/container.ktx", appCore.m_stagingBuffer, appCore.m_defaultSampler);
+    appCore.m_textures[0] = loadTexture("../textures/container.ktx", appCore.m_stagingBuffer, appCore.m_defaultSampler);
+    appCore.m_textures[1] = loadTexture("../textures/awesomeface.ktx", appCore.m_stagingBuffer, appCore.m_defaultSampler);
+    appCore.m_textures[2] = loadTexture("../textures/wall.ktx", appCore.m_stagingBuffer, appCore.m_defaultSampler);
+    appCore.m_textures[3] = loadTexture("../textures/statue.ktx", appCore.m_stagingBuffer, appCore.m_defaultSampler);
 
     glm::mat4 projMat = glm::perspective(FOV, ((float)windowWidth) / windowHeight, nearZ, farZ);
     glm::mat4 viewMat = glm::mat4(1.0f);
@@ -1594,6 +1602,16 @@ void gui(const VulkanCore& vulkanCore, AppCore& appCore)
                 updateViewMatrix(appCore);
             }
         }
+        if (ImGui::CollapsingHeader("Texture"))
+        {
+            if (ImGui::SliderInt("Texture ID", &activeTextureID, 0, ACTIVE_TEXTURES - 1))
+            {
+                uint32_t id = static_cast<uint32_t>(activeTextureID);
+                appCore.m_globalUBO->update(offsetof(GlobalUBO, texID), sizeof(uint32_t), &id);
+                globalUBODirty = true;
+            }
+        }
+
     }
     ImGui::End();
 
@@ -1780,8 +1798,10 @@ void appCleanup(const VulkanCore& vulkanCore, AppCore& appCore)
     delete appCore.m_swapchainImageAcquireFence;
     delete appCore.m_descPool;
 
+    for (uint32_t i = 0; i < ARRAY_OF_TEXTURES_SIZE; ++i)
+        delete appCore.m_textures[i];
+
     delete appCore.m_defaultSampler;
-    delete appCore.m_defaultTexture;
     delete appCore.m_stagingBuffer;
 
     delete appCore.m_sceneBuffer;

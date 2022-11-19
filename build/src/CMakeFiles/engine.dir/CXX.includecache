@@ -1192,22 +1192,6 @@ assert.h
 imgui_user.h
 ../third-party/imgui/imgui_user.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.cpp
-Loader.hpp
-/home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.hpp
-fstream
--
-assert.h
--
-sstream
--
-iostream
--
-unordered_map
--
-array
--
-
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.hpp
 glm/vec2.hpp
 -
