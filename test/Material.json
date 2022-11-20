@@ -1,0 +1,32 @@
+{
+    "attribute-descriptions" : {
+        "POSITION" : {
+            "type"   : "float",
+            "number" : 3
+        },
+        "NORMAL" : {
+            "type"   : "float",
+            "number" : 3
+        },
+        "TEX_COORD" : {
+            "type"   : "float",
+            "number" : 2
+        }
+    },
+    "material-descriptions"  : {
+        "name"    : "phong",
+        "shaders" : [ "shader.vert", "shader.frag" ],
+        "inputs"  : {
+            "attributes" : [
+                "POSITION" , 
+                "NORMAL"   , 
+                "TEX_COORD" 
+            ],
+            "uniforms"   : {
+                "mat-ubo" : {
+
+                }
+            }
+        }
+    }
+}
