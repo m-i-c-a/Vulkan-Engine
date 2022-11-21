@@ -1,4 +1,8 @@
 {
+    "metadata" : {
+        "pipeline-count" : 1,
+        "material-count" : 1
+    },
     "attribute-descriptions" : {
         "POSITION" : {
             "type"   : "float",
@@ -13,20 +17,26 @@
             "number" : 2
         }
     },
-    "material-descriptions"  : {
-        "name"    : "phong",
-        "shaders" : [ "shader.vert", "shader.frag" ],
-        "inputs"  : {
-            "attributes" : [
-                "POSITION" , 
-                "NORMAL"   , 
-                "TEX_COORD" 
+    "pipeline-descriptions"  : {
+        "name"          : "",
+        "id"            :  0,
+        "material"      :  0,
+        "pipeline-info" : {
+            "shaders"     : [
+                "shader.vert",
+                "shader.frag"
             ],
-            "uniforms"   : {
-                "mat-ubo" : {
-
-                }
-            }
+            "spec-consts" : {},
+            "topology"    : {},
+            "attributes"  : [
+                "POSITION",
+                "NORMAL"  ,
+                "TEX_COORD" 
+            ]
         }
+    },
+    "material-descriptions"  : {
+        "name" : "phong",
+        "id"   : 0
     }
 }

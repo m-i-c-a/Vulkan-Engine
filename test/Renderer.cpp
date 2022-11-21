@@ -160,11 +160,11 @@ void Renderer::render()
 
             if (firstPipelineWithDraws)
             {
-                // bind mat + draw SSBO
+                // bind mat SSBO
 
                 vkCmdBindDescriptorSets(vk_cmdBuff,
                                         VK_PIPELINE_BIND_POINT_GRAPHICS,
-                                        matBin.vk_pipelineLayout,
+                                        matBin.vk_pipelineLayout,         // we can have pipeline layout in pipeline
                                         1, 1,
                                         &matBin.vk_descSet,
                                         0, nullptr);
@@ -204,3 +204,35 @@ void Renderer::render()
     }
 }
 
+
+struct RenderableInfo
+{
+    uint32_t matID;
+    uint32_t drawID;
+};
+
+
+struct Material
+{
+    // uint32_t materialID <- from file
+
+    // uint32_t renderableID = renderableInfoBufferPool->acquireBlock();
+
+    // uint32_t drawID = drawBufferPool->acquireBlock()
+
+    // Material* mat = materials.find(materialID);
+    // uint32_t matID  = mat->bufferPool->acquireBlock()
+
+    // RenderableInfo& renInfo = renderableInfoBufferPool->getWritableBlock()
+    // renInfo.matID = matID;
+    // renInfo.drawID = drawID;
+
+    // set mat data
+
+    // set draw data
+
+
+    // BufferPool<MaterialUBO> matUBO;
+
+    // renderableInfo
+};
