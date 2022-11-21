@@ -5,20 +5,20 @@
 namespace VulkanWrapper
 {
 
-void CommandPool::create(const VkCommandPoolCreateFlags vk_cmdPoolFlags, const uint32_t qFamIdx)
+CommandPool::CommandPool(const VkCommandPoolCreateFlags vk_flags, const uint32_t qFamIdx)
 {
     const VkCommandPoolCreateInfo vk_cmdPoolCreateInfo {
         .sType = VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO,
-        .flags = vk_cmdPoolFlags,
+        .flags = vk_flags,
         .queueFamilyIndex = qFamIdx 
     };
 
-    VK_CHECK(vkCreateCommandPool(s_vkDevice, &vk_cmdPoolCreateInfo, nullptr, &m_vkCmdPool));
+    VK_CHECK(vkCreateCommandPool(s_vkDevice, &vk_cmdPoolCreateInfo, nullptr, &vk_handle));
 }
 
 CommandPool::~CommandPool()
 {
-    vkDestroyCommandPool(s_vkDevice, m_vkCmdPool, nullptr);
+    vkDestroyCommandPool(s_vkDevice, vk_handle, nullptr);
 }
 
 };

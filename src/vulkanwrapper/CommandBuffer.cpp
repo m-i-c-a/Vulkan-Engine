@@ -5,7 +5,7 @@
 namespace VulkanWrapper
 {
 
-void CommandBuffer::create(const VkCommandPool vk_cmdPool)
+CommandBuffer::CommandBuffer(const VkCommandPool vk_cmdPool)
 {
     const VkCommandBufferAllocateInfo vk_cmdBuffAllocInfo {
         .sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO,
@@ -14,7 +14,7 @@ void CommandBuffer::create(const VkCommandPool vk_cmdPool)
         .commandBufferCount = 1,
     };
 
-    VK_CHECK(vkAllocateCommandBuffers(s_vkDevice, &vk_cmdBuffAllocInfo, &m_vkCmdBuff));
+    VK_CHECK(vkAllocateCommandBuffers(s_vkDevice, &vk_cmdBuffAllocInfo, &vk_handle));
 }
 
 };

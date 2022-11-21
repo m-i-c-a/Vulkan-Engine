@@ -10,12 +10,9 @@ namespace VulkanWrapper
 
 struct CommandPool : public Resource
 {
-    VkCommandPool m_vkCmdPool = VK_NULL_HANDLE;
+    VkCommandPool vk_handle = VK_NULL_HANDLE;
 
-    CommandPool() = default;
-    ~CommandPool();
-
-    void create(const VkCommandPoolCreateFlags vk_cmdPoolFlags, const uint32_t qFamIdx);
+    CommandPool(const VkCommandPoolCreateFlags vk_cmdPoolFlags, const uint32_t qFamIdx);
 };
 
 };

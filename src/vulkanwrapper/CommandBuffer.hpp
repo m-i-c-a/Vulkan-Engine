@@ -10,11 +10,9 @@ namespace VulkanWrapper
 
 struct CommandBuffer : public Resource
 {
-    VkCommandBuffer m_vkCmdBuff = VK_NULL_HANDLE;
+    VkCommandBuffer vk_handle = VK_NULL_HANDLE;
 
-    CommandBuffer() = default;
-
-    void create(const VkCommandPool vk_cmdPool);
+    CommandBuffer(const VkCommandPool vk_cmdPool);
 };
 
 };
