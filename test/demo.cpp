@@ -83,10 +83,10 @@ int func()
 
     // Create / Define Resources for Uber Draw State
     Core::BufferPool<DrawData> drawBufferPool(MAX_RENDERABLE_COUNT,
-                                             MAX_RENDERABLE_COUNT,
-                                             VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT,
-                                             VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT,
-                                             VK_ACCESS_2_MEMORY_READ_BIT);
+                                              MAX_RENDERABLE_COUNT,
+                                              VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT,
+                                              VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT,
+                                              VK_ACCESS_2_MEMORY_READ_BIT);
 
     // APP SPECIFIC INIT
 
