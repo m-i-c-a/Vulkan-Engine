@@ -2,6 +2,9 @@
 
 #include <vector>
 
+#include "core/Attachment.hpp"
+
+
 struct DrawInfo
 {
 
@@ -43,6 +46,7 @@ struct RenderPlanInitInfo
     VkSampleCountFlagBits     vk_sampleCount;
     std::vector<VkFormat>     vk_attachmentFormats;
     std::vector<VkClearValue> vk_clearValues;
+    VkExtent2D                vk_framebufferDimensions;
 };
 
 struct RenderPlan

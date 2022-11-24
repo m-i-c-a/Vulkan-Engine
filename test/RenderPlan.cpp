@@ -1,4 +1,5 @@
 #include <array>
+#include <numeric>
 
 #include "RenderPlan.hpp"
 
@@ -6,7 +7,7 @@
 namespace init
 {
 
-VkRenderPass forward(const RenderPlanInitInfo& initInfo)
+VkRenderPass forward_createRenderPass(const RenderPlanInitInfo& initInfo)
 {
     // Attachments + Attachment References + Dependencies
 
@@ -123,6 +124,124 @@ VkRenderPass forward(const RenderPlanInitInfo& initInfo)
     return vk_renderPass;
 }
 
+std::vector<Core::Attachment> forward_createAttachments(const RenderPlanInitInfo& initInfo)
+{
+    std::vector<Core::Attachment> attachments;
+
+    { // DEFAULT COLOR
+
+        const VkImageCreateInfo vk_imageCreateInfo {
+            .sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO,
+            .imageType = VK_IMAGE_TYPE_2D,
+            .format = initInfo.vk_attachmentFormats[0],
+            .extent = { initInfo.vk_framebufferDimensions.width, initInfo.vk_framebufferDimensions.height, 1 },
+            .mipLevels = 1,
+            .arrayLayers = 1,
+            .samples = initInfo.vk_sampleCount,
+            .tiling = VK_IMAGE_TILING_OPTIMAL,
+            .usage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT,
+            .sharingMode = VK_SHARING_MODE_EXCLUSIVE,
+            .queueFamilyIndexCount = 0,
+            .pQueueFamilyIndices   = nullptr,
+            .initialLayout = VK_IMAGE_LAYOUT_UNDEFINED,
+        };
+
+        const VkImageViewCreateInfo vk_imageViewCreateInfo {
+            .sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO,
+            .image = VK_NULL_HANDLE,
+            .viewType = VK_IMAGE_VIEW_TYPE_2D,
+            .format = initInfo.vk_attachmentFormats[0],
+            .components = {
+                .r = VK_COMPONENT_SWIZZLE_IDENTITY,
+                .g = VK_COMPONENT_SWIZZLE_IDENTITY,
+                .b = VK_COMPONENT_SWIZZLE_IDENTITY,
+                .a = VK_COMPONENT_SWIZZLE_IDENTITY },
+            .subresourceRange = {
+                .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
+                .baseMipLevel = 0,
+                .levelCount = 1,
+                .baseArrayLayer = 0,
+                .layerCount = 1,
+            }
+        };
+    
+        attachments.emplace_back(vk_imageCreateInfo, vk_imageViewCreateInfo);
+    }
+
+    { // DEPTH
+
+        const VkImageCreateInfo vk_imageCreateInfo {
+            .sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO,
+            .imageType = VK_IMAGE_TYPE_2D,
+            .format = initInfo.vk_attachmentFormats[1],
+            .extent = { initInfo.vk_framebufferDimensions.width, initInfo.vk_framebufferDimensions.height, 1 },
+            .mipLevels = 1,
+            .arrayLayers = 1,
+            .samples = initInfo.vk_sampleCount,
+            .tiling = VK_IMAGE_TILING_OPTIMAL,
+            .usage = VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT,
+            .sharingMode = VK_SHARING_MODE_EXCLUSIVE,
+            .queueFamilyIndexCount = 0,
+            .pQueueFamilyIndices   = nullptr,
+            .initialLayout = VK_IMAGE_LAYOUT_UNDEFINED,
+        };
+
+        const VkImageViewCreateInfo vk_imageViewCreateInfo {
+            .sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO,
+            .image = VK_NULL_HANDLE,
+            .viewType = VK_IMAGE_VIEW_TYPE_2D,
+            .format = initInfo.vk_attachmentFormats[1],
+            .components = {
+                .r = VK_COMPONENT_SWIZZLE_IDENTITY,
+                .g = VK_COMPONENT_SWIZZLE_IDENTITY,
+                .b = VK_COMPONENT_SWIZZLE_IDENTITY,
+                .a = VK_COMPONENT_SWIZZLE_IDENTITY },
+            .subresourceRange = {
+                .aspectMask = VK_IMAGE_ASPECT_DEPTH_BIT,
+                .baseMipLevel = 0,
+                .levelCount = 1,
+                .baseArrayLayer = 0,
+                .layerCount = 1,
+            }
+        };
+    
+        attachments.emplace_back(vk_imageCreateInfo, vk_imageViewCreateInfo);
+    }
+
+    return attachments;
+}
+
+std::vector<VkFramebuffer> forward_createFramebuffers(const RenderPlanInitInfo& initInfo, const VkRenderPass vk_renderPass, const std::vector<Core::Attachment>& attachments)
+{
+    const std::vector<VkImageView> vk_attachmentImageViews = [&](){
+        std::vector<VkImageView> vk_imageViews;
+        vk_imageViews.reserve(attachments.size());
+
+        for (const auto& attachment : attachments)
+        {
+            vk_imageViews.push_back(attachment.getVkImageView());
+        }
+
+        return vk_imageViews;
+    }();
+
+    const VkFramebufferCreateInfo vk_framebufferCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO,
+        .renderPass = vk_renderPass,
+        .attachmentCount = static_cast<uint32_t>(vk_attachmentImageViews.size()),
+        .pAttachments = vk_attachmentImageViews.data(),
+        .width = initInfo.vk_framebufferDimensions.width,
+        .height = initInfo.vk_framebufferDimensions.height,
+        .layers = 1,
+    };
+
+    VkDevice vk_device;
+
+    VkFramebuffer vk_framebuffer;
+    vkCreateFramebuffer(vk_device, &vk_framebufferCreateInfo, nullptr, &vk_framebuffer);
+    return vk_framebuffer;
+}
+
 };
 
 VkRenderPass loadPlan(const RenderPlanInitInfo& initInfo)
@@ -131,8 +250,9 @@ VkRenderPass loadPlan(const RenderPlanInitInfo& initInfo)
     {
         case SupportedRenderPlan::eForward:
         {
-            return init::forward(initInfo);
-            break;
+            const VkRenderPass vk_renderPass = init::forward_createRenderPass(initInfo);
+            const std::vector<Core::Attachment> attachments = init::forward_createAttachments(initInfo);
+            const VkFramebuffer vk_framebuffer = init::forward_createFramebuffers(initInfo, vk_renderPass, attachments);
         }
     };
 }
@@ -150,6 +270,8 @@ RenderPlan::RenderPlan(const RenderPlanInitInfo& initInfo)
     vk_renderPassBeginInfo.renderPass = vk_renderPass;
     vk_renderPassBeginInfo.clearValueCount = static_cast<uint32_t>(vk_clearValues.size());
     vk_renderPassBeginInfo.pClearValues = vk_clearValues.data();
+
+
 }
 
 

@@ -10,6 +10,8 @@
 
 #include "core/BufferPool.hpp"
 
+#include "RenderPlan.hpp"
+
 struct MatData
 {
 
@@ -25,18 +27,18 @@ struct DrawInfo
 
 };
 
-struct RenderPlan
-{
-    void addPass();
-    void addColorAttachment();
-    void addDepthAttachment();
+// struct RenderPlan
+// {
+//     void addPass();
+//     void addColorAttachment();
+//     void addDepthAttachment();
 
-    void registerPipeline(const uint32_t pipelineID, const VkPipeline vk_pipeline);
+//     void registerPipeline(const uint32_t pipelineID, const VkPipeline vk_pipeline);
 
-    void addDraw(const DrawInfo& drawInfo);
+//     void addDraw(const DrawInfo& drawInfo);
 
-    void execute(const VkCommandBuffer vk_cmdBuff);
-};
+//     void execute(const VkCommandBuffer vk_cmdBuff);
+// };
 
 VulkanWrapper::DescriptorPool createDescriptorPool();
 VulkanWrapper::DescriptorSetLayout createDescriptorSetLayout();
@@ -56,16 +58,18 @@ constexpr VkDescriptorSetVariableDescriptorCountAllocateInfo vk_descriptorSetVar
 int func()
 {
     // INIT
+    
+    // GLFW + VulkanCore
 
     // Create Global Layout and set in renderer
-    RenderPlan renderer;
-    renderer.addPass();
-    renderer.addColorAttachment(/* Pass, AttachmentInfo */ );
-    renderer.addColorAttachment(/* Pass, AttachmentInfo */ );
-    renderer.addColorAttachment(/* Pass, AttachmentInfo */ );
-    renderer.addDepthAttachment(/* Pass, AttachmentInfo */ );
+    RenderPlanInitInfo rendererInitInfo {
+        .plan = SupportedRenderPlan::eForward,
+        .vk_sampleCount = VK_SAMPLE_COUNT_1_BIT,
+        .vk_attachmentFormats = {},
+        .vk_clearValues = {},
+    };
 
-    // Handle Subpass Dependencies
+    RenderPlan renderer(rendererInitInfo);
 
     // Create Global Vulkan Resources
     VulkanWrapper::CommandPool    cmdPool(0x0, 0);
