@@ -31,21 +31,34 @@ struct Pass
     VkSubpassEndInfo   vk_subpassEndInfo;
 };
 
+enum class SupportedRenderPlan
+{
+    eForward  = 0,
+    eDeferred    // 1
+};
+
+struct RenderPlanInitInfo
+{
+    SupportedRenderPlan       plan;
+    VkSampleCountFlagBits     vk_sampleCount;
+    std::vector<VkFormat>     vk_attachmentFormats;
+    std::vector<VkClearValue> vk_clearValues;
+};
+
 struct RenderPlan
 {
-    void addPass();
-    void addColorAttachment();
-    void addDepthAttachment();
+    VkRenderPass vk_renderPass = VK_NULL_HANDLE;
 
+    std::vector<VkClearValue> vk_clearValues; // kept around because render pass begin info reference
+    VkRenderPassBeginInfo vk_renderPassBeginInfo;
 
     void registerPipeline(const uint32_t pipelineID, const VkPipeline vk_pipeline);
 
     void addDraw(const DrawInfo& drawInfo);
 
-    void execute(const VkCommandBuffer vk_cmdBuff);
+    void execute(const VkCommandBuffer vk_cmdBuff, const VkFramebuffer vk_framebuffer, const VkRect2D vk_renderArea);
 
-
-    RenderPlan();
+    RenderPlan(const RenderPlanInitInfo& initInfo);
 };
 
 /*
