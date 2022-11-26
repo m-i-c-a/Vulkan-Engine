@@ -1,4 +1,5 @@
 add_library(core STATIC
+    Attachment.cpp                Attachment.hpp
     BufferPool.cpp                BufferPool.hpp
     PersistentDeviceBuffer.cpp    PersistentDeviceBuffer.hpp
     PersistentStagingBuffer.cpp   PersistentStagingBuffer.hpp

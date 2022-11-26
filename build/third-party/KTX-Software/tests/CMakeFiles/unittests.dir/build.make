@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
 
 # Include any dependencies generated for this target.
 include third-party/KTX-Software/tests/CMakeFiles/unittests.dir/depend.make
@@ -59,29 +59,29 @@ include third-party/KTX-Software/tests/CMakeFiles/unittests.dir/flags.make
 
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.o: third-party/KTX-Software/tests/CMakeFiles/unittests.dir/flags.make
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.o: ../third-party/KTX-Software/tests/unittests/unittests.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unittests.dir/unittests/unittests.cc.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/unittests.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unittests.dir/unittests/unittests.cc.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/unittests.cc
 
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unittests.dir/unittests/unittests.cc.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/unittests.cc > CMakeFiles/unittests.dir/unittests/unittests.cc.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/unittests.cc > CMakeFiles/unittests.dir/unittests/unittests.cc.i
 
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unittests.dir/unittests/unittests.cc.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/unittests.cc -o CMakeFiles/unittests.dir/unittests/unittests.cc.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/unittests.cc -o CMakeFiles/unittests.dir/unittests/unittests.cc.s
 
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.o: third-party/KTX-Software/tests/CMakeFiles/unittests.dir/flags.make
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.o: ../third-party/KTX-Software/tests/unittests/image_unittests.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unittests.dir/unittests/image_unittests.cc.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/image_unittests.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unittests.dir/unittests/image_unittests.cc.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/image_unittests.cc
 
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unittests.dir/unittests/image_unittests.cc.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/image_unittests.cc > CMakeFiles/unittests.dir/unittests/image_unittests.cc.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/image_unittests.cc > CMakeFiles/unittests.dir/unittests/image_unittests.cc.i
 
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unittests.dir/unittests/image_unittests.cc.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/image_unittests.cc -o CMakeFiles/unittests.dir/unittests/image_unittests.cc.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/image_unittests.cc -o CMakeFiles/unittests.dir/unittests/image_unittests.cc.s
 
 # Object files for target unittests
 unittests_OBJECTS = \
@@ -97,9 +97,9 @@ third-party/KTX-Software/tests/unittests: third-party/KTX-Software/tests/CMakeFi
 third-party/KTX-Software/tests/unittests: third-party/KTX-Software/tests/gtest/libgtest.a
 third-party/KTX-Software/tests/unittests: third-party/KTX-Software/libktx.so.4.1.0
 third-party/KTX-Software/tests/unittests: third-party/KTX-Software/tests/CMakeFiles/unittests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable unittests"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unittests.dir/link.txt --verbose=$(VERBOSE)
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests && /usr/bin/cmake -D TEST_TARGET=unittests -D TEST_EXECUTABLE=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/unittests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX=unittest -D TEST_SUFFIX= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=unittests_TESTS -D CTEST_FILE=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/unittests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -P /usr/share/cmake-3.16/Modules/GoogleTestAddTests.cmake
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable unittests"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unittests.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests && /usr/bin/cmake -D TEST_TARGET=unittests -D TEST_EXECUTABLE=/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/unittests -D TEST_EXECUTOR= -D TEST_WORKING_DIR=/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX=unittest -D TEST_SUFFIX= -D NO_PRETTY_TYPES=FALSE -D NO_PRETTY_VALUES=FALSE -D TEST_LIST=unittests_TESTS -D CTEST_FILE=/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/unittests[1]_tests.cmake -D TEST_DISCOVERY_TIMEOUT=5 -P /usr/share/cmake-3.16/Modules/GoogleTestAddTests.cmake
 
 # Rule to build all files generated by this target.
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build: third-party/KTX-Software/tests/unittests
@@ -107,10 +107,10 @@ third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build: third-party/KTX-S
 .PHONY : third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build
 
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/clean:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests && $(CMAKE_COMMAND) -P CMakeFiles/unittests.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests && $(CMAKE_COMMAND) -P CMakeFiles/unittests.dir/cmake_clean.cmake
 .PHONY : third-party/KTX-Software/tests/CMakeFiles/unittests.dir/clean
 
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/depend:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/CMakeFiles/unittests.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Engine /home/mica/Desktop/Engine/third-party/KTX-Software/tests /home/mica/Desktop/Engine/build /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/CMakeFiles/unittests.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third-party/KTX-Software/tests/CMakeFiles/unittests.dir/depend
 

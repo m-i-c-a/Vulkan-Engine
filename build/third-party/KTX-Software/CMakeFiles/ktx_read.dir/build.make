@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
 
 # Include any dependencies generated for this target.
 include third-party/KTX-Software/CMakeFiles/ktx_read.dir/depend.make
@@ -59,14 +59,14 @@ include third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 
 ../third-party/KTX-Software/lib/dfdutils/vk2dfd.inl: ../third-party/KTX-Software/lib/vkformat_enum.h
 ../third-party/KTX-Software/lib/dfdutils/vk2dfd.inl: ../third-party/KTX-Software/lib/dfdutils/makevk2dfd.pl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating VkFormat/DFD switch body"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software && /usr/bin/cmake -E make_directory lib/dfdutils
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software && /usr/bin/perl lib/dfdutils/makevk2dfd.pl lib/vkformat_enum.h lib/dfdutils/vk2dfd.inl
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating VkFormat/DFD switch body"
+	cd /home/mica/Desktop/Engine/third-party/KTX-Software && /usr/bin/cmake -E make_directory lib/dfdutils
+	cd /home/mica/Desktop/Engine/third-party/KTX-Software && /usr/bin/perl lib/dfdutils/makevk2dfd.pl lib/vkformat_enum.h lib/dfdutils/vk2dfd.inl
 
 ../third-party/KTX-Software/lib/vkformat_enum.h: ../third-party/KTX-Software/lib/dfdutils/vulkan/vulkan_core.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating VkFormat-related source files"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software && /usr/bin/cmake -E make_directory lib
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software && Vulkan_INCLUDE_DIR=/usr/include lib/mkvkformatfiles lib
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating VkFormat-related source files"
+	cd /home/mica/Desktop/Engine/third-party/KTX-Software && /usr/bin/cmake -E make_directory lib
+	cd /home/mica/Desktop/Engine/third-party/KTX-Software && Vulkan_INCLUDE_DIR=/usr/include lib/mkvkformatfiles lib
 
 ../third-party/KTX-Software/lib/vkformat_check.c: ../third-party/KTX-Software/lib/vkformat_enum.h
 	@$(CMAKE_COMMAND) -E touch_nocreate ../third-party/KTX-Software/lib/vkformat_check.c
@@ -76,354 +76,354 @@ include third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.o: ../third-party/KTX-Software/lib/basis_transcode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basis_transcode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basis_transcode.cpp
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basis_transcode.cpp > CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basis_transcode.cpp > CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basis_transcode.cpp -o CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basis_transcode.cpp -o CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.o: ../third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wno-sign-compare -Wno-unused-function -Wno-unused-variable -Wno-class-memaccess -Wno-maybe-uninitialized -o CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wno-sign-compare -Wno-unused-function -Wno-unused-variable -Wno-class-memaccess -Wno-maybe-uninitialized -o CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.cpp
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wno-sign-compare -Wno-unused-function -Wno-unused-variable -Wno-class-memaccess -Wno-maybe-uninitialized -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.cpp > CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wno-sign-compare -Wno-unused-function -Wno-unused-variable -Wno-class-memaccess -Wno-maybe-uninitialized -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.cpp > CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wno-sign-compare -Wno-unused-function -Wno-unused-variable -Wno-class-memaccess -Wno-maybe-uninitialized -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.cpp -o CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Wno-sign-compare -Wno-unused-function -Wno-unused-variable -Wno-class-memaccess -Wno-maybe-uninitialized -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.cpp -o CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.o: ../third-party/KTX-Software/lib/basisu/zstd/zstd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.c > CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.c > CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.c -o CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.c -o CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.o: ../third-party/KTX-Software/lib/checkheader.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/checkheader.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/checkheader.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/checkheader.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/checkheader.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/checkheader.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/checkheader.c > CMakeFiles/ktx_read.dir/lib/checkheader.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/checkheader.c > CMakeFiles/ktx_read.dir/lib/checkheader.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/checkheader.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/checkheader.c -o CMakeFiles/ktx_read.dir/lib/checkheader.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/checkheader.c -o CMakeFiles/ktx_read.dir/lib/checkheader.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.o: ../third-party/KTX-Software/lib/dfdutils/createdfd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/createdfd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/createdfd.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/createdfd.c > CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/createdfd.c > CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/createdfd.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/createdfd.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.o: ../third-party/KTX-Software/lib/dfdutils/colourspaces.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/colourspaces.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/colourspaces.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/colourspaces.c > CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/colourspaces.c > CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/colourspaces.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/colourspaces.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.o: ../third-party/KTX-Software/lib/dfdutils/interpretdfd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/interpretdfd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/interpretdfd.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/interpretdfd.c > CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/interpretdfd.c > CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/interpretdfd.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/interpretdfd.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.o: ../third-party/KTX-Software/lib/dfdutils/printdfd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/printdfd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/printdfd.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/printdfd.c > CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/printdfd.c > CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/printdfd.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/printdfd.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.o: ../third-party/KTX-Software/lib/dfdutils/queries.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/queries.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/queries.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/queries.c > CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/queries.c > CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/queries.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/queries.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.o: ../third-party/KTX-Software/lib/dfdutils/vk2dfd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.c > CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.c > CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.c -o CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.o: ../third-party/KTX-Software/lib/etcdec.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ktx_read.dir/lib/etcdec.cxx.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/etcdec.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ktx_read.dir/lib/etcdec.cxx.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/etcdec.cxx
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ktx_read.dir/lib/etcdec.cxx.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/etcdec.cxx > CMakeFiles/ktx_read.dir/lib/etcdec.cxx.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/etcdec.cxx > CMakeFiles/ktx_read.dir/lib/etcdec.cxx.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ktx_read.dir/lib/etcdec.cxx.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/etcdec.cxx -o CMakeFiles/ktx_read.dir/lib/etcdec.cxx.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/etcdec.cxx -o CMakeFiles/ktx_read.dir/lib/etcdec.cxx.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.o: ../third-party/KTX-Software/lib/etcunpack.cxx
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/etcunpack.cxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/etcunpack.cxx
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/etcunpack.cxx > CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/etcunpack.cxx > CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/etcunpack.cxx -o CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/etcunpack.cxx -o CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.o: ../third-party/KTX-Software/lib/filestream.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/filestream.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/filestream.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/filestream.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.c > CMakeFiles/ktx_read.dir/lib/filestream.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.c > CMakeFiles/ktx_read.dir/lib/filestream.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/filestream.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.c -o CMakeFiles/ktx_read.dir/lib/filestream.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.c -o CMakeFiles/ktx_read.dir/lib/filestream.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.o: ../third-party/KTX-Software/lib/hashlist.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/hashlist.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/hashlist.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/hashlist.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/hashlist.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/hashlist.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/hashlist.c > CMakeFiles/ktx_read.dir/lib/hashlist.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/hashlist.c > CMakeFiles/ktx_read.dir/lib/hashlist.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/hashlist.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/hashlist.c -o CMakeFiles/ktx_read.dir/lib/hashlist.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/hashlist.c -o CMakeFiles/ktx_read.dir/lib/hashlist.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.o: ../third-party/KTX-Software/lib/info.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/info.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/info.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/info.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/info.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/info.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/info.c > CMakeFiles/ktx_read.dir/lib/info.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/info.c > CMakeFiles/ktx_read.dir/lib/info.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/info.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/info.c -o CMakeFiles/ktx_read.dir/lib/info.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/info.c -o CMakeFiles/ktx_read.dir/lib/info.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.o: ../third-party/KTX-Software/lib/memstream.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/memstream.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/memstream.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/memstream.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.c > CMakeFiles/ktx_read.dir/lib/memstream.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.c > CMakeFiles/ktx_read.dir/lib/memstream.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/memstream.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.c -o CMakeFiles/ktx_read.dir/lib/memstream.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.c -o CMakeFiles/ktx_read.dir/lib/memstream.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.o: ../third-party/KTX-Software/lib/strings.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/strings.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/strings.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/strings.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/strings.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/strings.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/strings.c > CMakeFiles/ktx_read.dir/lib/strings.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/strings.c > CMakeFiles/ktx_read.dir/lib/strings.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/strings.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/strings.c -o CMakeFiles/ktx_read.dir/lib/strings.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/strings.c -o CMakeFiles/ktx_read.dir/lib/strings.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.o: ../third-party/KTX-Software/lib/swap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/swap.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/swap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/swap.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/swap.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/swap.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/swap.c > CMakeFiles/ktx_read.dir/lib/swap.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/swap.c > CMakeFiles/ktx_read.dir/lib/swap.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/swap.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/swap.c -o CMakeFiles/ktx_read.dir/lib/swap.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/swap.c -o CMakeFiles/ktx_read.dir/lib/swap.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.o: ../third-party/KTX-Software/lib/texture.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/texture.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/texture.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/texture.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture.c > CMakeFiles/ktx_read.dir/lib/texture.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture.c > CMakeFiles/ktx_read.dir/lib/texture.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/texture.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture.c -o CMakeFiles/ktx_read.dir/lib/texture.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture.c -o CMakeFiles/ktx_read.dir/lib/texture.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.o: ../third-party/KTX-Software/lib/texture2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/texture2.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/texture2.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/texture2.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.c > CMakeFiles/ktx_read.dir/lib/texture2.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.c > CMakeFiles/ktx_read.dir/lib/texture2.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/texture2.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.c -o CMakeFiles/ktx_read.dir/lib/texture2.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.c -o CMakeFiles/ktx_read.dir/lib/texture2.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.o: ../third-party/KTX-Software/lib/vkformat_check.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/vkformat_check.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_check.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/vkformat_check.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_check.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/vkformat_check.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_check.c > CMakeFiles/ktx_read.dir/lib/vkformat_check.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_check.c > CMakeFiles/ktx_read.dir/lib/vkformat_check.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/vkformat_check.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_check.c -o CMakeFiles/ktx_read.dir/lib/vkformat_check.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_check.c -o CMakeFiles/ktx_read.dir/lib/vkformat_check.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.o: ../third-party/KTX-Software/lib/vkformat_str.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/vkformat_str.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_str.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/vkformat_str.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_str.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/vkformat_str.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_str.c > CMakeFiles/ktx_read.dir/lib/vkformat_str.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_str.c > CMakeFiles/ktx_read.dir/lib/vkformat_str.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/vkformat_str.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_str.c -o CMakeFiles/ktx_read.dir/lib/vkformat_str.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_str.c -o CMakeFiles/ktx_read.dir/lib/vkformat_str.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.o: ../third-party/KTX-Software/lib/gl_funcs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/gl_funcs.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_funcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/gl_funcs.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_funcs.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/gl_funcs.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_funcs.c > CMakeFiles/ktx_read.dir/lib/gl_funcs.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_funcs.c > CMakeFiles/ktx_read.dir/lib/gl_funcs.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/gl_funcs.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_funcs.c -o CMakeFiles/ktx_read.dir/lib/gl_funcs.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_funcs.c -o CMakeFiles/ktx_read.dir/lib/gl_funcs.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.o: ../third-party/KTX-Software/lib/glloader.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/glloader.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/glloader.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/glloader.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/glloader.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/glloader.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/glloader.c > CMakeFiles/ktx_read.dir/lib/glloader.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/glloader.c > CMakeFiles/ktx_read.dir/lib/glloader.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/glloader.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/glloader.c -o CMakeFiles/ktx_read.dir/lib/glloader.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/glloader.c -o CMakeFiles/ktx_read.dir/lib/glloader.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.o: ../third-party/KTX-Software/lib/texture1.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/texture1.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture1.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/texture1.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture1.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/texture1.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture1.c > CMakeFiles/ktx_read.dir/lib/texture1.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture1.c > CMakeFiles/ktx_read.dir/lib/texture1.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/texture1.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture1.c -o CMakeFiles/ktx_read.dir/lib/texture1.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture1.c -o CMakeFiles/ktx_read.dir/lib/texture1.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.o: ../third-party/KTX-Software/lib/vk_funcs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/vk_funcs.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_funcs.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/vk_funcs.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_funcs.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/vk_funcs.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_funcs.c > CMakeFiles/ktx_read.dir/lib/vk_funcs.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_funcs.c > CMakeFiles/ktx_read.dir/lib/vk_funcs.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/vk_funcs.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_funcs.c -o CMakeFiles/ktx_read.dir/lib/vk_funcs.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_funcs.c -o CMakeFiles/ktx_read.dir/lib/vk_funcs.c.s
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.o: third-party/KTX-Software/CMakeFiles/ktx_read.dir/flags.make
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.o: ../third-party/KTX-Software/lib/vkloader.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/vkloader.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkloader.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building C object third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/ktx_read.dir/lib/vkloader.c.o   -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkloader.c
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/ktx_read.dir/lib/vkloader.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkloader.c > CMakeFiles/ktx_read.dir/lib/vkloader.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkloader.c > CMakeFiles/ktx_read.dir/lib/vkloader.c.i
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/ktx_read.dir/lib/vkloader.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkloader.c -o CMakeFiles/ktx_read.dir/lib/vkloader.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkloader.c -o CMakeFiles/ktx_read.dir/lib/vkloader.c.s
 
 # Object files for target ktx_read
 ktx_read_OBJECTS = \
@@ -487,9 +487,9 @@ third-party/KTX-Software/libktx_read.so.4.1.0: third-party/KTX-Software/CMakeFil
 third-party/KTX-Software/libktx_read.so.4.1.0: third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.o
 third-party/KTX-Software/libktx_read.so.4.1.0: third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make
 third-party/KTX-Software/libktx_read.so.4.1.0: third-party/KTX-Software/CMakeFiles/ktx_read.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX shared library libktx_read.so"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ktx_read.dir/link.txt --verbose=$(VERBOSE)
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && $(CMAKE_COMMAND) -E cmake_symlink_library libktx_read.so.4.1.0 libktx_read.so.4 libktx_read.so
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Linking CXX shared library libktx_read.so"
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ktx_read.dir/link.txt --verbose=$(VERBOSE)
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && $(CMAKE_COMMAND) -E cmake_symlink_library libktx_read.so.4.1.0 libktx_read.so.4 libktx_read.so
 
 third-party/KTX-Software/libktx_read.so.4: third-party/KTX-Software/libktx_read.so.4.1.0
 	@$(CMAKE_COMMAND) -E touch_nocreate third-party/KTX-Software/libktx_read.so.4
@@ -503,13 +503,13 @@ third-party/KTX-Software/CMakeFiles/ktx_read.dir/build: third-party/KTX-Software
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/build
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/clean:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && $(CMAKE_COMMAND) -P CMakeFiles/ktx_read.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && $(CMAKE_COMMAND) -P CMakeFiles/ktx_read.dir/cmake_clean.cmake
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/clean
 
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/depend: ../third-party/KTX-Software/lib/dfdutils/vk2dfd.inl
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/depend: ../third-party/KTX-Software/lib/vkformat_enum.h
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/depend: ../third-party/KTX-Software/lib/vkformat_check.c
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/depend: ../third-party/KTX-Software/lib/vkformat_str.c
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/CMakeFiles/ktx_read.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Engine /home/mica/Desktop/Engine/third-party/KTX-Software /home/mica/Desktop/Engine/build /home/mica/Desktop/Engine/build/third-party/KTX-Software /home/mica/Desktop/Engine/build/third-party/KTX-Software/CMakeFiles/ktx_read.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/depend
 

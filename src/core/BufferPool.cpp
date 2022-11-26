@@ -171,5 +171,7 @@ template class BufferPool<ObjectData>;
 template class BufferPool<GPUDrawCommand>;
 template class BufferPool<RenderableInfo>;
 template class BufferPool<MeshInfo>;
+template class BufferPool<MatData>;
+template class BufferPool<DrawData>;
 
 }; // Core

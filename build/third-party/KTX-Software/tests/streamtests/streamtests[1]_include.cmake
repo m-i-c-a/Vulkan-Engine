@@ -1,5 +1,5 @@
-if(EXISTS "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/streamtests/streamtests[1]_tests.cmake")
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/streamtests/streamtests[1]_tests.cmake")
+if(EXISTS "/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/streamtests/streamtests[1]_tests.cmake")
+  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/streamtests/streamtests[1]_tests.cmake")
 else()
   add_test(streamtests_NOT_BUILT streamtests_NOT_BUILT)
 endif()

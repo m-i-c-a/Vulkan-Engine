@@ -6,5 +6,5 @@ CXX_FLAGS = -g -DDEBUG   -g -std=c++2a
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mica/Desktop/Vulkan/Vulkan-Engine/src/common -I/home/mica/Desktop/Vulkan/Vulkan-Engine/src -I/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include 
+CXX_INCLUDES = -I/home/mica/Desktop/Engine/src/common -I/home/mica/Desktop/Engine/src -I/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include 
 

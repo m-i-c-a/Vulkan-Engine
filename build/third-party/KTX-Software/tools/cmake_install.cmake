@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools
+# Install script for directory: /home/mica/Desktop/Engine/third-party/KTX-Software/tools
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,27 +39,27 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/ktx2check/cmake_install.cmake")
+  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/ktx2check/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/ktx2ktx2/cmake_install.cmake")
+  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/ktx2ktx2/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/ktxinfo/cmake_install.cmake")
+  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/ktxinfo/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/ktxsc/cmake_install.cmake")
+  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/ktxsc/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx/cmake_install.cmake")
+  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx/cmake_install.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xtoolsx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -69,12 +69,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xtoolsx" OR NOT CMAKE_INSTALL_COMPON
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktx2check"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/ktx2check/ktx2check")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/ktx2check/ktx2check")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktx2check" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktx2check")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktx2check"
-         OLD_RPATH "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software:"
+         OLD_RPATH "/home/mica/Desktop/Engine/build/third-party/KTX-Software:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktx2check")
@@ -89,12 +89,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xtoolsx" OR NOT CMAKE_INSTALL_COMPON
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktx2ktx2"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/ktx2ktx2/ktx2ktx2")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/ktx2ktx2/ktx2ktx2")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktx2ktx2" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktx2ktx2")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktx2ktx2"
-         OLD_RPATH "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software:"
+         OLD_RPATH "/home/mica/Desktop/Engine/build/third-party/KTX-Software:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktx2ktx2")
@@ -109,12 +109,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xtoolsx" OR NOT CMAKE_INSTALL_COMPON
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktxinfo"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/ktxinfo/ktxinfo")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/ktxinfo/ktxinfo")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktxinfo" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktxinfo")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktxinfo"
-         OLD_RPATH "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software:"
+         OLD_RPATH "/home/mica/Desktop/Engine/build/third-party/KTX-Software:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktxinfo")
@@ -129,12 +129,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xtoolsx" OR NOT CMAKE_INSTALL_COMPON
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktxsc"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/ktxsc/ktxsc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/ktxsc/ktxsc")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktxsc" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktxsc")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktxsc"
-         OLD_RPATH "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software:"
+         OLD_RPATH "/home/mica/Desktop/Engine/build/third-party/KTX-Software:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/ktxsc")
@@ -149,12 +149,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xtoolsx" OR NOT CMAKE_INSTALL_COMPON
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/toktx"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx/toktx")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx/toktx")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/toktx" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/toktx")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/toktx"
-         OLD_RPATH "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software:"
+         OLD_RPATH "/home/mica/Desktop/Engine/build/third-party/KTX-Software:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/toktx")

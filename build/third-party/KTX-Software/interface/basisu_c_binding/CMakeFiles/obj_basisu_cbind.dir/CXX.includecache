@@ -80,11 +80,11 @@ basisu_transcoder_internal.h
 
 ../third-party/KTX-Software/utils/unused.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp
+/home/mica/Desktop/Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp
 basisu_transcoder.h
 -
 basisu_c_binding.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.h
 unused.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/interface/basisu_c_binding/src/unused.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/interface/basisu_c_binding/src/unused.h
 

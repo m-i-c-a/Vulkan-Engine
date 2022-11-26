@@ -358,7 +358,7 @@ cxxabi.h
 acxx_demangle.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/streamtests/streamtests.cc
+/home/mica/Desktop/Engine/third-party/KTX-Software/tests/streamtests/streamtests.cc
 cstring
 -
 sys/types.h
@@ -378,9 +378,9 @@ iostream
 fstream
 -
 gl_format.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/streamtests/gl_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tests/streamtests/gl_format.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/streamtests/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tests/streamtests/ktx.h
 gtest/gtest.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/streamtests/gtest/gtest.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tests/streamtests/gtest/gtest.h
 

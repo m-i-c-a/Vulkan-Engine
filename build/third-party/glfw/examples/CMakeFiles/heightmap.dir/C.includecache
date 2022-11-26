@@ -68,7 +68,7 @@ GL/gl.h
 GL/glext.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/heightmap.c
+/home/mica/Desktop/Engine/third-party/glfw/examples/heightmap.c
 stdlib.h
 -
 stdio.h

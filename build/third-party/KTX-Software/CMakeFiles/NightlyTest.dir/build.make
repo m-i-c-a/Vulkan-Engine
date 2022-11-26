@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
 
 # Utility rule file for NightlyTest.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 include third-party/KTX-Software/CMakeFiles/NightlyTest.dir/progress.make
 
 third-party/KTX-Software/CMakeFiles/NightlyTest:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && /usr/bin/ctest -D NightlyTest
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && /usr/bin/ctest -D NightlyTest
 
 NightlyTest: third-party/KTX-Software/CMakeFiles/NightlyTest
 NightlyTest: third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build.make
@@ -67,10 +67,10 @@ third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build: NightlyTest
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build
 
 third-party/KTX-Software/CMakeFiles/NightlyTest.dir/clean:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && $(CMAKE_COMMAND) -P CMakeFiles/NightlyTest.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && $(CMAKE_COMMAND) -P CMakeFiles/NightlyTest.dir/cmake_clean.cmake
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyTest.dir/clean
 
 third-party/KTX-Software/CMakeFiles/NightlyTest.dir/depend:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/CMakeFiles/NightlyTest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Engine /home/mica/Desktop/Engine/third-party/KTX-Software /home/mica/Desktop/Engine/build /home/mica/Desktop/Engine/build/third-party/KTX-Software /home/mica/Desktop/Engine/build/third-party/KTX-Software/CMakeFiles/NightlyTest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyTest.dir/depend
 

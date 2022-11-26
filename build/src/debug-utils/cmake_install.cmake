@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan-Engine/src/debug-utils
+# Install script for directory: /home/mica/Desktop/Engine/src/debug-utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

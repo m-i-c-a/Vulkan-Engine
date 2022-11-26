@@ -6,5 +6,5 @@ CXX_FLAGS = -g -DDEBUG -fPIC   -Wall -Wextra -O0 -pthread -Wpedantic -Werror -Ws
 
 CXX_DEFINES = -DASTCENC_AVX=2 -DASTCENC_F16C=1 -DASTCENC_NEON=0 -DASTCENC_POPCNT=1 -DASTCENC_SSE=41
 
-CXX_INCLUDES = -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/astc-encoder/Source 
+CXX_INCLUDES = -I/home/mica/Desktop/Engine/third-party/KTX-Software/lib/astc-encoder/Source 
 

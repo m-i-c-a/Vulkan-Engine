@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -94,7 +94,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Engine/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -148,9 +148,9 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles /home/mica/Desktop/Engine/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -359,19 +359,6 @@ windows: cmake_check_build_system
 windows/fast:
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/windows.dir/build.make third-party/glfw/examples/CMakeFiles/windows.dir/build
 .PHONY : windows/fast
-
-#=============================================================================
-# Target rules for targets named docs
-
-# Build rule for target.
-docs: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 docs
-.PHONY : docs
-
-# fast build rule for target.
-docs/fast:
-	$(MAKE) -f third-party/glfw/docs/CMakeFiles/docs.dir/build.make third-party/glfw/docs/CMakeFiles/docs.dir/build
-.PHONY : docs/fast
 
 #=============================================================================
 # Target rules for targets named ktx_version
@@ -1142,7 +1129,6 @@ help:
 	@echo "... offscreen"
 	@echo "... wave"
 	@echo "... windows"
-	@echo "... docs"
 	@echo "... ktx_version"
 	@echo "... ktx_read"
 	@echo "... ktx"

@@ -1,1 +1,1 @@
-/usr/bin/c++  -g -DDEBUG  -g CMakeFiles/ktxinfo.dir/ktxinfo.cpp.o  -o ktxinfo  -Wl,-rpath,/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software: ../../libktx.so.4.1.0 ../../libobjUtil.a -ldl -lpthread 
+/usr/bin/c++  -g -DDEBUG  -g CMakeFiles/ktxinfo.dir/ktxinfo.cpp.o  -o ktxinfo  -Wl,-rpath,/home/mica/Desktop/Engine/build/third-party/KTX-Software: ../../libktx.so.4.1.0 ../../libobjUtil.a -ldl -lpthread 

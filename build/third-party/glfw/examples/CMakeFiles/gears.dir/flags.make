@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu99
 
 C_DEFINES = 
 
-C_INCLUDES = -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/deps -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include 
+C_INCLUDES = -I/home/mica/Desktop/Engine/third-party/glfw/deps -I/home/mica/Desktop/Engine/third-party/glfw/include 
 

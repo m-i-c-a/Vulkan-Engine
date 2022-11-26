@@ -33,7 +33,7 @@ third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
  ../third-party/KTX-Software/tests/gtest/src/gtest-test-part.cc
  ../third-party/KTX-Software/tests/gtest/src/gtest-typed-test.cc
  ../third-party/KTX-Software/tests/gtest/src/gtest.cc
- /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/gtest/src/gtest-all.cc
+ /home/mica/Desktop/Engine/third-party/KTX-Software/tests/gtest/src/gtest-all.cc
 third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/src/gtest_main.cc.o
  ../third-party/KTX-Software/tests/gtest/include/gtest/gtest-death-test.h
  ../third-party/KTX-Software/tests/gtest/include/gtest/gtest-matchers.h
@@ -55,4 +55,4 @@ third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/src/gtest_main.cc.o
  ../third-party/KTX-Software/tests/gtest/include/gtest/internal/gtest-port.h
  ../third-party/KTX-Software/tests/gtest/include/gtest/internal/gtest-string.h
  ../third-party/KTX-Software/tests/gtest/include/gtest/internal/gtest-type-util.h
- /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/gtest/src/gtest_main.cc
+ /home/mica/Desktop/Engine/third-party/KTX-Software/tests/gtest/src/gtest_main.cc

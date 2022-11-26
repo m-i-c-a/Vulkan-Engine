@@ -84,7 +84,7 @@ errno.h
 string.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktxsc/ktxsc.cpp
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktxsc/ktxsc.cpp
 windows.h
 -
 cstdlib
@@ -102,11 +102,11 @@ vector
 ktx.h
 -
 argparser.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktxsc/argparser.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktxsc/argparser.h
 scapp.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktxsc/scapp.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktxsc/scapp.h
 version.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktxsc/version.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktxsc/version.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktxsc/version.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktxsc/version.h
 

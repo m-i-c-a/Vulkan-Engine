@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/gtest
+# Install script for directory: /home/mica/Desktop/Engine/third-party/KTX-Software/tests/gtest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
 
 # Include any dependencies generated for this target.
 include third-party/glfw/src/CMakeFiles/glfw.dir/depend.make
@@ -59,302 +59,302 @@ include third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 
 third-party/glfw/src/CMakeFiles/glfw.dir/context.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/context.c.o: ../third-party/glfw/src/context.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/context.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/context.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/context.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/context.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/context.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/context.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/context.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/context.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/context.c > CMakeFiles/glfw.dir/context.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/context.c > CMakeFiles/glfw.dir/context.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/context.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/context.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/context.c -o CMakeFiles/glfw.dir/context.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/context.c -o CMakeFiles/glfw.dir/context.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/init.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/init.c.o: ../third-party/glfw/src/init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/init.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/init.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/init.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/init.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/init.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/init.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/init.c > CMakeFiles/glfw.dir/init.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/init.c > CMakeFiles/glfw.dir/init.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/init.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/init.c -o CMakeFiles/glfw.dir/init.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/init.c -o CMakeFiles/glfw.dir/init.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/input.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/input.c.o: ../third-party/glfw/src/input.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/input.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/input.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/input.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/input.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/input.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/input.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/input.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/input.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/input.c > CMakeFiles/glfw.dir/input.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/input.c > CMakeFiles/glfw.dir/input.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/input.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/input.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/input.c -o CMakeFiles/glfw.dir/input.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/input.c -o CMakeFiles/glfw.dir/input.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/monitor.c.o: ../third-party/glfw/src/monitor.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/monitor.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/monitor.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/monitor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/monitor.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/monitor.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/monitor.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/monitor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/monitor.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/monitor.c > CMakeFiles/glfw.dir/monitor.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/monitor.c > CMakeFiles/glfw.dir/monitor.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/monitor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/monitor.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/monitor.c -o CMakeFiles/glfw.dir/monitor.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/monitor.c -o CMakeFiles/glfw.dir/monitor.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/platform.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/platform.c.o: ../third-party/glfw/src/platform.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/platform.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/platform.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/platform.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/platform.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/platform.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/platform.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/platform.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/platform.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/platform.c > CMakeFiles/glfw.dir/platform.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/platform.c > CMakeFiles/glfw.dir/platform.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/platform.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/platform.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/platform.c -o CMakeFiles/glfw.dir/platform.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/platform.c -o CMakeFiles/glfw.dir/platform.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o: ../third-party/glfw/src/vulkan.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/vulkan.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/vulkan.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/vulkan.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/vulkan.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/vulkan.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/vulkan.c > CMakeFiles/glfw.dir/vulkan.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/vulkan.c > CMakeFiles/glfw.dir/vulkan.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/vulkan.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/vulkan.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/vulkan.c -o CMakeFiles/glfw.dir/vulkan.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/vulkan.c -o CMakeFiles/glfw.dir/vulkan.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/window.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/window.c.o: ../third-party/glfw/src/window.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/window.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/window.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/window.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/window.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/window.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/window.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/window.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/window.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/window.c > CMakeFiles/glfw.dir/window.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/window.c > CMakeFiles/glfw.dir/window.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/window.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/window.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/window.c -o CMakeFiles/glfw.dir/window.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/window.c -o CMakeFiles/glfw.dir/window.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o: ../third-party/glfw/src/egl_context.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/egl_context.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/egl_context.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/egl_context.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/egl_context.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/egl_context.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/egl_context.c > CMakeFiles/glfw.dir/egl_context.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/egl_context.c > CMakeFiles/glfw.dir/egl_context.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/egl_context.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/egl_context.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/egl_context.c -o CMakeFiles/glfw.dir/egl_context.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/egl_context.c -o CMakeFiles/glfw.dir/egl_context.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o: ../third-party/glfw/src/osmesa_context.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/osmesa_context.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/osmesa_context.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/osmesa_context.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/osmesa_context.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/osmesa_context.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/osmesa_context.c > CMakeFiles/glfw.dir/osmesa_context.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/osmesa_context.c > CMakeFiles/glfw.dir/osmesa_context.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/osmesa_context.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/osmesa_context.c -o CMakeFiles/glfw.dir/osmesa_context.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/osmesa_context.c -o CMakeFiles/glfw.dir/osmesa_context.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_init.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/null_init.c.o: ../third-party/glfw/src/null_init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/null_init.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_init.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/null_init.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_init.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/null_init.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/null_init.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_init.c > CMakeFiles/glfw.dir/null_init.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/null_init.c > CMakeFiles/glfw.dir/null_init.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/null_init.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_init.c -o CMakeFiles/glfw.dir/null_init.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/null_init.c -o CMakeFiles/glfw.dir/null_init.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o: ../third-party/glfw/src/null_monitor.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_monitor.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_monitor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_monitor.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/null_monitor.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/null_monitor.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_monitor.c > CMakeFiles/glfw.dir/null_monitor.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/null_monitor.c > CMakeFiles/glfw.dir/null_monitor.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/null_monitor.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_monitor.c -o CMakeFiles/glfw.dir/null_monitor.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/null_monitor.c -o CMakeFiles/glfw.dir/null_monitor.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_window.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/null_window.c.o: ../third-party/glfw/src/null_window.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/null_window.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_window.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_window.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/null_window.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_window.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/null_window.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_window.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/null_window.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_window.c > CMakeFiles/glfw.dir/null_window.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/null_window.c > CMakeFiles/glfw.dir/null_window.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_window.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/null_window.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_window.c -o CMakeFiles/glfw.dir/null_window.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/null_window.c -o CMakeFiles/glfw.dir/null_window.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o: ../third-party/glfw/src/null_joystick.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_joystick.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_joystick.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -o CMakeFiles/glfw.dir/null_joystick.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/null_joystick.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/null_joystick.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_joystick.c > CMakeFiles/glfw.dir/null_joystick.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -E /home/mica/Desktop/Engine/third-party/glfw/src/null_joystick.c > CMakeFiles/glfw.dir/null_joystick.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/null_joystick.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_joystick.c -o CMakeFiles/glfw.dir/null_joystick.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wdeclaration-after-statement -S /home/mica/Desktop/Engine/third-party/glfw/src/null_joystick.c -o CMakeFiles/glfw.dir/null_joystick.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o: ../third-party/glfw/src/posix_module.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/posix_module.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_module.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/posix_module.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/posix_module.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/posix_module.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_module.c > CMakeFiles/glfw.dir/posix_module.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/src/posix_module.c > CMakeFiles/glfw.dir/posix_module.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_module.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/posix_module.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_module.c -o CMakeFiles/glfw.dir/posix_module.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/src/posix_module.c -o CMakeFiles/glfw.dir/posix_module.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o: ../third-party/glfw/src/posix_time.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/posix_time.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_time.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/posix_time.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/posix_time.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/posix_time.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_time.c > CMakeFiles/glfw.dir/posix_time.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/src/posix_time.c > CMakeFiles/glfw.dir/posix_time.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_time.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/posix_time.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_time.c -o CMakeFiles/glfw.dir/posix_time.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/src/posix_time.c -o CMakeFiles/glfw.dir/posix_time.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o: ../third-party/glfw/src/posix_thread.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/posix_thread.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_thread.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/posix_thread.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/posix_thread.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/posix_thread.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_thread.c > CMakeFiles/glfw.dir/posix_thread.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/src/posix_thread.c > CMakeFiles/glfw.dir/posix_thread.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/posix_thread.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_thread.c -o CMakeFiles/glfw.dir/posix_thread.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/src/posix_thread.c -o CMakeFiles/glfw.dir/posix_thread.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o: ../third-party/glfw/src/x11_init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/x11_init.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/x11_init.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/x11_init.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/x11_init.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_init.c > CMakeFiles/glfw.dir/x11_init.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/src/x11_init.c > CMakeFiles/glfw.dir/x11_init.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_init.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/x11_init.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_init.c -o CMakeFiles/glfw.dir/x11_init.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/src/x11_init.c -o CMakeFiles/glfw.dir/x11_init.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o: ../third-party/glfw/src/x11_monitor.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/x11_monitor.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_monitor.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/x11_monitor.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/x11_monitor.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/x11_monitor.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_monitor.c > CMakeFiles/glfw.dir/x11_monitor.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/src/x11_monitor.c > CMakeFiles/glfw.dir/x11_monitor.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/x11_monitor.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_monitor.c -o CMakeFiles/glfw.dir/x11_monitor.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/src/x11_monitor.c -o CMakeFiles/glfw.dir/x11_monitor.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o: ../third-party/glfw/src/x11_window.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/x11_window.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_window.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/x11_window.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/x11_window.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/x11_window.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_window.c > CMakeFiles/glfw.dir/x11_window.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/src/x11_window.c > CMakeFiles/glfw.dir/x11_window.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/x11_window.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/x11_window.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_window.c -o CMakeFiles/glfw.dir/x11_window.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/src/x11_window.c -o CMakeFiles/glfw.dir/x11_window.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o: ../third-party/glfw/src/xkb_unicode.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/xkb_unicode.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/xkb_unicode.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/xkb_unicode.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/xkb_unicode.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/xkb_unicode.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/xkb_unicode.c > CMakeFiles/glfw.dir/xkb_unicode.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/src/xkb_unicode.c > CMakeFiles/glfw.dir/xkb_unicode.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/xkb_unicode.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/xkb_unicode.c -o CMakeFiles/glfw.dir/xkb_unicode.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/src/xkb_unicode.c -o CMakeFiles/glfw.dir/xkb_unicode.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o: ../third-party/glfw/src/glx_context.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/glx_context.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/glx_context.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/glx_context.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/glx_context.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/glx_context.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/glx_context.c > CMakeFiles/glfw.dir/glx_context.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/src/glx_context.c > CMakeFiles/glfw.dir/glx_context.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/glx_context.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/glx_context.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/glx_context.c -o CMakeFiles/glfw.dir/glx_context.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/src/glx_context.c -o CMakeFiles/glfw.dir/glx_context.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o: ../third-party/glfw/src/linux_joystick.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/linux_joystick.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/linux_joystick.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/linux_joystick.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/linux_joystick.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/linux_joystick.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/linux_joystick.c > CMakeFiles/glfw.dir/linux_joystick.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/src/linux_joystick.c > CMakeFiles/glfw.dir/linux_joystick.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/linux_joystick.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/linux_joystick.c -o CMakeFiles/glfw.dir/linux_joystick.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/src/linux_joystick.c -o CMakeFiles/glfw.dir/linux_joystick.c.s
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o: third-party/glfw/src/CMakeFiles/glfw.dir/flags.make
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o: ../third-party/glfw/src/posix_poll.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/posix_poll.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_poll.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object third-party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/glfw.dir/posix_poll.c.o   -c /home/mica/Desktop/Engine/third-party/glfw/src/posix_poll.c
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/glfw.dir/posix_poll.c.i"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_poll.c > CMakeFiles/glfw.dir/posix_poll.c.i
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/mica/Desktop/Engine/third-party/glfw/src/posix_poll.c > CMakeFiles/glfw.dir/posix_poll.c.i
 
 third-party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/glfw.dir/posix_poll.c.s"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_poll.c -o CMakeFiles/glfw.dir/posix_poll.c.s
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/mica/Desktop/Engine/third-party/glfw/src/posix_poll.c -o CMakeFiles/glfw.dir/posix_poll.c.s
 
 # Object files for target glfw
 glfw_OBJECTS = \
@@ -410,9 +410,9 @@ third-party/glfw/src/libglfw3.a: third-party/glfw/src/CMakeFiles/glfw.dir/linux_
 third-party/glfw/src/libglfw3.a: third-party/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o
 third-party/glfw/src/libglfw3.a: third-party/glfw/src/CMakeFiles/glfw.dir/build.make
 third-party/glfw/src/libglfw3.a: third-party/glfw/src/CMakeFiles/glfw.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking C static library libglfw3.a"
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/glfw.dir/cmake_clean_target.cmake
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glfw.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking C static library libglfw3.a"
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/glfw.dir/cmake_clean_target.cmake
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/glfw.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 third-party/glfw/src/CMakeFiles/glfw.dir/build: third-party/glfw/src/libglfw3.a
@@ -420,10 +420,10 @@ third-party/glfw/src/CMakeFiles/glfw.dir/build: third-party/glfw/src/libglfw3.a
 .PHONY : third-party/glfw/src/CMakeFiles/glfw.dir/build
 
 third-party/glfw/src/CMakeFiles/glfw.dir/clean:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/glfw.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Engine/build/third-party/glfw/src && $(CMAKE_COMMAND) -P CMakeFiles/glfw.dir/cmake_clean.cmake
 .PHONY : third-party/glfw/src/CMakeFiles/glfw.dir/clean
 
 third-party/glfw/src/CMakeFiles/glfw.dir/depend:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Engine /home/mica/Desktop/Engine/third-party/glfw/src /home/mica/Desktop/Engine/build /home/mica/Desktop/Engine/build/third-party/glfw/src /home/mica/Desktop/Engine/build/third-party/glfw/src/CMakeFiles/glfw.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third-party/glfw/src/CMakeFiles/glfw.dir/depend
 

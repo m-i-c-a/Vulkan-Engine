@@ -45,4 +45,14 @@ struct MeshInfo
     int32_t  m_iVertexOffset = 0;
 };
 
+struct MatData
+{
+    float x;
+};
+
+struct DrawData
+{
+    uint32_t matID;
+};
+
 #endif // MICA_SHADER_STRUCTS_HPP

@@ -21,6 +21,16 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o: ../src/vulk
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o: ../src/vulkanwrapper/DescriptorPool.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorPool.cpp.o: ../src/vulkanwrapper/Resource.hpp
 
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorSet.cpp.o: ../src/common/Defines.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorSet.cpp.o: ../src/vulkanwrapper/DescriptorSet.cpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorSet.cpp.o: ../src/vulkanwrapper/DescriptorSet.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorSet.cpp.o: ../src/vulkanwrapper/Resource.hpp
+
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorSetLayout.cpp.o: ../src/common/Defines.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorSetLayout.cpp.o: ../src/vulkanwrapper/DescriptorSetLayout.cpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorSetLayout.cpp.o: ../src/vulkanwrapper/DescriptorSetLayout.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DescriptorSetLayout.cpp.o: ../src/vulkanwrapper/Resource.hpp
+
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o: ../src/common/Defines.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o: ../src/vulkanwrapper/DeviceMemory.cpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/DeviceMemory.cpp.o: ../src/vulkanwrapper/DeviceMemory.hpp
@@ -30,6 +40,11 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/common/Define
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/vulkanwrapper/Fence.cpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/vulkanwrapper/Fence.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Fence.cpp.o: ../src/vulkanwrapper/Resource.hpp
+
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Framebuffer.cpp.o: ../src/common/Defines.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Framebuffer.cpp.o: ../src/vulkanwrapper/Framebuffer.cpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Framebuffer.cpp.o: ../src/vulkanwrapper/Framebuffer.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Framebuffer.cpp.o: ../src/vulkanwrapper/Resource.hpp
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Generic.cpp.o: ../src/common/Defines.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Generic.cpp.o: ../src/vulkanwrapper/Generic.cpp
@@ -45,6 +60,11 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/common/De
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/vulkanwrapper/ImageView.cpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/vulkanwrapper/ImageView.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/vulkanwrapper/Resource.hpp
+
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/RenderPass.cpp.o: ../src/common/Defines.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/RenderPass.cpp.o: ../src/vulkanwrapper/RenderPass.cpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/RenderPass.cpp.o: ../src/vulkanwrapper/RenderPass.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/RenderPass.cpp.o: ../src/vulkanwrapper/Resource.hpp
 
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o: ../src/common/Defines.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Resource.cpp.o: ../src/vulkanwrapper/Resource.cpp

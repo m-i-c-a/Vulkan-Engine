@@ -13,6 +13,7 @@ struct CommandPool : public Resource
     VkCommandPool vk_handle = VK_NULL_HANDLE;
 
     CommandPool(const VkCommandPoolCreateFlags vk_cmdPoolFlags, const uint32_t qFamIdx);
+    ~CommandPool();
 };
 
 };

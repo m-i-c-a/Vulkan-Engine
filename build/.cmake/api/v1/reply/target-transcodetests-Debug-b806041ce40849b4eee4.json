@@ -1,0 +1,280 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "third-party/KTX-Software/tests/transcodetests/transcodetests"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"add_link_options",
+			"target_link_libraries",
+			"add_compile_options",
+			"target_compile_definitions",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"third-party/KTX-Software/tests/transcodetests/CMakeLists.txt",
+			"third-party/KTX-Software/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 170,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 165,
+				"parent" : 2
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 166,
+				"parent" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 25,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -DDEBUG  "
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-O0"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 7,
+					"define" : "DEBUG"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "KTX_BASISU_C_BINDINGS"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "KTX_FEATURE_KTX1"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "KTX_FEATURE_KTX2"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "KTX_FEATURE_WRITE"
+				},
+				{
+					"backtrace" : 7,
+					"define" : "_DEBUG"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/zstd"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/other_include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/utils"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/lib/astc-encoder/Source"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/interface/basisu_c_binding/inc"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/tests/transcodetests/../../other_include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/tests/transcodetests/../../lib"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/tests/gtest/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/mica/Desktop/Engine/third-party/KTX-Software/tests/gtest/."
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 4,
+			"id" : "ktx::@e48740fee3c922e74810"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "obj_basisu_cbind::@08dcb8a60478e76b277b"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "gtest::@940f671288c67bac3219"
+		}
+	],
+	"id" : "transcodetests::@676eab64ddfb8315b7cb",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g -DDEBUG",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/home/mica/Desktop/Engine/build/third-party/KTX-Software",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../gtest/libgtest.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../../libktx.so.4.1.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 4,
+				"fragment" : "../../interface/basisu_c_binding/libobj_basisu_cbind.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-ldl",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "transcodetests",
+	"nameOnDisk" : "transcodetests",
+	"paths" : 
+	{
+		"build" : "third-party/KTX-Software/tests/transcodetests",
+		"source" : "third-party/KTX-Software/tests/transcodetests"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "third-party/KTX-Software/tests/transcodetests/transcodetests.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

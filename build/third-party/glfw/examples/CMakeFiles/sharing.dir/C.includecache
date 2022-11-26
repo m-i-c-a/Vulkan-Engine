@@ -78,7 +78,7 @@ GL/gl.h
 GL/glext.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/sharing.c
+/home/mica/Desktop/Engine/third-party/glfw/examples/sharing.c
 glad/gl.h
 -
 GLFW/glfw3.h
@@ -88,7 +88,7 @@ stdio.h
 stdlib.h
 -
 getopt.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/getopt.h
+/home/mica/Desktop/Engine/third-party/glfw/examples/getopt.h
 linmath.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/linmath.h
+/home/mica/Desktop/Engine/third-party/glfw/examples/linmath.h
 

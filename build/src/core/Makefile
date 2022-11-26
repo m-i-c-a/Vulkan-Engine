@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -127,7 +127,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -138,7 +138,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CPackSourceConfig.cmake
+	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Engine/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -148,14 +148,14 @@ package_source/fast: package_source
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core/CMakeFiles/progress.marks
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 src/core/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles /home/mica/Desktop/Engine/build/src/core/CMakeFiles/progress.marks
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 src/core/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 src/core/clean
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 src/core/clean
 .PHONY : clean
 
 # The main clean target
@@ -165,22 +165,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 src/core/preinstall
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 src/core/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 src/core/preinstall
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 src/core/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/core/CMakeFiles/core.dir/rule:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 src/core/CMakeFiles/core.dir/rule
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 src/core/CMakeFiles/core.dir/rule
 .PHONY : src/core/CMakeFiles/core.dir/rule
 
 # Convenience name for target.
@@ -190,8 +190,35 @@ core: src/core/CMakeFiles/core.dir/rule
 
 # fast build rule for target.
 core/fast:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/build
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/build
 .PHONY : core/fast
+
+Attachment.o: Attachment.cpp.o
+
+.PHONY : Attachment.o
+
+# target to build an object file
+Attachment.cpp.o:
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/Attachment.cpp.o
+.PHONY : Attachment.cpp.o
+
+Attachment.i: Attachment.cpp.i
+
+.PHONY : Attachment.i
+
+# target to preprocess a source file
+Attachment.cpp.i:
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/Attachment.cpp.i
+.PHONY : Attachment.cpp.i
+
+Attachment.s: Attachment.cpp.s
+
+.PHONY : Attachment.s
+
+# target to generate assembly for a file
+Attachment.cpp.s:
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/Attachment.cpp.s
+.PHONY : Attachment.cpp.s
 
 BufferPool.o: BufferPool.cpp.o
 
@@ -199,7 +226,7 @@ BufferPool.o: BufferPool.cpp.o
 
 # target to build an object file
 BufferPool.cpp.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/BufferPool.cpp.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/BufferPool.cpp.o
 .PHONY : BufferPool.cpp.o
 
 BufferPool.i: BufferPool.cpp.i
@@ -208,7 +235,7 @@ BufferPool.i: BufferPool.cpp.i
 
 # target to preprocess a source file
 BufferPool.cpp.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/BufferPool.cpp.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/BufferPool.cpp.i
 .PHONY : BufferPool.cpp.i
 
 BufferPool.s: BufferPool.cpp.s
@@ -217,7 +244,7 @@ BufferPool.s: BufferPool.cpp.s
 
 # target to generate assembly for a file
 BufferPool.cpp.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/BufferPool.cpp.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/BufferPool.cpp.s
 .PHONY : BufferPool.cpp.s
 
 PersistentDeviceBuffer.o: PersistentDeviceBuffer.cpp.o
@@ -226,7 +253,7 @@ PersistentDeviceBuffer.o: PersistentDeviceBuffer.cpp.o
 
 # target to build an object file
 PersistentDeviceBuffer.cpp.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.o
 .PHONY : PersistentDeviceBuffer.cpp.o
 
 PersistentDeviceBuffer.i: PersistentDeviceBuffer.cpp.i
@@ -235,7 +262,7 @@ PersistentDeviceBuffer.i: PersistentDeviceBuffer.cpp.i
 
 # target to preprocess a source file
 PersistentDeviceBuffer.cpp.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.i
 .PHONY : PersistentDeviceBuffer.cpp.i
 
 PersistentDeviceBuffer.s: PersistentDeviceBuffer.cpp.s
@@ -244,7 +271,7 @@ PersistentDeviceBuffer.s: PersistentDeviceBuffer.cpp.s
 
 # target to generate assembly for a file
 PersistentDeviceBuffer.cpp.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentDeviceBuffer.cpp.s
 .PHONY : PersistentDeviceBuffer.cpp.s
 
 PersistentStagingBuffer.o: PersistentStagingBuffer.cpp.o
@@ -253,7 +280,7 @@ PersistentStagingBuffer.o: PersistentStagingBuffer.cpp.o
 
 # target to build an object file
 PersistentStagingBuffer.cpp.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o
 .PHONY : PersistentStagingBuffer.cpp.o
 
 PersistentStagingBuffer.i: PersistentStagingBuffer.cpp.i
@@ -262,7 +289,7 @@ PersistentStagingBuffer.i: PersistentStagingBuffer.cpp.i
 
 # target to preprocess a source file
 PersistentStagingBuffer.cpp.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.i
 .PHONY : PersistentStagingBuffer.cpp.i
 
 PersistentStagingBuffer.s: PersistentStagingBuffer.cpp.s
@@ -271,7 +298,7 @@ PersistentStagingBuffer.s: PersistentStagingBuffer.cpp.s
 
 # target to generate assembly for a file
 PersistentStagingBuffer.cpp.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.s
 .PHONY : PersistentStagingBuffer.cpp.s
 
 SceneBuffer.o: SceneBuffer.cpp.o
@@ -280,7 +307,7 @@ SceneBuffer.o: SceneBuffer.cpp.o
 
 # target to build an object file
 SceneBuffer.cpp.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o
 .PHONY : SceneBuffer.cpp.o
 
 SceneBuffer.i: SceneBuffer.cpp.i
@@ -289,7 +316,7 @@ SceneBuffer.i: SceneBuffer.cpp.i
 
 # target to preprocess a source file
 SceneBuffer.cpp.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/SceneBuffer.cpp.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/SceneBuffer.cpp.i
 .PHONY : SceneBuffer.cpp.i
 
 SceneBuffer.s: SceneBuffer.cpp.s
@@ -298,7 +325,7 @@ SceneBuffer.s: SceneBuffer.cpp.s
 
 # target to generate assembly for a file
 SceneBuffer.cpp.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/SceneBuffer.cpp.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/SceneBuffer.cpp.s
 .PHONY : SceneBuffer.cpp.s
 
 StagingBuffer.o: StagingBuffer.cpp.o
@@ -307,7 +334,7 @@ StagingBuffer.o: StagingBuffer.cpp.o
 
 # target to build an object file
 StagingBuffer.cpp.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/StagingBuffer.cpp.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/StagingBuffer.cpp.o
 .PHONY : StagingBuffer.cpp.o
 
 StagingBuffer.i: StagingBuffer.cpp.i
@@ -316,7 +343,7 @@ StagingBuffer.i: StagingBuffer.cpp.i
 
 # target to preprocess a source file
 StagingBuffer.cpp.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/StagingBuffer.cpp.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/StagingBuffer.cpp.i
 .PHONY : StagingBuffer.cpp.i
 
 StagingBuffer.s: StagingBuffer.cpp.s
@@ -325,7 +352,7 @@ StagingBuffer.s: StagingBuffer.cpp.s
 
 # target to generate assembly for a file
 StagingBuffer.cpp.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/StagingBuffer.cpp.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/StagingBuffer.cpp.s
 .PHONY : StagingBuffer.cpp.s
 
 Texture.o: Texture.cpp.o
@@ -334,7 +361,7 @@ Texture.o: Texture.cpp.o
 
 # target to build an object file
 Texture.cpp.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/Texture.cpp.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/Texture.cpp.o
 .PHONY : Texture.cpp.o
 
 Texture.i: Texture.cpp.i
@@ -343,7 +370,7 @@ Texture.i: Texture.cpp.i
 
 # target to preprocess a source file
 Texture.cpp.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/Texture.cpp.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/Texture.cpp.i
 .PHONY : Texture.cpp.i
 
 Texture.s: Texture.cpp.s
@@ -352,7 +379,7 @@ Texture.s: Texture.cpp.s
 
 # target to generate assembly for a file
 Texture.cpp.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/Texture.cpp.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/Texture.cpp.s
 .PHONY : Texture.cpp.s
 
 # Help Target
@@ -370,6 +397,9 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... core"
+	@echo "... Attachment.o"
+	@echo "... Attachment.i"
+	@echo "... Attachment.s"
 	@echo "... BufferPool.o"
 	@echo "... BufferPool.i"
 	@echo "... BufferPool.s"
@@ -399,6 +429,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktx2check
+# Install script for directory: /home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktx2check
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

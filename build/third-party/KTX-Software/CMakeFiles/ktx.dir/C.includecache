@@ -58,11 +58,11 @@ stddef.h
 
 ../third-party/KTX-Software/utils/unused.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basis_sgd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basis_sgd.h
 stdint.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.c
 limits.h
 -
 stddef.h
@@ -184,39 +184,39 @@ stdio.h
 time.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/checkheader.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/checkheader.c
 assert.h
 -
 string.h
 -
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/colourspaces.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/colourspaces.c
 KHR/khr_df.h
 -
 dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/createdfd.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/createdfd.c
 stdlib.h
 -
 KHR/khr_df.h
 -
 dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 KHR/khr_df.h
 -
 vulkan/vulkan_core.h
 -
 ../vkformat_enum.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/interpretdfd.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/interpretdfd.c
 stdint.h
 -
 stdio.h
@@ -224,17 +224,17 @@ stdio.h
 KHR/khr_df.h
 -
 dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/printdfd.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/printdfd.c
 stdio.h
 -
 KHR/khr_df.h
 -
 dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/queries.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/queries.c
 stdint.h
 -
 stdio.h
@@ -246,17 +246,17 @@ string.h
 KHR/khr_df.h
 -
 dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.c
 dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 vk2dfd.inl
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.inl
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.inl
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.inl
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/vk2dfd.inl
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.c
 assert.h
 -
 errno.h
@@ -274,31 +274,31 @@ sys/types.h
 sys/stat.h
 -
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 filestream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/formatsize.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/formatsize.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_format.h
 assert.h
 -
 formatsize.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/formatsize.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/formatsize.h
 vkformat_enum.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_funclist.inl
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_funclist.inl
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_funcs.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_funcs.c
 windows.h
 -
 dlfcn.h
@@ -306,21 +306,21 @@ dlfcn.h
 stdlib.h
 -
 gl_funcs.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_funcs.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_funcs.h
 gl_funclist.inl
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_funclist.inl
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_funclist.inl
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_funcs.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_funcs.h
 GL/glcorearb.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/GL/glcorearb.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/GL/glcorearb.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 windows.h
 -
 gl_funclist.inl
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_funclist.inl
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_funclist.inl
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/glloader.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/glloader.c
 assert.h
 -
 string.h
@@ -330,19 +330,19 @@ stdint.h
 stdlib.h
 -
 gl_funcs.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_funcs.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_funcs.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 texture.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture.h
 gl_format.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_format.h
 unused.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/unused.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/unused.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/hashlist.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/hashlist.c
 stdio.h
 -
 stdlib.h
@@ -352,13 +352,13 @@ string.h
 assert.h
 -
 uthash.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/uthash.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/uthash.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/info.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/info.c
 assert.h
 -
 inttypes.h
@@ -376,23 +376,23 @@ io.h
 ktx.h
 -
 dfdutils/dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 filestream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.h
 memstream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 basis_sgd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basis_sgd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basis_sgd.h
 unused.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/unused.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/unused.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 math.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.c
 assert.h
 -
 string.h
@@ -400,27 +400,27 @@ string.h
 stdlib.h
 -
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 memstream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/strings.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/strings.c
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/swap.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/swap.c
 KHR/khrplatform.h
 -
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture.c
 assert.h
 -
 math.h
@@ -430,57 +430,57 @@ stdlib.h
 string.h
 -
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 formatsize.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/formatsize.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/formatsize.h
 filestream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.h
 memstream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.h
 texture1.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture1.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture1.h
 texture2.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.h
 unused.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/unused.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/unused.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 formatsize.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/formatsize.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/formatsize.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture1.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture1.c
 stdlib.h
 -
 string.h
 -
 dfdutils/dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 filestream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.h
 memstream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.h
 texture1.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture1.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture1.h
 unused.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/unused.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/unused.h
 gl_format.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_format.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture1.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture1.h
 texture.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture.h
 texture_funcs.inl
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture_funcs.inl
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture_funcs.inl
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.c
 stdlib.h
 -
 string.h
@@ -492,31 +492,31 @@ zstd_errors.h
 KHR/khr_df.h
 -
 dfdutils/dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 filestream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.h
 memstream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.h
 texture2.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.h
 unused.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/unused.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/unused.h
 vk_format.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_format.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.h
 texture.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture.h
 texture_funcs.inl
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture_funcs.inl
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture_funcs.inl
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture_funcs.inl
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture_funcs.inl
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/uthash.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/uthash.h
 string.h
 -
 stddef.h
@@ -524,15 +524,15 @@ stddef.h
 inttypes.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/version.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/version.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_format.h
 gl_format.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_format.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_funcs.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_funcs.c
 vk_funcs.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_funcs.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_funcs.h
 windows.h
 -
 dlfcn.h
@@ -540,37 +540,37 @@ dlfcn.h
 stdlib.h
 -
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_funcs.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_funcs.h
 vulkan/vk_platform.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vulkan/vk_platform.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vulkan/vk_platform.h
 vulkan/vulkan_core.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vulkan/vulkan_core.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vulkan/vulkan_core.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 windows.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_check.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_check.c
 stdint.h
 -
 stdbool.h
 -
 vkformat_enum.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 stdint.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_str.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_str.c
 stdint.h
 -
 vkformat_enum.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkloader.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkloader.c
 assert.h
 -
 math.h
@@ -580,21 +580,21 @@ stdlib.h
 string.h
 -
 vk_funcs.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_funcs.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_funcs.h
 ktxvulkan.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxvulkan.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxvulkan.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 unused.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/unused.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/unused.h
 texture1.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture1.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture1.h
 texture2.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.h
 vk_format.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_format.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/writer1.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/writer1.c
 assert.h
 -
 stdio.h
@@ -606,25 +606,25 @@ string.h
 strings.h
 -
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 filestream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.h
 memstream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.h
 texture1.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture1.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture1.h
 dfdutils/dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 vkformat_enum.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 vk_format.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_format.h
 version.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/version.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/version.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/writer2.c
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/writer2.c
 assert.h
 -
 limits.h
@@ -644,21 +644,21 @@ zstd_errors.h
 KHR/khr_df.h
 -
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 filestream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/filestream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/filestream.h
 memstream.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/memstream.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/memstream.h
 texture2.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.h
 dfdutils/dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 vkformat_enum.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 vk_format.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_format.h
 version.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/version.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/version.h
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software
+# Install script for directory: /home/mica/Desktop/Engine/third-party/KTX-Software
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,22 +39,22 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/interface/basisu_c_binding/cmake_install.cmake")
+  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/interface/basisu_c_binding/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/lib/astc-encoder/cmake_install.cmake")
+  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/lib/astc-encoder/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/cmake_install.cmake")
+  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/cmake_install.cmake")
+  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/cmake_install.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibraryx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -70,8 +70,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibraryx" OR NOT CMAKE_INSTALL_COMP
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/libktx.so.4.1.0"
-    "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/libktx.so.4"
+    "/home/mica/Desktop/Engine/build/third-party/KTX-Software/libktx.so.4.1.0"
+    "/home/mica/Desktop/Engine/build/third-party/KTX-Software/libktx.so.4"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libktx.so.4.1.0"
@@ -88,8 +88,8 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES
-    "/home/mica/Desktop/Vulkan/Vulkan-Engine/include/ktx.h"
-    "/home/mica/Desktop/Vulkan/Vulkan-Engine/include/ktxvulkan.h"
+    "/home/mica/Desktop/Engine/include/ktx.h"
+    "/home/mica/Desktop/Engine/include/ktxvulkan.h"
     )
 endif()
 
@@ -100,7 +100,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibraryx" OR NOT CMAKE_INSTALL_COMP
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libktx.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/libktx.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/mica/Desktop/Engine/build/third-party/KTX-Software/libktx.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libktx.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libktx.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -113,7 +113,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibraryx" OR NOT CMAKE_INSTALL_COMP
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/ktx/KtxTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/ktx/KtxTargets.cmake"
-         "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/CMakeFiles/Export/lib/cmake/ktx/KtxTargets.cmake")
+         "/home/mica/Desktop/Engine/build/third-party/KTX-Software/CMakeFiles/Export/lib/cmake/ktx/KtxTargets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/ktx/KtxTargets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -122,16 +122,16 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibraryx" OR NOT CMAKE_INSTALL_COMP
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ktx" TYPE FILE FILES "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/CMakeFiles/Export/lib/cmake/ktx/KtxTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ktx" TYPE FILE FILES "/home/mica/Desktop/Engine/build/third-party/KTX-Software/CMakeFiles/Export/lib/cmake/ktx/KtxTargets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ktx" TYPE FILE FILES "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/CMakeFiles/Export/lib/cmake/ktx/KtxTargets-debug.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ktx" TYPE FILE FILES "/home/mica/Desktop/Engine/build/third-party/KTX-Software/CMakeFiles/Export/lib/cmake/ktx/KtxTargets-debug.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibraryx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/ktx" TYPE FILE FILES
-    "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/cmake/KtxConfig.cmake"
-    "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/KtxConfigVersion.cmake"
+    "/home/mica/Desktop/Engine/third-party/KTX-Software/cmake/KtxConfig.cmake"
+    "/home/mica/Desktop/Engine/build/third-party/KTX-Software/KtxConfigVersion.cmake"
     )
 endif()
 

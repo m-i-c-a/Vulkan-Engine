@@ -62,9 +62,9 @@ errno.h
 string.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktx2ktx2/ktx2ktx2.cpp
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktx2ktx2/ktx2ktx2.cpp
 ktxapp.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktx2ktx2/ktxapp.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktx2ktx2/ktxapp.h
 cstdlib
 -
 errno.h
@@ -78,11 +78,11 @@ vector
 ktx.h
 -
 argparser.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktx2ktx2/argparser.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktx2ktx2/argparser.h
 version.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktx2ktx2/version.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktx2ktx2/version.h
 imdebug.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktx2ktx2/imdebug.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktx2ktx2/imdebug.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/ktx2ktx2/version.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/tools/ktx2ktx2/version.h
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -94,7 +94,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CPackSourceConfig.cmake
+	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Engine/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -138,7 +138,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -148,14 +148,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/CMakeFiles/progress.marks
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles /home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/CMakeFiles/progress.marks
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/clean
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -165,22 +165,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/preinstall
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/preinstall
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/rule:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/rule
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/rule
 .PHONY : third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/rule
 
 # Convenience name for target.
@@ -190,12 +190,12 @@ texturetests: third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/rule
 
 # fast build rule for target.
 texturetests/fast:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build
 .PHONY : texturetests/fast
 
 # Convenience name for target.
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/rule:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/rule
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/rule
 .PHONY : third-party/KTX-Software/tests/CMakeFiles/unittests.dir/rule
 
 # Convenience name for target.
@@ -205,7 +205,7 @@ unittests: third-party/KTX-Software/tests/CMakeFiles/unittests.dir/rule
 
 # fast build rule for target.
 unittests/fast:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build
 .PHONY : unittests/fast
 
 texturetests/texturetests.o: texturetests/texturetests.cc.o
@@ -214,7 +214,7 @@ texturetests/texturetests.o: texturetests/texturetests.cc.o
 
 # target to build an object file
 texturetests/texturetests.cc.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/texturetests/texturetests.cc.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/texturetests/texturetests.cc.o
 .PHONY : texturetests/texturetests.cc.o
 
 texturetests/texturetests.i: texturetests/texturetests.cc.i
@@ -223,7 +223,7 @@ texturetests/texturetests.i: texturetests/texturetests.cc.i
 
 # target to preprocess a source file
 texturetests/texturetests.cc.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/texturetests/texturetests.cc.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/texturetests/texturetests.cc.i
 .PHONY : texturetests/texturetests.cc.i
 
 texturetests/texturetests.s: texturetests/texturetests.cc.s
@@ -232,7 +232,7 @@ texturetests/texturetests.s: texturetests/texturetests.cc.s
 
 # target to generate assembly for a file
 texturetests/texturetests.cc.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/texturetests/texturetests.cc.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/texturetests/texturetests.cc.s
 .PHONY : texturetests/texturetests.cc.s
 
 unittests/image_unittests.o: unittests/image_unittests.cc.o
@@ -241,7 +241,7 @@ unittests/image_unittests.o: unittests/image_unittests.cc.o
 
 # target to build an object file
 unittests/image_unittests.cc.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.o
 .PHONY : unittests/image_unittests.cc.o
 
 unittests/image_unittests.i: unittests/image_unittests.cc.i
@@ -250,7 +250,7 @@ unittests/image_unittests.i: unittests/image_unittests.cc.i
 
 # target to preprocess a source file
 unittests/image_unittests.cc.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.i
 .PHONY : unittests/image_unittests.cc.i
 
 unittests/image_unittests.s: unittests/image_unittests.cc.s
@@ -259,7 +259,7 @@ unittests/image_unittests.s: unittests/image_unittests.cc.s
 
 # target to generate assembly for a file
 unittests/image_unittests.cc.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.s
 .PHONY : unittests/image_unittests.cc.s
 
 unittests/unittests.o: unittests/unittests.cc.o
@@ -268,7 +268,7 @@ unittests/unittests.o: unittests/unittests.cc.o
 
 # target to build an object file
 unittests/unittests.cc.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.o
 .PHONY : unittests/unittests.cc.o
 
 unittests/unittests.i: unittests/unittests.cc.i
@@ -277,7 +277,7 @@ unittests/unittests.i: unittests/unittests.cc.i
 
 # target to preprocess a source file
 unittests/unittests.cc.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.i
 .PHONY : unittests/unittests.cc.i
 
 unittests/unittests.s: unittests/unittests.cc.s
@@ -286,7 +286,7 @@ unittests/unittests.s: unittests/unittests.cc.s
 
 # target to generate assembly for a file
 unittests/unittests.cc.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tests/CMakeFiles/unittests.dir/build.make third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.s
 .PHONY : unittests/unittests.cc.s
 
 # Help Target
@@ -325,6 +325,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

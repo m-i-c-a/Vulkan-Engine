@@ -42,11 +42,11 @@ inttypes.h
 stdint.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basis_sgd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basis_sgd.h
 stdint.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basis_transcode.cpp
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basis_transcode.cpp
 inttypes.h
 -
 stdio.h
@@ -54,27 +54,27 @@ stdio.h
 KHR/khr_df.h
 -
 dfdutils/dfd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 texture2.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.h
 vkformat_enum.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 vk_format.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_format.h
 basis_sgd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basis_sgd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basis_sgd.h
 basisu/transcoder/basisu_file_headers.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_file_headers.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_file_headers.h
 basisu/transcoder/basisu_transcoder.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.h
 basisu/transcoder/basisu_transcoder_internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu.h
 stdlib.h
 -
 stdio.h
@@ -106,9 +106,9 @@ assert.h
 random
 -
 basisu_containers.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_containers.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_containers.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_containers.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_containers.h
 stdlib.h
 -
 stdio.h
@@ -122,145 +122,145 @@ algorithm
 malloc.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_containers_impl.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_containers_impl.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_file_headers.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_file_headers.h
 basisu_transcoder_internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.cpp
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.cpp
 basisu_transcoder.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.h
 limits.h
 -
 basisu_containers_impl.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_containers_impl.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_containers_impl.h
 ../zstd/zstd.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.h
 basisu_transcoder_tables_dxt1_6.inc
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_dxt1_6.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_dxt1_6.inc
 basisu_transcoder_tables_dxt1_5.inc
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_dxt1_5.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_dxt1_5.inc
 basisu_transcoder_tables_bc7_m5_color.inc
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_bc7_m5_color.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_bc7_m5_color.inc
 basisu_transcoder_tables_bc7_m5_alpha.inc
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_bc7_m5_alpha.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_bc7_m5_alpha.inc
 basisu_transcoder_tables_astc.inc
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_astc.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_astc.inc
 basisu_transcoder_tables_astc_0_255.inc
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_astc_0_255.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_astc_0_255.inc
 basisu_transcoder_tables_pvrtc2_45.inc
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_pvrtc2_45.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_pvrtc2_45.inc
 basisu_transcoder_tables_pvrtc2_alpha_33.inc
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_pvrtc2_alpha_33.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_pvrtc2_alpha_33.inc
 basisu_transcoder_tables_atc_55.inc
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_atc_55.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_atc_55.inc
 basisu_transcoder_tables_atc_56.inc
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_atc_56.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_atc_56.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder.h
 basisu_transcoder_internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
 basisu_transcoder_uastc.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_uastc.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_uastc.h
 basisu_file_headers.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_file_headers.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_file_headers.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
 basisu.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_astc.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_astc.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_astc_0_255.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_astc_0_255.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_atc_55.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_atc_55.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_atc_56.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_atc_56.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_bc7_m5_alpha.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_bc7_m5_alpha.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_bc7_m5_color.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_bc7_m5_color.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_dxt1_5.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_dxt1_5.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_dxt1_6.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_dxt1_6.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_pvrtc2_45.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_pvrtc2_45.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_pvrtc2_alpha_33.inc
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_tables_pvrtc2_alpha_33.inc
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_uastc.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_uastc.h
 basisu_transcoder_internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/zstd/zstd.h
 limits.h
 -
 stddef.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/dfdutils/dfd.h
 KHR/khr_df.h
 -
 vulkan/vulkan_core.h
 -
 ../vkformat_enum.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/etcdec.cxx
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/etcdec.cxx
 stdio.h
 -
 stdlib.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/etcunpack.cxx
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/etcunpack.cxx
 assert.h
 -
 stdlib.h
 -
 GL/glcorearb.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/GL/glcorearb.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/GL/glcorearb.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 ktxint.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/formatsize.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/formatsize.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_format.h
 assert.h
 -
 formatsize.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/formatsize.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/formatsize.h
 vkformat_enum.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktxint.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktxint.h
 math.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture.h
 ktx.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/ktx.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/ktx.h
 formatsize.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/formatsize.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/formatsize.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture2.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture2.h
 texture.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture.h
 texture_funcs.inl
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture_funcs.inl
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture_funcs.inl
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/texture_funcs.inl
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/texture_funcs.inl
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vk_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vk_format.h
 gl_format.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/gl_format.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/gl_format.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/vkformat_enum.h
+/home/mica/Desktop/Engine/third-party/KTX-Software/lib/vkformat_enum.h
 stdint.h
 -
 

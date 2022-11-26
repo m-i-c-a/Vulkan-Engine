@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -83,7 +83,7 @@ install/local/fast: preinstall/fast
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CPackSourceConfig.cmake
+	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Engine/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -127,7 +127,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -148,14 +148,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx/CMakeFiles/progress.marks
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx/CMakeFiles/progress.marks
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/clean
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/clean
 .PHONY : clean
 
 # The main clean target
@@ -165,22 +165,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/preinstall
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/preinstall
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/rule:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/rule
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/rule
 .PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/rule
 
 # Convenience name for target.
@@ -190,12 +190,12 @@ toktx_version: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir
 
 # fast build rule for target.
 toktx_version/fast:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build
 .PHONY : toktx_version/fast
 
 # Convenience name for target.
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/rule:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/rule
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/rule
 .PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/rule
 
 # Convenience name for target.
@@ -205,7 +205,7 @@ toktx: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/rule
 
 # fast build rule for target.
 toktx/fast:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build
 .PHONY : toktx/fast
 
 __/__/lib/basisu/encoder/jpgd.o: __/__/lib/basisu/encoder/jpgd.cpp.o
@@ -214,7 +214,7 @@ __/__/lib/basisu/encoder/jpgd.o: __/__/lib/basisu/encoder/jpgd.cpp.o
 
 # target to build an object file
 __/__/lib/basisu/encoder/jpgd.cpp.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.o
 .PHONY : __/__/lib/basisu/encoder/jpgd.cpp.o
 
 __/__/lib/basisu/encoder/jpgd.i: __/__/lib/basisu/encoder/jpgd.cpp.i
@@ -223,7 +223,7 @@ __/__/lib/basisu/encoder/jpgd.i: __/__/lib/basisu/encoder/jpgd.cpp.i
 
 # target to preprocess a source file
 __/__/lib/basisu/encoder/jpgd.cpp.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.i
 .PHONY : __/__/lib/basisu/encoder/jpgd.cpp.i
 
 __/__/lib/basisu/encoder/jpgd.s: __/__/lib/basisu/encoder/jpgd.cpp.s
@@ -232,7 +232,7 @@ __/__/lib/basisu/encoder/jpgd.s: __/__/lib/basisu/encoder/jpgd.cpp.s
 
 # target to generate assembly for a file
 __/__/lib/basisu/encoder/jpgd.cpp.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.s
 .PHONY : __/__/lib/basisu/encoder/jpgd.cpp.s
 
 image.o: image.cc.o
@@ -241,7 +241,7 @@ image.o: image.cc.o
 
 # target to build an object file
 image.cc.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.o
 .PHONY : image.cc.o
 
 image.i: image.cc.i
@@ -250,7 +250,7 @@ image.i: image.cc.i
 
 # target to preprocess a source file
 image.cc.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.i
 .PHONY : image.cc.i
 
 image.s: image.cc.s
@@ -259,7 +259,7 @@ image.s: image.cc.s
 
 # target to generate assembly for a file
 image.cc.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.s
 .PHONY : image.cc.s
 
 jpgimage.o: jpgimage.cc.o
@@ -268,7 +268,7 @@ jpgimage.o: jpgimage.cc.o
 
 # target to build an object file
 jpgimage.cc.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.o
 .PHONY : jpgimage.cc.o
 
 jpgimage.i: jpgimage.cc.i
@@ -277,7 +277,7 @@ jpgimage.i: jpgimage.cc.i
 
 # target to preprocess a source file
 jpgimage.cc.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.i
 .PHONY : jpgimage.cc.i
 
 jpgimage.s: jpgimage.cc.s
@@ -286,7 +286,7 @@ jpgimage.s: jpgimage.cc.s
 
 # target to generate assembly for a file
 jpgimage.cc.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.s
 .PHONY : jpgimage.cc.s
 
 lodepng.o: lodepng.cc.o
@@ -295,7 +295,7 @@ lodepng.o: lodepng.cc.o
 
 # target to build an object file
 lodepng.cc.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.o
 .PHONY : lodepng.cc.o
 
 lodepng.i: lodepng.cc.i
@@ -304,7 +304,7 @@ lodepng.i: lodepng.cc.i
 
 # target to preprocess a source file
 lodepng.cc.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.i
 .PHONY : lodepng.cc.i
 
 lodepng.s: lodepng.cc.s
@@ -313,7 +313,7 @@ lodepng.s: lodepng.cc.s
 
 # target to generate assembly for a file
 lodepng.cc.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.s
 .PHONY : lodepng.cc.s
 
 npbmimage.o: npbmimage.cc.o
@@ -322,7 +322,7 @@ npbmimage.o: npbmimage.cc.o
 
 # target to build an object file
 npbmimage.cc.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.o
 .PHONY : npbmimage.cc.o
 
 npbmimage.i: npbmimage.cc.i
@@ -331,7 +331,7 @@ npbmimage.i: npbmimage.cc.i
 
 # target to preprocess a source file
 npbmimage.cc.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.i
 .PHONY : npbmimage.cc.i
 
 npbmimage.s: npbmimage.cc.s
@@ -340,7 +340,7 @@ npbmimage.s: npbmimage.cc.s
 
 # target to generate assembly for a file
 npbmimage.cc.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.s
 .PHONY : npbmimage.cc.s
 
 pngimage.o: pngimage.cc.o
@@ -349,7 +349,7 @@ pngimage.o: pngimage.cc.o
 
 # target to build an object file
 pngimage.cc.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.o
 .PHONY : pngimage.cc.o
 
 pngimage.i: pngimage.cc.i
@@ -358,7 +358,7 @@ pngimage.i: pngimage.cc.i
 
 # target to preprocess a source file
 pngimage.cc.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.i
 .PHONY : pngimage.cc.i
 
 pngimage.s: pngimage.cc.s
@@ -367,7 +367,7 @@ pngimage.s: pngimage.cc.s
 
 # target to generate assembly for a file
 pngimage.cc.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.s
 .PHONY : pngimage.cc.s
 
 toktx.o: toktx.cc.o
@@ -376,7 +376,7 @@ toktx.o: toktx.cc.o
 
 # target to build an object file
 toktx.cc.o:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.o
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.o
 .PHONY : toktx.cc.o
 
 toktx.i: toktx.cc.i
@@ -385,7 +385,7 @@ toktx.i: toktx.cc.i
 
 # target to preprocess a source file
 toktx.cc.i:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.i
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.i
 .PHONY : toktx.cc.i
 
 toktx.s: toktx.cc.s
@@ -394,7 +394,7 @@ toktx.s: toktx.cc.s
 
 # target to generate assembly for a file
 toktx.cc.s:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.s
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build.make third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.s
 .PHONY : toktx.cc.s
 
 # Help Target
@@ -445,6 +445,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

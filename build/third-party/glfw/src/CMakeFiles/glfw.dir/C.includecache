@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include/GLFW/glfw3.h
+/home/mica/Desktop/Engine/third-party/glfw/include/GLFW/glfw3.h
 stddef.h
 -
 stdint.h
@@ -52,7 +52,7 @@ GL/gl.h
 GL/glext.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/cocoa_joystick.h
+/home/mica/Desktop/Engine/third-party/glfw/src/cocoa_joystick.h
 IOKit/IOKitLib.h
 -
 IOKit/IOCFPlugIn.h
@@ -60,7 +60,7 @@ IOKit/IOCFPlugIn.h
 IOKit/hid/IOHIDKeys.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/cocoa_platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/cocoa_platform.h
 stdint.h
 -
 Carbon/Carbon.h
@@ -70,11 +70,11 @@ IOKit/hid/IOHIDLib.h
 Cocoa/Cocoa.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/cocoa_time.h
+/home/mica/Desktop/Engine/third-party/glfw/src/cocoa_time.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/context.c
+/home/mica/Desktop/Engine/third-party/glfw/src/context.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 assert.h
 -
 stdio.h
@@ -86,9 +86,9 @@ limits.h
 stdio.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/egl_context.c
+/home/mica/Desktop/Engine/third-party/glfw/src/egl_context.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 stdio.h
 -
 string.h
@@ -98,9 +98,9 @@ stdlib.h
 assert.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/glx_context.c
+/home/mica/Desktop/Engine/third-party/glfw/src/glx_context.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 string.h
 -
 stdlib.h
@@ -108,9 +108,9 @@ stdlib.h
 assert.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/init.c
+/home/mica/Desktop/Engine/third-party/glfw/src/init.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 string.h
 -
 stdlib.h
@@ -122,11 +122,11 @@ stdarg.h
 assert.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/input.c
+/home/mica/Desktop/Engine/third-party/glfw/src/input.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 mappings.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/mappings.h
+/home/mica/Desktop/Engine/third-party/glfw/src/mappings.h
 assert.h
 -
 float.h
@@ -138,17 +138,17 @@ stdlib.h
 string.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 glfw_config.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/glfw_config.h
+/home/mica/Desktop/Engine/third-party/glfw/src/glfw_config.h
 ../include/GLFW/glfw3.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/include/GLFW/glfw3.h
+/home/mica/Desktop/Engine/third-party/glfw/include/GLFW/glfw3.h
 platform.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/platform.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/linux_joystick.c
+/home/mica/Desktop/Engine/third-party/glfw/src/linux_joystick.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 sys/types.h
 -
 sys/stat.h
@@ -170,7 +170,7 @@ string.h
 unistd.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/linux_joystick.h
+/home/mica/Desktop/Engine/third-party/glfw/src/linux_joystick.h
 linux/input.h
 -
 linux/limits.h
@@ -178,11 +178,11 @@ linux/limits.h
 regex.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/mappings.h
+/home/mica/Desktop/Engine/third-party/glfw/src/mappings.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/monitor.c
+/home/mica/Desktop/Engine/third-party/glfw/src/monitor.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 assert.h
 -
 math.h
@@ -196,21 +196,21 @@ stdlib.h
 limits.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_init.c
+/home/mica/Desktop/Engine/third-party/glfw/src/null_init.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 stdlib.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_joystick.c
+/home/mica/Desktop/Engine/third-party/glfw/src/null_joystick.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_joystick.h
+/home/mica/Desktop/Engine/third-party/glfw/src/null_joystick.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_monitor.c
+/home/mica/Desktop/Engine/third-party/glfw/src/null_monitor.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 stdlib.h
 -
 string.h
@@ -218,15 +218,15 @@ string.h
 math.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/null_platform.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_window.c
+/home/mica/Desktop/Engine/third-party/glfw/src/null_window.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 stdlib.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/osmesa_context.c
+/home/mica/Desktop/Engine/third-party/glfw/src/osmesa_context.c
 stdlib.h
 -
 string.h
@@ -234,51 +234,51 @@ string.h
 assert.h
 -
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/platform.c
+/home/mica/Desktop/Engine/third-party/glfw/src/platform.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/platform.h
 null_platform.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/null_platform.h
 win32_platform.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/win32_platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/win32_platform.h
 cocoa_platform.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/cocoa_platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/cocoa_platform.h
 wl_platform.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/wl_platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/wl_platform.h
 x11_platform.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/x11_platform.h
 null_joystick.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/null_joystick.h
+/home/mica/Desktop/Engine/third-party/glfw/src/null_joystick.h
 win32_joystick.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/win32_joystick.h
+/home/mica/Desktop/Engine/third-party/glfw/src/win32_joystick.h
 cocoa_joystick.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/cocoa_joystick.h
+/home/mica/Desktop/Engine/third-party/glfw/src/cocoa_joystick.h
 linux_joystick.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/linux_joystick.h
+/home/mica/Desktop/Engine/third-party/glfw/src/linux_joystick.h
 win32_thread.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/win32_thread.h
+/home/mica/Desktop/Engine/third-party/glfw/src/win32_thread.h
 posix_thread.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_thread.h
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_thread.h
 win32_time.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/win32_time.h
+/home/mica/Desktop/Engine/third-party/glfw/src/win32_time.h
 cocoa_time.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/cocoa_time.h
+/home/mica/Desktop/Engine/third-party/glfw/src/cocoa_time.h
 posix_time.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_time.h
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_time.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_module.c
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_module.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 dlfcn.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_poll.c
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_poll.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 signal.h
 -
 time.h
@@ -286,39 +286,39 @@ time.h
 errno.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_poll.h
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_poll.h
 poll.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_thread.c
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_thread.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 assert.h
 -
 string.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_thread.h
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_thread.h
 pthread.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_time.c
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_time.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 unistd.h
 -
 sys/time.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_time.h
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_time.h
 stdint.h
 -
 time.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/vulkan.c
+/home/mica/Desktop/Engine/third-party/glfw/src/vulkan.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 assert.h
 -
 string.h
@@ -326,9 +326,9 @@ string.h
 stdlib.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/win32_joystick.h
+/home/mica/Desktop/Engine/third-party/glfw/src/win32_joystick.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/win32_platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/win32_platform.h
 wctype.h
 -
 windows.h
@@ -342,17 +342,17 @@ dbt.h
 dwmapi.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/win32_thread.h
+/home/mica/Desktop/Engine/third-party/glfw/src/win32_thread.h
 windows.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/win32_time.h
+/home/mica/Desktop/Engine/third-party/glfw/src/win32_time.h
 windows.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/window.c
+/home/mica/Desktop/Engine/third-party/glfw/src/window.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 assert.h
 -
 string.h
@@ -362,7 +362,7 @@ stdlib.h
 float.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/wl_platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/wl_platform.h
 wayland-client-core.h
 -
 xkbcommon/xkbcommon.h
@@ -370,13 +370,13 @@ xkbcommon/xkbcommon.h
 xkbcommon/xkbcommon-compose.h
 -
 xkb_unicode.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/xkb_unicode.h
+/home/mica/Desktop/Engine/third-party/glfw/src/xkb_unicode.h
 posix_poll.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_poll.h
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_poll.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_init.c
+/home/mica/Desktop/Engine/third-party/glfw/src/x11_init.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 stdlib.h
 -
 string.h
@@ -396,9 +396,9 @@ errno.h
 assert.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_monitor.c
+/home/mica/Desktop/Engine/third-party/glfw/src/x11_monitor.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 limits.h
 -
 stdlib.h
@@ -408,7 +408,7 @@ string.h
 math.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_platform.h
+/home/mica/Desktop/Engine/third-party/glfw/src/x11_platform.h
 unistd.h
 -
 signal.h
@@ -436,13 +436,13 @@ X11/extensions/XInput2.h
 X11/extensions/shape.h
 -
 xkb_unicode.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/xkb_unicode.h
+/home/mica/Desktop/Engine/third-party/glfw/src/xkb_unicode.h
 posix_poll.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/posix_poll.h
+/home/mica/Desktop/Engine/third-party/glfw/src/posix_poll.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/x11_window.c
+/home/mica/Desktop/Engine/third-party/glfw/src/x11_window.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 X11/cursorfont.h
 -
 X11/Xmd.h
@@ -462,9 +462,9 @@ errno.h
 assert.h
 -
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/xkb_unicode.c
+/home/mica/Desktop/Engine/third-party/glfw/src/xkb_unicode.c
 internal.h
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/internal.h
+/home/mica/Desktop/Engine/third-party/glfw/src/internal.h
 
-/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/src/xkb_unicode.h
+/home/mica/Desktop/Engine/third-party/glfw/src/xkb_unicode.h
 

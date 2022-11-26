@@ -10,6 +10,7 @@ add_executable(${PROJECT_NAME} main.cpp
     VulkanCore.cpp    VulkanCore.hpp
     Loader.cpp        Loader.hpp    
     TextureLoader.cpp TextureLoader.hpp    
+    RenderPlan.cpp    RenderPlan.hpp
     ${IMGUI_SOURCES}
 )
 
