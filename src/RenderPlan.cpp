@@ -331,6 +331,25 @@ void RenderPlan::registerPipeline(const uint32_t pipelineID, const VkPipeline vk
     // matIter->second.pipelineBins.insert({ materialID, &pipeIter.first->second });
 }
 
+void RenderPlan::addDraw(const DrawInfo& drawInfo)
+{
+    auto iter = pipelineBins.find(drawInfo.pipelineID);
+    if (iter == pipelineBins.end())
+    {
+        EXIT("Attempting to add renderable to a non-registered pipeline!\n");
+    }
+
+    iter->second.renderables.push_back({
+        .indexCount = drawInfo.indexCount,
+        .instanceCount = drawInfo.instanceCount,
+        .firstIndex = drawInfo.firstIndex,
+        .vertexOffset = drawInfo.vertexOffset,
+        .firstInstance = drawInfo.drawID,
+        .vertexCount = drawInfo.vertexCount,
+    });
+}
+
+
 void RenderPlan::execute(const VkCommandBuffer vk_cmdBuff, const VkRect2D vk_renderArea)
 {
     vk_renderPassBeginInfo.framebuffer = coreResources.framebuffer->vk_handle;
@@ -345,16 +364,48 @@ void RenderPlan::execute(const VkCommandBuffer vk_cmdBuff, const VkRect2D vk_ren
         .sType = VK_STRUCTURE_TYPE_SUBPASS_END_INFO
     };
 
+    vkCmdBeginRenderPass2(vk_cmdBuff, &vk_renderPassBeginInfo, &vk_subpassBeginInfo);
 
-    vkCmdBeginRenderPass(vk_cmdBuff, &vk_renderPassBeginInfo, VK_SUBPASS_CONTENTS_INLINE);
+    // bind 0
 
-    // vkCmdBeginRenderPass2(vk_cmdBuff, &vk_renderPassBeginInfo, &vk_subpassBeginInfo);
+    for (auto& [pipelineID, pipelineBin] : pipelineBins) // active pipelines which made it past cull
+    {
+        if (pipelineBin.renderables.empty())
+        {
+            continue;
+        }
 
-    // vkCmdNextSubpass2(vk_cmdBuff, &vk_subpassBeginInfo, &vk_subpassEndInfo);
+        // bind pipeline
 
-    // vkCmdEndRenderPass2(vk_cmdBuff, &vk_subpassEndInfo);
+        vkCmdBindPipeline(vk_cmdBuff, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineBin.vk_pipeline);
 
-    vkCmdEndRenderPass(vk_cmdBuff);
+        for (const Renderable& renderable : pipelineBin.renderables) // active renderables which made it past cull
+        {
+            // draw
+
+            if (renderable.indexCount != 0)
+            {
+                vkCmdDrawIndexed(vk_cmdBuff, 
+                                renderable.indexCount,
+                                renderable.instanceCount,  // 1 for all non-instanced models
+                                renderable.firstIndex,
+                                renderable.vertexOffset,
+                                renderable.firstInstance); // index into structure containing draw + mat ID
+            }
+            else
+            {
+                vkCmdDraw(vk_cmdBuff,
+                        renderable.vertexCount,
+                        renderable.instanceCount,  // 1 for all non-instanced models
+                        renderable.vertexOffset,
+                        renderable.firstInstance); // index into structure containing draw + mat ID
+            }
+        }
+
+        pipelineBin.renderables.clear();
+    }
+
+    vkCmdEndRenderPass2(vk_cmdBuff, &vk_subpassEndInfo);
 }
 
 

@@ -66,6 +66,21 @@ public:
         std::vector<VkClearValue> vk_clearValues;
         VkExtent2D                vk_framebufferDimensions;
     };
+
+    struct DrawInfo
+    {
+        // uint8_t frustum;
+        // uint32_t matID ;
+
+        uint32_t drawID;
+        uint32_t pipelineID;
+
+        uint32_t indexCount;
+        uint32_t instanceCount;
+        uint32_t firstIndex;
+        int32_t  vertexOffset;
+        uint32_t vertexCount;
+    };
 private:
     struct CoreResources
     {
@@ -82,8 +97,6 @@ private:
         int32_t  vertexOffset;
         uint32_t firstInstance;
         uint32_t vertexCount;
-        uint32_t drawID;      // index into structure containing draw + mat ID
-        bool indexedDraw;
     };
 
     struct RenderBin_Pipeline
@@ -110,7 +123,7 @@ public:
     ~RenderPlan();
 
     void registerPipeline(const uint32_t pipelineID, const VkPipeline vk_pipeline);
-    // void addDraw(const DrawInfo& drawInfo);
+    void addDraw(const DrawInfo& drawInfo);
     void execute(const VkCommandBuffer vk_cmdBuff, const VkRect2D vk_renderArea);
 
     VkImage getAttachmentImage(const uint32_t idx);

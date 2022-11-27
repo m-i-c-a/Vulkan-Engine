@@ -6,10 +6,10 @@
 
 struct GlobalUBO
 {
-    glm::mat4 projMatrix { 1.0f };
-    glm::mat4 viewMatrix { 1.0f };
+    // glm::mat4 projMatrix { 1.0f };
+    // glm::mat4 viewMatrix { 1.0f };
     glm::mat4 projViewMatrix { 1.0f };
-    uint texID = 0;
+    // uint texID = 0;
 };
 
 struct ObjectData 
@@ -33,11 +33,6 @@ struct RenderableInfo
     uint32_t objectID;
 };
 
-struct DrawInfo
-{
-    uint32_t objectID;
-};
-
 struct MeshInfo
 {
     uint32_t m_uIndexCount = 0;
@@ -53,7 +48,7 @@ struct MatData
 struct DrawData
 {
     glm::mat4 modelMatrix { 1.0f };
-    uint32_t matID;
+    // uint32_t matID;
 };
 
 #endif // MICA_SHADER_STRUCTS_HPP

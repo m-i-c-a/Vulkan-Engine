@@ -399,6 +399,8 @@ src/CMakeFiles/engine.dir/main.cpp.o: ../src/Loader.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/RenderPlan.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/VulkanCore.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/BufferPool.hpp
+src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/PersistentDeviceBuffer.hpp
+src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/PersistentStagingBuffer.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/SceneBuffer.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/debug-utils/DebugUtilsEXT.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/main.cpp

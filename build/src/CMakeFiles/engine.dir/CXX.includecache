@@ -1196,6 +1196,18 @@ stack
 vulkan/vulkan.h
 -
 
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentDeviceBuffer.hpp
+vector
+-
+vulkan/vulkan.h
+-
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentStagingBuffer.hpp
+vector
+-
+vulkan/vulkan.h
+-
+
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
 vector
 -
@@ -1249,6 +1261,10 @@ vulkanwrapper/ShaderModule.hpp
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/ShaderModule.hpp
 core/BufferPool.hpp
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/BufferPool.hpp
+core/PersistentDeviceBuffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentDeviceBuffer.hpp
+core/PersistentStagingBuffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentStagingBuffer.hpp
 core/SceneBuffer.hpp
 /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
 debug-utils/DebugUtilsEXT.hpp

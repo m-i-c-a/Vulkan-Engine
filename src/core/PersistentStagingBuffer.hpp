@@ -5,7 +5,6 @@
 
 #include <vulkan/vulkan.h>
 
-class HostBuffer;
 class PersistentDeviceBuffer;
 
 namespace VulkanWrapper
@@ -15,7 +14,6 @@ class Buffer;
 class DeviceMemory;
 
 };
-
 
 class PersistentStagingBuffer
 {

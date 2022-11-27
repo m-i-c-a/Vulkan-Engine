@@ -21,6 +21,8 @@
 #include "vulkanwrapper/ShaderModule.hpp"
 
 #include "core/BufferPool.hpp"
+#include "core/PersistentDeviceBuffer.hpp"
+#include "core/PersistentStagingBuffer.hpp"
 #include "core/SceneBuffer.hpp"
 
 #include "debug-utils/DebugUtilsEXT.hpp"
@@ -43,6 +45,7 @@ VulkanWrapper::Pipeline createPipeline(const VkPipelineLayout vk_pipelineLayout,
 
 ModelInfo loadMesh(Core::SceneBuffer& sceneBuffer, const std::string_view& filename);
 void blit(const VkCommandBuffer vk_cmdBuff, const VkImage vk_srcImage, const VkImage vk_dstImage, const VkOffset3D vk_dimensions);
+void updateBufferDescriptorSet(const VkDevice vk_device, const VkDescriptorSet vk_descSet, const uint32_t descBinding, const VkDescriptorType vk_descType, VkDescriptorBufferInfo&& vk_descBufferInfo);
 
 void submit();
 
@@ -53,6 +56,12 @@ constexpr uint32_t MAX_RENDERABLE_COUNT = 1;
 constexpr uint32_t MAX_MATERIAL_COUNT   = 1;
 constexpr uint32_t MAX_PIPELINE_COUNT   = 1;
 constexpr uint32_t MAX_TEXTURES         = 1;
+
+constexpr float NEAR_Z = 0.1f;
+constexpr float FAR_Z = 100.0f;
+
+static float FOV = 45.0f;
+static glm::vec3 camPos { 0.0f, 0.0f, -5.0f };
 
 constexpr VkDescriptorSetVariableDescriptorCountAllocateInfo vk_descriptorSetVariableDescriptorCountAllocInfo {
     .sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_ALLOCATE_INFO_EXT,
@@ -72,8 +81,8 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
             VK_FORMAT_D32_SFLOAT      // DEPTH
         },
         .vk_clearValues = { 
-            { .color = { 1.0, 0.0, 0.0, 0.0 } },
-            { .depthStencil = { 0.0, 0u }     }
+            { .color = { 0.1, 0.1, 0.1, 0.0 } },
+            { .depthStencil = { 1.0, 0u }     }
         },
         .vk_framebufferDimensions = vulkanCore.vk_swapchainExtent
     };
@@ -88,6 +97,16 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     VulkanWrapper::DescriptorSetLayout descSetLayout = createDescriptorSetLayout();
     VulkanWrapper::DescriptorSet descSet = allocateDescriptorSet(descPool.vk_handle, descSetLayout.vk_handle, (void*)&vk_descriptorSetVariableDescriptorCountAllocInfo);
 
+    PersistentStagingBuffer persistent_stagingBuffer;
+    PersistentDeviceBuffer* globalUBO = persistent_stagingBuffer.registerDeviceBuffer(sizeof(GlobalUBO), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
+    persistent_stagingBuffer.completeRegistration();
+
+    glm::mat4 projMat = glm::perspective(FOV, ((float)WINDOW_WIDTH) / (float)WINDOW_HEIGHT, NEAR_Z, FAR_Z);
+    glm::mat4 viewMat = glm::mat4(1.0f);
+    viewMat = glm::translate(viewMat, camPos);
+    glm::mat4 projViewMat = projMat * viewMat;
+    globalUBO->update(offsetof(GlobalUBO, projViewMatrix), sizeof(glm::mat4), &(projViewMat[0][0]));
+
     // // Create / Define Resources for Uber Material State
     // Core::BufferPool<MatData> matBufferPool(MAX_MATERIAL_COUNT, 
     //                                         MAX_MATERIAL_COUNT, 
@@ -101,6 +120,11 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
                                               VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT,
                                               VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT,
                                               VK_ACCESS_2_MEMORY_READ_BIT);
+
+
+    // Update Descriptor Sets
+    updateBufferDescriptorSet(vulkanCore.vk_device, descSet.vk_handle, 0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, { globalUBO->getBuffer(), 0, VK_WHOLE_SIZE });
+    updateBufferDescriptorSet(vulkanCore.vk_device, descSet.vk_handle, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, drawBufferPool.getDescBufferInfo());
 
     // Create Global Vertex / Index Buffer
     Core::SceneBuffer sceneBuffer(sizeof(Vertex), 5000000, 2000000, 5000000);
@@ -122,8 +146,8 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     DrawData& drawData = drawBufferPool.getWritableBlock(drawDataBlockIdx);
     drawData.modelMatrix = glm::mat4(1.0f);
     drawData.modelMatrix = glm::translate(drawData.modelMatrix, glm::vec3(0.0, 0.0, 0.0));
-    drawData.modelMatrix = glm::rotate(drawData.modelMatrix, glm::half_pi<float>(), glm::vec3(1.0, 0.0, 0.0)); 
-    drawData.modelMatrix = glm::scale(drawData.modelMatrix, glm::vec3(0.1, 0.1, 0.1));
+    drawData.modelMatrix = glm::rotate(drawData.modelMatrix, glm::half_pi<float>() / 2.0f, glm::vec3(1.0, 0.0, 0.0)); 
+    // drawData.modelMatrix = glm::scale(drawData.modelMatrix, glm::vec3(0.1, 0.1, 0.1));
 
     // Upload model info
 
@@ -131,6 +155,7 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
 
     sceneBuffer.flushQueuedUploads(cmdBuff.vk_handle, true);
     drawBufferPool.flushDirtyBlocks(cmdBuff.vk_handle, true);
+    globalUBO->flush(cmdBuff.vk_handle);
 
     cmdBuff.end();
 
@@ -143,77 +168,15 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
     VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
 
-#if 0
-    // APP SPECIFIC INIT
-
-
-    // Add matID to DrawData
-
-    // Upload model information
-
-#ifdef CULL
-    // Add renderble(s) to tile
-
-    // Add tile to grid
-
-    // Cull
-#endif
-
-    // Add renderables we want to draw to Renderer
-    DrawInfo drawInfo;
-    renderer.addDraw(drawInfo);
-
-    // Render
-    renderer.execute(vk_cmdBuff);
-
-    // Submit
-
-
-
-    // Iterate over all pipelines
-    // -- create pipeline layout 
-    // -- -- hash and make sure only created once + set layout for associated material
-    // -- create pipeline
-
-    const uint32_t pipelineCount = 0;
-
-    for (uint16_t i = 0; i < pipelineCount; ++i)
-    {
-        // Get reflection info
-
-
-        // If material has not been created, create it and register with Renderer
-
-        // Create Pipeline
-
-        // Register Pipeline with Renderer
-    }
-
-    // Register materials + pipelines with renderer
-
-    // MODEL LOAD
-
-    // uint32_t renderableInfoID
-    // uint32_t matID
-    // uint32_t drawID
-
-    // Populate staging memory with draw + mat ssbo + textures updates
-
-    // Add renderables to grid
-
-    // CULL
-
-    // Add renderables to renderer
-
-    // RENDER
-
-    // Draw renderables
-
-    // SUBMIT 
-
-    // Ensure all needed uploads are done
-    // Submit
-#endif
+    const RenderPlan::DrawInfo drawInfo {
+        .drawID = drawDataBlockIdx,
+        .pipelineID = pipelineID,
+        .indexCount = model.m_uIndexCount,
+        .instanceCount = 1,
+        .firstIndex = model.m_uFirstIndex,
+        .vertexOffset = model.m_iVertexOffset,
+        .vertexCount = 0,
+    };
 
     while (!glfwWindowShouldClose(glfw_window))
     {
@@ -226,6 +189,15 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
         cmdPool.reset(0x0);
 
         cmdBuff.begin(VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
+
+        renderer.addDraw(drawInfo);
+
+        const VkBuffer vk_vertexBuffer = sceneBuffer.getVertexBuffer();
+        const VkDeviceSize offsets[1] = { 0 };
+        vkCmdBindVertexBuffers(cmdBuff.vk_handle, 0, 1, &vk_vertexBuffer, offsets);
+        vkCmdBindIndexBuffer(cmdBuff.vk_handle, sceneBuffer.getIndexBuffer(), 0, VK_INDEX_TYPE_UINT32);
+
+        vkCmdBindDescriptorSets(cmdBuff.vk_handle, VK_PIPELINE_BIND_POINT_GRAPHICS, pipelineLayout.vk_handle, 0, 1, &descSet.vk_handle, 0, nullptr);
 
         renderer.execute(cmdBuff.vk_handle, { .offset = {0, 0}, .extent = vulkanCore.vk_swapchainExtent });
 
@@ -272,6 +244,8 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     }
 
     VK_CHECK(vkDeviceWaitIdle(vulkanCore.vk_device));
+
+    delete globalUBO;
 }
 
 
@@ -378,7 +352,7 @@ VulkanWrapper::DescriptorPool createDescriptorPool()
 
 VulkanWrapper::DescriptorSetLayout createDescriptorSetLayout()
 {
-    const uint32_t bindingCount = 4;
+    const uint32_t bindingCount = 2;
 
     const VkDescriptorBindingFlags vk_bindlessFlags {
         // The size of the binding will be determined upon descriptor set allocation. 
@@ -393,8 +367,8 @@ VulkanWrapper::DescriptorSetLayout createDescriptorSetLayout()
     const VkDescriptorBindingFlags vk_descriptorBindingFlags[bindingCount] {
         0x0,
         0x0,
-        0x0,
-        vk_bindlessFlags,
+        // 0x0,
+        // vk_bindlessFlags,
     };
 
     const VkDescriptorSetLayoutBindingFlagsCreateInfo vk_descriptorSetLayoutBindingFlagsCreateInfo {
@@ -418,20 +392,20 @@ VulkanWrapper::DescriptorSetLayout createDescriptorSetLayout()
             .stageFlags = VK_SHADER_STAGE_ALL,
             .pImmutableSamplers = nullptr,
         },
-        {
-            .binding = 2,
-            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_ALL,
-            .pImmutableSamplers = nullptr,
-        },
-        {
-            .binding = 3,
-            .descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER,
-            .descriptorCount = 1,
-            .stageFlags = VK_SHADER_STAGE_ALL,
-            .pImmutableSamplers = nullptr,
-        },
+        // {
+        //     .binding = 2,
+        //     .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+        //     .descriptorCount = 1,
+        //     .stageFlags = VK_SHADER_STAGE_ALL,
+        //     .pImmutableSamplers = nullptr,
+        // },
+        // {
+        //     .binding = 3,
+        //     .descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER,
+        //     .descriptorCount = 1,
+        //     .stageFlags = VK_SHADER_STAGE_ALL,
+        //     .pImmutableSamplers = nullptr,
+        // },
     };
 
     const VkDescriptorSetLayoutCreateInfo vk_createInfo {
@@ -749,4 +723,21 @@ void blit(const VkCommandBuffer vk_cmdBuff, const VkImage vk_srcImage, const VkI
     vkCmdBlitImage2(vk_cmdBuff, &vk_blitImageInfo);
 
     vkCmdPipelineBarrier2(vk_cmdBuff, &vk_postBlitDependencyInfo);
+}
+
+void updateBufferDescriptorSet(const VkDevice vk_device, const VkDescriptorSet vk_descSet, const uint32_t descBinding, const VkDescriptorType vk_descType, VkDescriptorBufferInfo&& vk_descBufferInfo)
+{
+    const VkWriteDescriptorSet vk_writeDescriptorSet {
+        .sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET,
+        .dstSet = vk_descSet,
+        .dstBinding = descBinding,
+        .dstArrayElement = 0,
+        .descriptorCount = 1,
+        .descriptorType = vk_descType,
+        .pImageInfo = nullptr,
+        .pBufferInfo = &vk_descBufferInfo,
+        .pTexelBufferView = nullptr,
+    };
+
+    vkUpdateDescriptorSets(vk_device, 1, &vk_writeDescriptorSet, 0, nullptr);
 }
