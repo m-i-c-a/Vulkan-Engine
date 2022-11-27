@@ -61,6 +61,16 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/vulkanwra
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/vulkanwrapper/ImageView.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o: ../src/vulkanwrapper/Resource.hpp
 
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Pipeline.cpp.o: ../src/common/Defines.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Pipeline.cpp.o: ../src/vulkanwrapper/Pipeline.cpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Pipeline.cpp.o: ../src/vulkanwrapper/Pipeline.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Pipeline.cpp.o: ../src/vulkanwrapper/Resource.hpp
+
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/PipelineLayout.cpp.o: ../src/common/Defines.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/PipelineLayout.cpp.o: ../src/vulkanwrapper/PipelineLayout.cpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/PipelineLayout.cpp.o: ../src/vulkanwrapper/PipelineLayout.hpp
+src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/PipelineLayout.cpp.o: ../src/vulkanwrapper/Resource.hpp
+
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/RenderPass.cpp.o: ../src/common/Defines.hpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/RenderPass.cpp.o: ../src/vulkanwrapper/RenderPass.cpp
 src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/RenderPass.cpp.o: ../src/vulkanwrapper/RenderPass.hpp

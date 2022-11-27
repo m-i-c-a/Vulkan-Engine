@@ -21,4 +21,9 @@ CommandPool::~CommandPool()
     vkDestroyCommandPool(s_vkDevice, vk_handle, nullptr);
 }
 
+void CommandPool::reset(const VkCommandPoolResetFlags vk_flags)
+{
+    VK_CHECK(vkResetCommandPool(s_vkDevice, vk_handle, vk_flags));
+}
+
 };

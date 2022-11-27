@@ -2,11 +2,12 @@
 #include <numeric>
 
 #include "RenderPlan.hpp"
+#include "Defines.hpp"
 
-#include "core/Attachment.hpp"
 #include "vulkanwrapper/RenderPass.hpp"
 #include "vulkanwrapper/Framebuffer.hpp"
 
+#include "core/Attachment.hpp"
 
 namespace init
 {
@@ -262,6 +263,8 @@ RenderPlan::CoreResources RenderPlan::loadPlan(const InitInfo& initInfo)
             return coreResources;
         }
     };
+
+    return coreResources;
 }
 
 void RenderPlan::unloadPlan(const RenderPlanType plan, RenderPlan::CoreResources& resources)
@@ -303,24 +306,47 @@ RenderPlan::~RenderPlan()
    unloadPlan(plan, coreResources); 
 }
 
+void RenderPlan::registerPipeline(const uint32_t pipelineID, const VkPipeline vk_pipeline)
+{
+    auto iter = pipelineBins.find(pipelineID);
+    if (iter != pipelineBins.end())
+    {
+        EXIT("Attemting to add the same material twice to the renderer.\n");
+    }
 
-// void RenderPlan::execute(const VkCommandBuffer vk_cmdBuff, const VkFramebuffer vk_framebuffer, const VkRect2D vk_renderArea)
-// {
-//     vk_renderPassBeginInfo.framebuffer = vk_framebuffer;
-//     vk_renderPassBeginInfo.renderArea = vk_renderArea;
+    const RenderBin_Pipeline bin {
+        .pipelineID  = pipelineID,
+        .vk_pipeline = vk_pipeline,
+    };
 
-//     const VkSubpassBeginInfo vk_subpassBeginInfo {
-//         .sType = VK_STRUCTURE_TYPE_SUBPASS_BEGIN_INFO,
-//         .contents = VK_SUBPASS_CONTENTS_INLINE,
-//     };
+    auto pipeIter = pipelineBins.insert({ pipelineID, std::move(bin) });
+    
+    // auto matIter = materialBins.find(materialID);
+    // if (matIter == materialBins.end())
+    // {
+    //     EXIT("Attempting to add pipeline to renderer when associated material does not exist!\n");
+    // }
 
-//     const VkSubpassEndInfo vk_subpassEndInfo {
-//         .sType = VK_STRUCTURE_TYPE_SUBPASS_END_INFO
-//     };
+    // matIter->second.pipelineBins.insert({ materialID, &pipeIter.first->second });
+}
 
-//     vkCmdBeginRenderPass2(vk_cmdBuff, &vk_renderPassBeginInfo, &vk_subpassBeginInfo);
+void RenderPlan::execute(const VkCommandBuffer vk_cmdBuff, const VkRect2D vk_renderArea)
+{
+    vk_renderPassBeginInfo.framebuffer = coreResources.framebuffer->vk_handle;
+    vk_renderPassBeginInfo.renderArea = vk_renderArea;
 
-//     vkCmdNextSubpass2(vk_cmdBuff, &vk_subpassBeginInfo, &vk_subpassEndInfo);
+    const VkSubpassBeginInfo vk_subpassBeginInfo {
+        .sType = VK_STRUCTURE_TYPE_SUBPASS_BEGIN_INFO,
+        .contents = VK_SUBPASS_CONTENTS_INLINE,
+    };
 
-//     vkCmdEndRenderPass2(vk_cmdBuff, &vk_subpassEndInfo);
-// }
+    const VkSubpassEndInfo vk_subpassEndInfo {
+        .sType = VK_STRUCTURE_TYPE_SUBPASS_END_INFO
+    };
+
+    vkCmdBeginRenderPass2(vk_cmdBuff, &vk_renderPassBeginInfo, &vk_subpassBeginInfo);
+
+    // vkCmdNextSubpass2(vk_cmdBuff, &vk_subpassBeginInfo, &vk_subpassEndInfo);
+
+    vkCmdEndRenderPass2(vk_cmdBuff, &vk_subpassEndInfo);
+}

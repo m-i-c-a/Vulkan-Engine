@@ -14,25 +14,13 @@ stdio.h
 stdlib.h
 -
 
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorSet.cpp
+/home/mica/Desktop/Engine/src/vulkanwrapper/CommandPool.cpp
+CommandPool.hpp
+/home/mica/Desktop/Engine/src/vulkanwrapper/CommandPool.hpp
 Defines.hpp
 /home/mica/Desktop/Engine/src/vulkanwrapper/Defines.hpp
-DescriptorSet.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorSet.hpp
 
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorSet.hpp
-vulkan/vulkan.h
--
-Resource.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Resource.hpp
-
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorSetLayout.cpp
-Defines.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Defines.hpp
-DescriptorSetLayout.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorSetLayout.hpp
-
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorSetLayout.hpp
+/home/mica/Desktop/Engine/src/vulkanwrapper/CommandPool.hpp
 vulkan/vulkan.h
 -
 Resource.hpp

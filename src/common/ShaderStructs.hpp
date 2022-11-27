@@ -52,6 +52,7 @@ struct MatData
 
 struct DrawData
 {
+    glm::mat4 modelMatrix { 1.0f };
     uint32_t matID;
 };
 

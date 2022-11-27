@@ -1,42 +1,48 @@
 #include <vulkan/vulkan.h>
 #include <GLFW/glfw3.h>
 
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/transform.hpp>
+
 #include "Defines.hpp"
 
 #include "VulkanCore.hpp"
 #include "RenderPlan.hpp"
+#include "Loader.hpp"
 
 #include "vulkanwrapper/CommandBuffer.hpp"
 #include "vulkanwrapper/CommandPool.hpp"
 #include "vulkanwrapper/DescriptorPool.hpp"
 #include "vulkanwrapper/DescriptorSet.hpp"
 #include "vulkanwrapper/DescriptorSetLayout.hpp"
+#include "vulkanwrapper/PipelineLayout.hpp"
+#include "vulkanwrapper/Pipeline.hpp"
+#include "vulkanwrapper/ShaderModule.hpp"
 
 #include "core/BufferPool.hpp"
+#include "core/SceneBuffer.hpp"
 
 #include "debug-utils/DebugUtilsEXT.hpp"
 
-
-struct MatData
+struct ModelInfo 
 {
-    float x;
+    uint32_t m_uMeshID     = 0;
+    uint32_t m_uIndexCount = 0;
+    uint32_t m_uFirstIndex = 0;
+    int32_t  m_iVertexOffset = 0;
 };
-
-struct DrawData
-{
-    uint32_t matID;
-};
-
-// struct DrawInfo
-// {
-//     float x;
-// };
 
 void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
 
 VulkanWrapper::DescriptorPool createDescriptorPool();
 VulkanWrapper::DescriptorSetLayout createDescriptorSetLayout();
 VulkanWrapper::DescriptorSet allocateDescriptorSet(const VkDescriptorPool vk_pool, const VkDescriptorSetLayout vk_layout, void* pNext);
+VulkanWrapper::PipelineLayout createPipelineLayout(const VkDescriptorSetLayout vk_descSetLayout);
+VulkanWrapper::Pipeline createPipeline(const VkPipelineLayout vk_pipelineLayout, const VkExtent2D vk_viewportExtent);
+
+ModelInfo loadMesh(Core::SceneBuffer& sceneBuffer, const std::string_view& filename);
+
+void submit();
 
 constexpr uint32_t WINDOW_WIDTH         = 300;
 constexpr uint32_t WINDOW_HEIGHT        = 300;
@@ -59,7 +65,7 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
         .vk_sampleCount = VK_SAMPLE_COUNT_1_BIT,
         .vk_attachmentFormats = { 
             VK_FORMAT_R8G8B8A8_UNORM, // DEFUALT COLOR
-            VK_FORMAT_D32_SFLOAT    // DEPTH
+            VK_FORMAT_D32_SFLOAT      // DEPTH
         },
         .vk_clearValues = { 
             { .color = { 0.0, 0.0, 0.0, 0.0 } },
@@ -77,12 +83,12 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     VulkanWrapper::DescriptorSetLayout descSetLayout = createDescriptorSetLayout();
     VulkanWrapper::DescriptorSet descSet = allocateDescriptorSet(descPool.vk_handle, descSetLayout.vk_handle, (void*)&vk_descriptorSetVariableDescriptorCountAllocInfo);
 
-    // Create / Define Resources for Uber Material State
-    Core::BufferPool<MatData> matBufferPool(MAX_MATERIAL_COUNT, 
-                                            MAX_MATERIAL_COUNT, 
-                                            VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT,
-                                            VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT,
-                                            VK_ACCESS_2_MEMORY_READ_BIT);
+    // // Create / Define Resources for Uber Material State
+    // Core::BufferPool<MatData> matBufferPool(MAX_MATERIAL_COUNT, 
+    //                                         MAX_MATERIAL_COUNT, 
+    //                                         VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT,
+    //                                         VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT,
+    //                                         VK_ACCESS_2_MEMORY_READ_BIT);
 
     // Create / Define Resources for Uber Draw State
     Core::BufferPool<DrawData> drawBufferPool(MAX_RENDERABLE_COUNT,
@@ -91,23 +97,55 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
                                               VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT,
                                               VK_ACCESS_2_MEMORY_READ_BIT);
 
-    // Create Global Layout and set in renderer
+    // Create Global Vertex / Index Buffer
+    Core::SceneBuffer sceneBuffer(sizeof(Vertex), 5000000, 2000000, 5000000);
 
+    // Create Pipeline
+    uint32_t pipelineID = 0;
+    VulkanWrapper::PipelineLayout pipelineLayout = createPipelineLayout(descSetLayout.vk_handle);
+    VulkanWrapper::Pipeline pipeline = createPipeline(pipelineLayout.vk_handle, vulkanCore.vk_swapchainExtent);
+
+    // Register created Pipeline with renderer
+    renderer.registerPipeline(pipelineID, pipeline.vk_handle);
+
+    // Load Model - currently drawID == renderableID
+    ModelInfo model = loadMesh(sceneBuffer, "../obj-files/plane.obj");
+
+    // uint32_t matID ; // <- matBufferPool->acquireBlock()
+
+    const uint32_t drawDataBlockIdx = (uint32_t)drawBufferPool.acquireBlock();
+    DrawData& drawData = drawBufferPool.getWritableBlock(drawDataBlockIdx);
+    drawData.modelMatrix = glm::mat4(1.0f);
+    drawData.modelMatrix = glm::translate(drawData.modelMatrix, glm::vec3(0.0, 0.0, 0.0));
+    drawData.modelMatrix = glm::rotate(drawData.modelMatrix, glm::half_pi<float>(), glm::vec3(1.0, 0.0, 0.0)); 
+    drawData.modelMatrix = glm::scale(drawData.modelMatrix, glm::vec3(0.1, 0.1, 0.1));
+
+    // Upload model info
+
+    cmdBuff.begin(VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
+
+    sceneBuffer.flushQueuedUploads(cmdBuff.vk_handle, true);
+    drawBufferPool.flushDirtyBlocks(cmdBuff.vk_handle, true);
+
+    cmdBuff.end();
+
+    const VkSubmitInfo vk_submitInfo {
+        .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
+        .waitSemaphoreCount = 0,
+        .pWaitSemaphores = nullptr,
+        .pWaitDstStageMask = nullptr,
+        .commandBufferCount = 1,
+        .pCommandBuffers = &cmdBuff.vk_handle,
+        .signalSemaphoreCount = 0,
+        .pSignalSemaphores = 0,
+    };
+
+    VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
+    VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
 
 #if 0
     // APP SPECIFIC INIT
 
-    // Create Pipeline
-    uint32_t pipelineID = 0;
-    VkPipelineLayout vk_pipelineLayout;
-    VkPipeline vk_pipeline;
-
-    // Register created Pipeline with renderer
-    renderer.registerPipeline(pipelineID, vk_pipeline);
-
-    // Load Model - currently drawID == renderableID
-    uint32_t drawID; // <- drawBufferPool->acquireBlock()
-    uint32_t matID ; // <- matBufferPool->acquireBlock()
 
     // Add matID to DrawData
 
@@ -180,6 +218,46 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     while (!glfwWindowShouldClose(glfw_window))
     {
         glfwPollEvents();
+
+        VK_CHECK(vkAcquireNextImageKHR(vulkanCore.vk_device, vulkanCore.vk_swapchain, UINT64_MAX, VK_NULL_HANDLE, appCore.m_swapchainImageAcquireFence->m_vkFence, &appCore.m_uActiveSwapchainImageIdx));
+        VK_CHECK(vkWaitForFences(vulkanCore.vk_device, 1, &appCore.m_swapchainImageAcquireFence->m_vkFence, VK_TRUE, UINT64_MAX));
+        VK_CHECK(vkResetFences(vulkanCore.vk_device, 1, &appCore.m_swapchainImageAcquireFence->m_vkFence));
+
+        cmdPool.reset(0x0);
+
+        cmdBuff.begin(VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
+
+        renderer.execute(cmdBuff.vk_handle, { .offset = {0, 0}, .extent = vulkanCore.vk_swapchainExtent });
+
+        cmdBuff.end();
+
+        const VkSubmitInfo vk_submitInfo {
+            .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
+            .waitSemaphoreCount = 0,
+            .pWaitSemaphores = nullptr,
+            .pWaitDstStageMask = nullptr,
+            .commandBufferCount = 1,
+            .pCommandBuffers = &cmdBuff.vk_handle,
+            .signalSemaphoreCount = 0,
+            .pSignalSemaphores = 0,
+        };
+
+        VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
+        VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
+
+        //*** Present (wait for graphics work to complete)
+        const VkPresentInfoKHR vk_presentInfo {
+            .sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR,
+            .waitSemaphoreCount = 0,
+            .pWaitSemaphores = nullptr,
+            .swapchainCount = 1,
+            .pSwapchains = &vulkanCore.vk_swapchain,
+            .pImageIndices = &appCore.m_uActiveSwapchainImageIdx,
+            .pResults = nullptr,
+        };
+
+        VK_CHECK(vkQueuePresentKHR(vulkanCore.vk_graphicsQ, &vk_presentInfo));
+        VK_CHECK(vkDeviceWaitIdle(vulkanCore.vk_device));
     }
 
     VK_CHECK(vkDeviceWaitIdle(vulkanCore.vk_device));
@@ -371,16 +449,199 @@ VulkanWrapper::DescriptorSet allocateDescriptorSet(const VkDescriptorPool vk_poo
     VkDescriptorSetLayout vk_globalDescSetLayout;
 }
 
+VulkanWrapper::PipelineLayout createPipelineLayout(const VkDescriptorSetLayout vk_descSetLayout)
+{
+    const VkPipelineLayoutCreateInfo vk_createInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
+        .setLayoutCount = 1,
+        .pSetLayouts = &vk_descSetLayout,
+        .pushConstantRangeCount = 0,
+        .pPushConstantRanges = nullptr,
+    };
 
-// VulkanWrapper::PipelineLay
-// {
-//     const VkPipelineLayoutCreateInfo vk_pipelineLayoutCreateInfo {
-//         .sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO,
-//         .setLayoutCount = 1,
-//         .pSetLayouts = &appCore.m_vkGraphicsDescSetLayout,
-//         .pushConstantRangeCount = 0,
-//         .pPushConstantRanges = nullptr,
-//     };
+    VulkanWrapper::PipelineLayout pipelineLayout(vk_createInfo);
+    return pipelineLayout;
+}
 
-//     VK_CHECK(vkCreatePipelineLayout(vulkanCore.vk_device, &vk_pipelineLayoutCreateInfo, nullptr, &appCore.m_vkGraphicsPipelineLayout));
-// }
+VulkanWrapper::Pipeline createPipeline(const VkPipelineLayout vk_pipelineLayout, const VkExtent2D vk_viewportExtent)
+{
+    VulkanWrapper::ShaderModule vertexShaderModule = VulkanWrapper::ShaderModule();
+    vertexShaderModule.create("../shaders/spirv/shader-vert.spv");
+
+    VulkanWrapper::ShaderModule fragmentShaderModule = VulkanWrapper::ShaderModule();
+    fragmentShaderModule.create("../shaders/spirv/shader-frag.spv");
+
+    const VkPipelineShaderStageCreateInfo vk_shaderStageCreateInfos[] = {
+        {
+            .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
+            .stage = VK_SHADER_STAGE_VERTEX_BIT,
+            .module = vertexShaderModule.m_vkShaderModule,
+            .pName = "main",
+            .pSpecializationInfo = nullptr
+        },
+        {
+            .sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO,
+            .stage = VK_SHADER_STAGE_FRAGMENT_BIT,
+            .module = fragmentShaderModule.m_vkShaderModule,
+            .pName = "main",
+            .pSpecializationInfo = nullptr
+        }
+    };
+
+    const VkVertexInputBindingDescription vk_vertexInputBindingDesc {
+        .binding = 0,
+        .stride = sizeof(Vertex),
+        .inputRate = VK_VERTEX_INPUT_RATE_VERTEX,
+    };
+
+    const VkVertexInputAttributeDescription vk_vertexInputAttribDescs[] {
+        {
+            .location = 0,
+            .binding = 0,
+            .format = VK_FORMAT_R32G32B32_SFLOAT,
+            .offset = 0,
+        },
+        {
+            .location = 1,
+            .binding = 0,
+            .format = VK_FORMAT_R32G32B32_SFLOAT,
+            .offset = sizeof(float) * 3,
+        },
+        {
+            .location = 2,
+            .binding = 0,
+            .format = VK_FORMAT_R32G32_SFLOAT,
+            .offset = sizeof(float) * 6,
+        },
+    };
+
+    const VkPipelineVertexInputStateCreateInfo vk_vertexInputStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO,
+        .vertexBindingDescriptionCount = 1,
+        .pVertexBindingDescriptions = &vk_vertexInputBindingDesc,
+        .vertexAttributeDescriptionCount = ARRAYSIZE(vk_vertexInputAttribDescs),
+        .pVertexAttributeDescriptions = vk_vertexInputAttribDescs,
+    };
+
+    const VkPipelineInputAssemblyStateCreateInfo vk_inputAssemblyStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO,
+        .topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST,
+        .primitiveRestartEnable = VK_FALSE,
+    };
+
+    const VkPipelineTessellationStateCreateInfo vk_tessellationStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_TESSELLATION_STATE_CREATE_INFO,
+        .patchControlPoints = 0,
+    };
+
+    const VkViewport vk_viewport {
+        .x = 0,
+        .y = 0,
+        .width = static_cast<float>(vk_viewportExtent.width),
+        .height = static_cast<float>(vk_viewportExtent.height),
+        .minDepth = 0,
+        .maxDepth = 1,
+    };
+
+    const VkRect2D vk_scissor {
+        .offset = {.x = 0, .y = 0},
+        .extent = vk_viewportExtent,
+    };
+
+    const VkPipelineViewportStateCreateInfo vk_viewportStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO,
+        .viewportCount = 1,
+        .pViewports = &vk_viewport,
+        .scissorCount = 1,
+        .pScissors = &vk_scissor,
+    };
+
+    const VkPipelineRasterizationStateCreateInfo vk_rasterizationStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO,
+        .depthClampEnable = VK_FALSE,
+        .rasterizerDiscardEnable = VK_FALSE,
+        .polygonMode = VK_POLYGON_MODE_FILL,
+        .cullMode = VK_CULL_MODE_NONE,
+        .frontFace = VK_FRONT_FACE_CLOCKWISE,
+        .depthBiasEnable = VK_FALSE,
+        .depthBiasConstantFactor = 0.f,
+        .depthBiasClamp = 0.f,
+        .depthBiasSlopeFactor = 0.f,
+        .lineWidth = 1.f,
+    };
+
+    const VkPipelineMultisampleStateCreateInfo vk_multisampleStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO,
+        .rasterizationSamples = VK_SAMPLE_COUNT_1_BIT,
+        .sampleShadingEnable = VK_FALSE,
+        .minSampleShading = 0,
+        .pSampleMask = nullptr,
+        .alphaToCoverageEnable = VK_FALSE,
+        .alphaToOneEnable = VK_FALSE,
+    };
+
+    const VkPipelineDepthStencilStateCreateInfo vk_depthStencilStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_DEPTH_STENCIL_STATE_CREATE_INFO,
+        .depthTestEnable = VK_TRUE,
+        .depthWriteEnable = VK_TRUE,
+        .depthCompareOp = VK_COMPARE_OP_LESS,
+        .depthBoundsTestEnable = VK_FALSE,
+        .stencilTestEnable = VK_FALSE,
+    };
+
+    const VkPipelineColorBlendAttachmentState vk_colorBlendAttachmentState {
+        .blendEnable = VK_FALSE,
+        .srcColorBlendFactor = VK_BLEND_FACTOR_ZERO,
+        .dstColorBlendFactor = VK_BLEND_FACTOR_ZERO,
+        .colorBlendOp = VK_BLEND_OP_ADD,
+        .srcAlphaBlendFactor = VK_BLEND_FACTOR_ZERO,
+        .dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO,
+        .alphaBlendOp = VK_BLEND_OP_ADD,
+        .colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT,
+    };
+    
+    const VkPipelineColorBlendStateCreateInfo vk_colorBlendStateCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO,
+        .logicOpEnable = VK_FALSE,
+        .logicOp = VK_LOGIC_OP_COPY,
+        .attachmentCount = 1,
+        .pAttachments = &vk_colorBlendAttachmentState,
+        .blendConstants = { 0, 0, 0, 0 }
+    };
+
+    VkGraphicsPipelineCreateInfo vk_graphicsPipelineCreateInfo {
+        .sType = VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO,
+        .pNext = nullptr,
+        .stageCount = ARRAYSIZE(vk_shaderStageCreateInfos),
+        .pStages = vk_shaderStageCreateInfos,
+        .pVertexInputState = &vk_vertexInputStateCreateInfo,
+        .pInputAssemblyState = &vk_inputAssemblyStateCreateInfo,
+        .pTessellationState = &vk_tessellationStateCreateInfo,
+        .pViewportState = &vk_viewportStateCreateInfo,
+        .pRasterizationState = &vk_rasterizationStateCreateInfo,
+        .pMultisampleState = &vk_multisampleStateCreateInfo,
+        .pDepthStencilState = &vk_depthStencilStateCreateInfo,
+        .pColorBlendState = &vk_colorBlendStateCreateInfo,
+        .pDynamicState = nullptr,
+        .layout = vk_pipelineLayout,
+        .renderPass = VK_NULL_HANDLE,
+        .subpass = 0,
+        .basePipelineHandle = VK_NULL_HANDLE,
+        .basePipelineIndex = 0,
+    };
+
+    VulkanWrapper::Pipeline pipeline(vk_graphicsPipelineCreateInfo);
+    return pipeline;
+}
+
+ModelInfo loadMesh(Core::SceneBuffer& sceneBuffer, const std::string_view& filename)
+{
+    static uint32_t meshID = 0;
+
+    ObjectBufferData vertexIndexData = loadObjFile(filename);
+    const MeshInfo meshInfo = sceneBuffer.queueUpload(meshID, sizeof(Vertex) * vertexIndexData.vertices.size(), (void*)vertexIndexData.vertices.data(), sizeof(uint32_t) * vertexIndexData.indices.size(), vertexIndexData.indices.data());
+
+    return { meshID++, meshInfo.m_uIndexCount, meshInfo.m_uFirstIndex, meshInfo.m_iVertexOffset };
+}
+
+

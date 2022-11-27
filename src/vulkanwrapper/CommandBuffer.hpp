@@ -13,6 +13,9 @@ struct CommandBuffer : public Resource
     VkCommandBuffer vk_handle = VK_NULL_HANDLE;
 
     CommandBuffer(const VkCommandPool vk_cmdPool);
+
+    void begin(const VkCommandBufferUsageFlags vk_flags);
+    void end();
 };
 
 };

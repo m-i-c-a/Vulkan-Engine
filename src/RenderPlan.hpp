@@ -1,6 +1,7 @@
 #include <vulkan/vulkan.h>
 
 #include <vector>
+#include <unordered_map>
 
 namespace VulkanWrapper
 {
@@ -18,34 +19,34 @@ class Attachment;
 }; // Core
 
 
-struct DrawInfo
-{
+// struct DrawInfo
+// {
 
-};
+// };
 
-struct RenderThread
-{
+// struct RenderThread
+// {
 
-};
+// };
 
-struct RenderAttachment
-{
+// struct RenderAttachment
+// {
 
-};
+// };
 
-struct Pass
-{
-    // color attachment(s)
-    // depth attachment
-    // stencil attachment
+// struct Pass
+// {
+//     // color attachment(s)
+//     // depth attachment
+//     // stencil attachment
 
-    // pre dependencies
-    // post dependencies
+//     // pre dependencies
+//     // post dependencies
 
 
-    VkSubpassBeginInfo vk_subpassBeginInfo;
-    VkSubpassEndInfo   vk_subpassEndInfo;
-};
+//     VkSubpassBeginInfo vk_subpassBeginInfo;
+//     VkSubpassEndInfo   vk_subpassEndInfo;
+// };
 
 
 enum class RenderPlanType
@@ -73,26 +74,44 @@ private:
         VulkanWrapper::Framebuffer* framebuffer;
     };
 
+    struct Renderable
+    {
+        uint32_t indexCount;
+        uint32_t instanceCount;
+        uint32_t firstIndex;
+        int32_t  vertexOffset;
+        uint32_t firstInstance;
+        uint32_t vertexCount;
+        uint32_t drawID;      // index into structure containing draw + mat ID
+        bool indexedDraw;
+    };
+
+    struct RenderBin_Pipeline
+    {
+        uint32_t   pipelineID  = 0;
+        VkPipeline vk_pipeline = VK_NULL_HANDLE;
+        std::vector<Renderable> renderables;
+    };
+
     static CoreResources loadPlan(const InitInfo& initInfo);
     static void unloadPlan(const RenderPlanType plan, RenderPlan::CoreResources& resources);
 
     const RenderPlanType plan;
     const std::vector<VkClearValue> vk_clearValues; // kept around because render pass begin info reference
 
-    // VulkanWrapper::RenderPass* renderPass = nullptr;
-    // VulkanWrapper::Framebuffer* framebuffer = nullptr;
-    // std::vector<Core::Attachment*> attachments;
-
     CoreResources coreResources;
     VkRenderPassBeginInfo vk_renderPassBeginInfo;
+
+    std::unordered_map<uint32_t, RenderBin_Pipeline> pipelineBins;
+    VkDescriptorSet vk_globalDescSet = VK_NULL_HANDLE;
 
 public:
     RenderPlan(const InitInfo& initInfo);
     ~RenderPlan();
 
-    // void registerPipeline(const uint32_t pipelineID, const VkPipeline vk_pipeline);
+    void registerPipeline(const uint32_t pipelineID, const VkPipeline vk_pipeline);
     // void addDraw(const DrawInfo& drawInfo);
-    // void execute(const VkCommandBuffer vk_cmdBuff, const VkFramebuffer vk_framebuffer, const VkRect2D vk_renderArea);
+    void execute(const VkCommandBuffer vk_cmdBuff, const VkRect2D vk_renderArea);
 };
 
 /*

@@ -14,6 +14,8 @@ struct CommandPool : public Resource
 
     CommandPool(const VkCommandPoolCreateFlags vk_cmdPoolFlags, const uint32_t qFamIdx);
     ~CommandPool();
+
+    void reset(const VkCommandPoolResetFlags vk_flags);
 };
 
 };

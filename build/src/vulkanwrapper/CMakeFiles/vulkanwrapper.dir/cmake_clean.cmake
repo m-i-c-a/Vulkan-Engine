@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/vulkanwrapper.dir/Generic.cpp.o"
   "CMakeFiles/vulkanwrapper.dir/Image.cpp.o"
   "CMakeFiles/vulkanwrapper.dir/ImageView.cpp.o"
+  "CMakeFiles/vulkanwrapper.dir/Pipeline.cpp.o"
+  "CMakeFiles/vulkanwrapper.dir/PipelineLayout.cpp.o"
   "CMakeFiles/vulkanwrapper.dir/RenderPass.cpp.o"
   "CMakeFiles/vulkanwrapper.dir/Resource.cpp.o"
   "CMakeFiles/vulkanwrapper.dir/Sampler.cpp.o"

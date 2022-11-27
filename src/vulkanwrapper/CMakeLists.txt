@@ -11,6 +11,8 @@ add_library(vulkanwrapper STATIC
     Generic.cpp             Generic.hpp
     Image.cpp               Image.hpp
     ImageView.cpp           ImageView.hpp
+    Pipeline.cpp            Pipeline.hpp
+    PipelineLayout.cpp      PipelineLayout.hpp
     RenderPass.cpp          RenderPass.hpp
     Resource.cpp            Resource.hpp
     Sampler.cpp             Sampler.hpp

@@ -517,6 +517,60 @@ ImageView.cpp.s:
 	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/ImageView.cpp.s
 .PHONY : ImageView.cpp.s
 
+Pipeline.o: Pipeline.cpp.o
+
+.PHONY : Pipeline.o
+
+# target to build an object file
+Pipeline.cpp.o:
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Pipeline.cpp.o
+.PHONY : Pipeline.cpp.o
+
+Pipeline.i: Pipeline.cpp.i
+
+.PHONY : Pipeline.i
+
+# target to preprocess a source file
+Pipeline.cpp.i:
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Pipeline.cpp.i
+.PHONY : Pipeline.cpp.i
+
+Pipeline.s: Pipeline.cpp.s
+
+.PHONY : Pipeline.s
+
+# target to generate assembly for a file
+Pipeline.cpp.s:
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/Pipeline.cpp.s
+.PHONY : Pipeline.cpp.s
+
+PipelineLayout.o: PipelineLayout.cpp.o
+
+.PHONY : PipelineLayout.o
+
+# target to build an object file
+PipelineLayout.cpp.o:
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/PipelineLayout.cpp.o
+.PHONY : PipelineLayout.cpp.o
+
+PipelineLayout.i: PipelineLayout.cpp.i
+
+.PHONY : PipelineLayout.i
+
+# target to preprocess a source file
+PipelineLayout.cpp.i:
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/PipelineLayout.cpp.i
+.PHONY : PipelineLayout.cpp.i
+
+PipelineLayout.s: PipelineLayout.cpp.s
+
+.PHONY : PipelineLayout.s
+
+# target to generate assembly for a file
+PipelineLayout.cpp.s:
+	cd /home/mica/Desktop/Engine/build && $(MAKE) -f src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/build.make src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/PipelineLayout.cpp.s
+.PHONY : PipelineLayout.cpp.s
+
 RenderPass.o: RenderPass.cpp.o
 
 .PHONY : RenderPass.o
@@ -676,6 +730,12 @@ help:
 	@echo "... ImageView.o"
 	@echo "... ImageView.i"
 	@echo "... ImageView.s"
+	@echo "... Pipeline.o"
+	@echo "... Pipeline.i"
+	@echo "... Pipeline.s"
+	@echo "... PipelineLayout.o"
+	@echo "... PipelineLayout.i"
+	@echo "... PipelineLayout.s"
 	@echo "... RenderPass.o"
 	@echo "... RenderPass.i"
 	@echo "... RenderPass.s"
