@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 # Utility rule file for uninstall.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
 include third-party/glfw/CMakeFiles/uninstall.dir/progress.make
 
 third-party/glfw/CMakeFiles/uninstall:
-	cd /home/mica/Desktop/Engine/build/third-party/glfw && /usr/bin/cmake -P /home/mica/Desktop/Engine/build/third-party/glfw/cmake_uninstall.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw && /usr/bin/cmake -P /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/cmake_uninstall.cmake
 
 uninstall: third-party/glfw/CMakeFiles/uninstall
 uninstall: third-party/glfw/CMakeFiles/uninstall.dir/build.make
@@ -67,10 +67,10 @@ third-party/glfw/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : third-party/glfw/CMakeFiles/uninstall.dir/build
 
 third-party/glfw/CMakeFiles/uninstall.dir/clean:
-	cd /home/mica/Desktop/Engine/build/third-party/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : third-party/glfw/CMakeFiles/uninstall.dir/clean
 
 third-party/glfw/CMakeFiles/uninstall.dir/depend:
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Engine /home/mica/Desktop/Engine/third-party/glfw /home/mica/Desktop/Engine/build /home/mica/Desktop/Engine/build/third-party/glfw /home/mica/Desktop/Engine/build/third-party/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/glfw/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third-party/glfw/CMakeFiles/uninstall.dir/depend
 

@@ -1164,7 +1164,7 @@ detail/setup.hpp
 detail/func_vector_relational.inl
 ../third-party/glm/glm/detail/func_vector_relational.inl
 
-/home/mica/Desktop/Engine/src/Loader.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.hpp
 glm/vec2.hpp
 -
 glm/vec3.hpp
@@ -1174,7 +1174,7 @@ vector
 string
 -
 
-/home/mica/Desktop/Engine/src/RenderPlan.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/RenderPlan.hpp
 vulkan/vulkan.h
 -
 vector
@@ -1182,13 +1182,13 @@ vector
 unordered_map
 -
 
-/home/mica/Desktop/Engine/src/VulkanCore.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/VulkanCore.hpp
 vector
 -
 vulkan/vulkan.h
 -
 
-/home/mica/Desktop/Engine/src/core/BufferPool.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/BufferPool.hpp
 vector
 -
 stack
@@ -1196,7 +1196,7 @@ stack
 vulkan/vulkan.h
 -
 
-/home/mica/Desktop/Engine/src/core/SceneBuffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
 vector
 -
 stack
@@ -1206,13 +1206,13 @@ unordered_map
 vulkan/vulkan.h
 -
 ShaderStructs.hpp
-/home/mica/Desktop/Engine/src/core/ShaderStructs.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/ShaderStructs.hpp
 
-/home/mica/Desktop/Engine/src/debug-utils/DebugUtilsEXT.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/debug-utils/DebugUtilsEXT.hpp
 vulkan/vulkan.h
 -
 
-/home/mica/Desktop/Engine/src/main.cpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/main.cpp
 vulkan/vulkan.h
 -
 GLFW/glfw3.h
@@ -1222,207 +1222,213 @@ glm/gtc/matrix_transform.hpp
 glm/gtx/transform.hpp
 -
 Defines.hpp
-/home/mica/Desktop/Engine/src/Defines.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/Defines.hpp
 VulkanCore.hpp
-/home/mica/Desktop/Engine/src/VulkanCore.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/VulkanCore.hpp
 RenderPlan.hpp
-/home/mica/Desktop/Engine/src/RenderPlan.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/RenderPlan.hpp
 Loader.hpp
-/home/mica/Desktop/Engine/src/Loader.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/Loader.hpp
 vulkanwrapper/CommandBuffer.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/CommandBuffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/CommandBuffer.hpp
 vulkanwrapper/CommandPool.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/CommandPool.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/CommandPool.hpp
 vulkanwrapper/DescriptorPool.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorPool.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.hpp
 vulkanwrapper/DescriptorSet.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorSet.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorSet.hpp
 vulkanwrapper/DescriptorSetLayout.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorSetLayout.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorSetLayout.hpp
+vulkanwrapper/Fence.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Fence.hpp
 vulkanwrapper/PipelineLayout.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/PipelineLayout.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/PipelineLayout.hpp
 vulkanwrapper/Pipeline.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Pipeline.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Pipeline.hpp
 vulkanwrapper/ShaderModule.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/ShaderModule.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/ShaderModule.hpp
 core/BufferPool.hpp
-/home/mica/Desktop/Engine/src/core/BufferPool.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/BufferPool.hpp
 core/SceneBuffer.hpp
-/home/mica/Desktop/Engine/src/core/SceneBuffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
 debug-utils/DebugUtilsEXT.hpp
-/home/mica/Desktop/Engine/src/debug-utils/DebugUtilsEXT.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/debug-utils/DebugUtilsEXT.hpp
 
-/home/mica/Desktop/Engine/src/vulkanwrapper/CommandBuffer.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/CommandBuffer.hpp
 vulkan/vulkan.h
 -
 Resource.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 
-/home/mica/Desktop/Engine/src/vulkanwrapper/CommandPool.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/CommandPool.hpp
 vulkan/vulkan.h
 -
 Resource.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorPool.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorPool.hpp
 vulkan/vulkan.h
 -
 Resource.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorSet.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorSet.hpp
 vulkan/vulkan.h
 -
 Resource.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 
-/home/mica/Desktop/Engine/src/vulkanwrapper/DescriptorSetLayout.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/DescriptorSetLayout.hpp
 vulkan/vulkan.h
 -
 Resource.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 
-/home/mica/Desktop/Engine/src/vulkanwrapper/Pipeline.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Fence.hpp
 vulkan/vulkan.h
 -
 Resource.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 
-/home/mica/Desktop/Engine/src/vulkanwrapper/PipelineLayout.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Pipeline.hpp
 vulkan/vulkan.h
 -
 Resource.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 
-/home/mica/Desktop/Engine/src/vulkanwrapper/Resource.hpp
-vulkan/vulkan.h
--
-
-/home/mica/Desktop/Engine/src/vulkanwrapper/ShaderModule.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/PipelineLayout.hpp
 vulkan/vulkan.h
 -
 Resource.hpp
-/home/mica/Desktop/Engine/src/vulkanwrapper/Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std.h
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+vulkan/vulkan.h
+-
+
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/ShaderModule.hpp
+vulkan/vulkan.h
+-
+Resource.hpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/Resource.hpp
+
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h264std.h
 stdint.h
 -
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h264std_encode.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h264std_encode.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h265std.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std_decode.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h265std_decode.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vk_video/vulkan_video_codec_h265std_encode.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h265std_encode.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_platform.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vk_platform.h
 stddef.h
 -
 stdint.h
 -
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan.h
 vk_platform.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_platform.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vk_platform.h
 vulkan_core.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_core.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_core.h
 vulkan_android.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_android.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_android.h
 zircon/types.h
 -
 vulkan_fuchsia.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_fuchsia.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_fuchsia.h
 vulkan_ios.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_ios.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_ios.h
 vulkan_macos.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_macos.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_macos.h
 vulkan_metal.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_metal.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_metal.h
 vulkan_vi.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_vi.h
-wayland-client.h
--
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_vi.h
 vulkan_wayland.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_wayland.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_wayland.h
 windows.h
 -
 vulkan_win32.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_win32.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_win32.h
 xcb/xcb.h
 -
 vulkan_xcb.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xcb.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xcb.h
 X11/Xlib.h
 -
 vulkan_xlib.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xlib.h
 directfb.h
 -
 vulkan_directfb.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_directfb.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_directfb.h
 X11/Xlib.h
 -
 X11/extensions/Xrandr.h
 -
 vulkan_xlib_xrandr.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib_xrandr.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xlib_xrandr.h
 ggp_c/vulkan_types.h
 -
 vulkan_ggp.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_ggp.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_ggp.h
 screen/screen.h
 -
 vulkan_screen.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_screen.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_screen.h
 vulkan_beta.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_beta.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_beta.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_android.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_android.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_beta.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_beta.h
 vk_video/vulkan_video_codec_h264std.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_video/vulkan_video_codec_h264std.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vk_video/vulkan_video_codec_h264std.h
 vk_video/vulkan_video_codec_h264std_encode.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_video/vulkan_video_codec_h264std_encode.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vk_video/vulkan_video_codec_h264std_encode.h
 vk_video/vulkan_video_codec_h265std.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_video/vulkan_video_codec_h265std.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vk_video/vulkan_video_codec_h265std.h
 vk_video/vulkan_video_codec_h265std_encode.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_video/vulkan_video_codec_h265std_encode.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vk_video/vulkan_video_codec_h265std_encode.h
 vk_video/vulkan_video_codec_h264std_decode.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_video/vulkan_video_codec_h264std_decode.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vk_video/vulkan_video_codec_h264std_decode.h
 vk_video/vulkan_video_codec_h265std_decode.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_video/vulkan_video_codec_h265std_decode.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vk_video/vulkan_video_codec_h265std_decode.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_core.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_core.h
 vk_platform.h
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vk_platform.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vk_platform.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_directfb.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_directfb.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_fuchsia.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_fuchsia.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_ggp.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_ggp.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_ios.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_ios.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_macos.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_macos.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_metal.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_metal.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_screen.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_screen.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_vi.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_vi.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_wayland.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_wayland.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_win32.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_win32.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xcb.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xcb.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xlib.h
 
-/home/mica/Desktop/Vulkan/1.3.224.1/x86_64/include/vulkan/vulkan_xlib_xrandr.h
+/home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xlib_xrandr.h
 

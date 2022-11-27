@@ -40,4 +40,4 @@ third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/texturetests/texturet
  ../third-party/KTX-Software/tests/gtest/include/gtest/internal/gtest-type-util.h
  ../third-party/KTX-Software/tests/unittests/wthelper.h
  ../third-party/KTX-Software/utils/unused.h
- /home/mica/Desktop/Engine/third-party/KTX-Software/tests/texturetests/texturetests.cc
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/texturetests/texturetests.cc

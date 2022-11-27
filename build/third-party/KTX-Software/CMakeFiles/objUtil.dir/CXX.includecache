@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/mica/Desktop/Engine/third-party/KTX-Software/utils/argparser.cpp
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/utils/argparser.cpp
 assert.h
 -
 argparser.h
-/home/mica/Desktop/Engine/third-party/KTX-Software/utils/argparser.h
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/utils/argparser.h
 
-/home/mica/Desktop/Engine/third-party/KTX-Software/utils/argparser.h
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/utils/argparser.h
 ios
 -
 sstream

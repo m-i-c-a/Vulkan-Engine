@@ -10,12 +10,14 @@ namespace VulkanWrapper
 
 struct Fence : public Resource
 {
-    VkFence m_vkFence = VK_NULL_HANDLE;
+    VkFence vk_handle = VK_NULL_HANDLE;
 
-    Fence() = default;
+    Fence(const VkFenceCreateFlags vk_fenceFlags);
     ~Fence();
 
-    void create(const VkFenceCreateFlags vk_fenceFlags);
+    void wait();
+    void reset();
+
 };
 
 };

@@ -68,7 +68,7 @@ GL/gl.h
 GL/glext.h
 -
 
-/home/mica/Desktop/Engine/third-party/glfw/examples/gears.c
+/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/glfw/examples/gears.c
 math.h
 -
 stdlib.h

@@ -15,6 +15,7 @@
 #include "vulkanwrapper/DescriptorPool.hpp"
 #include "vulkanwrapper/DescriptorSet.hpp"
 #include "vulkanwrapper/DescriptorSetLayout.hpp"
+#include "vulkanwrapper/Fence.hpp"
 #include "vulkanwrapper/PipelineLayout.hpp"
 #include "vulkanwrapper/Pipeline.hpp"
 #include "vulkanwrapper/ShaderModule.hpp"
@@ -38,9 +39,10 @@ VulkanWrapper::DescriptorPool createDescriptorPool();
 VulkanWrapper::DescriptorSetLayout createDescriptorSetLayout();
 VulkanWrapper::DescriptorSet allocateDescriptorSet(const VkDescriptorPool vk_pool, const VkDescriptorSetLayout vk_layout, void* pNext);
 VulkanWrapper::PipelineLayout createPipelineLayout(const VkDescriptorSetLayout vk_descSetLayout);
-VulkanWrapper::Pipeline createPipeline(const VkPipelineLayout vk_pipelineLayout, const VkExtent2D vk_viewportExtent);
+VulkanWrapper::Pipeline createPipeline(const VkPipelineLayout vk_pipelineLayout, const VkExtent2D vk_viewportExtent, const VkRenderPass vk_renderPass);
 
 ModelInfo loadMesh(Core::SceneBuffer& sceneBuffer, const std::string_view& filename);
+void blit(const VkCommandBuffer vk_cmdBuff, const VkImage vk_srcImage, const VkImage vk_dstImage, const VkOffset3D vk_dimensions);
 
 void submit();
 
@@ -60,15 +62,17 @@ constexpr VkDescriptorSetVariableDescriptorCountAllocateInfo vk_descriptorSetVar
 
 void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
 {
+    uint32_t swapchainImageIdx = 0;
+
     const RenderPlan::InitInfo rendererInitInfo {
         .plan = RenderPlanType::eForward,
         .vk_sampleCount = VK_SAMPLE_COUNT_1_BIT,
         .vk_attachmentFormats = { 
-            VK_FORMAT_R8G8B8A8_UNORM, // DEFUALT COLOR
+            VK_FORMAT_B8G8R8A8_UNORM, // DEFUALT COLOR
             VK_FORMAT_D32_SFLOAT      // DEPTH
         },
         .vk_clearValues = { 
-            { .color = { 0.0, 0.0, 0.0, 0.0 } },
+            { .color = { 1.0, 0.0, 0.0, 0.0 } },
             { .depthStencil = { 0.0, 0u }     }
         },
         .vk_framebufferDimensions = vulkanCore.vk_swapchainExtent
@@ -77,6 +81,7 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     RenderPlan renderer(rendererInitInfo);
 
     // Create Global Vulkan Resources
+    VulkanWrapper::Fence          fence(0x0);
     VulkanWrapper::CommandPool    cmdPool(0x0, 0);
     VulkanWrapper::CommandBuffer  cmdBuff(cmdPool.vk_handle);
     VulkanWrapper::DescriptorPool descPool = createDescriptorPool();
@@ -103,7 +108,7 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     // Create Pipeline
     uint32_t pipelineID = 0;
     VulkanWrapper::PipelineLayout pipelineLayout = createPipelineLayout(descSetLayout.vk_handle);
-    VulkanWrapper::Pipeline pipeline = createPipeline(pipelineLayout.vk_handle, vulkanCore.vk_swapchainExtent);
+    VulkanWrapper::Pipeline pipeline = createPipeline(pipelineLayout.vk_handle, vulkanCore.vk_swapchainExtent, renderer.getRenderPass());
 
     // Register created Pipeline with renderer
     renderer.registerPipeline(pipelineID, pipeline.vk_handle);
@@ -131,13 +136,8 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
 
     const VkSubmitInfo vk_submitInfo {
         .sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
-        .waitSemaphoreCount = 0,
-        .pWaitSemaphores = nullptr,
-        .pWaitDstStageMask = nullptr,
         .commandBufferCount = 1,
         .pCommandBuffers = &cmdBuff.vk_handle,
-        .signalSemaphoreCount = 0,
-        .pSignalSemaphores = 0,
     };
 
     VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
@@ -219,9 +219,9 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     {
         glfwPollEvents();
 
-        VK_CHECK(vkAcquireNextImageKHR(vulkanCore.vk_device, vulkanCore.vk_swapchain, UINT64_MAX, VK_NULL_HANDLE, appCore.m_swapchainImageAcquireFence->m_vkFence, &appCore.m_uActiveSwapchainImageIdx));
-        VK_CHECK(vkWaitForFences(vulkanCore.vk_device, 1, &appCore.m_swapchainImageAcquireFence->m_vkFence, VK_TRUE, UINT64_MAX));
-        VK_CHECK(vkResetFences(vulkanCore.vk_device, 1, &appCore.m_swapchainImageAcquireFence->m_vkFence));
+        VK_CHECK(vkAcquireNextImageKHR(vulkanCore.vk_device, vulkanCore.vk_swapchain, UINT64_MAX, VK_NULL_HANDLE, fence.vk_handle, &swapchainImageIdx));
+        fence.wait();
+        fence.reset();
 
         cmdPool.reset(0x0);
 
@@ -245,15 +245,26 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
         VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
         VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
 
+        cmdPool.reset(0x0);
+
+        cmdBuff.begin(VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
+
+        blit(cmdBuff.vk_handle, 
+             renderer.getAttachmentImage(0),
+             vulkanCore.vk_swapchainImages[swapchainImageIdx], 
+             { (int32_t)vulkanCore.vk_swapchainExtent.width, (int32_t)vulkanCore.vk_swapchainExtent.height, 1 });
+
+        cmdBuff.end();
+
+        VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
+        VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
+
         //*** Present (wait for graphics work to complete)
         const VkPresentInfoKHR vk_presentInfo {
             .sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR,
-            .waitSemaphoreCount = 0,
-            .pWaitSemaphores = nullptr,
             .swapchainCount = 1,
             .pSwapchains = &vulkanCore.vk_swapchain,
-            .pImageIndices = &appCore.m_uActiveSwapchainImageIdx,
-            .pResults = nullptr,
+            .pImageIndices = &swapchainImageIdx,
         };
 
         VK_CHECK(vkQueuePresentKHR(vulkanCore.vk_graphicsQ, &vk_presentInfo));
@@ -288,7 +299,7 @@ int main()
         .sType = VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_VULKAN_1_3_FEATURES,
         .pNext = (void*)&vk_physicalDeviceFeatures12,
         .synchronization2 = VK_TRUE,
-        .dynamicRendering = VK_TRUE
+        // .dynamicRendering = VK_TRUE
     };
 
     const VulkanInitInfo vulkanInitInfo {
@@ -297,7 +308,8 @@ int main()
         .requestedInstanceLayerNames = { "VK_LAYER_KHRONOS_validation" },
 #endif
         .requestedInstanceExtensionNames = { "VK_KHR_surface", "VK_KHR_xcb_surface", VK_EXT_DEBUG_UTILS_EXTENSION_NAME },
-        .requestedDeviceExtensionNames = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, "VK_KHR_dynamic_rendering", VK_KHR_SYNCHRONIZATION_2_EXTENSION_NAME },
+        // .requestedDeviceExtensionNames = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, "VK_KHR_dynamic_rendering", VK_KHR_SYNCHRONIZATION_2_EXTENSION_NAME },
+        .requestedDeviceExtensionNames = { VK_KHR_SWAPCHAIN_EXTENSION_NAME, VK_KHR_SYNCHRONIZATION_2_EXTENSION_NAME },
         .requestedSwapchainImageCount = 3,
         .requestedSwapchainImageFormat = VK_FORMAT_R8G8B8_SRGB,
         .requestedSwapchainImageExtent = { WINDOW_WIDTH, WINDOW_HEIGHT },
@@ -463,7 +475,7 @@ VulkanWrapper::PipelineLayout createPipelineLayout(const VkDescriptorSetLayout v
     return pipelineLayout;
 }
 
-VulkanWrapper::Pipeline createPipeline(const VkPipelineLayout vk_pipelineLayout, const VkExtent2D vk_viewportExtent)
+VulkanWrapper::Pipeline createPipeline(const VkPipelineLayout vk_pipelineLayout, const VkExtent2D vk_viewportExtent, const VkRenderPass vk_renderPass)
 {
     VulkanWrapper::ShaderModule vertexShaderModule = VulkanWrapper::ShaderModule();
     vertexShaderModule.create("../shaders/spirv/shader-vert.spv");
@@ -624,7 +636,7 @@ VulkanWrapper::Pipeline createPipeline(const VkPipelineLayout vk_pipelineLayout,
         .pColorBlendState = &vk_colorBlendStateCreateInfo,
         .pDynamicState = nullptr,
         .layout = vk_pipelineLayout,
-        .renderPass = VK_NULL_HANDLE,
+        .renderPass = vk_renderPass,
         .subpass = 0,
         .basePipelineHandle = VK_NULL_HANDLE,
         .basePipelineIndex = 0,
@@ -644,4 +656,97 @@ ModelInfo loadMesh(Core::SceneBuffer& sceneBuffer, const std::string_view& filen
     return { meshID++, meshInfo.m_uIndexCount, meshInfo.m_uFirstIndex, meshInfo.m_iVertexOffset };
 }
 
+void blit(const VkCommandBuffer vk_cmdBuff, const VkImage vk_srcImage, const VkImage vk_dstImage, const VkOffset3D vk_dimensions)
+{
+    const VkImageMemoryBarrier2 vk_preBlitBarrier {
+        .sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2,
+        .srcStageMask = VK_PIPELINE_STAGE_2_COLOR_ATTACHMENT_OUTPUT_BIT,
+        .srcAccessMask = VK_ACCESS_2_COLOR_ATTACHMENT_WRITE_BIT,
+        .dstStageMask = VK_PIPELINE_STAGE_2_TRANSFER_BIT,
+        .dstAccessMask = VK_ACCESS_2_TRANSFER_READ_BIT | 
+                         VK_ACCESS_2_TRANSFER_WRITE_BIT,
+        .oldLayout = VK_IMAGE_LAYOUT_UNDEFINED,
+        .newLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+        .srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED,
+        .dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED,
+        .image = vk_dstImage,
+        .subresourceRange = {
+            .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
+            .baseMipLevel = 0,
+            .levelCount = 1,
+            .baseArrayLayer = 0,
+            .layerCount = 1,
+        },
+    };
 
+    const VkImageMemoryBarrier2 vk_postBlitBarrier {
+        .sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2,
+        .srcStageMask = VK_PIPELINE_STAGE_2_TRANSFER_BIT,
+        .srcAccessMask = VK_ACCESS_2_TRANSFER_WRITE_BIT,
+        .dstStageMask = VK_PIPELINE_STAGE_2_NONE,
+        .dstAccessMask = VK_ACCESS_2_NONE,
+        .oldLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+        .newLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR,
+        .srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED,
+        .dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED,
+        .image = vk_dstImage,
+        .subresourceRange = {
+            .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
+            .baseMipLevel = 0,
+            .levelCount = 1,
+            .baseArrayLayer = 0,
+            .layerCount = 1,
+        },
+    };
+
+    const VkDependencyInfo vk_preBlitDependencyInfo {
+        .sType = VK_STRUCTURE_TYPE_DEPENDENCY_INFO,
+        .imageMemoryBarrierCount = 1,
+        .pImageMemoryBarriers = &vk_preBlitBarrier,
+    };
+
+    const VkDependencyInfo vk_postBlitDependencyInfo {
+        .sType = VK_STRUCTURE_TYPE_DEPENDENCY_INFO,
+        .imageMemoryBarrierCount = 1,
+        .pImageMemoryBarriers = &vk_postBlitBarrier,
+    };
+
+    const VkImageSubresourceLayers vk_blitImageSubresource {
+        .aspectMask = VK_IMAGE_ASPECT_COLOR_BIT,
+        .mipLevel = 0,
+        .baseArrayLayer = 0,
+        .layerCount = 1,
+    };
+
+    const VkImageBlit2 vk_imageBlit {
+        .sType = VK_STRUCTURE_TYPE_IMAGE_BLIT_2,
+        .srcSubresource = vk_blitImageSubresource,
+        .srcOffsets = {
+            { 0, 0, 0 },
+            vk_dimensions,
+        },
+        .dstSubresource = vk_blitImageSubresource,
+        .dstOffsets = {
+            { 0, 0, 0 },
+            vk_dimensions,
+        },
+    };
+
+    const VkBlitImageInfo2 vk_blitImageInfo {
+        .sType = VK_STRUCTURE_TYPE_BLIT_IMAGE_INFO_2,
+        .pNext = nullptr,
+        .srcImage = vk_srcImage,
+        .srcImageLayout = VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL,
+        .dstImage = vk_dstImage,
+        .dstImageLayout = VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
+        .regionCount = 1,
+        .pRegions = &vk_imageBlit,
+        .filter = VK_FILTER_NEAREST,
+    };
+
+    vkCmdPipelineBarrier2(vk_cmdBuff, &vk_preBlitDependencyInfo);
+
+    vkCmdBlitImage2(vk_cmdBuff, &vk_blitImageInfo);
+
+    vkCmdPipelineBarrier2(vk_cmdBuff, &vk_postBlitDependencyInfo);
+}

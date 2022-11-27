@@ -112,6 +112,9 @@ public:
     void registerPipeline(const uint32_t pipelineID, const VkPipeline vk_pipeline);
     // void addDraw(const DrawInfo& drawInfo);
     void execute(const VkCommandBuffer vk_cmdBuff, const VkRect2D vk_renderArea);
+
+    VkImage getAttachmentImage(const uint32_t idx);
+    VkRenderPass getRenderPass() const;
 };
 
 /*

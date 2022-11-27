@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/mica/Desktop/Engine/third-party/KTX-Software
-BuildDirectory: /home/mica/Desktop/Engine/build/third-party/KTX-Software
+SourceDirectory: /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software
+BuildDirectory: /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: micas-comp
+Site: mica-comp
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-c++
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/mica/Desktop/Engine/third-party/KTX-Software"
+ConfigureCommand: "/usr/bin/cmake" "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 

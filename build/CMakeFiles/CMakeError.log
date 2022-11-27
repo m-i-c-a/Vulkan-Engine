@@ -1,21 +1,21 @@
 Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
-Change Dir: /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp
+Change Dir: /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_044a8/fast && /usr/bin/make -f CMakeFiles/cmTC_044a8.dir/build.make CMakeFiles/cmTC_044a8.dir/build
-make[1]: Entering directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_044a8.dir/src.c.o
-/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_044a8.dir/src.c.o   -c /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/src.c
-Linking C executable cmTC_044a8
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_044a8.dir/link.txt --verbose=1
-/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_044a8.dir/src.c.o  -o cmTC_044a8 
-/usr/bin/ld: CMakeFiles/cmTC_044a8.dir/src.c.o: in function `main':
+Run Build Command(s):/usr/bin/make cmTC_1c4e7/fast && /usr/bin/make -f CMakeFiles/cmTC_1c4e7.dir/build.make CMakeFiles/cmTC_1c4e7.dir/build
+make[1]: Entering directory '/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_1c4e7.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_1c4e7.dir/src.c.o   -c /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_1c4e7
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1c4e7.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD    CMakeFiles/cmTC_1c4e7.dir/src.c.o  -o cmTC_1c4e7 
+/usr/bin/ld: CMakeFiles/cmTC_1c4e7.dir/src.c.o: in function `main':
 src.c:(.text+0x46): undefined reference to `pthread_create'
 /usr/bin/ld: src.c:(.text+0x52): undefined reference to `pthread_detach'
 /usr/bin/ld: src.c:(.text+0x63): undefined reference to `pthread_join'
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_044a8.dir/build.make:87: cmTC_044a8] Error 1
-make[1]: Leaving directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_044a8/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_1c4e7.dir/build.make:87: cmTC_1c4e7] Error 1
+make[1]: Leaving directory '/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_1c4e7/fast] Error 2
 
 
 Source file was:
@@ -39,200 +39,20 @@ int main(void)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp
+Change Dir: /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):/usr/bin/make cmTC_66246/fast && /usr/bin/make -f CMakeFiles/cmTC_66246.dir/build.make CMakeFiles/cmTC_66246.dir/build
-make[1]: Entering directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_66246.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_66246.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
-Linking C executable cmTC_66246
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_66246.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_66246.dir/CheckFunctionExists.c.o  -o cmTC_66246  -lpthreads 
+Run Build Command(s):/usr/bin/make cmTC_0f909/fast && /usr/bin/make -f CMakeFiles/cmTC_0f909.dir/build.make CMakeFiles/cmTC_0f909.dir/build
+make[1]: Entering directory '/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f909.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0f909.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.16/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0f909
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f909.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_0f909.dir/CheckFunctionExists.c.o  -o cmTC_0f909  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-make[1]: *** [CMakeFiles/cmTC_66246.dir/build.make:87: cmTC_66246] Error 1
-make[1]: Leaving directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_66246/fast] Error 2
+make[1]: *** [CMakeFiles/cmTC_0f909.dir/build.make:87: cmTC_0f909] Error 1
+make[1]: Leaving directory '/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_0f909/fast] Error 2
 
 
 
-Determining if the CL_VERSION_2_2 exist failed with the following output:
-Change Dir: /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_a0812/fast && /usr/bin/make -f CMakeFiles/cmTC_a0812.dir/build.make CMakeFiles/cmTC_a0812.dir/build
-make[1]: Entering directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a0812.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_a0812.dir/CheckSymbolExists.c.o   -c /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
-    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[1]: *** [CMakeFiles/cmTC_a0812.dir/build.make:66: CMakeFiles/cmTC_a0812.dir/CheckSymbolExists.c.o] Error 1
-make[1]: Leaving directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_a0812/fast] Error 2
-
-
-File /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef CL_VERSION_2_2
-  return ((int*)(&CL_VERSION_2_2))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-Determining if the CL_VERSION_2_1 exist failed with the following output:
-Change Dir: /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_a2bb6/fast && /usr/bin/make -f CMakeFiles/cmTC_a2bb6.dir/build.make CMakeFiles/cmTC_a2bb6.dir/build
-make[1]: Entering directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_a2bb6.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_a2bb6.dir/CheckSymbolExists.c.o   -c /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
-    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[1]: *** [CMakeFiles/cmTC_a2bb6.dir/build.make:66: CMakeFiles/cmTC_a2bb6.dir/CheckSymbolExists.c.o] Error 1
-make[1]: Leaving directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_a2bb6/fast] Error 2
-
-
-File /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef CL_VERSION_2_1
-  return ((int*)(&CL_VERSION_2_1))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-Determining if the CL_VERSION_2_0 exist failed with the following output:
-Change Dir: /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_843d5/fast && /usr/bin/make -f CMakeFiles/cmTC_843d5.dir/build.make CMakeFiles/cmTC_843d5.dir/build
-make[1]: Entering directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_843d5.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_843d5.dir/CheckSymbolExists.c.o   -c /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
-    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[1]: *** [CMakeFiles/cmTC_843d5.dir/build.make:66: CMakeFiles/cmTC_843d5.dir/CheckSymbolExists.c.o] Error 1
-make[1]: Leaving directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_843d5/fast] Error 2
-
-
-File /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef CL_VERSION_2_0
-  return ((int*)(&CL_VERSION_2_0))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-Determining if the CL_VERSION_1_2 exist failed with the following output:
-Change Dir: /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_60474/fast && /usr/bin/make -f CMakeFiles/cmTC_60474.dir/build.make CMakeFiles/cmTC_60474.dir/build
-make[1]: Entering directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_60474.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_60474.dir/CheckSymbolExists.c.o   -c /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
-    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[1]: *** [CMakeFiles/cmTC_60474.dir/build.make:66: CMakeFiles/cmTC_60474.dir/CheckSymbolExists.c.o] Error 1
-make[1]: Leaving directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_60474/fast] Error 2
-
-
-File /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef CL_VERSION_1_2
-  return ((int*)(&CL_VERSION_1_2))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-Determining if the CL_VERSION_1_1 exist failed with the following output:
-Change Dir: /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_eb438/fast && /usr/bin/make -f CMakeFiles/cmTC_eb438.dir/build.make CMakeFiles/cmTC_eb438.dir/build
-make[1]: Entering directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_eb438.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_eb438.dir/CheckSymbolExists.c.o   -c /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
-    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[1]: *** [CMakeFiles/cmTC_eb438.dir/build.make:66: CMakeFiles/cmTC_eb438.dir/CheckSymbolExists.c.o] Error 1
-make[1]: Leaving directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_eb438/fast] Error 2
-
-
-File /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef CL_VERSION_1_1
-  return ((int*)(&CL_VERSION_1_1))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}
-Determining if the CL_VERSION_1_0 exist failed with the following output:
-Change Dir: /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):/usr/bin/make cmTC_39612/fast && /usr/bin/make -f CMakeFiles/cmTC_39612.dir/build.make CMakeFiles/cmTC_39612.dir/build
-make[1]: Entering directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_39612.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_39612.dir/CheckSymbolExists.c.o   -c /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:2:10: fatal error: OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h: No such file or directory
-    2 | #include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-compilation terminated.
-make[1]: *** [CMakeFiles/cmTC_39612.dir/build.make:66: CMakeFiles/cmTC_39612.dir/CheckSymbolExists.c.o] Error 1
-make[1]: Leaving directory '/home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp'
-make: *** [Makefile:121: cmTC_39612/fast] Error 2
-
-
-File /home/mica/Desktop/Engine/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
-#include <OpenCL_INCLUDE_DIR-NOTFOUND/CL/cl.h>
-
-int main(int argc, char** argv)
-{
-  (void)argv;
-#ifndef CL_VERSION_1_0
-  return ((int*)(&CL_VERSION_1_0))[argc];
-#else
-  (void)argc;
-  return 0;
-#endif
-}

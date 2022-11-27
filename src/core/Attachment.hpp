@@ -18,9 +18,6 @@ namespace Core
 class Attachment
 {
 private:
-    VkDeviceMemory m_vkImageMemory           = VK_NULL_HANDLE;
-    VkDescriptorImageInfo m_vkDescriptorInfo = {};
-
     VulkanWrapper::Image*         m_image     = nullptr;
     VulkanWrapper::DeviceMemory*  m_memory    = nullptr;
     VulkanWrapper::ImageView*     m_imageView = nullptr;

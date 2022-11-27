@@ -10,4 +10,4 @@ third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.
  ../third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_internal.h
  ../third-party/KTX-Software/lib/basisu/transcoder/basisu_transcoder_uastc.h
  ../third-party/KTX-Software/utils/unused.h
- /home/mica/Desktop/Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp

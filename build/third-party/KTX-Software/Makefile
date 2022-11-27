@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -104,7 +104,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Engine/build/CPackSourceConfig.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -138,7 +138,7 @@ install/fast: preinstall/fast
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -148,14 +148,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles /home/mica/Desktop/Engine/build/third-party/KTX-Software/CMakeFiles/progress.marks
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles 0
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/CMakeFiles/progress.marks
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/clean
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/clean
 .PHONY : clean
 
 # The main clean target
@@ -165,22 +165,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/preinstall
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/preinstall
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ktx_version.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx_version.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx_version.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx_version.dir/rule
 
 # Convenience name for target.
@@ -190,12 +190,12 @@ ktx_version: third-party/KTX-Software/CMakeFiles/ktx_version.dir/rule
 
 # fast build rule for target.
 ktx_version/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_version.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_version.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_version.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_version.dir/build
 .PHONY : ktx_version/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule
 
 # Convenience name for target.
@@ -205,12 +205,12 @@ ktx_read: third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule
 
 # fast build rule for target.
 ktx_read/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/build
 .PHONY : ktx_read/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ktx.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx.dir/rule
 
 # Convenience name for target.
@@ -220,12 +220,12 @@ ktx: third-party/KTX-Software/CMakeFiles/ktx.dir/rule
 
 # fast build rule for target.
 ktx/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/build
 .PHONY : ktx/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/mkvk.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/mkvk.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/mkvk.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/mkvk.dir/rule
 
 # Convenience name for target.
@@ -235,12 +235,12 @@ mkvk: third-party/KTX-Software/CMakeFiles/mkvk.dir/rule
 
 # fast build rule for target.
 mkvk/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvk.dir/build.make third-party/KTX-Software/CMakeFiles/mkvk.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvk.dir/build.make third-party/KTX-Software/CMakeFiles/mkvk.dir/build
 .PHONY : mkvk/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/rule
 
 # Convenience name for target.
@@ -250,12 +250,12 @@ makedfd2vk: third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/rule
 
 # fast build rule for target.
 makedfd2vk/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build.make third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build.make third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build
 .PHONY : makedfd2vk/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/rule
 
 # Convenience name for target.
@@ -265,12 +265,12 @@ NightlyMemCheck: third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/rule
 
 # fast build rule for target.
 NightlyMemCheck/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemCheck.dir/build
 .PHONY : NightlyMemCheck/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/NightlyTest.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyTest.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyTest.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyTest.dir/rule
 
 # Convenience name for target.
@@ -280,12 +280,12 @@ NightlyTest: third-party/KTX-Software/CMakeFiles/NightlyTest.dir/rule
 
 # fast build rule for target.
 NightlyTest/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyTest.dir/build
 .PHONY : NightlyTest/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/rule
 
 # Convenience name for target.
@@ -295,12 +295,12 @@ ContinuousConfigure: third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir
 
 # fast build rule for target.
 ContinuousConfigure/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousConfigure.dir/build
 .PHONY : ContinuousConfigure/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/rule
 
 # Convenience name for target.
@@ -310,12 +310,12 @@ ContinuousBuild: third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/rule
 
 # fast build rule for target.
 ContinuousBuild/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousBuild.dir/build
 .PHONY : ContinuousBuild/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/rule
 
 # Convenience name for target.
@@ -325,12 +325,12 @@ NightlyConfigure: third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/rule
 
 # fast build rule for target.
 NightlyConfigure/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyConfigure.dir/build
 .PHONY : NightlyConfigure/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/rule
 
 # Convenience name for target.
@@ -340,12 +340,12 @@ NightlyMemoryCheck: third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/r
 
 # fast build rule for target.
 NightlyMemoryCheck/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyMemoryCheck.dir/build
 .PHONY : NightlyMemoryCheck/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/rule
 
 # Convenience name for target.
@@ -355,12 +355,12 @@ ExperimentalTest: third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/rule
 
 # fast build rule for target.
 ExperimentalTest/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalTest.dir/build
 .PHONY : ExperimentalTest/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/rule
 
 # Convenience name for target.
@@ -370,12 +370,12 @@ ContinuousUpdate: third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/rule
 
 # fast build rule for target.
 ContinuousUpdate/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousUpdate.dir/build
 .PHONY : ContinuousUpdate/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/rule
 
 # Convenience name for target.
@@ -385,12 +385,12 @@ NightlyUpdate: third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/rule
 
 # fast build rule for target.
 NightlyUpdate/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyUpdate.dir/build
 .PHONY : NightlyUpdate/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/rule
 
 # Convenience name for target.
@@ -400,12 +400,12 @@ ExperimentalMemCheck: third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.d
 
 # fast build rule for target.
 ExperimentalMemCheck/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalMemCheck.dir/build
 .PHONY : ExperimentalMemCheck/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/rule
 
 # Convenience name for target.
@@ -415,12 +415,12 @@ ExperimentalSubmit: third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/r
 
 # fast build rule for target.
 ExperimentalSubmit/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalSubmit.dir/build
 .PHONY : ExperimentalSubmit/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/Experimental.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/Experimental.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/Experimental.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/Experimental.dir/rule
 
 # Convenience name for target.
@@ -430,12 +430,12 @@ Experimental: third-party/KTX-Software/CMakeFiles/Experimental.dir/rule
 
 # fast build rule for target.
 Experimental/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/Experimental.dir/build.make third-party/KTX-Software/CMakeFiles/Experimental.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/Experimental.dir/build.make third-party/KTX-Software/CMakeFiles/Experimental.dir/build
 .PHONY : Experimental/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/rule
 
 # Convenience name for target.
@@ -445,12 +445,12 @@ ContinuousCoverage: third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/r
 
 # fast build rule for target.
 ContinuousCoverage/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousCoverage.dir/build
 .PHONY : ContinuousCoverage/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/rule
 
 # Convenience name for target.
@@ -460,12 +460,12 @@ mkvkformatfiles: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/rule
 
 # fast build rule for target.
 mkvkformatfiles/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/build.make third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/build.make third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/build
 .PHONY : mkvkformatfiles/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/rule
 
 # Convenience name for target.
@@ -475,12 +475,12 @@ ExperimentalConfigure: third-party/KTX-Software/CMakeFiles/ExperimentalConfigure
 
 # fast build rule for target.
 ExperimentalConfigure/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalConfigure.dir/build
 .PHONY : ExperimentalConfigure/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/Continuous.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/Continuous.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/Continuous.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/Continuous.dir/rule
 
 # Convenience name for target.
@@ -490,12 +490,12 @@ Continuous: third-party/KTX-Software/CMakeFiles/Continuous.dir/rule
 
 # fast build rule for target.
 Continuous/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/Continuous.dir/build.make third-party/KTX-Software/CMakeFiles/Continuous.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/Continuous.dir/build.make third-party/KTX-Software/CMakeFiles/Continuous.dir/build
 .PHONY : Continuous/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/Nightly.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/Nightly.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/Nightly.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/Nightly.dir/rule
 
 # Convenience name for target.
@@ -505,12 +505,12 @@ Nightly: third-party/KTX-Software/CMakeFiles/Nightly.dir/rule
 
 # fast build rule for target.
 Nightly/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/Nightly.dir/build.make third-party/KTX-Software/CMakeFiles/Nightly.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/Nightly.dir/build.make third-party/KTX-Software/CMakeFiles/Nightly.dir/build
 .PHONY : Nightly/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/rule
 
 # Convenience name for target.
@@ -520,12 +520,12 @@ NightlySubmit: third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/rule
 
 # fast build rule for target.
 NightlySubmit/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/build.make third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/build.make third-party/KTX-Software/CMakeFiles/NightlySubmit.dir/build
 .PHONY : NightlySubmit/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/NightlyStart.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyStart.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyStart.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyStart.dir/rule
 
 # Convenience name for target.
@@ -535,12 +535,12 @@ NightlyStart: third-party/KTX-Software/CMakeFiles/NightlyStart.dir/rule
 
 # fast build rule for target.
 NightlyStart/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyStart.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyStart.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyStart.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyStart.dir/build
 .PHONY : NightlyStart/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/rule
 
 # Convenience name for target.
@@ -550,12 +550,12 @@ ExperimentalCoverage: third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.d
 
 # fast build rule for target.
 ExperimentalCoverage/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalCoverage.dir/build
 .PHONY : ExperimentalCoverage/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/rule
 
 # Convenience name for target.
@@ -565,12 +565,12 @@ NightlyCoverage: third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/rule
 
 # fast build rule for target.
 NightlyCoverage/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyCoverage.dir/build
 .PHONY : NightlyCoverage/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/rule
 
 # Convenience name for target.
@@ -580,12 +580,12 @@ makevk2dfd: third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/rule
 
 # fast build rule for target.
 makevk2dfd/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/build.make third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/build.make third-party/KTX-Software/CMakeFiles/makevk2dfd.dir/build
 .PHONY : makevk2dfd/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/rule
 
 # Convenience name for target.
@@ -595,12 +595,12 @@ ExperimentalStart: third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/rul
 
 # fast build rule for target.
 ExperimentalStart/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalStart.dir/build
 .PHONY : ExperimentalStart/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/rule
 
 # Convenience name for target.
@@ -610,12 +610,12 @@ NightlyBuild: third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/rule
 
 # fast build rule for target.
 NightlyBuild/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/build.make third-party/KTX-Software/CMakeFiles/NightlyBuild.dir/build
 .PHONY : NightlyBuild/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/rule
 
 # Convenience name for target.
@@ -625,12 +625,12 @@ ExperimentalBuild: third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/rul
 
 # fast build rule for target.
 ExperimentalBuild/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalBuild.dir/build
 .PHONY : ExperimentalBuild/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/rule
 
 # Convenience name for target.
@@ -640,12 +640,12 @@ ExperimentalUpdate: third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/r
 
 # fast build rule for target.
 ExperimentalUpdate/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/build.make third-party/KTX-Software/CMakeFiles/ExperimentalUpdate.dir/build
 .PHONY : ExperimentalUpdate/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/rule
 
 # Convenience name for target.
@@ -655,12 +655,12 @@ ContinuousStart: third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/rule
 
 # fast build rule for target.
 ContinuousStart/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousStart.dir/build
 .PHONY : ContinuousStart/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/objUtil.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/objUtil.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/objUtil.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/objUtil.dir/rule
 
 # Convenience name for target.
@@ -670,12 +670,12 @@ objUtil: third-party/KTX-Software/CMakeFiles/objUtil.dir/rule
 
 # fast build rule for target.
 objUtil/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/build
 .PHONY : objUtil/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/rule
 
 # Convenience name for target.
@@ -685,12 +685,12 @@ ContinuousMemCheck: third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/r
 
 # fast build rule for target.
 ContinuousMemCheck/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousMemCheck.dir/build
 .PHONY : ContinuousMemCheck/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/rule
 
 # Convenience name for target.
@@ -700,12 +700,12 @@ ContinuousTest: third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/rule
 
 # fast build rule for target.
 ContinuousTest/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousTest.dir/build
 .PHONY : ContinuousTest/fast
 
 # Convenience name for target.
 third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/rule
 .PHONY : third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/rule
 
 # Convenience name for target.
@@ -715,7 +715,7 @@ ContinuousSubmit: third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/rule
 
 # fast build rule for target.
 ContinuousSubmit/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/build.make third-party/KTX-Software/CMakeFiles/ContinuousSubmit.dir/build
 .PHONY : ContinuousSubmit/fast
 
 lib/astc_encode.o: lib/astc_encode.cpp.o
@@ -724,7 +724,7 @@ lib/astc_encode.o: lib/astc_encode.cpp.o
 
 # target to build an object file
 lib/astc_encode.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/astc_encode.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/astc_encode.cpp.o
 .PHONY : lib/astc_encode.cpp.o
 
 lib/astc_encode.i: lib/astc_encode.cpp.i
@@ -733,7 +733,7 @@ lib/astc_encode.i: lib/astc_encode.cpp.i
 
 # target to preprocess a source file
 lib/astc_encode.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/astc_encode.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/astc_encode.cpp.i
 .PHONY : lib/astc_encode.cpp.i
 
 lib/astc_encode.s: lib/astc_encode.cpp.s
@@ -742,7 +742,7 @@ lib/astc_encode.s: lib/astc_encode.cpp.s
 
 # target to generate assembly for a file
 lib/astc_encode.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/astc_encode.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/astc_encode.cpp.s
 .PHONY : lib/astc_encode.cpp.s
 
 lib/basis_encode.o: lib/basis_encode.cpp.o
@@ -751,7 +751,7 @@ lib/basis_encode.o: lib/basis_encode.cpp.o
 
 # target to build an object file
 lib/basis_encode.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_encode.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_encode.cpp.o
 .PHONY : lib/basis_encode.cpp.o
 
 lib/basis_encode.i: lib/basis_encode.cpp.i
@@ -760,7 +760,7 @@ lib/basis_encode.i: lib/basis_encode.cpp.i
 
 # target to preprocess a source file
 lib/basis_encode.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_encode.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_encode.cpp.i
 .PHONY : lib/basis_encode.cpp.i
 
 lib/basis_encode.s: lib/basis_encode.cpp.s
@@ -769,7 +769,7 @@ lib/basis_encode.s: lib/basis_encode.cpp.s
 
 # target to generate assembly for a file
 lib/basis_encode.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_encode.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_encode.cpp.s
 .PHONY : lib/basis_encode.cpp.s
 
 lib/basis_transcode.o: lib/basis_transcode.cpp.o
@@ -778,8 +778,8 @@ lib/basis_transcode.o: lib/basis_transcode.cpp.o
 
 # target to build an object file
 lib/basis_transcode.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_transcode.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_transcode.cpp.o
 .PHONY : lib/basis_transcode.cpp.o
 
 lib/basis_transcode.i: lib/basis_transcode.cpp.i
@@ -788,8 +788,8 @@ lib/basis_transcode.i: lib/basis_transcode.cpp.i
 
 # target to preprocess a source file
 lib/basis_transcode.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_transcode.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_transcode.cpp.i
 .PHONY : lib/basis_transcode.cpp.i
 
 lib/basis_transcode.s: lib/basis_transcode.cpp.s
@@ -798,8 +798,8 @@ lib/basis_transcode.s: lib/basis_transcode.cpp.s
 
 # target to generate assembly for a file
 lib/basis_transcode.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_transcode.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basis_transcode.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basis_transcode.cpp.s
 .PHONY : lib/basis_transcode.cpp.s
 
 lib/basisu/encoder/basisu_backend.o: lib/basisu/encoder/basisu_backend.cpp.o
@@ -808,7 +808,7 @@ lib/basisu/encoder/basisu_backend.o: lib/basisu/encoder/basisu_backend.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_backend.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_backend.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_backend.cpp.o
 .PHONY : lib/basisu/encoder/basisu_backend.cpp.o
 
 lib/basisu/encoder/basisu_backend.i: lib/basisu/encoder/basisu_backend.cpp.i
@@ -817,7 +817,7 @@ lib/basisu/encoder/basisu_backend.i: lib/basisu/encoder/basisu_backend.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_backend.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_backend.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_backend.cpp.i
 .PHONY : lib/basisu/encoder/basisu_backend.cpp.i
 
 lib/basisu/encoder/basisu_backend.s: lib/basisu/encoder/basisu_backend.cpp.s
@@ -826,7 +826,7 @@ lib/basisu/encoder/basisu_backend.s: lib/basisu/encoder/basisu_backend.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_backend.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_backend.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_backend.cpp.s
 .PHONY : lib/basisu/encoder/basisu_backend.cpp.s
 
 lib/basisu/encoder/basisu_basis_file.o: lib/basisu/encoder/basisu_basis_file.cpp.o
@@ -835,7 +835,7 @@ lib/basisu/encoder/basisu_basis_file.o: lib/basisu/encoder/basisu_basis_file.cpp
 
 # target to build an object file
 lib/basisu/encoder/basisu_basis_file.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_basis_file.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_basis_file.cpp.o
 .PHONY : lib/basisu/encoder/basisu_basis_file.cpp.o
 
 lib/basisu/encoder/basisu_basis_file.i: lib/basisu/encoder/basisu_basis_file.cpp.i
@@ -844,7 +844,7 @@ lib/basisu/encoder/basisu_basis_file.i: lib/basisu/encoder/basisu_basis_file.cpp
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_basis_file.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_basis_file.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_basis_file.cpp.i
 .PHONY : lib/basisu/encoder/basisu_basis_file.cpp.i
 
 lib/basisu/encoder/basisu_basis_file.s: lib/basisu/encoder/basisu_basis_file.cpp.s
@@ -853,7 +853,7 @@ lib/basisu/encoder/basisu_basis_file.s: lib/basisu/encoder/basisu_basis_file.cpp
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_basis_file.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_basis_file.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_basis_file.cpp.s
 .PHONY : lib/basisu/encoder/basisu_basis_file.cpp.s
 
 lib/basisu/encoder/basisu_bc7enc.o: lib/basisu/encoder/basisu_bc7enc.cpp.o
@@ -862,7 +862,7 @@ lib/basisu/encoder/basisu_bc7enc.o: lib/basisu/encoder/basisu_bc7enc.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_bc7enc.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_bc7enc.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_bc7enc.cpp.o
 .PHONY : lib/basisu/encoder/basisu_bc7enc.cpp.o
 
 lib/basisu/encoder/basisu_bc7enc.i: lib/basisu/encoder/basisu_bc7enc.cpp.i
@@ -871,7 +871,7 @@ lib/basisu/encoder/basisu_bc7enc.i: lib/basisu/encoder/basisu_bc7enc.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_bc7enc.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_bc7enc.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_bc7enc.cpp.i
 .PHONY : lib/basisu/encoder/basisu_bc7enc.cpp.i
 
 lib/basisu/encoder/basisu_bc7enc.s: lib/basisu/encoder/basisu_bc7enc.cpp.s
@@ -880,7 +880,7 @@ lib/basisu/encoder/basisu_bc7enc.s: lib/basisu/encoder/basisu_bc7enc.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_bc7enc.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_bc7enc.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_bc7enc.cpp.s
 .PHONY : lib/basisu/encoder/basisu_bc7enc.cpp.s
 
 lib/basisu/encoder/basisu_comp.o: lib/basisu/encoder/basisu_comp.cpp.o
@@ -889,7 +889,7 @@ lib/basisu/encoder/basisu_comp.o: lib/basisu/encoder/basisu_comp.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_comp.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_comp.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_comp.cpp.o
 .PHONY : lib/basisu/encoder/basisu_comp.cpp.o
 
 lib/basisu/encoder/basisu_comp.i: lib/basisu/encoder/basisu_comp.cpp.i
@@ -898,7 +898,7 @@ lib/basisu/encoder/basisu_comp.i: lib/basisu/encoder/basisu_comp.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_comp.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_comp.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_comp.cpp.i
 .PHONY : lib/basisu/encoder/basisu_comp.cpp.i
 
 lib/basisu/encoder/basisu_comp.s: lib/basisu/encoder/basisu_comp.cpp.s
@@ -907,7 +907,7 @@ lib/basisu/encoder/basisu_comp.s: lib/basisu/encoder/basisu_comp.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_comp.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_comp.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_comp.cpp.s
 .PHONY : lib/basisu/encoder/basisu_comp.cpp.s
 
 lib/basisu/encoder/basisu_enc.o: lib/basisu/encoder/basisu_enc.cpp.o
@@ -916,7 +916,7 @@ lib/basisu/encoder/basisu_enc.o: lib/basisu/encoder/basisu_enc.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_enc.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_enc.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_enc.cpp.o
 .PHONY : lib/basisu/encoder/basisu_enc.cpp.o
 
 lib/basisu/encoder/basisu_enc.i: lib/basisu/encoder/basisu_enc.cpp.i
@@ -925,7 +925,7 @@ lib/basisu/encoder/basisu_enc.i: lib/basisu/encoder/basisu_enc.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_enc.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_enc.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_enc.cpp.i
 .PHONY : lib/basisu/encoder/basisu_enc.cpp.i
 
 lib/basisu/encoder/basisu_enc.s: lib/basisu/encoder/basisu_enc.cpp.s
@@ -934,7 +934,7 @@ lib/basisu/encoder/basisu_enc.s: lib/basisu/encoder/basisu_enc.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_enc.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_enc.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_enc.cpp.s
 .PHONY : lib/basisu/encoder/basisu_enc.cpp.s
 
 lib/basisu/encoder/basisu_etc.o: lib/basisu/encoder/basisu_etc.cpp.o
@@ -943,7 +943,7 @@ lib/basisu/encoder/basisu_etc.o: lib/basisu/encoder/basisu_etc.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_etc.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_etc.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_etc.cpp.o
 .PHONY : lib/basisu/encoder/basisu_etc.cpp.o
 
 lib/basisu/encoder/basisu_etc.i: lib/basisu/encoder/basisu_etc.cpp.i
@@ -952,7 +952,7 @@ lib/basisu/encoder/basisu_etc.i: lib/basisu/encoder/basisu_etc.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_etc.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_etc.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_etc.cpp.i
 .PHONY : lib/basisu/encoder/basisu_etc.cpp.i
 
 lib/basisu/encoder/basisu_etc.s: lib/basisu/encoder/basisu_etc.cpp.s
@@ -961,7 +961,7 @@ lib/basisu/encoder/basisu_etc.s: lib/basisu/encoder/basisu_etc.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_etc.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_etc.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_etc.cpp.s
 .PHONY : lib/basisu/encoder/basisu_etc.cpp.s
 
 lib/basisu/encoder/basisu_frontend.o: lib/basisu/encoder/basisu_frontend.cpp.o
@@ -970,7 +970,7 @@ lib/basisu/encoder/basisu_frontend.o: lib/basisu/encoder/basisu_frontend.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_frontend.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_frontend.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_frontend.cpp.o
 .PHONY : lib/basisu/encoder/basisu_frontend.cpp.o
 
 lib/basisu/encoder/basisu_frontend.i: lib/basisu/encoder/basisu_frontend.cpp.i
@@ -979,7 +979,7 @@ lib/basisu/encoder/basisu_frontend.i: lib/basisu/encoder/basisu_frontend.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_frontend.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_frontend.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_frontend.cpp.i
 .PHONY : lib/basisu/encoder/basisu_frontend.cpp.i
 
 lib/basisu/encoder/basisu_frontend.s: lib/basisu/encoder/basisu_frontend.cpp.s
@@ -988,7 +988,7 @@ lib/basisu/encoder/basisu_frontend.s: lib/basisu/encoder/basisu_frontend.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_frontend.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_frontend.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_frontend.cpp.s
 .PHONY : lib/basisu/encoder/basisu_frontend.cpp.s
 
 lib/basisu/encoder/basisu_gpu_texture.o: lib/basisu/encoder/basisu_gpu_texture.cpp.o
@@ -997,7 +997,7 @@ lib/basisu/encoder/basisu_gpu_texture.o: lib/basisu/encoder/basisu_gpu_texture.c
 
 # target to build an object file
 lib/basisu/encoder/basisu_gpu_texture.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_gpu_texture.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_gpu_texture.cpp.o
 .PHONY : lib/basisu/encoder/basisu_gpu_texture.cpp.o
 
 lib/basisu/encoder/basisu_gpu_texture.i: lib/basisu/encoder/basisu_gpu_texture.cpp.i
@@ -1006,7 +1006,7 @@ lib/basisu/encoder/basisu_gpu_texture.i: lib/basisu/encoder/basisu_gpu_texture.c
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_gpu_texture.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_gpu_texture.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_gpu_texture.cpp.i
 .PHONY : lib/basisu/encoder/basisu_gpu_texture.cpp.i
 
 lib/basisu/encoder/basisu_gpu_texture.s: lib/basisu/encoder/basisu_gpu_texture.cpp.s
@@ -1015,7 +1015,7 @@ lib/basisu/encoder/basisu_gpu_texture.s: lib/basisu/encoder/basisu_gpu_texture.c
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_gpu_texture.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_gpu_texture.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_gpu_texture.cpp.s
 .PHONY : lib/basisu/encoder/basisu_gpu_texture.cpp.s
 
 lib/basisu/encoder/basisu_kernels_sse.o: lib/basisu/encoder/basisu_kernels_sse.cpp.o
@@ -1024,7 +1024,7 @@ lib/basisu/encoder/basisu_kernels_sse.o: lib/basisu/encoder/basisu_kernels_sse.c
 
 # target to build an object file
 lib/basisu/encoder/basisu_kernels_sse.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_kernels_sse.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_kernels_sse.cpp.o
 .PHONY : lib/basisu/encoder/basisu_kernels_sse.cpp.o
 
 lib/basisu/encoder/basisu_kernels_sse.i: lib/basisu/encoder/basisu_kernels_sse.cpp.i
@@ -1033,7 +1033,7 @@ lib/basisu/encoder/basisu_kernels_sse.i: lib/basisu/encoder/basisu_kernels_sse.c
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_kernels_sse.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_kernels_sse.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_kernels_sse.cpp.i
 .PHONY : lib/basisu/encoder/basisu_kernels_sse.cpp.i
 
 lib/basisu/encoder/basisu_kernels_sse.s: lib/basisu/encoder/basisu_kernels_sse.cpp.s
@@ -1042,7 +1042,7 @@ lib/basisu/encoder/basisu_kernels_sse.s: lib/basisu/encoder/basisu_kernels_sse.c
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_kernels_sse.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_kernels_sse.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_kernels_sse.cpp.s
 .PHONY : lib/basisu/encoder/basisu_kernels_sse.cpp.s
 
 lib/basisu/encoder/basisu_opencl.o: lib/basisu/encoder/basisu_opencl.cpp.o
@@ -1051,7 +1051,7 @@ lib/basisu/encoder/basisu_opencl.o: lib/basisu/encoder/basisu_opencl.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_opencl.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_opencl.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_opencl.cpp.o
 .PHONY : lib/basisu/encoder/basisu_opencl.cpp.o
 
 lib/basisu/encoder/basisu_opencl.i: lib/basisu/encoder/basisu_opencl.cpp.i
@@ -1060,7 +1060,7 @@ lib/basisu/encoder/basisu_opencl.i: lib/basisu/encoder/basisu_opencl.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_opencl.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_opencl.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_opencl.cpp.i
 .PHONY : lib/basisu/encoder/basisu_opencl.cpp.i
 
 lib/basisu/encoder/basisu_opencl.s: lib/basisu/encoder/basisu_opencl.cpp.s
@@ -1069,7 +1069,7 @@ lib/basisu/encoder/basisu_opencl.s: lib/basisu/encoder/basisu_opencl.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_opencl.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_opencl.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_opencl.cpp.s
 .PHONY : lib/basisu/encoder/basisu_opencl.cpp.s
 
 lib/basisu/encoder/basisu_pvrtc1_4.o: lib/basisu/encoder/basisu_pvrtc1_4.cpp.o
@@ -1078,7 +1078,7 @@ lib/basisu/encoder/basisu_pvrtc1_4.o: lib/basisu/encoder/basisu_pvrtc1_4.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_pvrtc1_4.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_pvrtc1_4.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_pvrtc1_4.cpp.o
 .PHONY : lib/basisu/encoder/basisu_pvrtc1_4.cpp.o
 
 lib/basisu/encoder/basisu_pvrtc1_4.i: lib/basisu/encoder/basisu_pvrtc1_4.cpp.i
@@ -1087,7 +1087,7 @@ lib/basisu/encoder/basisu_pvrtc1_4.i: lib/basisu/encoder/basisu_pvrtc1_4.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_pvrtc1_4.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_pvrtc1_4.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_pvrtc1_4.cpp.i
 .PHONY : lib/basisu/encoder/basisu_pvrtc1_4.cpp.i
 
 lib/basisu/encoder/basisu_pvrtc1_4.s: lib/basisu/encoder/basisu_pvrtc1_4.cpp.s
@@ -1096,7 +1096,7 @@ lib/basisu/encoder/basisu_pvrtc1_4.s: lib/basisu/encoder/basisu_pvrtc1_4.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_pvrtc1_4.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_pvrtc1_4.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_pvrtc1_4.cpp.s
 .PHONY : lib/basisu/encoder/basisu_pvrtc1_4.cpp.s
 
 lib/basisu/encoder/basisu_resample_filters.o: lib/basisu/encoder/basisu_resample_filters.cpp.o
@@ -1105,7 +1105,7 @@ lib/basisu/encoder/basisu_resample_filters.o: lib/basisu/encoder/basisu_resample
 
 # target to build an object file
 lib/basisu/encoder/basisu_resample_filters.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resample_filters.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resample_filters.cpp.o
 .PHONY : lib/basisu/encoder/basisu_resample_filters.cpp.o
 
 lib/basisu/encoder/basisu_resample_filters.i: lib/basisu/encoder/basisu_resample_filters.cpp.i
@@ -1114,7 +1114,7 @@ lib/basisu/encoder/basisu_resample_filters.i: lib/basisu/encoder/basisu_resample
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_resample_filters.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resample_filters.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resample_filters.cpp.i
 .PHONY : lib/basisu/encoder/basisu_resample_filters.cpp.i
 
 lib/basisu/encoder/basisu_resample_filters.s: lib/basisu/encoder/basisu_resample_filters.cpp.s
@@ -1123,7 +1123,7 @@ lib/basisu/encoder/basisu_resample_filters.s: lib/basisu/encoder/basisu_resample
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_resample_filters.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resample_filters.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resample_filters.cpp.s
 .PHONY : lib/basisu/encoder/basisu_resample_filters.cpp.s
 
 lib/basisu/encoder/basisu_resampler.o: lib/basisu/encoder/basisu_resampler.cpp.o
@@ -1132,7 +1132,7 @@ lib/basisu/encoder/basisu_resampler.o: lib/basisu/encoder/basisu_resampler.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_resampler.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resampler.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resampler.cpp.o
 .PHONY : lib/basisu/encoder/basisu_resampler.cpp.o
 
 lib/basisu/encoder/basisu_resampler.i: lib/basisu/encoder/basisu_resampler.cpp.i
@@ -1141,7 +1141,7 @@ lib/basisu/encoder/basisu_resampler.i: lib/basisu/encoder/basisu_resampler.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_resampler.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resampler.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resampler.cpp.i
 .PHONY : lib/basisu/encoder/basisu_resampler.cpp.i
 
 lib/basisu/encoder/basisu_resampler.s: lib/basisu/encoder/basisu_resampler.cpp.s
@@ -1150,7 +1150,7 @@ lib/basisu/encoder/basisu_resampler.s: lib/basisu/encoder/basisu_resampler.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_resampler.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resampler.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_resampler.cpp.s
 .PHONY : lib/basisu/encoder/basisu_resampler.cpp.s
 
 lib/basisu/encoder/basisu_ssim.o: lib/basisu/encoder/basisu_ssim.cpp.o
@@ -1159,7 +1159,7 @@ lib/basisu/encoder/basisu_ssim.o: lib/basisu/encoder/basisu_ssim.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_ssim.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_ssim.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_ssim.cpp.o
 .PHONY : lib/basisu/encoder/basisu_ssim.cpp.o
 
 lib/basisu/encoder/basisu_ssim.i: lib/basisu/encoder/basisu_ssim.cpp.i
@@ -1168,7 +1168,7 @@ lib/basisu/encoder/basisu_ssim.i: lib/basisu/encoder/basisu_ssim.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_ssim.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_ssim.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_ssim.cpp.i
 .PHONY : lib/basisu/encoder/basisu_ssim.cpp.i
 
 lib/basisu/encoder/basisu_ssim.s: lib/basisu/encoder/basisu_ssim.cpp.s
@@ -1177,7 +1177,7 @@ lib/basisu/encoder/basisu_ssim.s: lib/basisu/encoder/basisu_ssim.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_ssim.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_ssim.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_ssim.cpp.s
 .PHONY : lib/basisu/encoder/basisu_ssim.cpp.s
 
 lib/basisu/encoder/basisu_uastc_enc.o: lib/basisu/encoder/basisu_uastc_enc.cpp.o
@@ -1186,7 +1186,7 @@ lib/basisu/encoder/basisu_uastc_enc.o: lib/basisu/encoder/basisu_uastc_enc.cpp.o
 
 # target to build an object file
 lib/basisu/encoder/basisu_uastc_enc.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_uastc_enc.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_uastc_enc.cpp.o
 .PHONY : lib/basisu/encoder/basisu_uastc_enc.cpp.o
 
 lib/basisu/encoder/basisu_uastc_enc.i: lib/basisu/encoder/basisu_uastc_enc.cpp.i
@@ -1195,7 +1195,7 @@ lib/basisu/encoder/basisu_uastc_enc.i: lib/basisu/encoder/basisu_uastc_enc.cpp.i
 
 # target to preprocess a source file
 lib/basisu/encoder/basisu_uastc_enc.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_uastc_enc.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_uastc_enc.cpp.i
 .PHONY : lib/basisu/encoder/basisu_uastc_enc.cpp.i
 
 lib/basisu/encoder/basisu_uastc_enc.s: lib/basisu/encoder/basisu_uastc_enc.cpp.s
@@ -1204,7 +1204,7 @@ lib/basisu/encoder/basisu_uastc_enc.s: lib/basisu/encoder/basisu_uastc_enc.cpp.s
 
 # target to generate assembly for a file
 lib/basisu/encoder/basisu_uastc_enc.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_uastc_enc.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/encoder/basisu_uastc_enc.cpp.s
 .PHONY : lib/basisu/encoder/basisu_uastc_enc.cpp.s
 
 lib/basisu/transcoder/basisu_transcoder.o: lib/basisu/transcoder/basisu_transcoder.cpp.o
@@ -1213,8 +1213,8 @@ lib/basisu/transcoder/basisu_transcoder.o: lib/basisu/transcoder/basisu_transcod
 
 # target to build an object file
 lib/basisu/transcoder/basisu_transcoder.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/transcoder/basisu_transcoder.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/transcoder/basisu_transcoder.cpp.o
 .PHONY : lib/basisu/transcoder/basisu_transcoder.cpp.o
 
 lib/basisu/transcoder/basisu_transcoder.i: lib/basisu/transcoder/basisu_transcoder.cpp.i
@@ -1223,8 +1223,8 @@ lib/basisu/transcoder/basisu_transcoder.i: lib/basisu/transcoder/basisu_transcod
 
 # target to preprocess a source file
 lib/basisu/transcoder/basisu_transcoder.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/transcoder/basisu_transcoder.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/transcoder/basisu_transcoder.cpp.i
 .PHONY : lib/basisu/transcoder/basisu_transcoder.cpp.i
 
 lib/basisu/transcoder/basisu_transcoder.s: lib/basisu/transcoder/basisu_transcoder.cpp.s
@@ -1233,8 +1233,8 @@ lib/basisu/transcoder/basisu_transcoder.s: lib/basisu/transcoder/basisu_transcod
 
 # target to generate assembly for a file
 lib/basisu/transcoder/basisu_transcoder.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/transcoder/basisu_transcoder.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/transcoder/basisu_transcoder.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/transcoder/basisu_transcoder.cpp.s
 .PHONY : lib/basisu/transcoder/basisu_transcoder.cpp.s
 
 lib/basisu/zstd/zstd.o: lib/basisu/zstd/zstd.c.o
@@ -1243,8 +1243,8 @@ lib/basisu/zstd/zstd.o: lib/basisu/zstd/zstd.c.o
 
 # target to build an object file
 lib/basisu/zstd/zstd.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/zstd/zstd.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/zstd/zstd.c.o
 .PHONY : lib/basisu/zstd/zstd.c.o
 
 lib/basisu/zstd/zstd.i: lib/basisu/zstd/zstd.c.i
@@ -1253,8 +1253,8 @@ lib/basisu/zstd/zstd.i: lib/basisu/zstd/zstd.c.i
 
 # target to preprocess a source file
 lib/basisu/zstd/zstd.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/zstd/zstd.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/zstd/zstd.c.i
 .PHONY : lib/basisu/zstd/zstd.c.i
 
 lib/basisu/zstd/zstd.s: lib/basisu/zstd/zstd.c.s
@@ -1263,8 +1263,8 @@ lib/basisu/zstd/zstd.s: lib/basisu/zstd/zstd.c.s
 
 # target to generate assembly for a file
 lib/basisu/zstd/zstd.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/zstd/zstd.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/basisu/zstd/zstd.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/basisu/zstd/zstd.c.s
 .PHONY : lib/basisu/zstd/zstd.c.s
 
 lib/checkheader.o: lib/checkheader.c.o
@@ -1273,8 +1273,8 @@ lib/checkheader.o: lib/checkheader.c.o
 
 # target to build an object file
 lib/checkheader.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/checkheader.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/checkheader.c.o
 .PHONY : lib/checkheader.c.o
 
 lib/checkheader.i: lib/checkheader.c.i
@@ -1283,8 +1283,8 @@ lib/checkheader.i: lib/checkheader.c.i
 
 # target to preprocess a source file
 lib/checkheader.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/checkheader.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/checkheader.c.i
 .PHONY : lib/checkheader.c.i
 
 lib/checkheader.s: lib/checkheader.c.s
@@ -1293,8 +1293,8 @@ lib/checkheader.s: lib/checkheader.c.s
 
 # target to generate assembly for a file
 lib/checkheader.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/checkheader.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/checkheader.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/checkheader.c.s
 .PHONY : lib/checkheader.c.s
 
 lib/dfdutils/colourspaces.o: lib/dfdutils/colourspaces.c.o
@@ -1303,8 +1303,8 @@ lib/dfdutils/colourspaces.o: lib/dfdutils/colourspaces.c.o
 
 # target to build an object file
 lib/dfdutils/colourspaces.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/colourspaces.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/colourspaces.c.o
 .PHONY : lib/dfdutils/colourspaces.c.o
 
 lib/dfdutils/colourspaces.i: lib/dfdutils/colourspaces.c.i
@@ -1313,8 +1313,8 @@ lib/dfdutils/colourspaces.i: lib/dfdutils/colourspaces.c.i
 
 # target to preprocess a source file
 lib/dfdutils/colourspaces.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/colourspaces.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/colourspaces.c.i
 .PHONY : lib/dfdutils/colourspaces.c.i
 
 lib/dfdutils/colourspaces.s: lib/dfdutils/colourspaces.c.s
@@ -1323,8 +1323,8 @@ lib/dfdutils/colourspaces.s: lib/dfdutils/colourspaces.c.s
 
 # target to generate assembly for a file
 lib/dfdutils/colourspaces.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/colourspaces.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/colourspaces.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/colourspaces.c.s
 .PHONY : lib/dfdutils/colourspaces.c.s
 
 lib/dfdutils/createdfd.o: lib/dfdutils/createdfd.c.o
@@ -1333,8 +1333,8 @@ lib/dfdutils/createdfd.o: lib/dfdutils/createdfd.c.o
 
 # target to build an object file
 lib/dfdutils/createdfd.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/createdfd.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/createdfd.c.o
 .PHONY : lib/dfdutils/createdfd.c.o
 
 lib/dfdutils/createdfd.i: lib/dfdutils/createdfd.c.i
@@ -1343,8 +1343,8 @@ lib/dfdutils/createdfd.i: lib/dfdutils/createdfd.c.i
 
 # target to preprocess a source file
 lib/dfdutils/createdfd.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/createdfd.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/createdfd.c.i
 .PHONY : lib/dfdutils/createdfd.c.i
 
 lib/dfdutils/createdfd.s: lib/dfdutils/createdfd.c.s
@@ -1353,8 +1353,8 @@ lib/dfdutils/createdfd.s: lib/dfdutils/createdfd.c.s
 
 # target to generate assembly for a file
 lib/dfdutils/createdfd.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/createdfd.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/createdfd.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/createdfd.c.s
 .PHONY : lib/dfdutils/createdfd.c.s
 
 lib/dfdutils/interpretdfd.o: lib/dfdutils/interpretdfd.c.o
@@ -1363,8 +1363,8 @@ lib/dfdutils/interpretdfd.o: lib/dfdutils/interpretdfd.c.o
 
 # target to build an object file
 lib/dfdutils/interpretdfd.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/interpretdfd.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/interpretdfd.c.o
 .PHONY : lib/dfdutils/interpretdfd.c.o
 
 lib/dfdutils/interpretdfd.i: lib/dfdutils/interpretdfd.c.i
@@ -1373,8 +1373,8 @@ lib/dfdutils/interpretdfd.i: lib/dfdutils/interpretdfd.c.i
 
 # target to preprocess a source file
 lib/dfdutils/interpretdfd.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/interpretdfd.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/interpretdfd.c.i
 .PHONY : lib/dfdutils/interpretdfd.c.i
 
 lib/dfdutils/interpretdfd.s: lib/dfdutils/interpretdfd.c.s
@@ -1383,8 +1383,8 @@ lib/dfdutils/interpretdfd.s: lib/dfdutils/interpretdfd.c.s
 
 # target to generate assembly for a file
 lib/dfdutils/interpretdfd.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/interpretdfd.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/interpretdfd.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/interpretdfd.c.s
 .PHONY : lib/dfdutils/interpretdfd.c.s
 
 lib/dfdutils/printdfd.o: lib/dfdutils/printdfd.c.o
@@ -1393,8 +1393,8 @@ lib/dfdutils/printdfd.o: lib/dfdutils/printdfd.c.o
 
 # target to build an object file
 lib/dfdutils/printdfd.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/printdfd.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/printdfd.c.o
 .PHONY : lib/dfdutils/printdfd.c.o
 
 lib/dfdutils/printdfd.i: lib/dfdutils/printdfd.c.i
@@ -1403,8 +1403,8 @@ lib/dfdutils/printdfd.i: lib/dfdutils/printdfd.c.i
 
 # target to preprocess a source file
 lib/dfdutils/printdfd.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/printdfd.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/printdfd.c.i
 .PHONY : lib/dfdutils/printdfd.c.i
 
 lib/dfdutils/printdfd.s: lib/dfdutils/printdfd.c.s
@@ -1413,8 +1413,8 @@ lib/dfdutils/printdfd.s: lib/dfdutils/printdfd.c.s
 
 # target to generate assembly for a file
 lib/dfdutils/printdfd.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/printdfd.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/printdfd.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/printdfd.c.s
 .PHONY : lib/dfdutils/printdfd.c.s
 
 lib/dfdutils/queries.o: lib/dfdutils/queries.c.o
@@ -1423,8 +1423,8 @@ lib/dfdutils/queries.o: lib/dfdutils/queries.c.o
 
 # target to build an object file
 lib/dfdutils/queries.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/queries.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/queries.c.o
 .PHONY : lib/dfdutils/queries.c.o
 
 lib/dfdutils/queries.i: lib/dfdutils/queries.c.i
@@ -1433,8 +1433,8 @@ lib/dfdutils/queries.i: lib/dfdutils/queries.c.i
 
 # target to preprocess a source file
 lib/dfdutils/queries.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/queries.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/queries.c.i
 .PHONY : lib/dfdutils/queries.c.i
 
 lib/dfdutils/queries.s: lib/dfdutils/queries.c.s
@@ -1443,8 +1443,8 @@ lib/dfdutils/queries.s: lib/dfdutils/queries.c.s
 
 # target to generate assembly for a file
 lib/dfdutils/queries.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/queries.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/queries.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/queries.c.s
 .PHONY : lib/dfdutils/queries.c.s
 
 lib/dfdutils/vk2dfd.o: lib/dfdutils/vk2dfd.c.o
@@ -1453,8 +1453,8 @@ lib/dfdutils/vk2dfd.o: lib/dfdutils/vk2dfd.c.o
 
 # target to build an object file
 lib/dfdutils/vk2dfd.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/vk2dfd.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/vk2dfd.c.o
 .PHONY : lib/dfdutils/vk2dfd.c.o
 
 lib/dfdutils/vk2dfd.i: lib/dfdutils/vk2dfd.c.i
@@ -1463,8 +1463,8 @@ lib/dfdutils/vk2dfd.i: lib/dfdutils/vk2dfd.c.i
 
 # target to preprocess a source file
 lib/dfdutils/vk2dfd.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/vk2dfd.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/vk2dfd.c.i
 .PHONY : lib/dfdutils/vk2dfd.c.i
 
 lib/dfdutils/vk2dfd.s: lib/dfdutils/vk2dfd.c.s
@@ -1473,8 +1473,8 @@ lib/dfdutils/vk2dfd.s: lib/dfdutils/vk2dfd.c.s
 
 # target to generate assembly for a file
 lib/dfdutils/vk2dfd.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/vk2dfd.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/dfdutils/vk2dfd.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/dfdutils/vk2dfd.c.s
 .PHONY : lib/dfdutils/vk2dfd.c.s
 
 lib/etcdec.o: lib/etcdec.cxx.o
@@ -1483,8 +1483,8 @@ lib/etcdec.o: lib/etcdec.cxx.o
 
 # target to build an object file
 lib/etcdec.cxx.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcdec.cxx.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcdec.cxx.o
 .PHONY : lib/etcdec.cxx.o
 
 lib/etcdec.i: lib/etcdec.cxx.i
@@ -1493,8 +1493,8 @@ lib/etcdec.i: lib/etcdec.cxx.i
 
 # target to preprocess a source file
 lib/etcdec.cxx.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcdec.cxx.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcdec.cxx.i
 .PHONY : lib/etcdec.cxx.i
 
 lib/etcdec.s: lib/etcdec.cxx.s
@@ -1503,8 +1503,8 @@ lib/etcdec.s: lib/etcdec.cxx.s
 
 # target to generate assembly for a file
 lib/etcdec.cxx.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcdec.cxx.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcdec.cxx.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcdec.cxx.s
 .PHONY : lib/etcdec.cxx.s
 
 lib/etcunpack.o: lib/etcunpack.cxx.o
@@ -1513,8 +1513,8 @@ lib/etcunpack.o: lib/etcunpack.cxx.o
 
 # target to build an object file
 lib/etcunpack.cxx.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcunpack.cxx.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcunpack.cxx.o
 .PHONY : lib/etcunpack.cxx.o
 
 lib/etcunpack.i: lib/etcunpack.cxx.i
@@ -1523,8 +1523,8 @@ lib/etcunpack.i: lib/etcunpack.cxx.i
 
 # target to preprocess a source file
 lib/etcunpack.cxx.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcunpack.cxx.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcunpack.cxx.i
 .PHONY : lib/etcunpack.cxx.i
 
 lib/etcunpack.s: lib/etcunpack.cxx.s
@@ -1533,8 +1533,8 @@ lib/etcunpack.s: lib/etcunpack.cxx.s
 
 # target to generate assembly for a file
 lib/etcunpack.cxx.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcunpack.cxx.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/etcunpack.cxx.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/etcunpack.cxx.s
 .PHONY : lib/etcunpack.cxx.s
 
 lib/filestream.o: lib/filestream.c.o
@@ -1543,8 +1543,8 @@ lib/filestream.o: lib/filestream.c.o
 
 # target to build an object file
 lib/filestream.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/filestream.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/filestream.c.o
 .PHONY : lib/filestream.c.o
 
 lib/filestream.i: lib/filestream.c.i
@@ -1553,8 +1553,8 @@ lib/filestream.i: lib/filestream.c.i
 
 # target to preprocess a source file
 lib/filestream.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/filestream.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/filestream.c.i
 .PHONY : lib/filestream.c.i
 
 lib/filestream.s: lib/filestream.c.s
@@ -1563,8 +1563,8 @@ lib/filestream.s: lib/filestream.c.s
 
 # target to generate assembly for a file
 lib/filestream.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/filestream.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/filestream.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/filestream.c.s
 .PHONY : lib/filestream.c.s
 
 lib/gl_funcs.o: lib/gl_funcs.c.o
@@ -1573,8 +1573,8 @@ lib/gl_funcs.o: lib/gl_funcs.c.o
 
 # target to build an object file
 lib/gl_funcs.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/gl_funcs.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/gl_funcs.c.o
 .PHONY : lib/gl_funcs.c.o
 
 lib/gl_funcs.i: lib/gl_funcs.c.i
@@ -1583,8 +1583,8 @@ lib/gl_funcs.i: lib/gl_funcs.c.i
 
 # target to preprocess a source file
 lib/gl_funcs.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/gl_funcs.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/gl_funcs.c.i
 .PHONY : lib/gl_funcs.c.i
 
 lib/gl_funcs.s: lib/gl_funcs.c.s
@@ -1593,8 +1593,8 @@ lib/gl_funcs.s: lib/gl_funcs.c.s
 
 # target to generate assembly for a file
 lib/gl_funcs.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/gl_funcs.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/gl_funcs.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/gl_funcs.c.s
 .PHONY : lib/gl_funcs.c.s
 
 lib/glloader.o: lib/glloader.c.o
@@ -1603,8 +1603,8 @@ lib/glloader.o: lib/glloader.c.o
 
 # target to build an object file
 lib/glloader.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/glloader.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/glloader.c.o
 .PHONY : lib/glloader.c.o
 
 lib/glloader.i: lib/glloader.c.i
@@ -1613,8 +1613,8 @@ lib/glloader.i: lib/glloader.c.i
 
 # target to preprocess a source file
 lib/glloader.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/glloader.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/glloader.c.i
 .PHONY : lib/glloader.c.i
 
 lib/glloader.s: lib/glloader.c.s
@@ -1623,8 +1623,8 @@ lib/glloader.s: lib/glloader.c.s
 
 # target to generate assembly for a file
 lib/glloader.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/glloader.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/glloader.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/glloader.c.s
 .PHONY : lib/glloader.c.s
 
 lib/hashlist.o: lib/hashlist.c.o
@@ -1633,8 +1633,8 @@ lib/hashlist.o: lib/hashlist.c.o
 
 # target to build an object file
 lib/hashlist.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/hashlist.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/hashlist.c.o
 .PHONY : lib/hashlist.c.o
 
 lib/hashlist.i: lib/hashlist.c.i
@@ -1643,8 +1643,8 @@ lib/hashlist.i: lib/hashlist.c.i
 
 # target to preprocess a source file
 lib/hashlist.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/hashlist.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/hashlist.c.i
 .PHONY : lib/hashlist.c.i
 
 lib/hashlist.s: lib/hashlist.c.s
@@ -1653,8 +1653,8 @@ lib/hashlist.s: lib/hashlist.c.s
 
 # target to generate assembly for a file
 lib/hashlist.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/hashlist.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/hashlist.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/hashlist.c.s
 .PHONY : lib/hashlist.c.s
 
 lib/info.o: lib/info.c.o
@@ -1663,8 +1663,8 @@ lib/info.o: lib/info.c.o
 
 # target to build an object file
 lib/info.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/info.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/info.c.o
 .PHONY : lib/info.c.o
 
 lib/info.i: lib/info.c.i
@@ -1673,8 +1673,8 @@ lib/info.i: lib/info.c.i
 
 # target to preprocess a source file
 lib/info.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/info.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/info.c.i
 .PHONY : lib/info.c.i
 
 lib/info.s: lib/info.c.s
@@ -1683,8 +1683,8 @@ lib/info.s: lib/info.c.s
 
 # target to generate assembly for a file
 lib/info.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/info.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/info.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/info.c.s
 .PHONY : lib/info.c.s
 
 lib/memstream.o: lib/memstream.c.o
@@ -1693,8 +1693,8 @@ lib/memstream.o: lib/memstream.c.o
 
 # target to build an object file
 lib/memstream.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/memstream.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/memstream.c.o
 .PHONY : lib/memstream.c.o
 
 lib/memstream.i: lib/memstream.c.i
@@ -1703,8 +1703,8 @@ lib/memstream.i: lib/memstream.c.i
 
 # target to preprocess a source file
 lib/memstream.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/memstream.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/memstream.c.i
 .PHONY : lib/memstream.c.i
 
 lib/memstream.s: lib/memstream.c.s
@@ -1713,8 +1713,8 @@ lib/memstream.s: lib/memstream.c.s
 
 # target to generate assembly for a file
 lib/memstream.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/memstream.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/memstream.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/memstream.c.s
 .PHONY : lib/memstream.c.s
 
 lib/strings.o: lib/strings.c.o
@@ -1723,8 +1723,8 @@ lib/strings.o: lib/strings.c.o
 
 # target to build an object file
 lib/strings.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/strings.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/strings.c.o
 .PHONY : lib/strings.c.o
 
 lib/strings.i: lib/strings.c.i
@@ -1733,8 +1733,8 @@ lib/strings.i: lib/strings.c.i
 
 # target to preprocess a source file
 lib/strings.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/strings.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/strings.c.i
 .PHONY : lib/strings.c.i
 
 lib/strings.s: lib/strings.c.s
@@ -1743,8 +1743,8 @@ lib/strings.s: lib/strings.c.s
 
 # target to generate assembly for a file
 lib/strings.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/strings.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/strings.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/strings.c.s
 .PHONY : lib/strings.c.s
 
 lib/swap.o: lib/swap.c.o
@@ -1753,8 +1753,8 @@ lib/swap.o: lib/swap.c.o
 
 # target to build an object file
 lib/swap.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/swap.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/swap.c.o
 .PHONY : lib/swap.c.o
 
 lib/swap.i: lib/swap.c.i
@@ -1763,8 +1763,8 @@ lib/swap.i: lib/swap.c.i
 
 # target to preprocess a source file
 lib/swap.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/swap.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/swap.c.i
 .PHONY : lib/swap.c.i
 
 lib/swap.s: lib/swap.c.s
@@ -1773,8 +1773,8 @@ lib/swap.s: lib/swap.c.s
 
 # target to generate assembly for a file
 lib/swap.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/swap.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/swap.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/swap.c.s
 .PHONY : lib/swap.c.s
 
 lib/texture.o: lib/texture.c.o
@@ -1783,8 +1783,8 @@ lib/texture.o: lib/texture.c.o
 
 # target to build an object file
 lib/texture.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture.c.o
 .PHONY : lib/texture.c.o
 
 lib/texture.i: lib/texture.c.i
@@ -1793,8 +1793,8 @@ lib/texture.i: lib/texture.c.i
 
 # target to preprocess a source file
 lib/texture.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture.c.i
 .PHONY : lib/texture.c.i
 
 lib/texture.s: lib/texture.c.s
@@ -1803,8 +1803,8 @@ lib/texture.s: lib/texture.c.s
 
 # target to generate assembly for a file
 lib/texture.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture.c.s
 .PHONY : lib/texture.c.s
 
 lib/texture1.o: lib/texture1.c.o
@@ -1813,8 +1813,8 @@ lib/texture1.o: lib/texture1.c.o
 
 # target to build an object file
 lib/texture1.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture1.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture1.c.o
 .PHONY : lib/texture1.c.o
 
 lib/texture1.i: lib/texture1.c.i
@@ -1823,8 +1823,8 @@ lib/texture1.i: lib/texture1.c.i
 
 # target to preprocess a source file
 lib/texture1.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture1.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture1.c.i
 .PHONY : lib/texture1.c.i
 
 lib/texture1.s: lib/texture1.c.s
@@ -1833,8 +1833,8 @@ lib/texture1.s: lib/texture1.c.s
 
 # target to generate assembly for a file
 lib/texture1.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture1.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture1.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture1.c.s
 .PHONY : lib/texture1.c.s
 
 lib/texture2.o: lib/texture2.c.o
@@ -1843,8 +1843,8 @@ lib/texture2.o: lib/texture2.c.o
 
 # target to build an object file
 lib/texture2.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture2.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture2.c.o
 .PHONY : lib/texture2.c.o
 
 lib/texture2.i: lib/texture2.c.i
@@ -1853,8 +1853,8 @@ lib/texture2.i: lib/texture2.c.i
 
 # target to preprocess a source file
 lib/texture2.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture2.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture2.c.i
 .PHONY : lib/texture2.c.i
 
 lib/texture2.s: lib/texture2.c.s
@@ -1863,8 +1863,8 @@ lib/texture2.s: lib/texture2.c.s
 
 # target to generate assembly for a file
 lib/texture2.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture2.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/texture2.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/texture2.c.s
 .PHONY : lib/texture2.c.s
 
 lib/vk_funcs.o: lib/vk_funcs.c.o
@@ -1873,8 +1873,8 @@ lib/vk_funcs.o: lib/vk_funcs.c.o
 
 # target to build an object file
 lib/vk_funcs.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vk_funcs.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vk_funcs.c.o
 .PHONY : lib/vk_funcs.c.o
 
 lib/vk_funcs.i: lib/vk_funcs.c.i
@@ -1883,8 +1883,8 @@ lib/vk_funcs.i: lib/vk_funcs.c.i
 
 # target to preprocess a source file
 lib/vk_funcs.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vk_funcs.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vk_funcs.c.i
 .PHONY : lib/vk_funcs.c.i
 
 lib/vk_funcs.s: lib/vk_funcs.c.s
@@ -1893,8 +1893,8 @@ lib/vk_funcs.s: lib/vk_funcs.c.s
 
 # target to generate assembly for a file
 lib/vk_funcs.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vk_funcs.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vk_funcs.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vk_funcs.c.s
 .PHONY : lib/vk_funcs.c.s
 
 lib/vkformat_check.o: lib/vkformat_check.c.o
@@ -1903,8 +1903,8 @@ lib/vkformat_check.o: lib/vkformat_check.c.o
 
 # target to build an object file
 lib/vkformat_check.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_check.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_check.c.o
 .PHONY : lib/vkformat_check.c.o
 
 lib/vkformat_check.i: lib/vkformat_check.c.i
@@ -1913,8 +1913,8 @@ lib/vkformat_check.i: lib/vkformat_check.c.i
 
 # target to preprocess a source file
 lib/vkformat_check.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_check.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_check.c.i
 .PHONY : lib/vkformat_check.c.i
 
 lib/vkformat_check.s: lib/vkformat_check.c.s
@@ -1923,8 +1923,8 @@ lib/vkformat_check.s: lib/vkformat_check.c.s
 
 # target to generate assembly for a file
 lib/vkformat_check.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_check.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_check.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_check.c.s
 .PHONY : lib/vkformat_check.c.s
 
 lib/vkformat_str.o: lib/vkformat_str.c.o
@@ -1933,8 +1933,8 @@ lib/vkformat_str.o: lib/vkformat_str.c.o
 
 # target to build an object file
 lib/vkformat_str.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_str.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_str.c.o
 .PHONY : lib/vkformat_str.c.o
 
 lib/vkformat_str.i: lib/vkformat_str.c.i
@@ -1943,8 +1943,8 @@ lib/vkformat_str.i: lib/vkformat_str.c.i
 
 # target to preprocess a source file
 lib/vkformat_str.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_str.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_str.c.i
 .PHONY : lib/vkformat_str.c.i
 
 lib/vkformat_str.s: lib/vkformat_str.c.s
@@ -1953,8 +1953,8 @@ lib/vkformat_str.s: lib/vkformat_str.c.s
 
 # target to generate assembly for a file
 lib/vkformat_str.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_str.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkformat_str.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkformat_str.c.s
 .PHONY : lib/vkformat_str.c.s
 
 lib/vkloader.o: lib/vkloader.c.o
@@ -1963,8 +1963,8 @@ lib/vkloader.o: lib/vkloader.c.o
 
 # target to build an object file
 lib/vkloader.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.o
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkloader.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkloader.c.o
 .PHONY : lib/vkloader.c.o
 
 lib/vkloader.i: lib/vkloader.c.i
@@ -1973,8 +1973,8 @@ lib/vkloader.i: lib/vkloader.c.i
 
 # target to preprocess a source file
 lib/vkloader.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.i
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkloader.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkloader.c.i
 .PHONY : lib/vkloader.c.i
 
 lib/vkloader.s: lib/vkloader.c.s
@@ -1983,8 +1983,8 @@ lib/vkloader.s: lib/vkloader.c.s
 
 # target to generate assembly for a file
 lib/vkloader.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.s
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkloader.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/lib/vkloader.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/vkloader.c.s
 .PHONY : lib/vkloader.c.s
 
 lib/writer1.o: lib/writer1.c.o
@@ -1993,7 +1993,7 @@ lib/writer1.o: lib/writer1.c.o
 
 # target to build an object file
 lib/writer1.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer1.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer1.c.o
 .PHONY : lib/writer1.c.o
 
 lib/writer1.i: lib/writer1.c.i
@@ -2002,7 +2002,7 @@ lib/writer1.i: lib/writer1.c.i
 
 # target to preprocess a source file
 lib/writer1.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer1.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer1.c.i
 .PHONY : lib/writer1.c.i
 
 lib/writer1.s: lib/writer1.c.s
@@ -2011,7 +2011,7 @@ lib/writer1.s: lib/writer1.c.s
 
 # target to generate assembly for a file
 lib/writer1.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer1.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer1.c.s
 .PHONY : lib/writer1.c.s
 
 lib/writer2.o: lib/writer2.c.o
@@ -2020,7 +2020,7 @@ lib/writer2.o: lib/writer2.c.o
 
 # target to build an object file
 lib/writer2.c.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer2.c.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer2.c.o
 .PHONY : lib/writer2.c.o
 
 lib/writer2.i: lib/writer2.c.i
@@ -2029,7 +2029,7 @@ lib/writer2.i: lib/writer2.c.i
 
 # target to preprocess a source file
 lib/writer2.c.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer2.c.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer2.c.i
 .PHONY : lib/writer2.c.i
 
 lib/writer2.s: lib/writer2.c.s
@@ -2038,7 +2038,7 @@ lib/writer2.s: lib/writer2.c.s
 
 # target to generate assembly for a file
 lib/writer2.c.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer2.c.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx.dir/build.make third-party/KTX-Software/CMakeFiles/ktx.dir/lib/writer2.c.s
 .PHONY : lib/writer2.c.s
 
 utils/argparser.o: utils/argparser.cpp.o
@@ -2047,7 +2047,7 @@ utils/argparser.o: utils/argparser.cpp.o
 
 # target to build an object file
 utils/argparser.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/utils/argparser.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/utils/argparser.cpp.o
 .PHONY : utils/argparser.cpp.o
 
 utils/argparser.i: utils/argparser.cpp.i
@@ -2056,7 +2056,7 @@ utils/argparser.i: utils/argparser.cpp.i
 
 # target to preprocess a source file
 utils/argparser.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/utils/argparser.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/utils/argparser.cpp.i
 .PHONY : utils/argparser.cpp.i
 
 utils/argparser.s: utils/argparser.cpp.s
@@ -2065,7 +2065,7 @@ utils/argparser.s: utils/argparser.cpp.s
 
 # target to generate assembly for a file
 utils/argparser.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/utils/argparser.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/CMakeFiles/objUtil.dir/build.make third-party/KTX-Software/CMakeFiles/objUtil.dir/utils/argparser.cpp.s
 .PHONY : utils/argparser.cpp.s
 
 # Help Target
@@ -2270,6 +2270,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

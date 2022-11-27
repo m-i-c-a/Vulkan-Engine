@@ -6,7 +6,7 @@ CXX_FLAGS = -g -DDEBUG   -Wall -Wextra -O0
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mica/Desktop/Engine/third-party/KTX-Software/tests/gtest/include -I/home/mica/Desktop/Engine/third-party/KTX-Software/tests/gtest/. 
+CXX_INCLUDES = -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/gtest/include -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/gtest/. 
 
 # Custom options: third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.o_OPTIONS = -Wno-missing-field-initializers
 

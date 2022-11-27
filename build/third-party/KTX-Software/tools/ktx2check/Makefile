@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -94,7 +94,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Engine/build/CPackSourceConfig.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -138,7 +138,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -148,14 +148,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/ktx2check/CMakeFiles/progress.marks
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles 0
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/ktx2check/CMakeFiles/progress.marks
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/clean
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/clean
 .PHONY : clean
 
 # The main clean target
@@ -165,22 +165,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/preinstall
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/preinstall
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/rule
 .PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/rule
 
 # Convenience name for target.
@@ -190,12 +190,12 @@ ktx2check_version: third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check
 
 # fast build rule for target.
 ktx2check_version/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build
 .PHONY : ktx2check_version/fast
 
 # Convenience name for target.
 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/rule
 .PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/rule
 
 # Convenience name for target.
@@ -205,7 +205,7 @@ ktx2check: third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/rul
 
 # fast build rule for target.
 ktx2check/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build
 .PHONY : ktx2check/fast
 
 ktx2check.o: ktx2check.cpp.o
@@ -214,7 +214,7 @@ ktx2check.o: ktx2check.cpp.o
 
 # target to build an object file
 ktx2check.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/ktx2check.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/ktx2check.cpp.o
 .PHONY : ktx2check.cpp.o
 
 ktx2check.i: ktx2check.cpp.i
@@ -223,7 +223,7 @@ ktx2check.i: ktx2check.cpp.i
 
 # target to preprocess a source file
 ktx2check.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/ktx2check.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/ktx2check.cpp.i
 .PHONY : ktx2check.cpp.i
 
 ktx2check.s: ktx2check.cpp.s
@@ -232,7 +232,7 @@ ktx2check.s: ktx2check.cpp.s
 
 # target to generate assembly for a file
 ktx2check.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/ktx2check.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/ktx2check.cpp.s
 .PHONY : ktx2check.cpp.s
 
 # Help Target
@@ -265,6 +265,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

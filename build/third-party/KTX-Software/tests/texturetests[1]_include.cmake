@@ -1,5 +1,5 @@
-if(EXISTS "/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/texturetests[1]_tests.cmake")
-  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/texturetests[1]_tests.cmake")
+if(EXISTS "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/texturetests[1]_tests.cmake")
+  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/texturetests[1]_tests.cmake")
 else()
   add_test(texturetests_NOT_BUILT texturetests_NOT_BUILT)
 endif()

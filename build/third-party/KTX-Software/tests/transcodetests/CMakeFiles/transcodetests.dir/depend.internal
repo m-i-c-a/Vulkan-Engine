@@ -36,4 +36,4 @@ third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/tran
  ../third-party/KTX-Software/tests/gtest/include/gtest/internal/gtest-port.h
  ../third-party/KTX-Software/tests/gtest/include/gtest/internal/gtest-string.h
  ../third-party/KTX-Software/tests/gtest/include/gtest/internal/gtest-type-util.h
- /home/mica/Desktop/Engine/third-party/KTX-Software/tests/transcodetests/transcodetests.cc
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/transcodetests/transcodetests.cc

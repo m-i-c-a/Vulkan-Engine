@@ -30,7 +30,7 @@ third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittest
  ../third-party/KTX-Software/tools/toktx/image.hpp
  ../third-party/KTX-Software/utils/argparser.h
  ../third-party/KTX-Software/utils/unused.h
- /home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/image_unittests.cc
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/image_unittests.cc
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.o
  ../third-party/KTX-Software/include/ktx.h
  ../third-party/KTX-Software/lib/dfdutils/dfd.h
@@ -71,5 +71,5 @@ third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.o
  ../third-party/KTX-Software/tests/gtest/include/gtest/internal/gtest-type-util.h
  ../third-party/KTX-Software/tests/loadtests/common/ltexceptions.h
  ../third-party/KTX-Software/utils/unused.h
- /home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/unittests.cc
- /home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/wthelper.h
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/unittests.cc
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/wthelper.h

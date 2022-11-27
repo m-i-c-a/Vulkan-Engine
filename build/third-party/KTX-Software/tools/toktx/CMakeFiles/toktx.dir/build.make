@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 # Include any dependencies generated for this target.
 include third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/depend.make
@@ -58,99 +58,99 @@ include third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/progress.make
 include third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/flags.make
 
 ../third-party/KTX-Software/tools/toktx/version.h:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generate /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/version.h"
-	cd /home/mica/Desktop/Engine/third-party/KTX-Software && ./mkversion -o version.h tools/toktx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generate /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/version.h"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software && ./mkversion -o version.h tools/toktx
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.o: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/flags.make
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.o: ../third-party/KTX-Software/lib/basisu/encoder/jpgd.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.o"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/encoder/jpgd.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/encoder/jpgd.cpp
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.i"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/encoder/jpgd.cpp > CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/encoder/jpgd.cpp > CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.i
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.s"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/lib/basisu/encoder/jpgd.cpp -o CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/lib/basisu/encoder/jpgd.cpp -o CMakeFiles/toktx.dir/__/__/lib/basisu/encoder/jpgd.cpp.s
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.o: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/flags.make
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.o: ../third-party/KTX-Software/tools/toktx/image.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.o"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/image.cc.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/image.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/image.cc.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/image.cc
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/toktx.dir/image.cc.i"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/image.cc > CMakeFiles/toktx.dir/image.cc.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/image.cc > CMakeFiles/toktx.dir/image.cc.i
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/image.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/toktx.dir/image.cc.s"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/image.cc -o CMakeFiles/toktx.dir/image.cc.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/image.cc -o CMakeFiles/toktx.dir/image.cc.s
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.o: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/flags.make
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.o: ../third-party/KTX-Software/tools/toktx/jpgimage.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.o"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/jpgimage.cc.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/jpgimage.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/jpgimage.cc.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/jpgimage.cc
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/toktx.dir/jpgimage.cc.i"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/jpgimage.cc > CMakeFiles/toktx.dir/jpgimage.cc.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/jpgimage.cc > CMakeFiles/toktx.dir/jpgimage.cc.i
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/jpgimage.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/toktx.dir/jpgimage.cc.s"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/jpgimage.cc -o CMakeFiles/toktx.dir/jpgimage.cc.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/jpgimage.cc -o CMakeFiles/toktx.dir/jpgimage.cc.s
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.o: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/flags.make
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.o: ../third-party/KTX-Software/tools/toktx/lodepng.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.o"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/lodepng.cc.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/lodepng.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/lodepng.cc.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/lodepng.cc
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/toktx.dir/lodepng.cc.i"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/lodepng.cc > CMakeFiles/toktx.dir/lodepng.cc.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/lodepng.cc > CMakeFiles/toktx.dir/lodepng.cc.i
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/lodepng.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/toktx.dir/lodepng.cc.s"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/lodepng.cc -o CMakeFiles/toktx.dir/lodepng.cc.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/lodepng.cc -o CMakeFiles/toktx.dir/lodepng.cc.s
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.o: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/flags.make
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.o: ../third-party/KTX-Software/tools/toktx/npbmimage.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.o"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/npbmimage.cc.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/npbmimage.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/npbmimage.cc.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/npbmimage.cc
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/toktx.dir/npbmimage.cc.i"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/npbmimage.cc > CMakeFiles/toktx.dir/npbmimage.cc.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/npbmimage.cc > CMakeFiles/toktx.dir/npbmimage.cc.i
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/npbmimage.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/toktx.dir/npbmimage.cc.s"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/npbmimage.cc -o CMakeFiles/toktx.dir/npbmimage.cc.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/npbmimage.cc -o CMakeFiles/toktx.dir/npbmimage.cc.s
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.o: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/flags.make
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.o: ../third-party/KTX-Software/tools/toktx/pngimage.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.o"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/pngimage.cc.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/pngimage.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/pngimage.cc.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/pngimage.cc
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/toktx.dir/pngimage.cc.i"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/pngimage.cc > CMakeFiles/toktx.dir/pngimage.cc.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/pngimage.cc > CMakeFiles/toktx.dir/pngimage.cc.i
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/pngimage.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/toktx.dir/pngimage.cc.s"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/pngimage.cc -o CMakeFiles/toktx.dir/pngimage.cc.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/pngimage.cc -o CMakeFiles/toktx.dir/pngimage.cc.s
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.o: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/flags.make
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.o: ../third-party/KTX-Software/tools/toktx/toktx.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.o"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/toktx.cc.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/toktx.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/toktx.dir/toktx.cc.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/toktx.cc
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/toktx.dir/toktx.cc.i"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/toktx.cc > CMakeFiles/toktx.dir/toktx.cc.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/toktx.cc > CMakeFiles/toktx.dir/toktx.cc.i
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/toktx.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/toktx.dir/toktx.cc.s"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/toktx.cc -o CMakeFiles/toktx.dir/toktx.cc.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/toktx.cc -o CMakeFiles/toktx.dir/toktx.cc.s
 
 # Object files for target toktx
 toktx_OBJECTS = \
@@ -176,8 +176,8 @@ third-party/KTX-Software/tools/toktx/toktx: third-party/KTX-Software/tools/toktx
 third-party/KTX-Software/tools/toktx/toktx: third-party/KTX-Software/libktx.so.4.1.0
 third-party/KTX-Software/tools/toktx/toktx: third-party/KTX-Software/libobjUtil.a
 third-party/KTX-Software/tools/toktx/toktx: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable toktx"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/toktx.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable toktx"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/toktx.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build: third-party/KTX-Software/tools/toktx/toktx
@@ -185,10 +185,10 @@ third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build: third-party/KTX
 .PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/build
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/clean:
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && $(CMAKE_COMMAND) -P CMakeFiles/toktx.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && $(CMAKE_COMMAND) -P CMakeFiles/toktx.dir/cmake_clean.cmake
 .PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/clean
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/depend: ../third-party/KTX-Software/tools/toktx/version.h
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Engine /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx /home/mica/Desktop/Engine/build /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/depend
 

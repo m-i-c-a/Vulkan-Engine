@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 # Include any dependencies generated for this target.
 include third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/depend.make
@@ -59,16 +59,16 @@ include third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basis
 
 third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.o: third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/flags.make
 third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.o: ../third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.o"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/interface/basisu_c_binding && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.o -c /home/mica/Desktop/Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/interface/basisu_c_binding && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp
 
 third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.i"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/interface/basisu_c_binding && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp > CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/interface/basisu_c_binding && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp > CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.i
 
 third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.s"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/interface/basisu_c_binding && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp -o CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/interface/basisu_c_binding && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp -o CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.s
 
 # Object files for target obj_basisu_cbind
 obj_basisu_cbind_OBJECTS = \
@@ -80,9 +80,9 @@ obj_basisu_cbind_EXTERNAL_OBJECTS =
 third-party/KTX-Software/interface/basisu_c_binding/libobj_basisu_cbind.a: third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.o
 third-party/KTX-Software/interface/basisu_c_binding/libobj_basisu_cbind.a: third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/build.make
 third-party/KTX-Software/interface/basisu_c_binding/libobj_basisu_cbind.a: third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libobj_basisu_cbind.a"
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/interface/basisu_c_binding && $(CMAKE_COMMAND) -P CMakeFiles/obj_basisu_cbind.dir/cmake_clean_target.cmake
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/interface/basisu_c_binding && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/obj_basisu_cbind.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libobj_basisu_cbind.a"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/interface/basisu_c_binding && $(CMAKE_COMMAND) -P CMakeFiles/obj_basisu_cbind.dir/cmake_clean_target.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/interface/basisu_c_binding && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/obj_basisu_cbind.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/build: third-party/KTX-Software/interface/basisu_c_binding/libobj_basisu_cbind.a
@@ -90,10 +90,10 @@ third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.
 .PHONY : third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/build
 
 third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/clean:
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/interface/basisu_c_binding && $(CMAKE_COMMAND) -P CMakeFiles/obj_basisu_cbind.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/interface/basisu_c_binding && $(CMAKE_COMMAND) -P CMakeFiles/obj_basisu_cbind.dir/cmake_clean.cmake
 .PHONY : third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/clean
 
 third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/depend:
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Engine /home/mica/Desktop/Engine/third-party/KTX-Software/interface/basisu_c_binding /home/mica/Desktop/Engine/build /home/mica/Desktop/Engine/build/third-party/KTX-Software/interface/basisu_c_binding /home/mica/Desktop/Engine/build/third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/interface/basisu_c_binding /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/interface/basisu_c_binding /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/depend
 

@@ -1,1 +1,1 @@
-/usr/bin/c++  -g -DDEBUG  -g CMakeFiles/unittests.dir/unittests/unittests.cc.o CMakeFiles/unittests.dir/unittests/image_unittests.cc.o  -o unittests  -Wl,-rpath,/home/mica/Desktop/Engine/build/third-party/KTX-Software gtest/libgtest.a ../libktx.so.4.1.0 -lpthread -ldl -lpthread 
+/usr/bin/c++  -g -DDEBUG  -g CMakeFiles/unittests.dir/unittests/unittests.cc.o CMakeFiles/unittests.dir/unittests/image_unittests.cc.o  -o unittests  -Wl,-rpath,/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software gtest/libgtest.a ../libktx.so.4.1.0 -lpthread -ldl -lpthread 

@@ -6,5 +6,5 @@ CXX_FLAGS = -g -DDEBUG -fvisibility=hidden   -Wall -Wextra -O0
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mica/Desktop/Engine/third-party/KTX-Software/utils 
+CXX_INCLUDES = -I/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/utils 
 

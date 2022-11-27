@@ -1,4 +1,4 @@
-# Install script for directory: /home/mica/Desktop/Engine/third-party/KTX-Software/tests
+# Install script for directory: /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,16 +39,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/gtest/cmake_install.cmake")
+  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/gtest/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/transcodetests/cmake_install.cmake")
+  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/transcodetests/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/streamtests/cmake_install.cmake")
+  include("/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/streamtests/cmake_install.cmake")
 endif()
 

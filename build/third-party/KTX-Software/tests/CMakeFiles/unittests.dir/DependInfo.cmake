@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/image_unittests.cc" "/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.o"
-  "/home/mica/Desktop/Engine/third-party/KTX-Software/tests/unittests/unittests.cc" "/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.o"
+  "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/image_unittests.cc" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/image_unittests.cc.o"
+  "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/unittests/unittests.cc" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/CMakeFiles/unittests.dir/unittests/unittests.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -37,8 +37,8 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/mica/Desktop/Engine/build/third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
-  "/home/mica/Desktop/Engine/build/third-party/KTX-Software/CMakeFiles/ktx.dir/DependInfo.cmake"
+  "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tests/gtest/CMakeFiles/gtest.dir/DependInfo.cmake"
+  "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/CMakeFiles/ktx.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

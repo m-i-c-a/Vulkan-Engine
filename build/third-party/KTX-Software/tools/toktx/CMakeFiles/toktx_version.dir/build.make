@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 # Utility rule file for toktx_version.
 
@@ -57,8 +57,8 @@ third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version: ../third-party/KT
 
 
 ../third-party/KTX-Software/tools/toktx/version.h:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generate /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx/version.h"
-	cd /home/mica/Desktop/Engine/third-party/KTX-Software && ./mkversion -o version.h tools/toktx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generate /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx/version.h"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software && ./mkversion -o version.h tools/toktx
 
 toktx_version: third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version
 toktx_version: ../third-party/KTX-Software/tools/toktx/version.h
@@ -72,10 +72,10 @@ third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build: toktx_v
 .PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/build
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/clean:
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx && $(CMAKE_COMMAND) -P CMakeFiles/toktx_version.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx && $(CMAKE_COMMAND) -P CMakeFiles/toktx_version.dir/cmake_clean.cmake
 .PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/clean
 
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/depend:
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Engine /home/mica/Desktop/Engine/third-party/KTX-Software/tools/toktx /home/mica/Desktop/Engine/build /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx /home/mica/Desktop/Engine/build/third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tools/toktx /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx_version.dir/depend
 

@@ -1,0 +1,190 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "third-party/KTX-Software/tests/gtest/libgtest.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"add_compile_options",
+			"target_include_directories",
+			"set_source_files_properties"
+		],
+		"files" : 
+		[
+			"third-party/KTX-Software/tests/gtest/CMakeLists.txt",
+			"third-party/KTX-Software/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 4,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 165,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 166,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 10,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 20,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -DDEBUG  "
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-O0"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-Wno-missing-field-initializers"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/gtest/include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/gtest/."
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -DDEBUG  "
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 3,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 4,
+					"fragment" : "-O0"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/gtest/include"
+				},
+				{
+					"backtrace" : 5,
+					"path" : "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/tests/gtest/."
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				2
+			]
+		}
+	],
+	"id" : "gtest::@940f671288c67bac3219",
+	"name" : "gtest",
+	"nameOnDisk" : "libgtest.a",
+	"paths" : 
+	{
+		"build" : "third-party/KTX-Software/tests/gtest",
+		"source" : "third-party/KTX-Software/tests/gtest"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				2
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "third-party/KTX-Software/tests/gtest/src/gtest-all.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "third-party/KTX-Software/tests/gtest/src/gtest-internal-inl.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "third-party/KTX-Software/tests/gtest/src/gtest_main.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

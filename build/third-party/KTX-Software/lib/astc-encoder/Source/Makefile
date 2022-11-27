@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -94,7 +94,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Engine/build/CPackSourceConfig.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackSourceConfig.cmake /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -138,7 +138,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target package
 package: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
-	cd /home/mica/Desktop/Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && /usr/bin/cpack --config ./CPackConfig.cmake
 .PHONY : package
 
 # Special rule for the target package
@@ -148,14 +148,14 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles /home/mica/Desktop/Engine/build/third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/progress.marks
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Engine/build/CMakeFiles 0
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/progress.marks
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/clean
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/clean
 .PHONY : clean
 
 # The main clean target
@@ -165,22 +165,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/preinstall
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/preinstall
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/rule:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/rule
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/rule
 .PHONY : third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/rule
 
 # Convenience name for target.
@@ -190,7 +190,7 @@ astcenc-avx2-static: third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles
 
 # fast build rule for target.
 astcenc-avx2-static/fast:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build
 .PHONY : astcenc-avx2-static/fast
 
 astcenc_averages_and_directions.o: astcenc_averages_and_directions.cpp.o
@@ -199,7 +199,7 @@ astcenc_averages_and_directions.o: astcenc_averages_and_directions.cpp.o
 
 # target to build an object file
 astcenc_averages_and_directions.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_averages_and_directions.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_averages_and_directions.cpp.o
 .PHONY : astcenc_averages_and_directions.cpp.o
 
 astcenc_averages_and_directions.i: astcenc_averages_and_directions.cpp.i
@@ -208,7 +208,7 @@ astcenc_averages_and_directions.i: astcenc_averages_and_directions.cpp.i
 
 # target to preprocess a source file
 astcenc_averages_and_directions.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_averages_and_directions.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_averages_and_directions.cpp.i
 .PHONY : astcenc_averages_and_directions.cpp.i
 
 astcenc_averages_and_directions.s: astcenc_averages_and_directions.cpp.s
@@ -217,7 +217,7 @@ astcenc_averages_and_directions.s: astcenc_averages_and_directions.cpp.s
 
 # target to generate assembly for a file
 astcenc_averages_and_directions.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_averages_and_directions.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_averages_and_directions.cpp.s
 .PHONY : astcenc_averages_and_directions.cpp.s
 
 astcenc_block_sizes.o: astcenc_block_sizes.cpp.o
@@ -226,7 +226,7 @@ astcenc_block_sizes.o: astcenc_block_sizes.cpp.o
 
 # target to build an object file
 astcenc_block_sizes.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_block_sizes.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_block_sizes.cpp.o
 .PHONY : astcenc_block_sizes.cpp.o
 
 astcenc_block_sizes.i: astcenc_block_sizes.cpp.i
@@ -235,7 +235,7 @@ astcenc_block_sizes.i: astcenc_block_sizes.cpp.i
 
 # target to preprocess a source file
 astcenc_block_sizes.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_block_sizes.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_block_sizes.cpp.i
 .PHONY : astcenc_block_sizes.cpp.i
 
 astcenc_block_sizes.s: astcenc_block_sizes.cpp.s
@@ -244,7 +244,7 @@ astcenc_block_sizes.s: astcenc_block_sizes.cpp.s
 
 # target to generate assembly for a file
 astcenc_block_sizes.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_block_sizes.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_block_sizes.cpp.s
 .PHONY : astcenc_block_sizes.cpp.s
 
 astcenc_color_quantize.o: astcenc_color_quantize.cpp.o
@@ -253,7 +253,7 @@ astcenc_color_quantize.o: astcenc_color_quantize.cpp.o
 
 # target to build an object file
 astcenc_color_quantize.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_quantize.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_quantize.cpp.o
 .PHONY : astcenc_color_quantize.cpp.o
 
 astcenc_color_quantize.i: astcenc_color_quantize.cpp.i
@@ -262,7 +262,7 @@ astcenc_color_quantize.i: astcenc_color_quantize.cpp.i
 
 # target to preprocess a source file
 astcenc_color_quantize.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_quantize.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_quantize.cpp.i
 .PHONY : astcenc_color_quantize.cpp.i
 
 astcenc_color_quantize.s: astcenc_color_quantize.cpp.s
@@ -271,7 +271,7 @@ astcenc_color_quantize.s: astcenc_color_quantize.cpp.s
 
 # target to generate assembly for a file
 astcenc_color_quantize.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_quantize.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_quantize.cpp.s
 .PHONY : astcenc_color_quantize.cpp.s
 
 astcenc_color_unquantize.o: astcenc_color_unquantize.cpp.o
@@ -280,7 +280,7 @@ astcenc_color_unquantize.o: astcenc_color_unquantize.cpp.o
 
 # target to build an object file
 astcenc_color_unquantize.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_unquantize.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_unquantize.cpp.o
 .PHONY : astcenc_color_unquantize.cpp.o
 
 astcenc_color_unquantize.i: astcenc_color_unquantize.cpp.i
@@ -289,7 +289,7 @@ astcenc_color_unquantize.i: astcenc_color_unquantize.cpp.i
 
 # target to preprocess a source file
 astcenc_color_unquantize.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_unquantize.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_unquantize.cpp.i
 .PHONY : astcenc_color_unquantize.cpp.i
 
 astcenc_color_unquantize.s: astcenc_color_unquantize.cpp.s
@@ -298,7 +298,7 @@ astcenc_color_unquantize.s: astcenc_color_unquantize.cpp.s
 
 # target to generate assembly for a file
 astcenc_color_unquantize.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_unquantize.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_color_unquantize.cpp.s
 .PHONY : astcenc_color_unquantize.cpp.s
 
 astcenc_compress_symbolic.o: astcenc_compress_symbolic.cpp.o
@@ -307,7 +307,7 @@ astcenc_compress_symbolic.o: astcenc_compress_symbolic.cpp.o
 
 # target to build an object file
 astcenc_compress_symbolic.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compress_symbolic.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compress_symbolic.cpp.o
 .PHONY : astcenc_compress_symbolic.cpp.o
 
 astcenc_compress_symbolic.i: astcenc_compress_symbolic.cpp.i
@@ -316,7 +316,7 @@ astcenc_compress_symbolic.i: astcenc_compress_symbolic.cpp.i
 
 # target to preprocess a source file
 astcenc_compress_symbolic.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compress_symbolic.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compress_symbolic.cpp.i
 .PHONY : astcenc_compress_symbolic.cpp.i
 
 astcenc_compress_symbolic.s: astcenc_compress_symbolic.cpp.s
@@ -325,7 +325,7 @@ astcenc_compress_symbolic.s: astcenc_compress_symbolic.cpp.s
 
 # target to generate assembly for a file
 astcenc_compress_symbolic.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compress_symbolic.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compress_symbolic.cpp.s
 .PHONY : astcenc_compress_symbolic.cpp.s
 
 astcenc_compute_variance.o: astcenc_compute_variance.cpp.o
@@ -334,7 +334,7 @@ astcenc_compute_variance.o: astcenc_compute_variance.cpp.o
 
 # target to build an object file
 astcenc_compute_variance.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compute_variance.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compute_variance.cpp.o
 .PHONY : astcenc_compute_variance.cpp.o
 
 astcenc_compute_variance.i: astcenc_compute_variance.cpp.i
@@ -343,7 +343,7 @@ astcenc_compute_variance.i: astcenc_compute_variance.cpp.i
 
 # target to preprocess a source file
 astcenc_compute_variance.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compute_variance.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compute_variance.cpp.i
 .PHONY : astcenc_compute_variance.cpp.i
 
 astcenc_compute_variance.s: astcenc_compute_variance.cpp.s
@@ -352,7 +352,7 @@ astcenc_compute_variance.s: astcenc_compute_variance.cpp.s
 
 # target to generate assembly for a file
 astcenc_compute_variance.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compute_variance.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_compute_variance.cpp.s
 .PHONY : astcenc_compute_variance.cpp.s
 
 astcenc_decompress_symbolic.o: astcenc_decompress_symbolic.cpp.o
@@ -361,7 +361,7 @@ astcenc_decompress_symbolic.o: astcenc_decompress_symbolic.cpp.o
 
 # target to build an object file
 astcenc_decompress_symbolic.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_decompress_symbolic.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_decompress_symbolic.cpp.o
 .PHONY : astcenc_decompress_symbolic.cpp.o
 
 astcenc_decompress_symbolic.i: astcenc_decompress_symbolic.cpp.i
@@ -370,7 +370,7 @@ astcenc_decompress_symbolic.i: astcenc_decompress_symbolic.cpp.i
 
 # target to preprocess a source file
 astcenc_decompress_symbolic.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_decompress_symbolic.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_decompress_symbolic.cpp.i
 .PHONY : astcenc_decompress_symbolic.cpp.i
 
 astcenc_decompress_symbolic.s: astcenc_decompress_symbolic.cpp.s
@@ -379,7 +379,7 @@ astcenc_decompress_symbolic.s: astcenc_decompress_symbolic.cpp.s
 
 # target to generate assembly for a file
 astcenc_decompress_symbolic.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_decompress_symbolic.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_decompress_symbolic.cpp.s
 .PHONY : astcenc_decompress_symbolic.cpp.s
 
 astcenc_diagnostic_trace.o: astcenc_diagnostic_trace.cpp.o
@@ -388,7 +388,7 @@ astcenc_diagnostic_trace.o: astcenc_diagnostic_trace.cpp.o
 
 # target to build an object file
 astcenc_diagnostic_trace.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_diagnostic_trace.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_diagnostic_trace.cpp.o
 .PHONY : astcenc_diagnostic_trace.cpp.o
 
 astcenc_diagnostic_trace.i: astcenc_diagnostic_trace.cpp.i
@@ -397,7 +397,7 @@ astcenc_diagnostic_trace.i: astcenc_diagnostic_trace.cpp.i
 
 # target to preprocess a source file
 astcenc_diagnostic_trace.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_diagnostic_trace.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_diagnostic_trace.cpp.i
 .PHONY : astcenc_diagnostic_trace.cpp.i
 
 astcenc_diagnostic_trace.s: astcenc_diagnostic_trace.cpp.s
@@ -406,7 +406,7 @@ astcenc_diagnostic_trace.s: astcenc_diagnostic_trace.cpp.s
 
 # target to generate assembly for a file
 astcenc_diagnostic_trace.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_diagnostic_trace.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_diagnostic_trace.cpp.s
 .PHONY : astcenc_diagnostic_trace.cpp.s
 
 astcenc_entry.o: astcenc_entry.cpp.o
@@ -415,7 +415,7 @@ astcenc_entry.o: astcenc_entry.cpp.o
 
 # target to build an object file
 astcenc_entry.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_entry.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_entry.cpp.o
 .PHONY : astcenc_entry.cpp.o
 
 astcenc_entry.i: astcenc_entry.cpp.i
@@ -424,7 +424,7 @@ astcenc_entry.i: astcenc_entry.cpp.i
 
 # target to preprocess a source file
 astcenc_entry.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_entry.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_entry.cpp.i
 .PHONY : astcenc_entry.cpp.i
 
 astcenc_entry.s: astcenc_entry.cpp.s
@@ -433,7 +433,7 @@ astcenc_entry.s: astcenc_entry.cpp.s
 
 # target to generate assembly for a file
 astcenc_entry.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_entry.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_entry.cpp.s
 .PHONY : astcenc_entry.cpp.s
 
 astcenc_find_best_partitioning.o: astcenc_find_best_partitioning.cpp.o
@@ -442,7 +442,7 @@ astcenc_find_best_partitioning.o: astcenc_find_best_partitioning.cpp.o
 
 # target to build an object file
 astcenc_find_best_partitioning.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_find_best_partitioning.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_find_best_partitioning.cpp.o
 .PHONY : astcenc_find_best_partitioning.cpp.o
 
 astcenc_find_best_partitioning.i: astcenc_find_best_partitioning.cpp.i
@@ -451,7 +451,7 @@ astcenc_find_best_partitioning.i: astcenc_find_best_partitioning.cpp.i
 
 # target to preprocess a source file
 astcenc_find_best_partitioning.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_find_best_partitioning.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_find_best_partitioning.cpp.i
 .PHONY : astcenc_find_best_partitioning.cpp.i
 
 astcenc_find_best_partitioning.s: astcenc_find_best_partitioning.cpp.s
@@ -460,7 +460,7 @@ astcenc_find_best_partitioning.s: astcenc_find_best_partitioning.cpp.s
 
 # target to generate assembly for a file
 astcenc_find_best_partitioning.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_find_best_partitioning.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_find_best_partitioning.cpp.s
 .PHONY : astcenc_find_best_partitioning.cpp.s
 
 astcenc_ideal_endpoints_and_weights.o: astcenc_ideal_endpoints_and_weights.cpp.o
@@ -469,7 +469,7 @@ astcenc_ideal_endpoints_and_weights.o: astcenc_ideal_endpoints_and_weights.cpp.o
 
 # target to build an object file
 astcenc_ideal_endpoints_and_weights.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_ideal_endpoints_and_weights.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_ideal_endpoints_and_weights.cpp.o
 .PHONY : astcenc_ideal_endpoints_and_weights.cpp.o
 
 astcenc_ideal_endpoints_and_weights.i: astcenc_ideal_endpoints_and_weights.cpp.i
@@ -478,7 +478,7 @@ astcenc_ideal_endpoints_and_weights.i: astcenc_ideal_endpoints_and_weights.cpp.i
 
 # target to preprocess a source file
 astcenc_ideal_endpoints_and_weights.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_ideal_endpoints_and_weights.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_ideal_endpoints_and_weights.cpp.i
 .PHONY : astcenc_ideal_endpoints_and_weights.cpp.i
 
 astcenc_ideal_endpoints_and_weights.s: astcenc_ideal_endpoints_and_weights.cpp.s
@@ -487,7 +487,7 @@ astcenc_ideal_endpoints_and_weights.s: astcenc_ideal_endpoints_and_weights.cpp.s
 
 # target to generate assembly for a file
 astcenc_ideal_endpoints_and_weights.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_ideal_endpoints_and_weights.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_ideal_endpoints_and_weights.cpp.s
 .PHONY : astcenc_ideal_endpoints_and_weights.cpp.s
 
 astcenc_image.o: astcenc_image.cpp.o
@@ -496,7 +496,7 @@ astcenc_image.o: astcenc_image.cpp.o
 
 # target to build an object file
 astcenc_image.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_image.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_image.cpp.o
 .PHONY : astcenc_image.cpp.o
 
 astcenc_image.i: astcenc_image.cpp.i
@@ -505,7 +505,7 @@ astcenc_image.i: astcenc_image.cpp.i
 
 # target to preprocess a source file
 astcenc_image.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_image.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_image.cpp.i
 .PHONY : astcenc_image.cpp.i
 
 astcenc_image.s: astcenc_image.cpp.s
@@ -514,7 +514,7 @@ astcenc_image.s: astcenc_image.cpp.s
 
 # target to generate assembly for a file
 astcenc_image.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_image.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_image.cpp.s
 .PHONY : astcenc_image.cpp.s
 
 astcenc_integer_sequence.o: astcenc_integer_sequence.cpp.o
@@ -523,7 +523,7 @@ astcenc_integer_sequence.o: astcenc_integer_sequence.cpp.o
 
 # target to build an object file
 astcenc_integer_sequence.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_integer_sequence.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_integer_sequence.cpp.o
 .PHONY : astcenc_integer_sequence.cpp.o
 
 astcenc_integer_sequence.i: astcenc_integer_sequence.cpp.i
@@ -532,7 +532,7 @@ astcenc_integer_sequence.i: astcenc_integer_sequence.cpp.i
 
 # target to preprocess a source file
 astcenc_integer_sequence.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_integer_sequence.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_integer_sequence.cpp.i
 .PHONY : astcenc_integer_sequence.cpp.i
 
 astcenc_integer_sequence.s: astcenc_integer_sequence.cpp.s
@@ -541,7 +541,7 @@ astcenc_integer_sequence.s: astcenc_integer_sequence.cpp.s
 
 # target to generate assembly for a file
 astcenc_integer_sequence.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_integer_sequence.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_integer_sequence.cpp.s
 .PHONY : astcenc_integer_sequence.cpp.s
 
 astcenc_mathlib.o: astcenc_mathlib.cpp.o
@@ -550,7 +550,7 @@ astcenc_mathlib.o: astcenc_mathlib.cpp.o
 
 # target to build an object file
 astcenc_mathlib.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib.cpp.o
 .PHONY : astcenc_mathlib.cpp.o
 
 astcenc_mathlib.i: astcenc_mathlib.cpp.i
@@ -559,7 +559,7 @@ astcenc_mathlib.i: astcenc_mathlib.cpp.i
 
 # target to preprocess a source file
 astcenc_mathlib.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib.cpp.i
 .PHONY : astcenc_mathlib.cpp.i
 
 astcenc_mathlib.s: astcenc_mathlib.cpp.s
@@ -568,7 +568,7 @@ astcenc_mathlib.s: astcenc_mathlib.cpp.s
 
 # target to generate assembly for a file
 astcenc_mathlib.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib.cpp.s
 .PHONY : astcenc_mathlib.cpp.s
 
 astcenc_mathlib_softfloat.o: astcenc_mathlib_softfloat.cpp.o
@@ -577,7 +577,7 @@ astcenc_mathlib_softfloat.o: astcenc_mathlib_softfloat.cpp.o
 
 # target to build an object file
 astcenc_mathlib_softfloat.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib_softfloat.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib_softfloat.cpp.o
 .PHONY : astcenc_mathlib_softfloat.cpp.o
 
 astcenc_mathlib_softfloat.i: astcenc_mathlib_softfloat.cpp.i
@@ -586,7 +586,7 @@ astcenc_mathlib_softfloat.i: astcenc_mathlib_softfloat.cpp.i
 
 # target to preprocess a source file
 astcenc_mathlib_softfloat.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib_softfloat.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib_softfloat.cpp.i
 .PHONY : astcenc_mathlib_softfloat.cpp.i
 
 astcenc_mathlib_softfloat.s: astcenc_mathlib_softfloat.cpp.s
@@ -595,7 +595,7 @@ astcenc_mathlib_softfloat.s: astcenc_mathlib_softfloat.cpp.s
 
 # target to generate assembly for a file
 astcenc_mathlib_softfloat.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib_softfloat.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_mathlib_softfloat.cpp.s
 .PHONY : astcenc_mathlib_softfloat.cpp.s
 
 astcenc_partition_tables.o: astcenc_partition_tables.cpp.o
@@ -604,7 +604,7 @@ astcenc_partition_tables.o: astcenc_partition_tables.cpp.o
 
 # target to build an object file
 astcenc_partition_tables.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_partition_tables.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_partition_tables.cpp.o
 .PHONY : astcenc_partition_tables.cpp.o
 
 astcenc_partition_tables.i: astcenc_partition_tables.cpp.i
@@ -613,7 +613,7 @@ astcenc_partition_tables.i: astcenc_partition_tables.cpp.i
 
 # target to preprocess a source file
 astcenc_partition_tables.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_partition_tables.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_partition_tables.cpp.i
 .PHONY : astcenc_partition_tables.cpp.i
 
 astcenc_partition_tables.s: astcenc_partition_tables.cpp.s
@@ -622,7 +622,7 @@ astcenc_partition_tables.s: astcenc_partition_tables.cpp.s
 
 # target to generate assembly for a file
 astcenc_partition_tables.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_partition_tables.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_partition_tables.cpp.s
 .PHONY : astcenc_partition_tables.cpp.s
 
 astcenc_percentile_tables.o: astcenc_percentile_tables.cpp.o
@@ -631,7 +631,7 @@ astcenc_percentile_tables.o: astcenc_percentile_tables.cpp.o
 
 # target to build an object file
 astcenc_percentile_tables.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_percentile_tables.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_percentile_tables.cpp.o
 .PHONY : astcenc_percentile_tables.cpp.o
 
 astcenc_percentile_tables.i: astcenc_percentile_tables.cpp.i
@@ -640,7 +640,7 @@ astcenc_percentile_tables.i: astcenc_percentile_tables.cpp.i
 
 # target to preprocess a source file
 astcenc_percentile_tables.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_percentile_tables.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_percentile_tables.cpp.i
 .PHONY : astcenc_percentile_tables.cpp.i
 
 astcenc_percentile_tables.s: astcenc_percentile_tables.cpp.s
@@ -649,7 +649,7 @@ astcenc_percentile_tables.s: astcenc_percentile_tables.cpp.s
 
 # target to generate assembly for a file
 astcenc_percentile_tables.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_percentile_tables.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_percentile_tables.cpp.s
 .PHONY : astcenc_percentile_tables.cpp.s
 
 astcenc_pick_best_endpoint_format.o: astcenc_pick_best_endpoint_format.cpp.o
@@ -658,7 +658,7 @@ astcenc_pick_best_endpoint_format.o: astcenc_pick_best_endpoint_format.cpp.o
 
 # target to build an object file
 astcenc_pick_best_endpoint_format.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_pick_best_endpoint_format.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_pick_best_endpoint_format.cpp.o
 .PHONY : astcenc_pick_best_endpoint_format.cpp.o
 
 astcenc_pick_best_endpoint_format.i: astcenc_pick_best_endpoint_format.cpp.i
@@ -667,7 +667,7 @@ astcenc_pick_best_endpoint_format.i: astcenc_pick_best_endpoint_format.cpp.i
 
 # target to preprocess a source file
 astcenc_pick_best_endpoint_format.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_pick_best_endpoint_format.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_pick_best_endpoint_format.cpp.i
 .PHONY : astcenc_pick_best_endpoint_format.cpp.i
 
 astcenc_pick_best_endpoint_format.s: astcenc_pick_best_endpoint_format.cpp.s
@@ -676,7 +676,7 @@ astcenc_pick_best_endpoint_format.s: astcenc_pick_best_endpoint_format.cpp.s
 
 # target to generate assembly for a file
 astcenc_pick_best_endpoint_format.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_pick_best_endpoint_format.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_pick_best_endpoint_format.cpp.s
 .PHONY : astcenc_pick_best_endpoint_format.cpp.s
 
 astcenc_platform_isa_detection.o: astcenc_platform_isa_detection.cpp.o
@@ -685,7 +685,7 @@ astcenc_platform_isa_detection.o: astcenc_platform_isa_detection.cpp.o
 
 # target to build an object file
 astcenc_platform_isa_detection.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_platform_isa_detection.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_platform_isa_detection.cpp.o
 .PHONY : astcenc_platform_isa_detection.cpp.o
 
 astcenc_platform_isa_detection.i: astcenc_platform_isa_detection.cpp.i
@@ -694,7 +694,7 @@ astcenc_platform_isa_detection.i: astcenc_platform_isa_detection.cpp.i
 
 # target to preprocess a source file
 astcenc_platform_isa_detection.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_platform_isa_detection.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_platform_isa_detection.cpp.i
 .PHONY : astcenc_platform_isa_detection.cpp.i
 
 astcenc_platform_isa_detection.s: astcenc_platform_isa_detection.cpp.s
@@ -703,7 +703,7 @@ astcenc_platform_isa_detection.s: astcenc_platform_isa_detection.cpp.s
 
 # target to generate assembly for a file
 astcenc_platform_isa_detection.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_platform_isa_detection.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_platform_isa_detection.cpp.s
 .PHONY : astcenc_platform_isa_detection.cpp.s
 
 astcenc_quantization.o: astcenc_quantization.cpp.o
@@ -712,7 +712,7 @@ astcenc_quantization.o: astcenc_quantization.cpp.o
 
 # target to build an object file
 astcenc_quantization.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_quantization.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_quantization.cpp.o
 .PHONY : astcenc_quantization.cpp.o
 
 astcenc_quantization.i: astcenc_quantization.cpp.i
@@ -721,7 +721,7 @@ astcenc_quantization.i: astcenc_quantization.cpp.i
 
 # target to preprocess a source file
 astcenc_quantization.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_quantization.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_quantization.cpp.i
 .PHONY : astcenc_quantization.cpp.i
 
 astcenc_quantization.s: astcenc_quantization.cpp.s
@@ -730,7 +730,7 @@ astcenc_quantization.s: astcenc_quantization.cpp.s
 
 # target to generate assembly for a file
 astcenc_quantization.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_quantization.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_quantization.cpp.s
 .PHONY : astcenc_quantization.cpp.s
 
 astcenc_symbolic_physical.o: astcenc_symbolic_physical.cpp.o
@@ -739,7 +739,7 @@ astcenc_symbolic_physical.o: astcenc_symbolic_physical.cpp.o
 
 # target to build an object file
 astcenc_symbolic_physical.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_symbolic_physical.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_symbolic_physical.cpp.o
 .PHONY : astcenc_symbolic_physical.cpp.o
 
 astcenc_symbolic_physical.i: astcenc_symbolic_physical.cpp.i
@@ -748,7 +748,7 @@ astcenc_symbolic_physical.i: astcenc_symbolic_physical.cpp.i
 
 # target to preprocess a source file
 astcenc_symbolic_physical.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_symbolic_physical.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_symbolic_physical.cpp.i
 .PHONY : astcenc_symbolic_physical.cpp.i
 
 astcenc_symbolic_physical.s: astcenc_symbolic_physical.cpp.s
@@ -757,7 +757,7 @@ astcenc_symbolic_physical.s: astcenc_symbolic_physical.cpp.s
 
 # target to generate assembly for a file
 astcenc_symbolic_physical.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_symbolic_physical.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_symbolic_physical.cpp.s
 .PHONY : astcenc_symbolic_physical.cpp.s
 
 astcenc_weight_align.o: astcenc_weight_align.cpp.o
@@ -766,7 +766,7 @@ astcenc_weight_align.o: astcenc_weight_align.cpp.o
 
 # target to build an object file
 astcenc_weight_align.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_align.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_align.cpp.o
 .PHONY : astcenc_weight_align.cpp.o
 
 astcenc_weight_align.i: astcenc_weight_align.cpp.i
@@ -775,7 +775,7 @@ astcenc_weight_align.i: astcenc_weight_align.cpp.i
 
 # target to preprocess a source file
 astcenc_weight_align.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_align.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_align.cpp.i
 .PHONY : astcenc_weight_align.cpp.i
 
 astcenc_weight_align.s: astcenc_weight_align.cpp.s
@@ -784,7 +784,7 @@ astcenc_weight_align.s: astcenc_weight_align.cpp.s
 
 # target to generate assembly for a file
 astcenc_weight_align.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_align.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_align.cpp.s
 .PHONY : astcenc_weight_align.cpp.s
 
 astcenc_weight_quant_xfer_tables.o: astcenc_weight_quant_xfer_tables.cpp.o
@@ -793,7 +793,7 @@ astcenc_weight_quant_xfer_tables.o: astcenc_weight_quant_xfer_tables.cpp.o
 
 # target to build an object file
 astcenc_weight_quant_xfer_tables.cpp.o:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_quant_xfer_tables.cpp.o
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_quant_xfer_tables.cpp.o
 .PHONY : astcenc_weight_quant_xfer_tables.cpp.o
 
 astcenc_weight_quant_xfer_tables.i: astcenc_weight_quant_xfer_tables.cpp.i
@@ -802,7 +802,7 @@ astcenc_weight_quant_xfer_tables.i: astcenc_weight_quant_xfer_tables.cpp.i
 
 # target to preprocess a source file
 astcenc_weight_quant_xfer_tables.cpp.i:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_quant_xfer_tables.cpp.i
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_quant_xfer_tables.cpp.i
 .PHONY : astcenc_weight_quant_xfer_tables.cpp.i
 
 astcenc_weight_quant_xfer_tables.s: astcenc_weight_quant_xfer_tables.cpp.s
@@ -811,7 +811,7 @@ astcenc_weight_quant_xfer_tables.s: astcenc_weight_quant_xfer_tables.cpp.s
 
 # target to generate assembly for a file
 astcenc_weight_quant_xfer_tables.cpp.s:
-	cd /home/mica/Desktop/Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_quant_xfer_tables.cpp.s
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/build.make third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.dir/astcenc_weight_quant_xfer_tables.cpp.s
 .PHONY : astcenc_weight_quant_xfer_tables.cpp.s
 
 # Help Target
@@ -909,6 +909,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

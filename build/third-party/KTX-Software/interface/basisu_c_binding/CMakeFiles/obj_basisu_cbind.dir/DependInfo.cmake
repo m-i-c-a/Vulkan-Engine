@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/mica/Desktop/Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp" "/home/mica/Desktop/Engine/build/third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.o"
+  "/home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software/interface/basisu_c_binding/src/basisu_c_binding.cpp" "/home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/interface/basisu_c_binding/CMakeFiles/obj_basisu_cbind.dir/src/basisu_c_binding.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

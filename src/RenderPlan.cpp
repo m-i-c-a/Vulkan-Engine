@@ -38,8 +38,8 @@ VulkanWrapper::RenderPass* forward_createRenderPass(const RenderPlan::InitInfo& 
             .storeOp = VK_ATTACHMENT_STORE_OP_STORE,
             .stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE,
             .stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE,
-            .initialLayout = VK_IMAGE_LAYOUT_COLOR_ATTACHMENT_OPTIMAL,
-            .finalLayout = VK_IMAGE_LAYOUT_PRESENT_SRC_KHR
+            .initialLayout = VK_IMAGE_LAYOUT_UNDEFINED,
+            .finalLayout = VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL
         },
         {   // DEPTH
             .sType = VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_2,
@@ -154,11 +154,11 @@ std::vector<Core::Attachment*> forward_createAttachments(const RenderPlan::InitI
             .arrayLayers = 1,
             .samples = initInfo.vk_sampleCount,
             .tiling = VK_IMAGE_TILING_OPTIMAL,
-            .usage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT,
+            .usage = VK_IMAGE_USAGE_COLOR_ATTACHMENT_BIT | VK_IMAGE_USAGE_TRANSFER_SRC_BIT,
             .sharingMode = VK_SHARING_MODE_EXCLUSIVE,
             .queueFamilyIndexCount = 0,
             .pQueueFamilyIndices   = nullptr,
-            .initialLayout = VK_IMAGE_LAYOUT_UNDEFINED,
+            .initialLayout = VK_IMAGE_LAYOUT_UNDEFINED
         };
 
         VkImageViewCreateInfo vk_imageViewCreateInfo {
@@ -238,7 +238,7 @@ VulkanWrapper::Framebuffer* forward_createFramebuffers(const RenderPlan::InitInf
         .width = initInfo.vk_framebufferDimensions.width,
         .height = initInfo.vk_framebufferDimensions.height,
         .layers = 1,
-    };
+    };   
 
     VulkanWrapper::Framebuffer* framebuffer = new VulkanWrapper::Framebuffer(vk_createInfo);
     return framebuffer;
@@ -296,6 +296,7 @@ RenderPlan::RenderPlan(const InitInfo& initInfo)
     , vk_clearValues { initInfo.vk_clearValues }
 {
     vk_renderPassBeginInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO;
+    vk_renderPassBeginInfo.pNext = nullptr;
     vk_renderPassBeginInfo.renderPass = coreResources.renderPass->vk_handle;
     vk_renderPassBeginInfo.clearValueCount = static_cast<uint32_t>(vk_clearValues.size());
     vk_renderPassBeginInfo.pClearValues = vk_clearValues.data();
@@ -344,9 +345,27 @@ void RenderPlan::execute(const VkCommandBuffer vk_cmdBuff, const VkRect2D vk_ren
         .sType = VK_STRUCTURE_TYPE_SUBPASS_END_INFO
     };
 
-    vkCmdBeginRenderPass2(vk_cmdBuff, &vk_renderPassBeginInfo, &vk_subpassBeginInfo);
+
+    vkCmdBeginRenderPass(vk_cmdBuff, &vk_renderPassBeginInfo, VK_SUBPASS_CONTENTS_INLINE);
+
+    // vkCmdBeginRenderPass2(vk_cmdBuff, &vk_renderPassBeginInfo, &vk_subpassBeginInfo);
 
     // vkCmdNextSubpass2(vk_cmdBuff, &vk_subpassBeginInfo, &vk_subpassEndInfo);
 
-    vkCmdEndRenderPass2(vk_cmdBuff, &vk_subpassEndInfo);
+    // vkCmdEndRenderPass2(vk_cmdBuff, &vk_subpassEndInfo);
+
+    vkCmdEndRenderPass(vk_cmdBuff);
+}
+
+
+VkImage RenderPlan::getAttachmentImage(const uint32_t idx)
+{
+    return coreResources.attachments[idx]->getVkImage();
+}
+
+
+
+VkRenderPass RenderPlan::getRenderPass() const
+{
+    return coreResources.renderPass->vk_handle;
 }

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/mica/Desktop/Engine
+CMAKE_SOURCE_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/mica/Desktop/Engine/build
+CMAKE_BINARY_DIR = /home/mica/Desktop/Vulkan/Vulkan-Engine/build
 
 # Utility rule file for makedfd2vk.
 
@@ -57,9 +57,9 @@ third-party/KTX-Software/CMakeFiles/makedfd2vk: ../third-party/KTX-Software/lib/
 
 
 ../third-party/KTX-Software/lib/vkformat_enum.h: ../third-party/KTX-Software/lib/dfdutils/vulkan/vulkan_core.h
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating VkFormat-related source files"
-	cd /home/mica/Desktop/Engine/third-party/KTX-Software && /usr/bin/cmake -E make_directory lib
-	cd /home/mica/Desktop/Engine/third-party/KTX-Software && Vulkan_INCLUDE_DIR=/usr/include lib/mkvkformatfiles lib
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating VkFormat-related source files"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software && /usr/bin/cmake -E make_directory lib
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software && Vulkan_INCLUDE_DIR=/usr/include lib/mkvkformatfiles lib
 
 ../third-party/KTX-Software/lib/vkformat_check.c: ../third-party/KTX-Software/lib/vkformat_enum.h
 	@$(CMAKE_COMMAND) -E touch_nocreate ../third-party/KTX-Software/lib/vkformat_check.c
@@ -69,9 +69,9 @@ third-party/KTX-Software/CMakeFiles/makedfd2vk: ../third-party/KTX-Software/lib/
 
 ../third-party/KTX-Software/lib/dfdutils/dfd2vk.inl: ../third-party/KTX-Software/lib/vkformat_enum.h
 ../third-party/KTX-Software/lib/dfdutils/dfd2vk.inl: ../third-party/KTX-Software/lib/dfdutils/makedfd2vk.pl
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating DFD/VkFormat switch body"
-	cd /home/mica/Desktop/Engine/third-party/KTX-Software && /usr/bin/cmake -E make_directory lib/dfdutils
-	cd /home/mica/Desktop/Engine/third-party/KTX-Software && /usr/bin/perl lib/dfdutils/makedfd2vk.pl lib/vkformat_enum.h lib/dfdutils/dfd2vk.inl
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating DFD/VkFormat switch body"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software && /usr/bin/cmake -E make_directory lib/dfdutils
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software && /usr/bin/perl lib/dfdutils/makedfd2vk.pl lib/vkformat_enum.h lib/dfdutils/dfd2vk.inl
 
 makedfd2vk: third-party/KTX-Software/CMakeFiles/makedfd2vk
 makedfd2vk: ../third-party/KTX-Software/lib/vkformat_enum.h
@@ -88,10 +88,10 @@ third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build: makedfd2vk
 .PHONY : third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build
 
 third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/clean:
-	cd /home/mica/Desktop/Engine/build/third-party/KTX-Software && $(CMAKE_COMMAND) -P CMakeFiles/makedfd2vk.dir/cmake_clean.cmake
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software && $(CMAKE_COMMAND) -P CMakeFiles/makedfd2vk.dir/cmake_clean.cmake
 .PHONY : third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/clean
 
 third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/depend:
-	cd /home/mica/Desktop/Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Engine /home/mica/Desktop/Engine/third-party/KTX-Software /home/mica/Desktop/Engine/build /home/mica/Desktop/Engine/build/third-party/KTX-Software /home/mica/Desktop/Engine/build/third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/mica/Desktop/Vulkan/Vulkan-Engine /home/mica/Desktop/Vulkan/Vulkan-Engine/third-party/KTX-Software /home/mica/Desktop/Vulkan/Vulkan-Engine/build /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software /home/mica/Desktop/Vulkan/Vulkan-Engine/build/third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/depend
 
