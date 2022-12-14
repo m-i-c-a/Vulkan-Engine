@@ -42,13 +42,13 @@ struct MeshInfo
 
 struct MatData
 {
-    float x;
+    uint32_t albedoID = 0;
 };
 
 struct DrawData
 {
     glm::mat4 modelMatrix { 1.0f };
-    // uint32_t matID;
+    uint32_t matID;
 };
 
 #endif // MICA_SHADER_STRUCTS_HPP

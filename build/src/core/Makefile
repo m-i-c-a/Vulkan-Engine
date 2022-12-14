@@ -382,6 +382,33 @@ Texture.cpp.s:
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/Texture.cpp.s
 .PHONY : Texture.cpp.s
 
+TextureList.o: TextureList.cpp.o
+
+.PHONY : TextureList.o
+
+# target to build an object file
+TextureList.cpp.o:
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/TextureList.cpp.o
+.PHONY : TextureList.cpp.o
+
+TextureList.i: TextureList.cpp.i
+
+.PHONY : TextureList.i
+
+# target to preprocess a source file
+TextureList.cpp.i:
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/TextureList.cpp.i
+.PHONY : TextureList.cpp.i
+
+TextureList.s: TextureList.cpp.s
+
+.PHONY : TextureList.s
+
+# target to generate assembly for a file
+TextureList.cpp.s:
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build && $(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/TextureList.cpp.s
+.PHONY : TextureList.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -418,6 +445,9 @@ help:
 	@echo "... Texture.o"
 	@echo "... Texture.i"
 	@echo "... Texture.s"
+	@echo "... TextureList.o"
+	@echo "... TextureList.i"
+	@echo "... TextureList.s"
 .PHONY : help
 
 

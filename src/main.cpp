@@ -24,6 +24,7 @@
 #include "core/PersistentDeviceBuffer.hpp"
 #include "core/PersistentStagingBuffer.hpp"
 #include "core/SceneBuffer.hpp"
+#include "core/TextureList.hpp"
 
 #include "debug-utils/DebugUtilsEXT.hpp"
 
@@ -43,14 +44,14 @@ VulkanWrapper::DescriptorSet allocateDescriptorSet(const VkDescriptorPool vk_poo
 VulkanWrapper::PipelineLayout createPipelineLayout(const VkDescriptorSetLayout vk_descSetLayout);
 VulkanWrapper::Pipeline createPipeline(const VkPipelineLayout vk_pipelineLayout, const VkExtent2D vk_viewportExtent, const VkRenderPass vk_renderPass);
 
-ModelInfo loadMesh(Core::SceneBuffer& sceneBuffer, const std::string_view& filename);
+RenderPlan::DrawInfo loadModel(Core::SceneBuffer& sceneBuffer, Core::BufferPool<MatData>& matBufferPool,  Core::BufferPool<DrawData>& drawBufferPool, Core::TextureList& textureList, const std::string& filename);
 void blit(const VkCommandBuffer vk_cmdBuff, const VkImage vk_srcImage, const VkImage vk_dstImage, const VkOffset3D vk_dimensions);
 void updateBufferDescriptorSet(const VkDevice vk_device, const VkDescriptorSet vk_descSet, const uint32_t descBinding, const VkDescriptorType vk_descType, VkDescriptorBufferInfo&& vk_descBufferInfo);
 
 void submit();
 
-constexpr uint32_t WINDOW_WIDTH         = 300;
-constexpr uint32_t WINDOW_HEIGHT        = 300;
+constexpr uint32_t WINDOW_WIDTH         = 600;
+constexpr uint32_t WINDOW_HEIGHT        = 600;
 
 constexpr uint32_t MAX_RENDERABLE_COUNT = 1;
 constexpr uint32_t MAX_MATERIAL_COUNT   = 1;
@@ -101,18 +102,14 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     PersistentDeviceBuffer* globalUBO = persistent_stagingBuffer.registerDeviceBuffer(sizeof(GlobalUBO), VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT);
     persistent_stagingBuffer.completeRegistration();
 
-    glm::mat4 projMat = glm::perspective(FOV, ((float)WINDOW_WIDTH) / (float)WINDOW_HEIGHT, NEAR_Z, FAR_Z);
-    glm::mat4 viewMat = glm::mat4(1.0f);
-    viewMat = glm::translate(viewMat, camPos);
-    glm::mat4 projViewMat = projMat * viewMat;
-    globalUBO->update(offsetof(GlobalUBO, projViewMatrix), sizeof(glm::mat4), &(projViewMat[0][0]));
+    Core::TextureList textureList(MAX_TEXTURES);
 
     // // Create / Define Resources for Uber Material State
-    // Core::BufferPool<MatData> matBufferPool(MAX_MATERIAL_COUNT, 
-    //                                         MAX_MATERIAL_COUNT, 
-    //                                         VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT,
-    //                                         VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT,
-    //                                         VK_ACCESS_2_MEMORY_READ_BIT);
+    Core::BufferPool<MatData> matBufferPool(MAX_MATERIAL_COUNT, 
+                                            MAX_MATERIAL_COUNT, 
+                                            VK_BUFFER_USAGE_TRANSFER_DST_BIT | VK_BUFFER_USAGE_STORAGE_BUFFER_BIT,
+                                            VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT,
+                                            VK_ACCESS_2_MEMORY_READ_BIT);
 
     // Create / Define Resources for Uber Draw State
     Core::BufferPool<DrawData> drawBufferPool(MAX_RENDERABLE_COUNT,
@@ -121,10 +118,10 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
                                               VK_PIPELINE_STAGE_2_VERTEX_SHADER_BIT,
                                               VK_ACCESS_2_MEMORY_READ_BIT);
 
-
     // Update Descriptor Sets
     updateBufferDescriptorSet(vulkanCore.vk_device, descSet.vk_handle, 0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, { globalUBO->getBuffer(), 0, VK_WHOLE_SIZE });
     updateBufferDescriptorSet(vulkanCore.vk_device, descSet.vk_handle, 1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, drawBufferPool.getDescBufferInfo());
+    updateBufferDescriptorSet(vulkanCore.vk_device, descSet.vk_handle, 2, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, matBufferPool.getDescBufferInfo());
 
     // Create Global Vertex / Index Buffer
     Core::SceneBuffer sceneBuffer(sizeof(Vertex), 5000000, 2000000, 5000000);
@@ -137,19 +134,15 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     // Register created Pipeline with renderer
     renderer.registerPipeline(pipelineID, pipeline.vk_handle);
 
-    // Load Model - currently drawID == renderableID
-    ModelInfo model = loadMesh(sceneBuffer, "../obj-files/plane.obj");
+    // Load Model 
+    const RenderPlan::DrawInfo drawInfo = loadModel(sceneBuffer, matBufferPool, drawBufferPool, textureList, "../obj-files/torus.obj");
 
-    // uint32_t matID ; // <- matBufferPool->acquireBlock()
-
-    const uint32_t drawDataBlockIdx = (uint32_t)drawBufferPool.acquireBlock();
-    DrawData& drawData = drawBufferPool.getWritableBlock(drawDataBlockIdx);
-    drawData.modelMatrix = glm::mat4(1.0f);
-    drawData.modelMatrix = glm::translate(drawData.modelMatrix, glm::vec3(0.0, 0.0, 0.0));
-    drawData.modelMatrix = glm::rotate(drawData.modelMatrix, glm::half_pi<float>() / 2.0f, glm::vec3(1.0, 0.0, 0.0)); 
-    // drawData.modelMatrix = glm::scale(drawData.modelMatrix, glm::vec3(0.1, 0.1, 0.1));
-
-    // Upload model info
+    // Init globalUBO
+    glm::mat4 projMat = glm::perspective(FOV, ((float)WINDOW_WIDTH) / (float)WINDOW_HEIGHT, NEAR_Z, FAR_Z);
+    glm::mat4 viewMat = glm::mat4(1.0f);
+    viewMat = glm::translate(viewMat, camPos);
+    glm::mat4 projViewMat = projMat * viewMat;
+    globalUBO->update(offsetof(GlobalUBO, projViewMatrix), sizeof(glm::mat4), &(projViewMat[0][0]));
 
     cmdBuff.begin(VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
 
@@ -168,16 +161,6 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
     VK_CHECK(vkQueueSubmit(vulkanCore.vk_graphicsQ, 1, &vk_submitInfo, VK_NULL_HANDLE));
     VK_CHECK(vkQueueWaitIdle(vulkanCore.vk_graphicsQ));
 
-    const RenderPlan::DrawInfo drawInfo {
-        .drawID = drawDataBlockIdx,
-        .pipelineID = pipelineID,
-        .indexCount = model.m_uIndexCount,
-        .instanceCount = 1,
-        .firstIndex = model.m_uFirstIndex,
-        .vertexOffset = model.m_iVertexOffset,
-        .vertexCount = 0,
-    };
-
     while (!glfwWindowShouldClose(glfw_window))
     {
         glfwPollEvents();
@@ -186,11 +169,11 @@ void kickoff(GLFWwindow* glfw_window, const VulkanCore& vulkanCore)
         fence.wait();
         fence.reset();
 
+        renderer.addDraw(drawInfo);
+
         cmdPool.reset(0x0);
 
         cmdBuff.begin(VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT);
-
-        renderer.addDraw(drawInfo);
 
         const VkBuffer vk_vertexBuffer = sceneBuffer.getVertexBuffer();
         const VkDeviceSize offsets[1] = { 0 };
@@ -352,7 +335,7 @@ VulkanWrapper::DescriptorPool createDescriptorPool()
 
 VulkanWrapper::DescriptorSetLayout createDescriptorSetLayout()
 {
-    const uint32_t bindingCount = 2;
+    const uint32_t bindingCount = 4;
 
     const VkDescriptorBindingFlags vk_bindlessFlags {
         // The size of the binding will be determined upon descriptor set allocation. 
@@ -367,8 +350,8 @@ VulkanWrapper::DescriptorSetLayout createDescriptorSetLayout()
     const VkDescriptorBindingFlags vk_descriptorBindingFlags[bindingCount] {
         0x0,
         0x0,
-        // 0x0,
-        // vk_bindlessFlags,
+        0x0,
+        vk_bindlessFlags,
     };
 
     const VkDescriptorSetLayoutBindingFlagsCreateInfo vk_descriptorSetLayoutBindingFlagsCreateInfo {
@@ -392,20 +375,20 @@ VulkanWrapper::DescriptorSetLayout createDescriptorSetLayout()
             .stageFlags = VK_SHADER_STAGE_ALL,
             .pImmutableSamplers = nullptr,
         },
-        // {
-        //     .binding = 2,
-        //     .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
-        //     .descriptorCount = 1,
-        //     .stageFlags = VK_SHADER_STAGE_ALL,
-        //     .pImmutableSamplers = nullptr,
-        // },
-        // {
-        //     .binding = 3,
-        //     .descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER,
-        //     .descriptorCount = 1,
-        //     .stageFlags = VK_SHADER_STAGE_ALL,
-        //     .pImmutableSamplers = nullptr,
-        // },
+        {
+            .binding = 2,
+            .descriptorType = VK_DESCRIPTOR_TYPE_STORAGE_BUFFER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_ALL,
+            .pImmutableSamplers = nullptr,
+        },
+        {
+            .binding = 3,
+            .descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER,
+            .descriptorCount = 1,
+            .stageFlags = VK_SHADER_STAGE_ALL,
+            .pImmutableSamplers = nullptr,
+        },
     };
 
     const VkDescriptorSetLayoutCreateInfo vk_createInfo {
@@ -620,16 +603,6 @@ VulkanWrapper::Pipeline createPipeline(const VkPipelineLayout vk_pipelineLayout,
     return pipeline;
 }
 
-ModelInfo loadMesh(Core::SceneBuffer& sceneBuffer, const std::string_view& filename)
-{
-    static uint32_t meshID = 0;
-
-    ObjectBufferData vertexIndexData = loadObjFile(filename);
-    const MeshInfo meshInfo = sceneBuffer.queueUpload(meshID, sizeof(Vertex) * vertexIndexData.vertices.size(), (void*)vertexIndexData.vertices.data(), sizeof(uint32_t) * vertexIndexData.indices.size(), vertexIndexData.indices.data());
-
-    return { meshID++, meshInfo.m_uIndexCount, meshInfo.m_uFirstIndex, meshInfo.m_iVertexOffset };
-}
-
 void blit(const VkCommandBuffer vk_cmdBuff, const VkImage vk_srcImage, const VkImage vk_dstImage, const VkOffset3D vk_dimensions)
 {
     const VkImageMemoryBarrier2 vk_preBlitBarrier {
@@ -740,4 +713,48 @@ void updateBufferDescriptorSet(const VkDevice vk_device, const VkDescriptorSet v
     };
 
     vkUpdateDescriptorSets(vk_device, 1, &vk_writeDescriptorSet, 0, nullptr);
+}
+
+RenderPlan::DrawInfo loadModel(Core::SceneBuffer& sceneBuffer, Core::BufferPool<MatData>& matBufferPool,  Core::BufferPool<DrawData>& drawBufferPool, Core::TextureList& textureList, const std::string& filename)
+{
+    static uint32_t meshID = 0;
+
+    ObjectBufferData vertexIndexData = loadObjFile(filename);
+    const MeshInfo meshInfo = sceneBuffer.queueUpload(meshID, sizeof(Vertex) * vertexIndexData.vertices.size(), (void*)vertexIndexData.vertices.data(), sizeof(uint32_t) * vertexIndexData.indices.size(), vertexIndexData.indices.data());
+
+    // Load all Texture indices
+    const uint32_t albedoID = 0;
+
+    // textureList.acquire();
+
+    const uint32_t matID = matBufferPool.acquireBlock();
+    {
+        MatData& matData = matBufferPool.getWritableBlock(matID);
+        matData.albedoID = albedoID;
+    }
+
+    const uint32_t drawID = drawBufferPool.acquireBlock();
+    {
+        DrawData& drawData = drawBufferPool.getWritableBlock(drawID);
+        drawData.modelMatrix = glm::mat4(1.0f);
+        drawData.modelMatrix = glm::translate(drawData.modelMatrix, glm::vec3(0.0, 0.0, 0.0));
+        drawData.modelMatrix = glm::rotate(drawData.modelMatrix, glm::half_pi<float>() / 2.0f, glm::vec3(1.0, 0.0, 0.0)); 
+        // drawData.modelMatrix = glm::scale(drawData.modelMatrix, glm::vec3(0.1, 0.1, 0.1));
+
+        drawData.matID = matID;
+    }
+
+
+    const RenderPlan::DrawInfo drawInfo {
+        .drawID = drawID,
+        .matID  = matID,
+        .pipelineID = 0,
+        .indexCount = meshInfo.m_uIndexCount,
+        .instanceCount = 1,
+        .firstIndex = meshInfo.m_uFirstIndex,
+        .vertexOffset = meshInfo.m_iVertexOffset,
+        .vertexCount = 0,
+    };
+
+    return drawInfo;
 }

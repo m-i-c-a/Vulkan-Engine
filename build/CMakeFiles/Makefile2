@@ -806,12 +806,12 @@ third-party/glfw/examples/CMakeFiles/heightmap.dir/clean:
 third-party/glfw/examples/CMakeFiles/sharing.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/sharing.dir/build.make third-party/glfw/examples/CMakeFiles/sharing.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/sharing.dir/build.make third-party/glfw/examples/CMakeFiles/sharing.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target sharing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=80 "Built target sharing"
 .PHONY : third-party/glfw/examples/CMakeFiles/sharing.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/sharing.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/sharing.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/sharing.dir/rule
@@ -887,12 +887,12 @@ third-party/glfw/examples/CMakeFiles/particles.dir/clean:
 third-party/glfw/examples/CMakeFiles/splitview.dir/all: third-party/glfw/src/CMakeFiles/glfw.dir/all
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/splitview.dir/build.make third-party/glfw/examples/CMakeFiles/splitview.dir/depend
 	$(MAKE) -f third-party/glfw/examples/CMakeFiles/splitview.dir/build.make third-party/glfw/examples/CMakeFiles/splitview.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=80 "Built target splitview"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target splitview"
 .PHONY : third-party/glfw/examples/CMakeFiles/splitview.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/examples/CMakeFiles/splitview.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/examples/CMakeFiles/splitview.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/examples/CMakeFiles/splitview.dir/rule
@@ -1022,12 +1022,12 @@ third-party/glfw/examples/CMakeFiles/windows.dir/clean:
 third-party/glfw/docs/CMakeFiles/docs.dir/all:
 	$(MAKE) -f third-party/glfw/docs/CMakeFiles/docs.dir/build.make third-party/glfw/docs/CMakeFiles/docs.dir/depend
 	$(MAKE) -f third-party/glfw/docs/CMakeFiles/docs.dir/build.make third-party/glfw/docs/CMakeFiles/docs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=15 "Built target docs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target docs"
 .PHONY : third-party/glfw/docs/CMakeFiles/docs.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/glfw/docs/CMakeFiles/docs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/glfw/docs/CMakeFiles/docs.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/glfw/docs/CMakeFiles/docs.dir/rule
@@ -1077,12 +1077,12 @@ third-party/KTX-Software/CMakeFiles/ktx_read.dir/all: third-party/KTX-Software/C
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/all: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all
 	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/depend
 	$(MAKE) -f third-party/KTX-Software/CMakeFiles/ktx_read.dir/build.make third-party/KTX-Software/CMakeFiles/ktx_read.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=57,58,59,60,61,62,63,64,65,66,67,68,69 "Built target ktx_read"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=58,59,60,61,62,63,64,65,66,67,68,69 "Built target ktx_read"
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 16
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 14
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx_read.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx_read.dir/rule
@@ -1112,7 +1112,7 @@ third-party/KTX-Software/CMakeFiles/ktx.dir/all: third-party/KTX-Software/lib/as
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/CMakeFiles/ktx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 32
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 31
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/ktx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/CMakeFiles/ktx.dir/rule
@@ -1141,7 +1141,7 @@ third-party/KTX-Software/CMakeFiles/mkvk.dir/all: third-party/KTX-Software/CMake
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/CMakeFiles/mkvk.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/mkvk.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/CMakeFiles/mkvk.dir/rule
@@ -1163,12 +1163,12 @@ third-party/KTX-Software/CMakeFiles/mkvk.dir/clean:
 third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/all: third-party/KTX-Software/CMakeFiles/mkvkformatfiles.dir/all
 	$(MAKE) -f third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build.make third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/depend
 	$(MAKE) -f third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build.make third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=73 "Built target makedfd2vk"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target makedfd2vk"
 .PHONY : third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/CMakeFiles/makedfd2vk.dir/rule
@@ -2081,12 +2081,12 @@ third-party/KTX-Software/lib/astc-encoder/Source/CMakeFiles/astcenc-avx2-static.
 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/all:
 	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/depend
 	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=55 "Built target ktx2check_version"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ktx2check_version"
 .PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/rule
@@ -2110,12 +2110,12 @@ third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/all: third-par
 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/all: third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check_version.dir/all
 	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/depend
 	$(MAKE) -f third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build.make third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=54 "Built target ktx2check"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=54,55 "Built target ktx2check"
 .PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 34
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 33
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/rule
@@ -2137,12 +2137,12 @@ third-party/KTX-Software/tools/ktx2check/CMakeFiles/ktx2check.dir/clean:
 third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/all:
 	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/depend
 	$(MAKE) -f third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build.make third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ktx2ktx2_version"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=57 "Built target ktx2ktx2_version"
 .PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2_version.dir/rule
@@ -2193,12 +2193,12 @@ third-party/KTX-Software/tools/ktx2ktx2/CMakeFiles/ktx2ktx2.dir/clean:
 third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/all:
 	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/depend
 	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=71 "Built target ktxinfo_version"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ktxinfo_version"
 .PHONY : third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/rule
@@ -2222,12 +2222,12 @@ third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/all: third-party/K
 third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/all: third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo_version.dir/all
 	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/depend
 	$(MAKE) -f third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/build.make third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=70 "Built target ktxinfo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=70,71 "Built target ktxinfo"
 .PHONY : third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 34
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 33
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/rule
@@ -2249,12 +2249,12 @@ third-party/KTX-Software/tools/ktxinfo/CMakeFiles/ktxinfo.dir/clean:
 third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/all:
 	$(MAKE) -f third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/build.make third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/depend
 	$(MAKE) -f third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/build.make third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num= "Built target ktxsc_version"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=73 "Built target ktxsc_version"
 .PHONY : third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/all
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tools/ktxsc/CMakeFiles/ktxsc_version.dir/rule
@@ -2339,7 +2339,7 @@ third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/all: third-party/KTX-S
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 36
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 35
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tools/toktx/CMakeFiles/toktx.dir/rule
@@ -2367,7 +2367,7 @@ third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/all: third-party/KTX-
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 34
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 33
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tests/CMakeFiles/texturetests.dir/rule
@@ -2395,7 +2395,7 @@ third-party/KTX-Software/tests/CMakeFiles/unittests.dir/all: third-party/KTX-Sof
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 34
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/CMakeFiles/unittests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tests/CMakeFiles/unittests.dir/rule
@@ -2451,7 +2451,7 @@ third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/all:
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 35
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 34
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tests/transcodetests/CMakeFiles/transcodetests.dir/rule
@@ -2479,7 +2479,7 @@ third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/all: third
 
 # Build rule for subdir invocation for target.
 third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 34
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 33
 	$(MAKE) -f CMakeFiles/Makefile2 third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : third-party/KTX-Software/tests/streamtests/CMakeFiles/streamtests.dir/rule
@@ -2559,12 +2559,12 @@ src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/clean:
 src/core/CMakeFiles/core.dir/all: src/vulkanwrapper/CMakeFiles/vulkanwrapper.dir/all
 	$(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/depend
 	$(MAKE) -f src/core/CMakeFiles/core.dir/build.make src/core/CMakeFiles/core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=11,12,13 "Built target core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=11,12,13,14 "Built target core"
 .PHONY : src/core/CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.
 src/core/CMakeFiles/core.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 src/core/CMakeFiles/core.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles 0
 .PHONY : src/core/CMakeFiles/core.dir/rule
@@ -2586,7 +2586,7 @@ src/core/CMakeFiles/core.dir/clean:
 src/debug-utils/CMakeFiles/debug-utils.dir/all:
 	$(MAKE) -f src/debug-utils/CMakeFiles/debug-utils.dir/build.make src/debug-utils/CMakeFiles/debug-utils.dir/depend
 	$(MAKE) -f src/debug-utils/CMakeFiles/debug-utils.dir/build.make src/debug-utils/CMakeFiles/debug-utils.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=14 "Built target debug-utils"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=15 "Built target debug-utils"
 .PHONY : src/debug-utils/CMakeFiles/debug-utils.dir/all
 
 # Build rule for subdir invocation for target.

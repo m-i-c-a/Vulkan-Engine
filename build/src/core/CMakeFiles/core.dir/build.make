@@ -148,6 +148,19 @@ src/core/CMakeFiles/core.dir/Texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/Texture.cpp.s"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/Texture.cpp -o CMakeFiles/core.dir/Texture.cpp.s
 
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: src/core/CMakeFiles/core.dir/flags.make
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: ../src/core/TextureList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/core/CMakeFiles/core.dir/TextureList.cpp.o"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core.dir/TextureList.cpp.o -c /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/TextureList.cpp
+
+src/core/CMakeFiles/core.dir/TextureList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core.dir/TextureList.cpp.i"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/TextureList.cpp > CMakeFiles/core.dir/TextureList.cpp.i
+
+src/core/CMakeFiles/core.dir/TextureList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core.dir/TextureList.cpp.s"
+	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/TextureList.cpp -o CMakeFiles/core.dir/TextureList.cpp.s
+
 # Object files for target core
 core_OBJECTS = \
 "CMakeFiles/core.dir/Attachment.cpp.o" \
@@ -156,7 +169,8 @@ core_OBJECTS = \
 "CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o" \
 "CMakeFiles/core.dir/SceneBuffer.cpp.o" \
 "CMakeFiles/core.dir/StagingBuffer.cpp.o" \
-"CMakeFiles/core.dir/Texture.cpp.o"
+"CMakeFiles/core.dir/Texture.cpp.o" \
+"CMakeFiles/core.dir/TextureList.cpp.o"
 
 # External object files for target core
 core_EXTERNAL_OBJECTS =
@@ -168,9 +182,10 @@ src/core/libcore.a: src/core/CMakeFiles/core.dir/PersistentStagingBuffer.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/SceneBuffer.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/StagingBuffer.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/Texture.cpp.o
+src/core/libcore.a: src/core/CMakeFiles/core.dir/TextureList.cpp.o
 src/core/libcore.a: src/core/CMakeFiles/core.dir/build.make
 src/core/libcore.a: src/core/CMakeFiles/core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libcore.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/mica/Desktop/Vulkan/Vulkan-Engine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libcore.a"
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && $(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean_target.cmake
 	cd /home/mica/Desktop/Vulkan/Vulkan-Engine/build/src/core && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core.dir/link.txt --verbose=$(VERBOSE)
 

@@ -115,6 +115,7 @@ Core::Texture* loadTexture(const char* filename, Core::StagingBuffer* stagingBuf
         .vk_imageViewType = vk_imageViewType
     };
 
+    // Core::Texture* texture = createTexture(initInfo, sampler);
     Core::Texture* texture = createTexture(initInfo, sampler);
 
     ktx_uint8_t* data = ktxTexture_GetData(tex);

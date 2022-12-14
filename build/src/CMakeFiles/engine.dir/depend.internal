@@ -403,6 +403,7 @@ src/CMakeFiles/engine.dir/main.cpp.o
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentDeviceBuffer.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/PersistentStagingBuffer.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/SceneBuffer.hpp
+ /home/mica/Desktop/Vulkan/Vulkan-Engine/src/core/TextureList.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/debug-utils/DebugUtilsEXT.hpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/main.cpp
  /home/mica/Desktop/Vulkan/Vulkan-Engine/src/vulkanwrapper/CommandBuffer.hpp

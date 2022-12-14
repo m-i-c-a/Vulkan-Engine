@@ -19,7 +19,6 @@ namespace Core
 class Texture
 {
 private:
-    VkDeviceMemory m_vkImageMemory           = VK_NULL_HANDLE;
     VkDescriptorImageInfo m_vkDescriptorInfo = {};
 
     VulkanWrapper::Image*         m_image     = nullptr;

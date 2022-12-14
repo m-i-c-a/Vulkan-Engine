@@ -6,6 +6,7 @@ add_library(core STATIC
     SceneBuffer.cpp               SceneBuffer.hpp
     StagingBuffer.cpp             StagingBuffer.hpp
     Texture.cpp                   Texture.hpp
+    TextureList.cpp               TextureList.hpp
 )
 
 target_link_libraries(core PRIVATE vulkanwrapper  $ENV{VULKAN_SDK}/lib/libvulkan.so)

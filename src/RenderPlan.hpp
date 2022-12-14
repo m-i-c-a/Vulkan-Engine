@@ -70,9 +70,9 @@ public:
     struct DrawInfo
     {
         // uint8_t frustum;
-        // uint32_t matID ;
 
         uint32_t drawID;
+        uint32_t matID ;
         uint32_t pipelineID;
 
         uint32_t indexCount;

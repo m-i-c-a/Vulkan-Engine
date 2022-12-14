@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/core.dir/SceneBuffer.cpp.o"
   "CMakeFiles/core.dir/StagingBuffer.cpp.o"
   "CMakeFiles/core.dir/Texture.cpp.o"
+  "CMakeFiles/core.dir/TextureList.cpp.o"
   "libcore.a"
   "libcore.pdb"
 )

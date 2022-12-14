@@ -29,6 +29,13 @@ VulkanWrapper::RenderPass* forward_createRenderPass(const RenderPlan::InitInfo& 
 {
     // Attachments + Attachment References + Dependencies
 
+
+    // initialLayout - The layout the driver expects the image to be in. It is
+    //                 our (the developers') responsibility to ensure that the 
+    //                 image is in this layout. 
+    // There is not transition to initial layout, there is a transition from initial
+    // layout to first used subpass (if need be).
+
     const std::array<VkAttachmentDescription2, 2> vk_attachmentDescriptions {{
         {   // DEFAULT COLOR
             .sType = VK_STRUCTURE_TYPE_ATTACHMENT_DESCRIPTION_2,
@@ -38,7 +45,7 @@ VulkanWrapper::RenderPass* forward_createRenderPass(const RenderPlan::InitInfo& 
             .storeOp = VK_ATTACHMENT_STORE_OP_STORE,
             .stencilLoadOp = VK_ATTACHMENT_LOAD_OP_DONT_CARE,
             .stencilStoreOp = VK_ATTACHMENT_STORE_OP_DONT_CARE,
-            .initialLayout = VK_IMAGE_LAYOUT_UNDEFINED,
+            .initialLayout = VK_IMAGE_LAYOUT_UNDEFINED, 
             .finalLayout = VK_IMAGE_LAYOUT_TRANSFER_SRC_OPTIMAL
         },
         {   // DEPTH

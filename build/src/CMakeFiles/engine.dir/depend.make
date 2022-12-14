@@ -402,6 +402,7 @@ src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/BufferPool.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/PersistentDeviceBuffer.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/PersistentStagingBuffer.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/SceneBuffer.hpp
+src/CMakeFiles/engine.dir/main.cpp.o: ../src/core/TextureList.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/debug-utils/DebugUtilsEXT.hpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/main.cpp
 src/CMakeFiles/engine.dir/main.cpp.o: ../src/vulkanwrapper/CommandBuffer.hpp

@@ -223,3 +223,34 @@ src/core/CMakeFiles/core.dir/Texture.cpp.o: /home/mica/Documents/vulkan_download
 src/core/CMakeFiles/core.dir/Texture.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xlib.h
 src/core/CMakeFiles/core.dir/Texture.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xlib_xrandr.h
 
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: ../src/common/Defines.hpp
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: ../src/core/Texture.hpp
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: ../src/vulkanwrapper/Resource.hpp
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: ../src/vulkanwrapper/Sampler.hpp
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: ../src/core/TextureList.cpp
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: ../src/core/TextureList.hpp
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h264std.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h264std_decode.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h264std_encode.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h265std.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h265std_decode.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vk_video/vulkan_video_codec_h265std_encode.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vk_platform.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_android.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_beta.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_core.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_directfb.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_fuchsia.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_ggp.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_ios.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_macos.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_metal.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_screen.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_vi.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_wayland.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_win32.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xcb.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xlib.h
+src/core/CMakeFiles/core.dir/TextureList.cpp.o: /home/mica/Documents/vulkan_downloads/1.3.231.2/x86_64/include/vulkan/vulkan_xlib_xrandr.h
+
